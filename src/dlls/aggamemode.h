@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGGAMEMODES_H__B6D8EF5B_9423_4422_B935_1D71B6146DCA__INCLUDED_)
 #define AFX_AGGAMEMODES_H__B6D8EF5B_9423_4422_B935_1D71B6146DCA__INCLUDED_
@@ -50,4 +50,4 @@ inline BYTE AgGametype()
 };
 
 #endif // !defined(AFX_AGGAMEMODES_H__B6D8EF5B_9423_4422_B935_1D71B6146DCA__INCLUDED_)
-//-- bullit@planethalflife.com
+//-- Martin Webrant

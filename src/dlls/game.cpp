@@ -17,9 +17,9 @@
 #include "util.h"
 #include "game.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "agglobal.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 cvar_t	displaysoundlist = {"displaysoundlist","0"};
 
 // multiplayer server rules
@@ -885,9 +885,9 @@ void GameDLLInit( void )
 	CVAR_REGISTER ( &sk_player_leg3 );
 // END REGISTER CVARS FOR SKILL LEVEL STUFF
 
-//++ bullit@planethalflife.com
+//++ BulliT
   AgInitGame();
- //-- bullit@planethalflife.com
+ //-- Martin Webrant
 	SERVER_COMMAND( "exec skill.cfg\n" );
 }
 

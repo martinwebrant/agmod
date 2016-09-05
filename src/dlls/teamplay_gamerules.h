@@ -16,11 +16,11 @@
 // teamplay_gamerules.h
 //
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #if !defined(_TEAMPLAY_H_)
 #include "multi_gamerules.h"
 #define _TEAMPLAY_H_
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 #define MAX_TEAMNAME_LENGTH	16
 #define MAX_TEAMS			32
 
@@ -41,9 +41,9 @@ public:
 	virtual int IPointsForKill( CBasePlayer *pAttacker, CBasePlayer *pKilled );
 	virtual void InitHUD( CBasePlayer *pl );
 	virtual void DeathNotice( CBasePlayer *pVictim, entvars_t *pKiller, entvars_t *pevInflictor );
-//++ bullit@planethalflife.com
+//++ BulliT
 	//virtual const char *GetGameDescription( void ) { return "HL Teamplay"; }  // this is the game name that gets seen in the server browser
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	virtual void UpdateGameMode( CBasePlayer *pPlayer );  // the client needs to be informed of the current game mode
 	virtual void PlayerKilled( CBasePlayer *pVictim, entvars_t *pKiller, entvars_t *pInflictor );
 	virtual void Think ( void );
@@ -53,15 +53,15 @@ public:
 	const char *SetDefaultPlayerTeam( CBasePlayer *pPlayer );
 	virtual void ChangePlayerTeam( CBasePlayer *pPlayer, const char *pTeamName, BOOL bKill, BOOL bGib );
 
-//++ bullit@planethalflife.com
+//++ BulliT
  	void RecountTeams( void );
   const char *TeamWithFewestPlayers( void );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 private:
-//++ bullit@planethalflife.com
+//++ BulliT
 	//void RecountTeams( void );
   //const char *TeamWithFewestPlayers( void );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	BOOL m_DisableDeathMessages;
 	BOOL m_DisableDeathPenalty;

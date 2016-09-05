@@ -346,7 +346,7 @@ void CHudSpectator::SetSpectatorStartPosition()
 
 	else if ( UTIL_FindEntityInMap( "info_player_coop",  m_cameraOrigin, m_cameraAngles ) )
 		iJumpSpectator = 1;
-//++ bullit@planethalflife.com
+//++ BulliT
 	else if ( UTIL_FindEntityInMap( "info_player_team1",  m_cameraOrigin, m_cameraAngles ) )
 		iJumpSpectator = 1;
 	else if ( UTIL_FindEntityInMap( "info_player_team2",  m_cameraOrigin, m_cameraAngles ) )
@@ -355,7 +355,7 @@ void CHudSpectator::SetSpectatorStartPosition()
 		iJumpSpectator = 1;
 	else if ( UTIL_FindEntityInMap( "ctf_bluespawn",  m_cameraOrigin, m_cameraAngles ) )
 		iJumpSpectator = 1;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	else
 	{
 		// jump to 0,0,0 if no better position was found
@@ -460,11 +460,11 @@ int CHudSpectator::Draw(float flTime)
 		sprintf(string, "%s", g_PlayerInfoList[i+1].name );
 		
 		lx = strlen(string)*3; // 3 is avg. character length :)
-//++ bullit@planethalflife.com
+//++ BulliT
 //		gEngfuncs.pfnDrawSetTextColor( color[0], color[1], color[2] );
 //		DrawConsoleString( m_vPlayerPos[i][0]-lx,m_vPlayerPos[i][1], string);
 		DrawConsoleString( m_vPlayerPos[i][0]-lx,m_vPlayerPos[i][1], string, color[0], color[1], color[2]);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 
 	return 1;

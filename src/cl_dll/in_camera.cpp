@@ -159,7 +159,7 @@ void DLLEXPORT CAM_Think( void )
 #endif
 	vec3_t viewangles;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   /*
 	switch( (int) cam_command->value )
 	{
@@ -176,7 +176,7 @@ void DLLEXPORT CAM_Think( void )
 			break;
 	}
   */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if( !cam_thirdperson )
 		return;

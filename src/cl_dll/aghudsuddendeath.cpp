@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -61,4 +61,4 @@ int AgHudSuddenDeath::MsgFunc_SuddenDeath(const char *pszName,  int iSize, void 
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

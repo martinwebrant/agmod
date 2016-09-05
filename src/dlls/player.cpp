@@ -184,7 +184,7 @@ int gmsgGeigerRange = 0;
 int gmsgTeamNames = 0;
 int gmsgStatusText = 0;
 int gmsgStatusValue = 0; 
-//++ bullit@planethalflife.com
+//++ BulliT
 int gmsgAllowSpec = 0;		
 int gmsgSpectator = 0;		
 int gmsgVGUIMenu  = 0;		
@@ -217,7 +217,7 @@ extern int g_teamplay;
 #ifdef AGSTATS
 #include "agstats.h"
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 void LinkUserMessages( void )
 {
@@ -244,9 +244,9 @@ void LinkUserMessages( void )
 	gmsgInitHUD = REG_USER_MSG("InitHUD", 0 );		// called every time a new player joins the server
 	gmsgShowGameTitle = REG_USER_MSG("GameTitle", 1);
 	gmsgDeathMsg = REG_USER_MSG( "DeathMsg", -1 );
-//++ bullit@planethalflife.com
+//++ BulliT
 //	gmsgScoreInfo = REG_USER_MSG( "ScoreInfo", 9 );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	gmsgTeamInfo = REG_USER_MSG( "TeamInfo", -1 );  // sets the name of a player's team
 	gmsgTeamScore = REG_USER_MSG( "TeamScore", -1 );  // sets the score of a team on the scoreboard
 	gmsgGameMode = REG_USER_MSG( "GameMode", 1 );
@@ -262,7 +262,7 @@ void LinkUserMessages( void )
 	gmsgFade = REG_USER_MSG("ScreenFade", sizeof(ScreenFade));
 	gmsgAmmoX = REG_USER_MSG("AmmoX", 2);
 	gmsgTeamNames = REG_USER_MSG( "TeamNames", -1 );
-  //++ bullit@planethalflife.com
+  //++ BulliT
 	gmsgScoreInfo   = REG_USER_MSG("ScoreInfo", 9 );
   gmsgAllowSpec	  = REG_USER_MSG("AllowSpec",	1);   //Allow spectator button message.
   gmsgSpectator	  = REG_USER_MSG("Spectator",	2);   //Spectator message.
@@ -291,7 +291,7 @@ void LinkUserMessages( void )
   gmsgMapList     = REG_USER_MSG("MapList", -1);    //MapList
   gmsgCTFFlag			= REG_USER_MSG("CTFFlag",2);		  //Who is carrying the flags.
 	gmsgCRC32				= REG_USER_MSG("CRC32", -1);		  //Checksum, file
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 #ifdef AG_NO_CLIENT_DLL
 	gmsgStatusText = REG_USER_MSG("StatusText", -1);
 	gmsgStatusValue = REG_USER_MSG("StatusValue", 3);
@@ -578,7 +578,7 @@ int CBasePlayer :: TakeDamage( entvars_t *pevInflictor, entvars_t *pevAttacker, 
 				m_rgbTimeBasedDamage[i] = 0;
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   UTIL_SendDirectorMessage( this->edict(), ENT(pevInflictor), 5 | DRC_FLAG_DRAMATIC);
   /*
 	// tell director about it
@@ -589,7 +589,7 @@ int CBasePlayer :: TakeDamage( entvars_t *pevInflictor, entvars_t *pevAttacker, 
 		WRITE_LONG( 5 );   // eventflags (priority and flags)
 	MESSAGE_END();
   */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	// how bad is it, doc?
 
@@ -927,10 +927,10 @@ entvars_t *g_pevLastInflictor;  // Set in combat.cpp.  Used to pass the damage i
 
 void CBasePlayer::Killed( entvars_t *pevAttacker, int iGib )
 {
-  //++ bullit@planethalflife.com
+  //++ BulliT
   if (pev)
     m_vKilled = pev->origin;
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 	CSound *pSound;
 
 	// Holster weapon immediately, to allow it to cleanup
@@ -996,10 +996,10 @@ void CBasePlayer::Killed( entvars_t *pevAttacker, int iGib )
 	if ( ( pev->health < -40 && iGib != GIB_NEVER ) || iGib == GIB_ALWAYS )
 	{
 		pev->solid			= SOLID_NOT;
-//++ bullit@planethalflife.com
+//++ BulliT
     if (0 < ag_show_gibs.value)
       GibMonster();	// This clears pev->model
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		pev->effects |= EF_NODRAW;
 		return;
 	}
@@ -1378,12 +1378,12 @@ void CBasePlayer::PlayerDeathThink(void)
 	pev->effects |= EF_NOINTERP;
 	pev->framerate = 0.0;
   
-  //++ bullit@planethalflife.com
+  //++ BulliT
   //Remove sticky dead models.
   pev->solid = SOLID_NOT;
   if (Spectate_Think())
     return;
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 
 	BOOL fAnyButtonDown = (pev->button & ~IN_SCORE );
 	
@@ -1407,19 +1407,19 @@ void CBasePlayer::PlayerDeathThink(void)
 // choose to respawn.
 	if ( g_pGameRules->IsMultiplayer() && ( gpGlobals->time > (m_fDeadTime + 6) ) && !(m_afPhysicsFlags & PFLAG_OBSERVER) )
 	{
-    //-- bullit@planethalflife.com
+    //-- Martin Webrant
     m_fDisplayGamemode = gpGlobals->time + 1;
 		// go to dead camera. 
 		//StartDeathCam();
-    //-- bullit@planethalflife.com
+    //-- Martin Webrant
 	}
 	
 // wait for any button down,  or mp_forcerespawn is set and the respawn time is up
-  //++ bullit@planethalflife.com
+  //++ BulliT
   //Don't trigg on any button - just attack button.
   if ( !(pev->button & IN_ATTACK || pev->button & IN_USE) && !( g_pGameRules->IsMultiplayer() && CVAR_GET_FLOAT("mp_forcerespawn") > 0 && (gpGlobals->time > (m_fDeadTime + 5) ) ) )
     return;
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 
 	pev->button = 0;
 	m_iRespawnFrames = 0;
@@ -1716,10 +1716,10 @@ void CBasePlayer::AddPoints( int score, BOOL bAllowNegativeScore )
 		WRITE_BYTE( ENTINDEX(edict()) );
 		WRITE_SHORT( pev->frags );
 		WRITE_SHORT( m_iDeaths );
-//++ bullit@planethalflife.com
+//++ BulliT
 		WRITE_SHORT( g_teamplay );
 		WRITE_SHORT( g_pGameRules->GetTeamIndex( m_szTeamName ) + 1 );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	MESSAGE_END();
 }
 
@@ -1862,7 +1862,7 @@ void CBasePlayer::PreThink(void)
 	if ( g_fGameOver )
 		return;         // intermission or finale
 
-  //++ bullit@planethalflife.com
+  //++ BulliT
   if (IsSpectator() || ARENA == AgGametype() || LMS == AgGametype())
     EnableControl(TRUE);
   else
@@ -1907,7 +1907,7 @@ void CBasePlayer::PreThink(void)
 
     m_fDisplayGamemode = 0;
   } 
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 	UTIL_MakeVectors(pev->v_angle);             // is this still used?
 	
 	ItemPreFrame( );
@@ -2694,7 +2694,7 @@ void CBasePlayer::PostThink()
 
 	UpdatePlayerSound();
 
-//++ bullit@planethalflife.com
+//++ BulliT
 //  // Track button info so we can detect 'pressed' and 'released' buttons next frame
 //  m_afButtonLast = pev->button;
   
@@ -2722,12 +2722,12 @@ void CBasePlayer::PostThink()
 		if (0 < ag_lj_timer.value)
 			LongjumpThink();
   }
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 pt_end:
-//++ bullit@planethalflife.com
+//++ BulliT
   // Track button info so we can detect 'pressed' and 'released' buttons next frame
   m_afButtonLast = pev->button;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 #if defined( CLIENT_WEAPONS )
 		// Decay timers on weapons
 	// go through all of the weapons and make a list of the ones to pack
@@ -2831,17 +2831,17 @@ Returns the entity to spawn at
 USES AND SETS GLOBAL g_pLastSpawn
 ============
 */
-//++ bullit@planethalflife.com
+//++ BulliT
 edict_t *EntSelectCTFSpawnPoint( CBaseEntity *pPlayer );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 edict_t *EntSelectSpawnPoint( CBaseEntity *pPlayer )
 {
-  //++ bullit@planethalflife.com
+  //++ BulliT
   if (CTF == AgGametype())
   {
     return EntSelectCTFSpawnPoint(pPlayer);
   }
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 	CBaseEntity *pSpot;
 	edict_t		*player;
 
@@ -2937,10 +2937,10 @@ void CBasePlayer::Spawn( void )
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_WALK;
 	pev->max_health		= pev->health;
-//++ bullit@planethalflife.com
+//++ BulliT
   //pev->flags		   &= FL_PROXY;	// keep proxy flag sey by engine
 	pev->flags		   &= FL_PROXY | FL_FAKECLIENT;	// keep proxy flag sey by engine
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	pev->flags		   |= FL_CLIENT;
 	pev->air_finished	= gpGlobals->time + 12;
 	pev->dmg			= 2;				// initial water damage
@@ -2957,11 +2957,11 @@ void CBasePlayer::Spawn( void )
 
 	g_engfuncs.pfnSetPhysicsKeyValue( edict(), "slj", "0" );
 	g_engfuncs.pfnSetPhysicsKeyValue( edict(), "hl", "1" );
-  //++ bullit@planethalflife.com
+  //++ BulliT
   g_engfuncs.pfnSetPhysicsKeyValue( edict(), "bj", CVAR_GET_STRING("sv_ag_oldphysics") );
   m_fPlayerIdCheck = gpGlobals->time + 2;
   m_fLongjumpTimer = gpGlobals->time;
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 
 	pev->fov = m_iFOV				= 0;// init field of view.
 	m_iClientFOV		= -1; // make sure fov reset is sent
@@ -3023,7 +3023,7 @@ void CBasePlayer::Spawn( void )
 	}
 
 	m_lastx = m_lasty = 0;
-//++ bullit@planethalflife.com
+//++ BulliT
   if (IsProxy())
   {
     pev->effects |= EF_NODRAW;
@@ -3041,7 +3041,7 @@ void CBasePlayer::Spawn( void )
   	g_pGameRules->PlayerSpawn( this );
     Spectate_UpdatePosition();
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 
@@ -3320,10 +3320,10 @@ const char *CBasePlayer::TeamID( void )
 	if ( pev == NULL )		// Not fully connected yet
 		return "";
 
-//++ bullit@planethalflife.com
+//++ BulliT
   if (IsSpectator() && (LMS != AgGametype() || LMS == AgGametype() && !m_bReady))
     return "";
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// return their team name
 	return m_szTeamName;
 }
@@ -3521,7 +3521,7 @@ void CBasePlayer :: ForceClientDllUpdate( void )
 	m_fWeapon = FALSE;          // Force weapon send
 	m_fKnownItem = FALSE;    // Force weaponinit messages.
 	m_fInitHUD = TRUE;		// Force HUD gmsgResetHUD message
-//++ bullit@planethalflife.com
+//++ BulliT
   m_bInitLocation = true;
   m_iFlagStatus1Last = -1;
   m_iFlagStatus2Last = -1;
@@ -3569,10 +3569,10 @@ void CBasePlayer :: ForceClientDllUpdate( void )
         WRITE_BYTE(ENTINDEX(plr->edict()));
 			WRITE_SHORT( plr->pev->frags );
 			WRITE_SHORT( m_iDeaths );
-	//++ bullit@planethalflife.com
+	//++ BulliT
 			WRITE_SHORT( g_teamplay );
 			WRITE_SHORT( g_pGameRules->GetTeamIndex( plr->m_szTeamName ) + 1 );
-	//-- bullit@planethalflife.com
+	//-- Martin Webrant
 		MESSAGE_END();
 		*/
 
@@ -3590,7 +3590,7 @@ void CBasePlayer :: ForceClientDllUpdate( void )
     }
   }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// Now force all the necessary messages
 	//  to be sent.
 	UpdateClientData();
@@ -3685,7 +3685,7 @@ void CBasePlayer::ImpulseCommands( )
 //=========================================================
 void CBasePlayer::CheatImpulseCommands( int iImpulse )
 {
-  //++ bullit@planethalflife.com
+  //++ BulliT
   return;
   /*
 #if !defined( HLDEMO_BUILD )
@@ -3862,7 +3862,7 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 	}
 #endif	// HLDEMO_BUILD
 	*/
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 }
 
 //
@@ -4146,7 +4146,7 @@ void CBasePlayer :: UpdateClientData( void )
 			MESSAGE_BEGIN( MSG_ONE, gmsgInitHUD, NULL, pev );
 			MESSAGE_END();
 
-      //++ bullit@planethalflife.com
+      //++ BulliT
       SendWallhackInfo();
 
       if (0 < ag_match_running.value)
@@ -4163,7 +4163,7 @@ void CBasePlayer :: UpdateClientData( void )
       MESSAGE_END();
       
 
-      //-- bullit@planethalflife.com
+      //-- Martin Webrant
 			g_pGameRules->InitHUD( this );
 			m_fGameHUDInitialized = TRUE;
 			if ( g_pGameRules->IsMultiplayer() )
@@ -4187,7 +4187,7 @@ void CBasePlayer :: UpdateClientData( void )
 		m_iClientHideHUD = m_iHideHUD;
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   CBasePlayer* pPlayerTarget = NULL;
   if (m_hSpectateTarget != NULL && m_hSpectateTarget->pev != NULL)
     pPlayerTarget = (CBasePlayer*)CBasePlayer::Instance(m_hSpectateTarget->pev);
@@ -4207,7 +4207,7 @@ void CBasePlayer :: UpdateClientData( void )
 
   if (pev->iuser1 != OBS_IN_EYE)
   {
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	if ( m_iFOV != m_iClientFOV )
 	{
 		MESSAGE_BEGIN( MSG_ONE, gmsgSetFOV, NULL, pev );
@@ -4216,7 +4216,7 @@ void CBasePlayer :: UpdateClientData( void )
 
 		// cache FOV change at end of function, so weapon updates can see that FOV has changed
 	}
-//++ bullit@planethalflife.com
+//++ BulliT
   }
   else
   {
@@ -4231,7 +4231,7 @@ void CBasePlayer :: UpdateClientData( void )
       pev->fov = pPlayerTarget->pev->fov;
 
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	// HACKHACK -- send the message to display the game title
 	if (gDisplayTitle)
@@ -4242,12 +4242,12 @@ void CBasePlayer :: UpdateClientData( void )
 		gDisplayTitle = 0;
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   if (!pPlayerTarget)
   {
 //  if (pev->health != m_iClientHealth)
 	if ((int)pev->health != m_iClientHealth)
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	{
 		int iHealth = max( (int)pev->health, 0 );  // make sure that no negative health values are sent
 
@@ -4260,10 +4260,10 @@ void CBasePlayer :: UpdateClientData( void )
 	}
 
 
-//++ bullit@planethalflife.com
+//++ BulliT
 //	if (pev->armorvalue != m_iClientBattery)
 	if ((int)pev->armorvalue != m_iClientBattery)
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	{
 		m_iClientBattery = pev->armorvalue;
 
@@ -4273,7 +4273,7 @@ void CBasePlayer :: UpdateClientData( void )
 			WRITE_SHORT( (int)pev->armorvalue);
 		MESSAGE_END();
 	}
-//++ bullit@planethalflife.com
+//++ BulliT
   }
   else
   {
@@ -4300,7 +4300,7 @@ void CBasePlayer :: UpdateClientData( void )
       MESSAGE_END();
     }
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if (pev->dmg_take || pev->dmg_save || m_bitsHUDDamage != m_bitsDamageType)
 	{
@@ -4428,10 +4428,10 @@ void CBasePlayer :: UpdateClientData( void )
 		}
 	}
 
-	//++ bullit@planethalflife.com
+	//++ BulliT
   if (pev->iuser1 != OBS_IN_EYE)
   {
-		//-- bullit@planethalflife.com
+		//-- Martin Webrant
 		SendAmmoUpdate();
 		
 		// Update all the items
@@ -4440,7 +4440,7 @@ void CBasePlayer :: UpdateClientData( void )
 			if ( m_rgpPlayerItems[i] )  // each item updates it's successors
 				m_rgpPlayerItems[i]->UpdateClientData( this );
 		}
-		//++ bullit@planethalflife.com
+		//++ BulliT
   }
   else
   {
@@ -4496,9 +4496,9 @@ void CBasePlayer :: UpdateClientData( void )
       }
     }
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// Cache and client weapon change
-//++ bullit@planethalflife.com
+//++ BulliT
   /*
 	m_pClientActiveItem = m_pActiveItem;
 	m_iClientFOV = m_iFOV;
@@ -4544,7 +4544,7 @@ void CBasePlayer :: UpdateClientData( void )
 		m_flNextSBarUpdateTime = gpGlobals->time + 0.2;
 	}
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 
@@ -4873,10 +4873,10 @@ int CBasePlayer :: GetCustomDecalFrames( void )
 //=========================================================
 void CBasePlayer::DropPlayerItem ( char *pszItemName )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   if (FStrEq(pszItemName,"flag") && CTF == AgGametype())
     g_pGameRules->m_CTF.PlayerDropFlag(this,true);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	if ( !g_pGameRules->IsMultiplayer() || (weaponstay.value > 0) )
 	{
 		// no dropping in single player.
@@ -5253,7 +5253,7 @@ void CInfoIntermission::Think ( void )
 
 LINK_ENTITY_TO_CLASS( info_intermission, CInfoIntermission );
 
-//++ bullit@planethalflife.com
+//++ BulliT
 CBasePlayer* FindPlayerForward( CBasePlayer* pMe )
 {
   TraceResult tr;
@@ -5410,10 +5410,10 @@ void CBasePlayer::ResetScore()
 		WRITE_BYTE( ENTINDEX(edict()) );
 		WRITE_SHORT( pev->frags );
 		WRITE_SHORT( m_iDeaths );
-//++ bullit@planethalflife.com
+//++ BulliT
 		WRITE_SHORT( g_teamplay );
 		WRITE_SHORT( g_pGameRules->GetTeamIndex( m_szTeamName ) + 1 );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	MESSAGE_END();
 }
 
@@ -5673,7 +5673,7 @@ void CBasePlayer::SetWeaponWeight(const char* pszWeaponWeights)
          &m_iWeaponWeight[WEAPON_SNARK]);
 }
 */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 void CBasePlayer::ShowVGUI(int iMenu)
 {

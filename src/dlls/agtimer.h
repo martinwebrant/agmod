@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGTIMER_H__699E98F5_E1CB_4F41_8492_F741C0450C4D__INCLUDED_)
 #define AFX_AGTIMER_H__699E98F5_E1CB_4F41_8492_F741C0450C4D__INCLUDED_
@@ -51,5 +51,5 @@ extern bool	g_bPaused;
 
 #endif // !defined(AFX_AGTIMER_H__699E98F5_E1CB_4F41_8492_F741C0450C4D__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 

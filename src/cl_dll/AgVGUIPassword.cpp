@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include<VGUI_HeaderPanel.h>
 #include<VGUI_TablePanel.h>
@@ -273,4 +273,4 @@ void AgVGuiPassword::SavePasswords()
   fclose(pFile);
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

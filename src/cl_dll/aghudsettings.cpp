@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -65,7 +65,7 @@ int AgHudSettings::Draw(float fTime)
   sprintf(szText,"Adrenaline Gamer Mod %s",m_szVersion);
   gHUD.DrawHudString(ScreenWidth/20 , gHUD.m_scrinfo.iCharHeight, ScreenWidth,szText,r,g,b);
   gHUD.DrawHudString(ScreenWidth/20 , gHUD.m_scrinfo.iCharHeight*2, ScreenWidth,"www.planethalflife.com/agmod",r,g,b);
-  gHUD.DrawHudString(ScreenWidth/20 , gHUD.m_scrinfo.iCharHeight*3, ScreenWidth,"bullit@planethalflife.com",r,g,b);
+  gHUD.DrawHudString(ScreenWidth/20 , gHUD.m_scrinfo.iCharHeight*3, ScreenWidth,"Martin Webrant",r,g,b);
   x = ScreenWidth - (ScreenWidth / 5);
 
   sprintf(szText,"%s",m_szGamemode);
@@ -156,4 +156,4 @@ bool AgIsMatch()
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

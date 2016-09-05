@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_VGUI_Password_)
 #define _AG_VGUI_Password_
@@ -40,4 +40,4 @@ public:
 
 #endif //_AG_VGUI_Password_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

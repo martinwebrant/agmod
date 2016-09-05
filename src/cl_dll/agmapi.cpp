@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "agmapi.h"
 #undef EXPORT
 #include <windows.h>
@@ -24,7 +24,7 @@ bool AgSendMail(const char* pszMessage)
 	MapiRecipDesc arMailRecipients[1];
 	ZeroMemory(&arMailRecipients,sizeof(arMailRecipients));
 	arMailRecipients[0].lpszName	  = "BulliT";
-	arMailRecipients[0].lpszAddress  = "SMTP:bullit@planethalflife.com";
+	arMailRecipients[0].lpszAddress  = "SMTP:Martin Webrant";
 	arMailRecipients[0].ulRecipClass = MAPI_TO;
 
 	Message.nRecipCount = 1;
@@ -36,4 +36,4 @@ bool AgSendMail(const char* pszMessage)
 
 	return false;
 }
-//-- bullit@planethalflife.com
+//-- Martin Webrant

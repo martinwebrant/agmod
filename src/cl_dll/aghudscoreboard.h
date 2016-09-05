@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_HUD_SCOREBOARD_)
 #define _AG_HUD_SCOREBOARD_
@@ -29,4 +29,4 @@ private:
 
 #endif //_AG_HUD_SCOREBOARD_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

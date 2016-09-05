@@ -70,14 +70,14 @@ int DLLEXPORT HUD_AddEntity( int type, struct cl_entity_s *ent, const char *mode
 		if ( (	g_iUser1 == OBS_IN_EYE || gHUD.m_Spectator.m_pip->value == INSET_IN_EYE ) &&
 				ent->index == g_iUser2 )
 			return 0;	// don't draw the player we are following in eye
-//++ bullit@planethalflife.com
+//++ BulliT
     /*
 		//Dont draw the entities that the player carries (for example flag), I used to fix this in AddToFullPack
 		if ( (	g_iUser1 == OBS_IN_EYE || gHUD.m_Spectator.m_pip->value == INSET_IN_EYE ) &&
 				ent->curstate.owner == g_iUser2 )
 			return 0;
       */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	}
 

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -81,4 +81,4 @@ void AgMatchReport::Save()
   fflush(pFile);
   fclose(pFile);
 }
-//-- bullit@planethalflife.com
+//-- Martin Webrant

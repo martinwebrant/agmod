@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 
 #if !defined(_AG_GLOBAL_)
@@ -52,4 +52,4 @@ const char* AgGetDirectory();
 const char* AgGetDirectoryValve();
 
 #endif _AG_GLOBAL_
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -45,11 +45,11 @@ extern vec3_t v_angles;
 extern float g_lastFOV;
 extern struct local_state_s *g_finalstate;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 /*
 extern void HUD_SetAmmo(int iAmmoType, int iCount);
 extern void HUD_SetWeaponClip(int iWeapon, int iCount);
 */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 #endif

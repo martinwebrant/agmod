@@ -128,7 +128,7 @@ int CBasePlayer::TakeDamage( entvars_t *pevInflictor, entvars_t *pevAttacker, fl
 		}
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   if (g_pGameRules->m_iGameMode >= LMS)
   {
     if (!g_pGameRules->m_LMS.CanTakeDamage())
@@ -139,17 +139,17 @@ int CBasePlayer::TakeDamage( entvars_t *pevInflictor, entvars_t *pevAttacker, fl
     if (!g_pGameRules->m_Arena.CanTakeDamage())
       return 0;
   }
-//++ bullit@planethalflife.com
+//++ BulliT
 
 
 	// team play damage avoidance
 	if ( g_pGameRules->PlayerRelationship( this, pAttacker ) == GR_TEAMMATE )
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 		// LTS you can still hurt yourself
 		if ( g_pGameRules->m_iGameMode == LTS && pAttacker != this )
 			return 0;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 		// Teamplay 3 you can still hurt yourself
 		if ( CVAR_GET_FLOAT( "mp_teamplay" ) == 3 && pAttacker != this )

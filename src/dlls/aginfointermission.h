@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGINFOINTERMISSION_H__92743C98_BDED_4776_ABE6_7FDAA798F87E__INCLUDED_)
 #define AFX_AGINFOINTERMISSION_H__92743C98_BDED_4776_ABE6_7FDAA798F87E__INCLUDED_
@@ -47,4 +47,4 @@ inline edict_t* AgInfoIntermission::GetRandomSpot()
 #endif // !defined(AFX_AGINFOINTERMISSION_H__92743C98_BDED_4776_ABE6_7FDAA798F87E__INCLUDED_)
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -17,9 +17,9 @@
 #include "util.h"
 #include "game.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "agglobal.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 // QUAKECLASSIC
 cvar_t	rj = {"rj", "0"};
 
@@ -892,8 +892,8 @@ void GameDLLInit( void )
 
 	SERVER_COMMAND( "exec skill.cfg\n" );
 
-//++ bullit@planethalflife.com
+//++ BulliT
   AgInitGame();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 

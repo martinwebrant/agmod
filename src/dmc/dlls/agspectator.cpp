@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -240,4 +240,4 @@ bool CBasePlayer::Spectate_Follow(EHANDLE& pPlayer,int iMode)
   return true;
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

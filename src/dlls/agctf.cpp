@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com - with ideas from http://www.planethalflife.com/whenitsdone/
+//++ BulliT - with ideas from http://www.planethalflife.com/whenitsdone/
 
 #include "extdll.h"
 #include "util.h"
@@ -1507,5 +1507,5 @@ void AgCTFFileItemCache::Init()
   }
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 

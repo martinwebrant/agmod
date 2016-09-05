@@ -202,11 +202,11 @@ int CHudStatusBar :: Draw( float fTime )
 		}
 
 		if ( m_pflNameColors[i] )
-//++ bullit@planethalflife.com
+//++ BulliT
 			//gEngfuncs.pfnDrawSetTextColor( m_pflNameColors[i][0], m_pflNameColors[i][1], m_pflNameColors[i][2] );
       DrawConsoleString( x, y, m_szStatusBar[i], m_pflNameColors[i][0], m_pflNameColors[i][1], m_pflNameColors[i][2]  );
     else
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 		DrawConsoleString( x, y, m_szStatusBar[i] );
 	}

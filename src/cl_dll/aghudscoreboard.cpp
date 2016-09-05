@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -251,4 +251,4 @@ int AgHudScoreboard::Draw(float fTime)
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 
 #include "extdll.h"
@@ -197,4 +197,4 @@ void AgTimeout::Timeout(CBasePlayer* pPlayer)
       return;
   }
 }
-//-- bullit@planethalflife.com
+//-- Martin Webrant

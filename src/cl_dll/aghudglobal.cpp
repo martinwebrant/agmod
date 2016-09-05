@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -414,4 +414,4 @@ void AgHudGlobal::UserCmd_AgRecord()
 	ClientCmd(szCMD);
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

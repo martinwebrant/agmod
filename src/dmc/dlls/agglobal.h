@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_GLOBAL_H_)
 #define _AG_GLOBAL_H_
@@ -26,4 +26,4 @@ void         AgInitGame();
 
 #endif // !defined(_AG_GLOBAL_H_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

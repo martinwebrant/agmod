@@ -952,7 +952,7 @@ void CFuncTankMortar::Fire( const Vector &barrelEnd, const Vector &forward, entv
 			UTIL_MakeAimVectors(pev->angles);
 
 			TankTrace( barrelEnd, forward, gTankSpread[m_spread], tr );
-//++ bullit@planethalflife.com
+//++ BulliT
 //			ExplosionCreate( tr.vecEndPos, pev->angles, edict(), pev->impulse, TRUE );
       CBaseEntity* pEnt = NULL;
       if (pevAttacker)
@@ -962,7 +962,7 @@ void CFuncTankMortar::Fire( const Vector &barrelEnd, const Vector &forward, entv
           pEnt = pCheck;
       }
       ExplosionCreate( tr.vecEndPos, pev->angles, edict(), pev->impulse, TRUE, pEnt);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 			CFuncTank::Fire( barrelEnd, forward, pev );

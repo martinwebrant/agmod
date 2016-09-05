@@ -1419,13 +1419,13 @@ void EV_EgonFire( event_args_t *args )
 		gEngfuncs.pEventAPI->EV_WeaponAnimation ( g_fireAnims1[ gEngfuncs.pfnRandomLong( 0, 3 ) ], 1 );
 
   
-//++ bullit@planethalflife.com
+//++ BulliT
   #define	INSET_IN_EYE			2
   #define OBS_IN_EYE				4
   #define IS_FIRSTPERSON_SPEC ( g_iUser1 == OBS_IN_EYE || (g_iUser1 && (gHUD.m_Spectator.m_pip->value == INSET_IN_EYE)) )
   //if ( iStartup == 1 && EV_IsLocal( idx ) && !pBeam && !pBeam2 && cl_lw->value ) //Adrian: Added the cl_lw check for those lital people that hate weapon prediction.
   if ( iStartup == 1 && EV_IsLocal( idx ) && !pBeam && !pBeam2 && cl_lw->value && !IS_FIRSTPERSON_SPEC) //Adrian: Added the cl_lw check for those lital people that hate weapon prediction.
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	{
 		vec3_t vecSrc, vecEnd, origin, angles, forward, right, up;
 		pmtrace_t tr;

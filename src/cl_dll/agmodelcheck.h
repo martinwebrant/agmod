@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGMODELCHECK_H__4596B2F8_81A4_4927_9A82_9637C7F9A3C9__INCLUDED_)
 #define AFX_AGMODELCHECK_H__4596B2F8_81A4_4927_9A82_9637C7F9A3C9__INCLUDED_
@@ -34,4 +34,4 @@ extern AgModelCheck g_ModelCheck;
 
 #endif // !defined(AFX_AGMODELCHECK_H__4596B2F8_81A4_4927_9A82_9637C7F9A3C9__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

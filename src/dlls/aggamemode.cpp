@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include	"extdll.h"
 #include	"util.h"
@@ -323,4 +323,4 @@ void AgGameMode::LoadGames()
   }
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

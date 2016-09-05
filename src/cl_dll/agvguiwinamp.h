@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_VGUI_WINAMP_)
 #define _AG_VGUI_WINAMP_
@@ -20,4 +20,4 @@ public:
 
 #endif //_AG_VGUI_WINAMP_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

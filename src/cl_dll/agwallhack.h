@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 #if !defined(AFX_AGWALLHACK_H__72F3428F_5B58_4681_A572_92EAAE5B2F91__INCLUDED_)
 #define AFX_AGWALLHACK_H__72F3428F_5B58_4681_A572_92EAAE5B2F91__INCLUDED_
 
@@ -64,4 +64,4 @@ extern AgWallhack g_Wallhack;
 
 #endif // !defined(AFX_AGWALLHACK_H__72F3428F_5B58_4681_A572_92EAAE5B2F91__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

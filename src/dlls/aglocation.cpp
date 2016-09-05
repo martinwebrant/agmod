@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include	"extdll.h"
 #include	"util.h"
@@ -22,6 +22,6 @@ AgLocation::~AgLocation()
 
 #endif
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 

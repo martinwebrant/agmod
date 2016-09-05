@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 #if !defined(AFX_AGVARIABLECHECKER_H__73BB9962_9A14_4A89_B856_FEFB40FC1E13__INCLUDED_)
 #define AFX_AGVARIABLECHECKER_H__73BB9962_9A14_4A89_B856_FEFB40FC1E13__INCLUDED_
 
@@ -69,4 +69,4 @@ inline float ag_cl_yawspeed()
 
 
 #endif // !defined(AFX_AGVARIABLECHECKER_H__73BB9962_9A14_4A89_B856_FEFB40FC1E13__INCLUDED_)
-//-- bullit@planethalflife.com
+//-- Martin Webrant

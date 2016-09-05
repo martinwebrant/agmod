@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include	"extdll.h"
 #include	"util.h"
@@ -128,4 +128,4 @@ void AgLocationCache::Load()
 
 #endif
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

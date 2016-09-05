@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -30,6 +30,6 @@ void AgLocation::Show()
   gEngfuncs.pEfxAPI->R_TempSprite( m_vPosition, vec3_origin, 1, iSpot, kRenderTransAlpha, kRenderFxNoDissipation, 255.0, 10, FTENT_SPRCYCLE );
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 

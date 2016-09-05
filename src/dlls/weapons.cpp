@@ -420,7 +420,7 @@ void W_Precache(void)
 	
 	PRECACHE_SOUND ("items/weapondrop1.wav");// weapon falls to the ground
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifndef AG_NO_CLIENT_DLL
   UTIL_PrecacheOther("item_flag_team1");
   UTIL_PrecacheOther("item_flag_team2");
@@ -448,7 +448,7 @@ void W_Precache(void)
 	*/
 #endif
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 
@@ -648,11 +648,11 @@ void CBasePlayerItem::DefaultTouch( CBaseEntity *pOther )
 	{
 		AttachToPlayer( pPlayer );
 
-//++ bullit@planethalflife.com
+//++ BulliT
     if (pPlayer->m_bInSpawn)
   		EMIT_SOUND(ENT(pPlayer->pev), CHAN_ITEM, "items/gunpickup2.wav", ag_spawn_volume.value, ATTN_NORM);
     else
-//-- bullit@planethalflife.com
+//-- Martin Webrant
       EMIT_SOUND(ENT(pPlayer->pev), CHAN_ITEM, "items/gunpickup2.wav", 1, ATTN_NORM);
 	}
 
@@ -876,13 +876,13 @@ int CBasePlayerWeapon::UpdateClientData( CBasePlayer *pPlayer )
 
 	if ( bSend )
 	{
-//++ bullit@planethalflife.com TESTWEP
+//++ BulliT TESTWEP
 		MESSAGE_BEGIN( MSG_ONE, gmsgCurWeapon, NULL, pPlayer->pev );
 			WRITE_BYTE( state );
 			WRITE_BYTE( m_iId );
 			WRITE_BYTE( m_iClip );
 		MESSAGE_END();
-//-- bullit@planethalflife.com TESTWEP
+//-- Martin Webrant TESTWEP
 
 		m_iClientClip = m_iClip;
 		m_iClientWeaponState = state;
@@ -1171,10 +1171,10 @@ void CBasePlayerAmmo :: DefaultTouch( CBaseEntity *pOther )
 //=========================================================
 int CBasePlayerWeapon::ExtractAmmo( CBasePlayerWeapon *pWeapon )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 	//int			iReturn;
   int			iReturn = 0;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if ( pszAmmo1() != NULL )
 	{

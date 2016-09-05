@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "agbase64.h"
 #include <string.h>
@@ -109,7 +109,7 @@ void AgBase64Encode(const unsigned char* pszString,unsigned long ulInLen,char* p
   *pszBuffer = 0;
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 /*
 

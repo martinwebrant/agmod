@@ -147,9 +147,9 @@ void CHudMessage::MessageScanNextChar( void )
 	srcGreen = m_parms.pMessage->g1;
 	srcBlue = m_parms.pMessage->b1;
 	blend = 0;	// Pure source
-	//++ bullit@planethalflife.com
+	//++ BulliT
 	destRed = destGreen = destBlue = 0;
-	//-- bullit@planethalflife.com
+	//-- Martin Webrant
 
 	switch( m_parms.pMessage->effect )
 	{

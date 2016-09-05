@@ -51,14 +51,14 @@ public:
 
 	CVoiceGameMgr	m_VoiceGameMgr;
 
-  //++ bullit@planethalflife.com
+  //++ BulliT
 	void RecountTeams( void );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 private:
-//++ bullit@planethalflife.com
+//++ BulliT
 	//void RecountTeams( void );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	const char *TeamWithFewestPlayers( void );
 
 	BOOL m_DisableDeathMessages;

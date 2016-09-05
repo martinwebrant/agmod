@@ -209,10 +209,10 @@ int gmsgQItems = 0;
 int gmsgStatusText = 0;
 int gmsgStatusValue = 0; 
 
-//++ bullit@planethalflife.com
+//++ BulliT
 int gmsgAllowSpec = 0;		
 int gmsgSpectator = 0;		
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 void LinkUserMessages( void )
 {
@@ -260,10 +260,10 @@ void LinkUserMessages( void )
 	gmsgStatusText = REG_USER_MSG("StatusText", -1);
 	gmsgStatusValue = REG_USER_MSG("StatusValue", 3); 
 
-//++ bullit@planethalflife.com
+//++ BulliT
   gmsgAllowSpec	  = REG_USER_MSG("AllowSpec",	1);   //Allow spectator button message.
   gmsgSpectator	  = REG_USER_MSG("Spectator",	2);   //Spectator message.
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 LINK_ENTITY_TO_CLASS( player, CBasePlayer );
@@ -616,11 +616,11 @@ void CBasePlayer::Killed( entvars_t *pevAttacker, int iGib )
 	pev->angles.x = 0;
 	pev->angles.z = 0;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   if (g_pGameRules->m_iGameMode >= ARENA)
     m_iQuakeWeapon = 0;
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
   SetThink(PlayerDeathThink);
 	pev->nextthink = gpGlobals->time + 0.1;
 }
@@ -1008,10 +1008,10 @@ void CBasePlayer::PlayerDeathThink(void)
 	pev->effects |= EF_NOINTERP;
 	pev->framerate = 0.0;
 
-  //++ bullit@planethalflife.com
+  //++ BulliT
   //Remove sticky dead models.
   pev->solid = SOLID_NOT;
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 
 	BOOL fAnyButtonDown = (pev->button & ~IN_SCORE );
 	
@@ -2897,9 +2897,9 @@ void CBasePlayer::Spawn( void )
 		pev->solid = SOLID_NOT;
 		pev->takedamage = DAMAGE_NO;
 		pev->movetype = MOVETYPE_NONE;
-//++ bullit@planethalflife.com
+//++ BulliT
 	  pev->deadflag		= DEAD_RESPAWNABLE;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 		g_engfuncs.pfnSetClientMaxspeed( ENT( pev ), 1 );
 		m_iHideHUD |= HIDEHUD_WEAPONS | HIDEHUD_FLASHLIGHT | HIDEHUD_HEALTH;
@@ -2912,9 +2912,9 @@ void CBasePlayer::Spawn( void )
 		pev->effects &= ~EF_NODRAW;
 
 		g_pGameRules->PlayerSpawn( this );
-//++ bullit@planethalflife.com
+//++ BulliT
     Spectate_UpdatePosition();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 		PLAYBACK_EVENT_FULL ( FEV_GLOBAL, edict(), g_sTeleport, 0.0, (float *)&pev->origin, (float *)&g_vecZero, 0.0, 0.0, 0, 0, 0, 0);
 
@@ -4909,7 +4909,7 @@ void CInfoIntermission::Think ( void )
 LINK_ENTITY_TO_CLASS( info_intermission, CInfoIntermission );
 
 
-//++ bullit@planethalflife.com
+//++ BulliT
 void CBasePlayer::Init()
 {
   m_bReady = true;
@@ -5016,4 +5016,4 @@ void CBasePlayer::ResetScore()
 		WRITE_SHORT( pev->team );
 	MESSAGE_END();
 }
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -39,9 +39,9 @@
 #include "usercmd.h"
 #include "netadr.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "agglobal.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 extern DLL_GLOBAL ULONG		g_ulModelIndexPlayer;
 extern DLL_GLOBAL BOOL		g_fGameOver;
 extern DLL_GLOBAL int		g_iSkillLevel;
@@ -135,10 +135,10 @@ void respawn(entvars_t* pev, BOOL fCopyCorpse)
 {
 	if (gpGlobals->coop || gpGlobals->deathmatch)
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
     if ( fCopyCorpse && pev->movetype != MOVETYPE_NOCLIP && 0 < ag_show_gibs.value)
 //		if ( fCopyCorpse )
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		{
 			// make a copy of the dead body for appearances sake
 			CopyToBodyQue(pev);
@@ -168,17 +168,17 @@ void ClientKill( edict_t *pEntity )
 
 	CBasePlayer *pl = (CBasePlayer*) CBasePlayer::Instance( pev );
 
-//++ bullit@planethalflife.com
+//++ BulliT
 	if ( pl->m_fNextSuicideTime > gpGlobals->time && !pl->IsSpectator() || ARENA == AgGametype()
     || ag_match_running.value > 0)
   //if ( pl->m_fNextSuicideTime > gpGlobals->time )
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		return;  // prevent suiciding too ofter
 
-//++ bullit@planethalflife.com
+//++ BulliT
 //	pl->m_fNextSuicideTime = gpGlobals->time + 1;  // don't let them suicide for 5 seconds after suiciding
 	pl->m_fNextSuicideTime = gpGlobals->time + 5;  // don't let them suicide for 5 seconds after suiciding
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	// have the player kill themself
 	pev->health = 0;
@@ -205,9 +205,9 @@ void ClientPutInServer( edict_t *pEntity )
 	pPlayer = GetClassPtr((CBasePlayer *)pev);
 	pPlayer->SetCustomDecalFrames(-1); // Assume none;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   pPlayer->Init();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// Allocate a CBasePlayer for pev, and call spawn
 	pPlayer->Spawn() ;
 
@@ -381,7 +381,7 @@ void ClientCommand( edict_t *pEntity )
 
 	entvars_t *pev = &pEntity->v;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   /*
 	if ( FStrEq(pcmd, "say" ) )
 	{
@@ -401,16 +401,16 @@ void ClientCommand( edict_t *pEntity )
 	}
 	else 
 */ 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
   if ( FStrEq(pcmd, "drop" ) )
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
     if (ARENA != AgGametype() && ARCADE != AgGametype() &&  INSTAGIB != AgGametype())
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		// player is dropping an item. 
 		GetClassPtr((CBasePlayer *)pev)->DropPlayerItem((char *)CMD_ARGV(1));
 	}
-//++ bullit@planethalflife.com
+//++ BulliT
 /*
 	else if ( FStrEq(pcmd, "fov" ) )
 	{
@@ -424,7 +424,7 @@ void ClientCommand( edict_t *pEntity )
 		}
 	}
 */ 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	else if ( FStrEq(pcmd, "use" ) )
 	{
 		GetClassPtr((CBasePlayer *)pev)->SelectItem((char *)CMD_ARGV(1));
@@ -488,11 +488,11 @@ void ClientUserInfoChanged( edict_t *pEntity, char *infobuffer )
 				*pApersand = ' ';
 		}
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AG_NO_CLIENT_DLL
 		AgStripColors(sName);
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 		// Set the name
 		g_engfuncs.pfnSetClientKeyValue( ENTINDEX(pEntity), infobuffer, "name", sName );
@@ -758,7 +758,7 @@ void ClientPrecache( void )
 
 	if (giPrecacheGrunt)
 		UTIL_PrecacheOther("monster_human_grunt");
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AG_USE_CHEATPROTECTION
 #ifndef AG_NO_CLIENT_DLL
 	/*
@@ -808,7 +808,7 @@ void ClientPrecache( void )
 	*/
 #endif
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 /*
@@ -836,12 +836,12 @@ Engine is going to shut down, allows setting a breakpoint in game .dll to catch 
 void Sys_Error( const char *error_string )
 {
 	// Default case, do nothing.  MOD AUTHORS:  Add code ( e.g., _asm { int 3 }; here to cause a breakpoint for debugging your game .dlls
-//++ bullit@planethalflife.com
+//++ BulliT
   AgLog(error_string);
 #ifdef _DEBUG
   _asm { int 3 }; 
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 /*
@@ -1164,10 +1164,10 @@ int AddToFullPack( struct entity_state_s *state, int e, edict_t *ent, edict_t *h
 
 		state->gravity      = ent->v.gravity;
 //		state->team			= ent->v.team;
-//++ bullit@planethalflife.com
+//++ BulliT
 #define PC_CIVILIAN		11		// from client dll
 		state->playerclass  = PC_CIVILIAN;  //Fool client dll to think we are TFC. This is for enabling of commandmenu.txt.
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 //		
 		state->usehull      = ( ent->v.flags & FL_DUCKING ) ? 1 : 0;
 		state->health		= ent->v.health;
@@ -1592,11 +1592,11 @@ void UpdateClientData ( const struct edict_s *ent, int sendweapons, struct clien
 
 	cd->pushmsec		= ent->v.pushmsec;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   //Added for spectators
 	cd->iuser1			= ent->v.iuser1;
 	cd->iuser2			= ent->v.iuser2;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 #if defined( CLIENT_WEAPONS )
 	if ( sendweapons )
 	{
@@ -1699,7 +1699,7 @@ ConnectionlessPacket
   size of the response_buffer, so you must zero it out if you choose not to respond.
 ================================
 */
-//++ bullit@planethalflife.com
+//++ BulliT
 //UTIL_SplitTextMessage comes from statsme plugin made by OLO - www.olo.counter-strike.pl
 char* UTIL_SplitTextMessage(const char *pMessage)
 {
@@ -1780,7 +1780,7 @@ void AgHudMessage(const char* pszText, float fHoldTime = 4, float x = -1, float 
   }
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 int	ConnectionlessPacket( const struct netadr_s *net_from, const char *args, char *response_buffer, int *response_buffer_size )
 {
 	// Parse stuff from args
@@ -1790,7 +1790,7 @@ int	ConnectionlessPacket( const struct netadr_s *net_from, const char *args, cha
 	// If we wanted to response, we'd write data into response_buffer
 	*response_buffer_size = 0;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 
   if (g_pGameRules)
   {
@@ -1816,7 +1816,7 @@ int	ConnectionlessPacket( const struct netadr_s *net_from, const char *args, cha
       return 1;
     }
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// Since we don't listen for anything here, just respond that it's a bogus message
 	// If we didn't reject the message, we'd return 1 for success instead.
 	return 0;
@@ -1911,7 +1911,7 @@ AllowLagCompensation
 */
 int AllowLagCompensation( void )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   //Since this is called when server is pause I use this one to handle timeout... ugly aint it? :P
   if (g_pGameRules)
   {
@@ -1920,6 +1920,6 @@ int AllowLagCompensation( void )
 #endif
 	  g_pGameRules->m_Vote.Think();
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
   return 1;
 }

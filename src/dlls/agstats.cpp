@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -213,4 +213,4 @@ void AgStats::PlayerKilled(CBasePlayer* pInflictor, CBasePlayer* pKilled)
 	GetStats(pKilled)->m_iDeaths++;
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

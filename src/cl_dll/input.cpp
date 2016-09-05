@@ -14,9 +14,9 @@
 #include "hud.h"
 #include "cl_util.h"
 #include "camera.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "AgVariableChecker.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 extern "C"
 {
 #include "kbutton.h"
@@ -464,9 +464,9 @@ extern void __CmdFunc_InputPlayerSpecial(void);
 void IN_Attack2Down(void) 
 {
 	KeyDown(&in_attack2);
-//++ bullit@planethalflife.com
+//++ BulliT
 	//Removed unused function that sends extra command to server. __CmdFunc_InputPlayerSpecial();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	gHUD.m_Spectator.HandleButtonsDown( IN_ATTACK2 );
 }
 
@@ -627,41 +627,41 @@ void CL_AdjustAngles ( float frametime, float *viewangles )
 
 	if (!(in_strafe.state & 1))
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 		viewangles[YAW] -= speed*ag_cl_yawspeed()*CL_KeyState (&in_right);
 		viewangles[YAW] += speed*ag_cl_yawspeed()*CL_KeyState (&in_left);
 		//viewangles[YAW] -= speed*cl_yawspeed->value*CL_KeyState (&in_right);
 		//viewangles[YAW] += speed*cl_yawspeed->value*CL_KeyState (&in_left);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		viewangles[YAW] = anglemod(viewangles[YAW]);
 	}
 	if (in_klook.state & 1)
 	{
 		V_StopPitchDrift ();
-//++ bullit@planethalflife.com
+//++ BulliT
 		viewangles[PITCH] -= speed*ag_cl_pitchspeed() * CL_KeyState (&in_forward);
 		viewangles[PITCH] += speed*ag_cl_pitchspeed() * CL_KeyState (&in_back);
     /*
 		viewangles[PITCH] -= speed*cl_pitchspeed->value * CL_KeyState (&in_forward);
 		viewangles[PITCH] += speed*cl_pitchspeed->value * CL_KeyState (&in_back);
     */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 	
 	up = CL_KeyState (&in_lookup);
 	down = CL_KeyState(&in_lookdown);
 	
-//++ bullit@planethalflife.com
+//++ BulliT
 	viewangles[PITCH] -= speed*ag_cl_pitchspeed() * up;
 	viewangles[PITCH] += speed*ag_cl_pitchspeed() * down;
 //	viewangles[PITCH] -= speed*cl_pitchspeed->value * up;
 //	viewangles[PITCH] += speed*cl_pitchspeed->value * down;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if (up || down)
 		V_StopPitchDrift ();
 		
-//++ bullit@planethalflife.com
+//++ BulliT
 	if (viewangles[PITCH] > ag_cl_pitchdown())
 		viewangles[PITCH] = ag_cl_pitchdown();
 	if (viewangles[PITCH] < -ag_cl_pitchup())
@@ -672,7 +672,7 @@ void CL_AdjustAngles ( float frametime, float *viewangles )
 	if (viewangles[PITCH] < -cl_pitchup->value)
 		viewangles[PITCH] = -cl_pitchup->value;
     */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if (viewangles[ROLL] > 50)
 		viewangles[ROLL] = 50;

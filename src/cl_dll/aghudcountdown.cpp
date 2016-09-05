@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -134,4 +134,4 @@ int AgHudCountdown::MsgFunc_Countdown(const char *pszName,  int iSize, void *pbu
 
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

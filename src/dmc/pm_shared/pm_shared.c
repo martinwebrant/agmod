@@ -2063,9 +2063,9 @@ void PM_Jump (void)
 	// In the air now.
     pmove->onground = -1;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 	//PM_PreventMegaBunnyJumping();
-//-- bullit@planethalflife.com
+//-- BulliT
 	
 	pmove->PM_PlaySound( CHAN_BODY, "player/plyrjmp8.wav", 0.5, ATTN_NORM, 0, PITCH_NORM );
 

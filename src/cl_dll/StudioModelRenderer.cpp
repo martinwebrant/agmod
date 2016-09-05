@@ -1577,19 +1577,19 @@ void CStudioModelRenderer::StudioRenderFinal_Software( void )
 
 	if (m_pCvarDrawEntities->value == 2)
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef _DEBUG
 		IEngineStudio.StudioDrawBones( );
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 	else if (m_pCvarDrawEntities->value == 3)
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef _DEBUG
 		IEngineStudio.StudioDrawHulls( );
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 	else
 	{
@@ -1602,22 +1602,22 @@ void CStudioModelRenderer::StudioRenderFinal_Software( void )
 
 	if (m_pCvarDrawEntities->value == 4)
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef _DEBUG
 		gEngfuncs.pTriAPI->RenderMode( kRenderTransAdd );
 		IEngineStudio.StudioDrawHulls( );
 		gEngfuncs.pTriAPI->RenderMode( kRenderNormal );
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 
 	if (m_pCvarDrawEntities->value == 5)
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef _DEBUG
 		IEngineStudio.StudioDrawAbsBBox( );
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 	
 	IEngineStudio.RestoreRenderer();
@@ -1639,19 +1639,19 @@ void CStudioModelRenderer::StudioRenderFinal_Hardware( void )
 	
 	if (m_pCvarDrawEntities->value == 2)
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef _DEBUG
 		IEngineStudio.StudioDrawBones();
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 	else if (m_pCvarDrawEntities->value == 3)
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef _DEBUG
 		IEngineStudio.StudioDrawHulls();
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 	else
 	{
@@ -1673,23 +1673,23 @@ void CStudioModelRenderer::StudioRenderFinal_Hardware( void )
 
 	if ( m_pCvarDrawEntities->value == 4 )
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef _DEBUG
 		gEngfuncs.pTriAPI->RenderMode( kRenderTransAdd );
 		IEngineStudio.StudioDrawHulls( );
 		gEngfuncs.pTriAPI->RenderMode( kRenderNormal );
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
 	if (m_pCvarDrawEntities->value == 5)
 	{
 #ifdef _DEBUG
 		IEngineStudio.StudioDrawAbsBBox( );
 #endif
 	}
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	IEngineStudio.RestoreRenderer();
 }
 

@@ -29,9 +29,9 @@
 #include "ammohistory.h"
 #include "vgui_TeamFortressViewport.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 extern cvar_t* g_phud_weapon;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 WEAPON *gpActiveSel;	// NULL means off, 1 means just the menu bar, otherwise
 						// this points to the active weapon menu item
 WEAPON *gpLastSel;		// Last weapon menu selection 
@@ -56,11 +56,11 @@ int WeaponsResource :: CountAmmo( int iId )
 	if ( iId < 0 )
 		return 0;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 	//Fixes some crashes.
 	if ( iId > MAX_AMMO_TYPES )
 		return 0;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	return riAmmo[iId];
 }
 
@@ -934,7 +934,7 @@ int CHudAmmo::Draw(float flTime)
 		SPR_DrawAdditive(0, x, y - iOffset, &m_pWeapon->rcAmmo);
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   //Draw the weaponsprite in spectator mode.
   if (g_iUser1 == OBS_IN_EYE || 0 != g_phud_weapon->value)
   {
@@ -953,7 +953,7 @@ int CHudAmmo::Draw(float flTime)
     int iOffset = (m_pWeapon->rcInactive.bottom - m_pWeapon->rcInactive.top)/8;
 	  SPR_DrawAdditive(0, x, y - iOffset , &m_pWeapon->rcInactive);
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// Does weapon have seconday ammo?
 	if (pw->iAmmo2Type > 0) 
 	{

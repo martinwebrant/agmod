@@ -51,12 +51,12 @@ class CTransparentPanel;
 class CClassMenuPanel;
 class CTeamMenuPanel;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 class	AGVGuiIRC;
 class	AGVGuiWinamp;
 class	AgVGuiPassword;
 class	AgVGuiMapBrowser;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 char* GetVGUITGAName(const char *pszName);
 BitmapTGA *LoadTGAForRes(const char* pImageName);
 void ScaleColors( int &r, int &g, int &b, int a );
@@ -467,10 +467,10 @@ private:
 	int			m_iNumberOfTeams;
 	int			m_iBuildState;
 	int			m_iRandomPC;
-//++ bullit@planethalflife.com
+//++ BulliT
 	//char		m_sTeamNames[5][MAX_TEAMNAME_SIZE];
   char		m_sTeamNames[MAX_TEAMS][MAX_TEAMNAME_SIZE];
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	// Localisation strings
 	char		m_sDetpackStrings[3][MAX_BUTTON_SIZE];
@@ -554,7 +554,7 @@ public:
 	ScorePanel *GetScoreBoard( void ) { return m_pScoreBoard; }
 
 	void *operator new( size_t stAllocateBlock );
-//++ bullit@planethalflife.com
+//++ BulliT
 	AGVGuiIRC *m_pIRC;
   AGVGuiWinamp *m_pWinamp;
   AgVGuiPassword *m_pPassword;
@@ -573,7 +573,7 @@ public:
   {
     strcpy(m_sMapName,pszMap);
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 public:
 	// VGUI Menus
@@ -737,9 +737,9 @@ public:
 #define SHOW_CLASSDESC		2
 #define SHOW_MOTD			3
 #define SHOW_SPECHELP		4
-//++ bullit@planethalflife.com
+//++ BulliT
 #define SHOW_README   5
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 class CMenuHandler_TextWindow : public ActionSignal
 {
@@ -1474,10 +1474,10 @@ public:
 // Panel that draws itself with a transparent black background
 class CTransparentPanel : public Panel
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 //private:
 public:
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	int	m_iTransparency;
 public:
 	CTransparentPanel(int iTrans, int x,int y,int wide,int tall) : Panel(x,y,wide,tall)
@@ -1743,11 +1743,11 @@ public:
 		// Draw the vertical line
 		int HealthWidth = gHUD.GetSpriteRect(gHUD.m_HUD_number_0).right - gHUD.GetSpriteRect(gHUD.m_HUD_number_0).left;
 		x += HealthWidth / 2;
-//++ bullit@planethalflife.com
+//++ BulliT
 		//FillRGBA(x, iYPos + 5, HealthWidth / 10, gHUD.m_iFontHeight, 255, 160, 0, a);
 		UnpackRGB(r,g,b, RGB_YELLOWISH);
 		FillRGBA(x, iYPos + 5, HealthWidth / 10, gHUD.m_iFontHeight, r, g, b, a);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		
 	}
 };

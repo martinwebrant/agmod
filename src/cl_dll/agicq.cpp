@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "agmapi.h"
 #include <windows.h>
 
@@ -25,4 +25,4 @@ bool AgSendICQ(const char* pszMessage)
   lpfSendMessage(13243715,(char*)pszMessage);
   return true;
 }
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGADMINCACHE_H__638C4983_F4E5_4118_B00C_BC595A3C3415__INCLUDED_)
 #define AFX_AGADMINCACHE_H__638C4983_F4E5_4118_B00C_BC595A3C3415__INCLUDED_
@@ -37,4 +37,4 @@ extern DLL_GLOBAL AgAdminCache AdminCache;
 
 #endif // !defined(AFX_AGADMINCACHE_H__638C4983_F4E5_4118_B00C_BC595A3C3415__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

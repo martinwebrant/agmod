@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -65,4 +65,4 @@ void AgInfoIntermission::Think()
   }
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

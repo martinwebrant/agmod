@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -358,12 +358,12 @@ bool AgVote::CallVote(CBasePlayer* pPlayer)
   m_sCalled = pPlayer->GetName();
   m_bRunning = true;
 
-  //++ muphicks@mups.co.uk
+  //++ muphicks
   UTIL_LogPrintf("\"%s<%d><%s><%s>\" triggered \"calledvote\" (votename \"%s\") (newsetting \"%s\")\n", 
                      pPlayer->GetName(), GETPLAYERUSERID( pPlayer->edict() ), GETPLAYERAUTHID(pPlayer->edict()), pPlayer->TeamID(), 
                      m_sVote.c_str(),m_sValue.c_str()
                      );
-  //-- muphicks@mups.co.uk
+  //-- muphicks
 
   return false;
 }
@@ -533,4 +533,4 @@ bool AgVote::ResetVote()
   return true;
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

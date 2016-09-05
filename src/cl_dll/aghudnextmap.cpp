@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -64,4 +64,4 @@ int AgHudNextmap::MsgFunc_Nextmap(const char *pszName,  int iSize, void *pbuf)
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

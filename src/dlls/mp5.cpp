@@ -22,11 +22,11 @@
 #include "player.h"
 #include "soundent.h"
 #include "gamerules.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
 #include "agstats.h"
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 enum mp5_e
 {
@@ -55,7 +55,7 @@ int CMP5::SecondaryAmmoIndex( void )
 
 void CMP5::Spawn( )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifndef CLIENT_DLL
   if (SGBOW == AgGametype())
   {
@@ -64,19 +64,19 @@ void CMP5::Spawn( )
     return;
   }
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	pev->classname = MAKE_STRING("weapon_9mmAR"); // hack to allow for old names
 	Precache( );
 	SET_MODEL(ENT(pev), "models/w_9mmAR.mdl");
 	m_iId = WEAPON_MP5;
 
 	m_iDefaultAmmo = MP5_DEFAULT_GIVE;
-  //++ bullit@planethalflife.com
+  //++ BulliT
 #ifndef CLIENT_DLL
   if (ARENA == AgGametype() || ARCADE == AgGametype() || LMS == AgGametype())
 	  m_iDefaultAmmo = MP5_MAX_CLIP;
 #endif 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	FallInit();// get ready to fall down.
 }

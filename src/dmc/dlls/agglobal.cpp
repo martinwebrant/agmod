@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -205,4 +205,4 @@ void AgInitGame()
   ADD_SERVER_COMMAND("agstart",AgStart);
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -20,11 +20,11 @@
 #include "weapons.h"
 #include "nodes.h"
 #include "player.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
 #include "agstats.h"
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 enum glock_e {
 	GLOCK_IDLE1 = 0,

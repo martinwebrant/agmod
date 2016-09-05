@@ -31,10 +31,10 @@ public:
 	
 	virtual uchar readUChar(bool& success)					
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 		if(m_pData && m_ReadPos>=0 && m_ReadPos<m_DataLen)
 //		if(m_ReadPos>=0 && m_ReadPos<m_DataLen)
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		{
 			success=true;
 			uchar ret = m_pData[m_ReadPos];

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -796,4 +796,4 @@ void AgClient::Play(CBasePlayer* pPlayer, say_type Type, const char* pszWave)
       */
 	}
 }
-//-- bullit@planethalflife.com
+//-- Martin Webrant

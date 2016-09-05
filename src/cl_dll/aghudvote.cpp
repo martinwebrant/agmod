@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -104,4 +104,4 @@ int AgHudVote::MsgFunc_Vote(const char *pszName,  int iSize, void *pbuf)
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

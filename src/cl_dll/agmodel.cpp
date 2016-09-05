@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 //Most parts written by David "Nighthawk" Flor (dflor@mach3.com) for the mod Opera (http://www.halflife.net/opera)
 //Parts of code from Valve Software mdlviewer (CalcBonePosition).
 
@@ -289,4 +289,4 @@ bool AgModel::IsChecked()
 
 #endif //AG_USE_CHEATPROTECTION
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

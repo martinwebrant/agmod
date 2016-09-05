@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 
 #if !defined(AFX_AGSCORELOG_H__A764B26F_F098_4237_B5B9_A62BD9FD9BF6__INCLUDED_)
@@ -30,5 +30,5 @@ public:
 
 #endif // !defined(AFX_AGSCORELOG_H__A764B26F_F098_4237_B5B9_A62BD9FD9BF6__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 

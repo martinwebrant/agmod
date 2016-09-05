@@ -37,10 +37,10 @@
 #include "usercmd.h"
 #include "netadr.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 extern int gmsgTeamInfo;
 extern cvar_t timeleft, timelimit;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 extern DLL_GLOBAL ULONG		g_ulModelIndexPlayer;
@@ -194,9 +194,9 @@ void ClientPutInServer( edict_t *pEntity )
 
 	pPlayer->m_bHadFirstSpawn = false;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   pPlayer->Init();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	// Allocate a CBasePlayer for pev, and call spawn
 	pPlayer->Spawn();
@@ -386,10 +386,10 @@ void ClientCommand( edict_t *pEntity )
 
 		if ( pPlayer->m_bHadFirstSpawn == false && g_bHaveMOTD )
 		{
-//++ bullit@planethalflife.com
+//++ BulliT
       if (!g_pGameRules->FPlayerCanRespawn(pPlayer))
         return;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 			pPlayer->m_bHadFirstSpawn = true;
 			pPlayer->Spawn();
@@ -400,7 +400,7 @@ void ClientCommand( edict_t *pEntity )
 	{
 		CBasePlayer * pPlayer = GetClassPtr((CBasePlayer *)pev);
 
-//++ bullit@planethalflife.com
+//++ BulliT
     /*
 		if ( pPlayer->pev->flags & FL_PROXY )
 		{
@@ -433,7 +433,7 @@ void ClientCommand( edict_t *pEntity )
       pPlayer->ResetScore();
     }
     return;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
   }
 	else if (FStrEq(pcmd, "lastinv" ))
 	{
@@ -455,7 +455,7 @@ void ClientCommand( edict_t *pEntity )
 		if ( pPlayer->IsObserver() )
 			pPlayer->Observer_FindNextPlayer();
 	}
-//++ bullit@planethalflife.com
+//++ BulliT
   else if (FStrEq(CMD_ARGV(0), "ready" ))
   {	
     CBasePlayer * pPlayer = GetClassPtr((CBasePlayer *)pev);
@@ -554,7 +554,7 @@ void ClientCommand( edict_t *pEntity )
     }
     return;
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	else
 	{
 		// tell the user they entered an unknown command

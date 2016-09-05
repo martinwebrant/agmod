@@ -22,12 +22,12 @@
 #include "cl_util.h"
 #include "netadr.h"
 #include "vgui_schememanager.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "AgVariableChecker.h"
 #include "AgGlobal.h"
 #include "irc.h"
 #include "agwallhack.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 extern "C"
 {
@@ -43,9 +43,9 @@ extern "C"
 
 
 cl_enginefunc_t gEngfuncs;
-//++ bullit@planethalflife.com
+//++ BulliT
 irc::CIrcSession g_ircSession;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 CHud gHUD;
 TeamFortressViewport *gViewPort = NULL;
 
@@ -166,14 +166,14 @@ int DLLEXPORT Initialize(cl_enginefunc_t * pEnginefuncs, int iVersion)
 	
 	EV_HookEvents();
 
-  //++ bullit@planethalflife.com
+  //++ BulliT
   AgInitClientDll();
 
 #ifdef AG_USE_CHEATPROTECTION
   g_Wallhack.SetHLAddressToValidate((DWORD)pFromModuleAddress);
 #endif
 
-  //-- bullit@planethalflife.com
+  //-- Martin Webrant
 	return 1;
 }
 

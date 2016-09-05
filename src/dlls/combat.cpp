@@ -30,9 +30,9 @@
 #include "weapons.h"
 #include "func_break.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "agglobal.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 extern DLL_GLOBAL Vector		g_vecAttackDir;
 extern DLL_GLOBAL int			g_iSkillLevel;
 
@@ -1045,9 +1045,9 @@ void RadiusDamage( Vector vecSrc, entvars_t *pevInflictor, entvars_t *pevAttacke
 	float		flAdjustedDamage, falloff;
 	Vector		vecSpot;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   flRadius *= ag_blastradius.value;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	if ( flRadius )
 		falloff = flDamage / flRadius;
 	else

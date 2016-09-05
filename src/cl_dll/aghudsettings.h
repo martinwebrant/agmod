@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_SETTINGS_HUD_)
 #define _AG_SETTINGS_HUD_
@@ -31,4 +31,4 @@ bool AgIsMatch();
 
 #endif //_AG_SETTINGS_HUD_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_IRC_HUD_)
 #define _AG_IRC_HUD_
@@ -26,4 +26,4 @@ public:
 
 #endif //_AG_IRC_HUD_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

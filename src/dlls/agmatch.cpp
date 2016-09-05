@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -262,4 +262,4 @@ void AgMatch::Allow(CBasePlayer* pPlayer)
   AgConsole(sText);
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

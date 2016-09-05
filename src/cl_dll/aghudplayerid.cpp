@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -103,4 +103,4 @@ int AgHudPlayerId::MsgFunc_PlayerId(const char *pszName,  int iSize, void *pbuf)
 
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ Copyright bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -293,5 +293,5 @@ void AgLMS::ClientDisconnected(CBasePlayer* pPlayer)
   pPlayer->SetIngame(false);
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 

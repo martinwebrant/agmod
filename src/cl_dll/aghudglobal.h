@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_GLOBAL_HUD_)
 #define _AG_GLOBAL_HUD_
@@ -40,4 +40,4 @@ AgString AgGetRealName(int iPlayer);
 
 #endif //_AG_GLOBAL_HUD_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

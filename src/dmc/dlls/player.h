@@ -197,10 +197,10 @@ public:
 	virtual void StartSneaking( void ) { m_tSneaking = gpGlobals->time - 1; }
 	virtual void StopSneaking( void ) { m_tSneaking = gpGlobals->time + 30; }
 	virtual BOOL IsSneaking( void ) { return m_tSneaking <= gpGlobals->time; }
-//++ bullit@planethalflife.com
+//++ BulliT
 //	virtual BOOL IsAlive( void ) { return (pev->deadflag == DEAD_NO) && pev->health > 0; }
 	virtual BOOL IsAlive( void ) { return (pev->deadflag == DEAD_NO) && pev->health > 0 && !IsSpectator(); }
-//++ bullit@planethalflife.com
+//++ BulliT
 	virtual BOOL ShouldFadeOnDeath( void ) { return FALSE; }
 	virtual	BOOL IsPlayer( void ) { return TRUE; }			// Spectators should return FALSE for this, they aren't "players" as far as game logic is concerned
 
@@ -392,7 +392,7 @@ public:
 	unsigned short m_usLightning;
 	unsigned short m_usSpike;
 	unsigned short m_usSuperSpike;	
-//++ bullit@planethalflife.com
+//++ BulliT
 protected:
   bool          m_bIngame;           //Player was in the game when match started.
 public:
@@ -416,10 +416,10 @@ public:
   bool Spectate_Think();
   bool Spectate_Follow(EHANDLE& pPlayer,int iMode);
   bool Spectate_HLTV();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 };
 
-//++ bullit@planethalflife.com
+//++ BulliT
 inline const char* CBasePlayer::GetName()
 {
   return pev->netname ? STRING(pev->netname)[0] ? STRING(pev->netname) : "" : "";
@@ -456,7 +456,7 @@ inline bool CBasePlayer::IsProxy()
 #define OBS_MAP_FREE			5
 #define OBS_MAP_CHASE			6
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 #define AUTOAIM_2DEGREES  0.0348994967025
 #define AUTOAIM_5DEGREES  0.08715574274766

@@ -98,10 +98,10 @@ ScorePanel::ScorePanel(int x,int y,int wide,int tall) : Panel(x,y,wide,tall)
 	Font *tfont = pSchemes->getFont(hTitleScheme);
 	Font *smallfont = pSchemes->getFont(hSmallScheme);
 
-//++ bullit@planethalflife.com
+//++ BulliT
 	if (m_pCTFScoreboard = vgui_LoadTGANoInvertAlpha("gfx/vgui/640_ag_ctf_score.tga"))
 		m_pCTFScoreboard->setColor(Color(255,255,255,1));	// Give just a tiny bit of translucency so software draws correctly.
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	setBgColor(0, 0, 0, 96);
 	m_pCurrentHighlightLabel = NULL;
@@ -572,10 +572,10 @@ void ScorePanel::FillGrid()
 			pLabel->setFont(sfont);
 			pLabel->setTextOffset(0, 0);
 			
-//++ bullit@planethalflife.com
+//++ BulliT
 			//int rowheight = 13;
       int rowheight = 12;
-//++ bullit@planethalflife.com
+//++ BulliT
 			if (ScreenHeight > 480)
 			{
 				rowheight = YRES(rowheight);
@@ -609,10 +609,10 @@ void ScorePanel::FillGrid()
 									0 );
 
 				// different height for team header rows
-//++ bullit@planethalflife.com
+//++ BulliT
 				//rowheight = 20;
         rowheight = 19;
-//++ bullit@planethalflife.com
+//++ BulliT
 				if (ScreenHeight >= 480)
 				{
 					rowheight = YRES(rowheight);
@@ -634,10 +634,10 @@ void ScorePanel::FillGrid()
 				pLabel->setFgColor(100, 100, 100, 0);
 
 				// different height for team header rows
-//++ bullit@planethalflife.com
+//++ BulliT
 				//rowheight = 20;
         rowheight = 19;
-//++ bullit@planethalflife.com
+//++ BulliT
 				if (ScreenHeight >= 480)
 				{
 					rowheight = YRES(rowheight);
@@ -704,11 +704,11 @@ void ScorePanel::FillGrid()
 					}
 					else
 					{
-//++ bullit@planethalflife.com
+//++ BulliT
 						//sprintf( sz2, gViewPort->GetTeamName(team_info->teamnumber) );
             sprintf( sz2, team_info->name );
             AgStripColors(sz2);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 					}
 
 					strcpy(sz, sz2);
@@ -743,10 +743,10 @@ void ScorePanel::FillGrid()
 					break;
 				case COLUMN_LATENCY:
 					if ( m_iIsATeam[row] == TEAM_YES )
-//++ bullit@planethalflife.com
+//++ BulliT
 						//sprintf(sz, "%d", team_info->ping );
             sprintf(sz, "%d/%d", team_info->ping, team_info->packetloss );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 					break;
 				default:
 					break;
@@ -759,7 +759,7 @@ void ScorePanel::FillGrid()
 				switch (col)
 				{
 				case COLUMN_NAME:
-          //++ bullit@planethalflife.com
+          //++ BulliT
           //sprintf(sz, "%s  ", pl_info->name);
           if (g_IsSpectator[m_iSortedRows[row]])
 					  sprintf(sz, "%s  (spectator)", AgGetRealName(m_iSortedRows[row]).c_str());
@@ -773,7 +773,7 @@ void ScorePanel::FillGrid()
             sprintf(sz, "%s  ", pl_info->name);
             */
           AgStripColors(sz);
-          //-- bullit@planethalflife.com
+          //-- Martin Webrant
 					break;
 				case COLUMN_VOICE:
 					sz[0] = 0;
@@ -791,7 +791,7 @@ void ScorePanel::FillGrid()
 					if ( g_iTeamNumber == 0 )
 						bShowClass = false;
 
-          //++ bullit@planethalflife.com
+          //++ BulliT
           sprintf( sz, "%s", AgGetAuthID(m_iSortedRows[row]).c_str());
           /*
 					if (bShowClass)
@@ -814,7 +814,7 @@ void ScorePanel::FillGrid()
 						strcpy(sz, "");
 					}
           */
-          //-- bullit@planethalflife.com
+          //-- Martin Webrant
 					break;
 
 				case COLUMN_TRACKER:
@@ -830,10 +830,10 @@ void ScorePanel::FillGrid()
 					sprintf(sz, "%d",  g_PlayerExtraInfo[ m_iSortedRows[row] ].deaths );
 					break;
 				case COLUMN_LATENCY:
-//++ bullit@planethalflife.com
+//++ BulliT
 						//sprintf(sz, "%d", g_PlayerInfoList[ m_iSortedRows[row] ].ping );
             sprintf(sz, "%d/%d", g_PlayerInfoList[ m_iSortedRows[row] ].ping, g_PlayerInfoList[ m_iSortedRows[row] ].packetloss );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 					break;
 				default:
 					break;

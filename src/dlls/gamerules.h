@@ -16,11 +16,11 @@
 // GameRules
 //=========================================================
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #if !defined(_GAMERULES_H_)
 #define _GAMERULES_H_
 #include "agglobal.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 //#include "weapons.h"
 //#include "items.h"
 class CBasePlayerItem;
@@ -153,9 +153,9 @@ public:
 	virtual void ChangePlayerTeam( CBasePlayer *pPlayer, const char *pTeamName, BOOL bKill, BOOL bGib ) {}
 	virtual const char *SetDefaultPlayerTeam( CBasePlayer *pPlayer ) { return ""; }
 
-//++ bullit@planethalflife.com
+//++ BulliT
  	virtual void RecountTeams(void) {};
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 // Sounds
 	virtual BOOL PlayTextureSounds( void ) { return TRUE; }
 	virtual BOOL PlayFootstepSounds( CBasePlayer *pl, float fvol ) { return TRUE; }
@@ -166,9 +166,9 @@ public:
 	// Immediately end a multiplayer game
 	virtual void EndMultiplayerGame( void ) {}
 };
-//++ bullit@planethalflife.com
+//++ BulliT
 //extern CGameRules *InstallGameRules( void );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 //=========================================================
 // CHalfLifeRules - rules for the single player Half-Life 
@@ -256,10 +256,10 @@ public:
 	virtual int PlayerRelationship( CBaseEntity *pPlayer, CBaseEntity *pTarget );
 };
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "aggamerules.h"
 extern AgGameRules *InstallGameRules( void );
 extern DLL_GLOBAL AgGameRules*	g_pGameRules;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 #endif //_GAMERULES_H_

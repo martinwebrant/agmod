@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGGAMERULES_H__5F634943_35DD_4A80_922F_A0A82C815D99__INCLUDED_)
 #define AFX_AGGAMERULES_H__5F634943_35DD_4A80_922F_A0A82C815D99__INCLUDED_
@@ -108,4 +108,4 @@ public:
 
 #endif // !defined(AFX_AGGAMERULES_H__5F634943_35DD_4A80_922F_A0A82C815D99__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

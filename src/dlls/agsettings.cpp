@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "extdll.h"
 #include "util.h"
 #include "cbase.h"
@@ -750,4 +750,4 @@ void AgSettings::CalcNextMap()
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

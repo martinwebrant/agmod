@@ -1764,7 +1764,7 @@ void CSaveRestoreBuffer :: BufferRewind( int size )
 	m_pdata->size -= size;
 }
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef __MINGW32__
 extern "C" {
 unsigned _rotr ( unsigned val, int shift)
@@ -1786,7 +1786,7 @@ unsigned _rotr ( unsigned val, int shift)
 }
 }
 #endif 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 #ifndef _WIN32
 extern "C" {
 unsigned _rotr ( unsigned val, int shift)
@@ -2564,7 +2564,7 @@ int	CRestore::BufferCheckZString( const char *string )
 	return 0;
 }
 
-//++ bullit@planethalflife.com
+//++ BulliT
 void UTIL_SendDirectorMessage( edict_t *ent1, edict_t *ent2, int priority_and_flags )
 {
   MESSAGE_BEGIN( MSG_SPEC, SVC_DIRECTOR );
@@ -2581,4 +2581,4 @@ void UTIL_SendDirectorMessage( edict_t *ent1, edict_t *ent2, int priority_and_fl
     WRITE_LONG( priority_and_flags );
   MESSAGE_END();
 }
-//-- bullit@planethalflife.com
+//-- Martin Webrant

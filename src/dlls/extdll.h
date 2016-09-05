@@ -31,11 +31,11 @@
 #pragma warning(disable : 4201)		// nameless struct/union
 #pragma warning(disable : 4514)		// unreferenced inline function removed
 #pragma warning(disable : 4100)		// unreferenced formal parameter
-//++ bullit@planethalflife.com
+//++ BulliT
 #pragma warning(disable : 4710)		// not inlined
 #pragma warning(disable : 4514)		// unreferenced inline function has been removed
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 // Prevent tons of unused windows definitions
 #ifdef _WIN32

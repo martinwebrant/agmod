@@ -26,10 +26,10 @@ CBaseEntity
 				CBaseGroup
 */
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #if !defined(_CBASE_H_)
 #define _CBASE_H_
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 #define		MAX_PATH_SIZE	10 // max number of nodes available for a path.
@@ -806,6 +806,6 @@ public:
 // QUAKECLASSIC
 extern char *g_szDeathType;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #endif //_CBASE_H_
-//-- bullit@planethalflife.com
+//-- Martin Webrant

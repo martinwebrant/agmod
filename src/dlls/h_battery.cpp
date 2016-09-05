@@ -47,9 +47,9 @@ public:
 	int		m_iJuice;
 	int		m_iOn;			// 0 = off, 1 = startup, 2 = going
 	float   m_flSoundTime;
-//++ bullit@planethalflife.com
+//++ BulliT
   virtual void Reset();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 };
 
 TYPEDESCRIPTION CRecharge::m_SaveData[] =
@@ -121,10 +121,10 @@ void CRecharge::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE use
 	}
 
 	// if the player doesn't have the suit, or there is no juice left, make the deny noise
-//++ bullit@planethalflife.com
+//++ BulliT
 	//if ((m_iJuice <= 0) || (!(pActivator->pev->weapons & (1<<WEAPON_SUIT))))
   if ((m_iJuice <= 0) || (!(pActivator->pev->weapons & (1<<WEAPON_SUIT))) || 0 < ag_ban_recharg.value)
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	{
 		if (m_flSoundTime <= gpGlobals->time)
 		{
@@ -203,7 +203,7 @@ void CRecharge::Off(void)
 	}
 	else
 		SetThink( &CRecharge::SUB_DoNothing );
-}//++ bullit@planethalflife.com
+}//++ BulliT
 void CRecharge::Reset()
 {
 	m_iJuice = gSkillData.suitchargerCapacity;
@@ -211,4 +211,4 @@ void CRecharge::Reset()
   pev->nextthink = pev->ltime;
   Off();
 }
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include<VGUI_HeaderPanel.h>
 #include<VGUI_TablePanel.h>
@@ -238,4 +238,4 @@ void AGVGuiIRC::PrintMessage(const char* pszText)
   m_pTextPanel->setText(m_sText.c_str());
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

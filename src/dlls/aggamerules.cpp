@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -988,10 +988,10 @@ void AgGameRules::ResendScoreBoard()
         WRITE_BYTE( ENTINDEX(plr->edict()) );
         WRITE_SHORT( plr->pev->frags );
         WRITE_SHORT( plr->m_iDeaths );
-        //++ bullit@planethalflife.com
+        //++ BulliT
  		    WRITE_SHORT( g_teamplay );
 		    WRITE_SHORT( g_pGameRules->GetTeamIndex( plr->m_szTeamName ) + 1 );
-       //-- bullit@planethalflife.com
+       //-- Martin Webrant
       MESSAGE_END();
 
       //Spectator
@@ -1092,10 +1092,10 @@ void AgGameRules::HLTV_ResendScoreBoard()
         WRITE_BYTE( ENTINDEX(plr->edict()) );
         WRITE_SHORT( plr->pev->frags );
         WRITE_SHORT( plr->m_iDeaths );
-        //++ bullit@planethalflife.com
+        //++ BulliT
  		    WRITE_SHORT( g_teamplay );
 		    WRITE_SHORT( g_pGameRules->GetTeamIndex( plr->m_szTeamName ) + 1 );
-        //-- bullit@planethalflife.com
+        //-- Martin Webrant
       MESSAGE_END();
 
       //Spectator
@@ -1138,7 +1138,7 @@ struct lessagteam : binary_function<AgTeam, AgTeam, bool> {
 
 AgString CHalfLifeTeamplay::GetTeamWithFewestPlayers()
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   if (CTF == AgGametype())
   {
     if (GetTeamIndex(CTF_TEAM1_NAME) == -1)
@@ -1146,7 +1146,7 @@ AgString CHalfLifeTeamplay::GetTeamWithFewestPlayers()
     else if (GetTeamIndex(CTF_TEAM2_NAME) == -1)
       return CTF_TEAM2_NAME; 
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	char	*pName;
 	char	szTeamList[TEAMPLAY_TEAMLISTLENGTH];
@@ -1252,5 +1252,5 @@ void AgGameRules::SendMapListToClient(CBasePlayer* pPlayer, bool bStart)
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 

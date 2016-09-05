@@ -1,4 +1,4 @@
-//++ muphicks@mups.co.uk  
+//++ muphicks  
 // AGDomination mode header file
 
 #if !defined(__AG_DOM_H__)

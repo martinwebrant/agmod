@@ -51,9 +51,9 @@ float g_ColorGreen[3]	= { 0.6, 1.0, 0.6 };
 float g_ColorYellow[3]	= { 1.0, 0.7, 0.0 };
 float g_ColorGrey[3]	= { 0.8, 0.8, 0.8 };
 
-//++ bullit@planethalflife.com
+//++ BulliT
 float g_ColorConsole[3] = { 1.0, 0.7, 0.0 };
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 float *GetClientColor( int clientIndex )
 {
@@ -64,9 +64,9 @@ float *GetClientColor( int clientIndex )
 	case 3: return g_ColorYellow;
 	case 4: return g_ColorGreen;
 	//case 0: return g_ColorYellow;
-//++ bullit@planethalflife.com
+//++ BulliT
   case 0: return g_ColorConsole;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		default	: return g_ColorGrey;
 	}
 
@@ -132,11 +132,11 @@ int CHudDeathNotice :: Draw( float flTime )
 
 				// Draw killers name
 				if ( rgDeathNoticeList[i].KillerColor )
-//++ bullit@planethalflife.com
+//++ BulliT
 					//gEngfuncs.pfnDrawSetTextColor( rgDeathNoticeList[i].KillerColor[0], rgDeathNoticeList[i].KillerColor[1], rgDeathNoticeList[i].KillerColor[2] );
           x = 5 + DrawConsoleString( x, y, rgDeathNoticeList[i].szKiller, rgDeathNoticeList[i].KillerColor[0], rgDeathNoticeList[i].KillerColor[1], rgDeathNoticeList[i].KillerColor[2]  );
         else
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 				x = 5 + DrawConsoleString( x, y, rgDeathNoticeList[i].szKiller );
 			}
 
@@ -156,11 +156,11 @@ int CHudDeathNotice :: Draw( float flTime )
 			if (rgDeathNoticeList[i].iNonPlayerKill == FALSE)
 			{
 				if ( rgDeathNoticeList[i].VictimColor )
-//++ bullit@planethalflife.com
+//++ BulliT
 					//gEngfuncs.pfnDrawSetTextColor( rgDeathNoticeList[i].VictimColor[0], rgDeathNoticeList[i].VictimColor[1], rgDeathNoticeList[i].VictimColor[2] );
           x = DrawConsoleString( x, y, rgDeathNoticeList[i].szVictim, rgDeathNoticeList[i].VictimColor[0], rgDeathNoticeList[i].VictimColor[1], rgDeathNoticeList[i].VictimColor[2] );
         else
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 				x = DrawConsoleString( x, y, rgDeathNoticeList[i].szVictim );
 			}
 		}

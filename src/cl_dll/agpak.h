@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 #if !defined(_AG_PAK_H_)
 #define _AG_PAK_H_
 
@@ -12,4 +12,4 @@ public:
 
 #endif // !defined(_AG_PAK_H_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

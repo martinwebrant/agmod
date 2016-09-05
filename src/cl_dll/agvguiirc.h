@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_VGUI_IRC_)
 #define _AG_VGUI_IRC_
@@ -35,4 +35,4 @@ public:
 
 #endif //_AG_VGUI_IRC_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

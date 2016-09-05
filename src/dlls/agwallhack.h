@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(__AG_WALLHACK_H__)
 #define __AG_WALLHACK_H__
@@ -24,4 +24,4 @@ extern DLL_GLOBAL AgWallhack Wallhack;
 
 #endif // !__AG_WALLHACK_H__
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

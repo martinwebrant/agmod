@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGSCORECACHE_H__92DDA4B4_AB28_483B_8028_FAAB0667ECD4__INCLUDED_)
 #define AFX_AGSCORECACHE_H__92DDA4B4_AB28_483B_8028_FAAB0667ECD4__INCLUDED_
@@ -29,4 +29,4 @@ public:
 
 #endif // !defined(AFX_AGSCORECACHE_H__92DDA4B4_AB28_483B_8028_FAAB0667ECD4__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

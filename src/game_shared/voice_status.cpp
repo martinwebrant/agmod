@@ -395,7 +395,7 @@ void CVoiceStatus::UpdateSpeakerStatus(int entindex, qboolean bTalking)
 	if(!*m_pParentPanel)
 		return;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   /*
 	if( gEngfuncs.pfnGetCvarFloat("voice_clientdebug") )
 	{
@@ -404,7 +404,7 @@ void CVoiceStatus::UpdateSpeakerStatus(int entindex, qboolean bTalking)
 		gEngfuncs.pfnConsolePrint( msg );
 	}
   */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	// Is it the local player talking?
 	if( entindex == -1 )
@@ -489,14 +489,14 @@ void CVoiceStatus::UpdateServerState(bool bForce)
 	char const *pLevelName = gEngfuncs.pfnGetLevelName();
 	if( pLevelName[0] == 0 )
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
     /*
 		if( gEngfuncs.pfnGetCvarFloat("voice_clientdebug") )
 		{
 			gEngfuncs.pfnConsolePrint( "CVoiceStatus::UpdateServerState: pLevelName[0]==0\n" );
 		}
     */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 		return;
 	}
@@ -510,7 +510,7 @@ void CVoiceStatus::UpdateServerState(bool bForce)
 		_snprintf(str, sizeof(str), "VModEnable %d", m_bServerModEnable);
 		ServerCmd(str);
 
-//++ bullit@planethalflife.com
+//++ BulliT
     /*
 		if(gEngfuncs.pfnGetCvarFloat("voice_clientdebug"))
 		{
@@ -519,7 +519,7 @@ void CVoiceStatus::UpdateServerState(bool bForce)
 			gEngfuncs.pfnConsolePrint(msg);
 		}
     */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 
 	char str[2048];
@@ -554,7 +554,7 @@ void CVoiceStatus::UpdateServerState(bool bForce)
 
 	if(bChange || bForce)
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
     /*
 		if(gEngfuncs.pfnGetCvarFloat("voice_clientdebug"))
 		{
@@ -563,20 +563,20 @@ void CVoiceStatus::UpdateServerState(bool bForce)
 			gEngfuncs.pfnConsolePrint(msg);
 		}
     */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 		gEngfuncs.pfnServerCmdUnreliable(str);	// Tell the server..
 	}
 	else
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
     /*
 		if (gEngfuncs.pfnGetCvarFloat("voice_clientdebug"))
 		{
 			gEngfuncs.pfnConsolePrint( "CVoiceStatus::UpdateServerState: no change\n" );
 		}
     */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 	
 	m_LastUpdateServerState = gEngfuncs.GetClientTime();
@@ -645,7 +645,7 @@ void CVoiceStatus::HandleVoiceMaskMsg(int iSize, void *pbuf)
 		m_AudiblePlayers.SetDWord(dw, (unsigned long)READ_LONG());
 		m_ServerBannedPlayers.SetDWord(dw, (unsigned long)READ_LONG());
 
-//++ bullit@planethalflife.com
+//++ BulliT
     /*
 		if(gEngfuncs.pfnGetCvarFloat("voice_clientdebug"))
 		{
@@ -659,7 +659,7 @@ void CVoiceStatus::HandleVoiceMaskMsg(int iSize, void *pbuf)
 			gEngfuncs.pfnConsolePrint(str);
 		}
     */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 
 	m_bServerModEnable = READ_BYTE();
@@ -667,14 +667,14 @@ void CVoiceStatus::HandleVoiceMaskMsg(int iSize, void *pbuf)
 
 void CVoiceStatus::HandleReqStateMsg(int iSize, void *pbuf)
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 /*
 	if(gEngfuncs.pfnGetCvarFloat("voice_clientdebug"))
 	{
 		gEngfuncs.pfnConsolePrint("CVoiceStatus::HandleReqStateMsg\n");
 	}
 */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	UpdateServerState(true);	
 }
@@ -774,10 +774,10 @@ void CVoiceStatus::RepositionLabels()
 		m_pLocalLabel->setParent(*m_pParentPanel);
 		m_pLocalLabel->setVisible( true );
 
-//++ bullit@planethalflife.com
+//++ BulliT
 		//if( m_bServerAcked && !!gEngfuncs.pfnGetCvarFloat("voice_clientdebug") )
     if( m_bServerAcked)
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 			m_pLocalLabel->setImage( m_pAckBitmap );
 		else
 			m_pLocalLabel->setImage( m_pLocalBitmap );
@@ -871,20 +871,20 @@ bool CVoiceStatus::IsPlayerAudible(int iPlayer)
 //-----------------------------------------------------------------------------
 void CVoiceStatus::SetPlayerBlockedState(int iPlayer, bool blocked)
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   /*
 	if (gEngfuncs.pfnGetCvarFloat("voice_clientdebug"))
 	{
 		gEngfuncs.pfnConsolePrint( "CVoiceStatus::SetPlayerBlockedState part 1\n" );
 	}
   */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	char playerID[16];
 	if (!gEngfuncs.GetPlayerUniqueID(iPlayer, playerID))
 		return;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   /*
 	// Squelch or (try to) unsquelch this player.
 	if (gEngfuncs.pfnGetCvarFloat("voice_clientdebug"))
@@ -894,7 +894,7 @@ void CVoiceStatus::SetPlayerBlockedState(int iPlayer, bool blocked)
 		gEngfuncs.pfnConsolePrint(str);
 	}
   */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	m_BanMgr.SetPlayerBan( playerID, blocked );
 		UpdateServerState(false);

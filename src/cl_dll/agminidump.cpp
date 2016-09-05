@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #ifdef AG_USE_MINIDUMP
 
@@ -148,4 +148,4 @@ AgMiniDump g_MiniDump; //The dumper.
 #endif CLIENT_DLL
 
 #endif AG_USE_MINIDUMP
-//-- bullit@planethalflife.com
+//-- Martin Webrant

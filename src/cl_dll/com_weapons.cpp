@@ -276,7 +276,7 @@ unsigned short	stub_PrecacheEvent		( int type, const char *s ) { return 0; }
 const char		*stub_NameForFunction	( unsigned long function ) { return "func"; }
 void			stub_SetModel			( edict_t *e, const char *m ) {}
 
-//++ bullit@planethalflife.com
+//++ BulliT
 /*
 #include "ammohistory.h"
 #include "pm_shared.h"
@@ -292,5 +292,5 @@ void HUD_SetWeaponClip(int iWeapon, int iCount)
 		gWR.GetWeapon(iWeapon)->iClip = iCount;
 }
 */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 

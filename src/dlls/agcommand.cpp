@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include	"extdll.h"
 #include	"util.h"
@@ -550,4 +550,4 @@ void AgCommand::Exec(const AgString& sExec, CBasePlayer* pPlayer)
   SERVER_EXECUTE();
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -215,10 +215,10 @@ void CVoiceGameMgr::UpdateMasks()
 {
 	m_UpdateInterval = 0;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 	//bool bAllTalk = !!g_engfuncs.pfnCVarGetFloat( "sv_alltalk" );
   bool bAllTalk = false;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	for(int iClient=0; iClient < m_nMaxPlayers; iClient++)
 	{

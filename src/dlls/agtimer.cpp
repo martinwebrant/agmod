@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 
 #include "extdll.h"
@@ -97,4 +97,4 @@ void AgTimer::Think()
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -55,14 +55,14 @@
 #include "vgui_ScorePanel.h"
 #include "vgui_SpectatorPanel.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "AGVGuiIRC.h"
 #include "AGVGuiWinamp.h"
 #include "AgVGuiPassword.h"
 #include "AgVGuiMapBrowser.h"
 
 extern cvar_t* g_phud_spectatebar;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 extern int g_iVisibleMouse;
 class CCommandMenu;
 int g_iPlayerClass;
@@ -595,12 +595,12 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 	m_SpectatorOptionsMenu = CreateCommandMenu("spectatormenu.txt", 1, YRES(32), true, CMENU_SIZE_X, BUTTON_SIZE_Y / 2, 0 );	// above bottom bar, flat design
 	m_SpectatorCameraMenu = CreateCommandMenu("spectcammenu.txt", 1, YRES(32), true, XRES( 200 ), BUTTON_SIZE_Y / 2, ScreenWidth - ( XRES ( 200 ) + 15 ) );	// above bottom bar, flat design
 	CreateServerBrowser();
-//++ bullit@planethalflife.com
+//++ BulliT
 	CreateIRC();
 	CreateWinamp();
   CreatePassword();
 	CreateMapBrowser();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 //-----------------------------------------------------------------------------
@@ -647,14 +647,14 @@ void TeamFortressViewport::Initialize( void )
 	for (int i = 0; i < 5; i++)
 	{
 		m_iValidClasses[i] = 0;
-//++ bullit@planethalflife.com
+//++ BulliT
       //strcpy(m_sTeamNames[i], "");
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
-//++ bullit@planethalflife.com
+//++ BulliT
   for (i = 0; i < MAX_TEAMS; i++)
 		strcpy(m_sTeamNames[i], "");
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	App::getInstance()->setCursorOveride( App::getInstance()->getScheme()->getCursor(Scheme::SchemeCursor::scu_none) );
 }
@@ -979,10 +979,10 @@ CommandButton *TeamFortressViewport::CreateCustomButton( char *pButtonText, char
 
 		// Spectate button
 		m_pTeamButtons[5] = new SpectateButton( CHudTextMessage::BufferedLocaliseTextString( "#Menu_Spectate" ), 0, BUTTON_SIZE_Y, CMENU_SIZE_X, BUTTON_SIZE_Y, false);
-//++ bullit@planethalflife.com
+//++ BulliT
 		//m_pTeamButtons[5]->addActionSignal(new CMenuHandler_StringCommand( "spectate" ));
     m_pTeamButtons[5]->addActionSignal(new CMenuHandler_StringCommand( "spectate 1" ));
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		pMenu->AddButton( m_pTeamButtons[5] ); 
 	}
 	// ChangeClass
@@ -1197,7 +1197,7 @@ CommandButton *TeamFortressViewport::CreateCustomButton( char *pButtonText, char
 		// Create an input signal that'll popup the current menu
 		pButton->addInputSignal( new CMenuHandler_PopupSubMenuInput(pButton, m_pCurrentCommandMenu) );
 	}
-//++ bullit@planethalflife.com
+//++ BulliT
 	else if ( !strcmp( pButtonName, "!README" ) )
 	{
 		pButton = new ClassButton(0, pButtonText, 0, BUTTON_SIZE_Y * m_pCurrentCommandMenu->GetNumButtons(), CMENU_SIZE_X, BUTTON_SIZE_Y, false);
@@ -1205,7 +1205,7 @@ CommandButton *TeamFortressViewport::CreateCustomButton( char *pButtonText, char
 		// Create an input signal that'll popup the current menu
 		pButton->addInputSignal( new CMenuHandler_PopupSubMenuInput(pButton, m_pCurrentCommandMenu) );
 	}
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	return pButton;
 }
@@ -1229,7 +1229,7 @@ void TeamFortressViewport::ToggleServerBrowser()
 
 	UpdateCursorState();
 }
-//++ bullit@planethalflife.com
+//++ BulliT
 void TeamFortressViewport::ToggleIRC()
 {
 	if (!m_iInitialized)
@@ -1332,7 +1332,7 @@ void TeamFortressViewport::ToggleMapBrowser()
 	UpdateCursorState();
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 //=======================================================================
 void TeamFortressViewport::ShowCommandMenu(int menuIndex)
@@ -1369,10 +1369,10 @@ void TeamFortressViewport::ShowCommandMenu(int menuIndex)
 		const char *param = gEngfuncs.Cmd_Argv( i - 1 );
 		if ( param )
 		{
-			//++ bullit@planethalflife.com
+			//++ BulliT
 			//if ( m_pCurrentCommandMenu->KeyInput(param[0]) )
 			if ( m_pCurrentCommandMenu && m_pCurrentCommandMenu->KeyInput(param[0]) )
-			//-- bullit@planethalflife.com
+			//-- Martin Webrant
 			{
 				// kill the menu open time, since the key input is final
 				HideCommandMenu();
@@ -1435,19 +1435,19 @@ void TeamFortressViewport::ShowScoreBoard( void )
 		// No Scoreboard in single-player
 		if ( gEngfuncs.GetMaxClients() > 1 )
 		{
-//++ bullit@planethalflife.com
+//++ BulliT
       if (CVAR_GET_FLOAT("cl_old_scoreboard") == 1)
       {
         gHUD.m_Scoreboard.ShowScoreboard(true);
       }
       else
       {
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 			m_pScoreBoard->Open();
 			UpdateCursorState();
-//++ bullit@planethalflife.com
+//++ BulliT
       }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		}
 	}
 }
@@ -1458,18 +1458,18 @@ void TeamFortressViewport::ShowScoreBoard( void )
 bool TeamFortressViewport::IsScoreBoardVisible( void )
 {
 	if (m_pScoreBoard)
-//++ bullit@planethalflife.com
+//++ BulliT
       if (CVAR_GET_FLOAT("cl_old_scoreboard") == 1)
       {
 		  return gHUD.m_Scoreboard.IsVisible();
       }
       else
       {
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		return m_pScoreBoard->isVisible();
-//++ bullit@planethalflife.com
+//++ BulliT
       }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	return false;
 }
@@ -1485,22 +1485,22 @@ void TeamFortressViewport::HideScoreBoard( void )
 
 	if (m_pScoreBoard)
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
     if (CVAR_GET_FLOAT("cl_old_scoreboard") == 1)
     {
       gHUD.m_Scoreboard.ShowScoreboard(false);
     }
     else
     {
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		m_pScoreBoard->setVisible(false);
 
 		GetClientVoiceMgr()->StopSquelchMode();
 
 		UpdateCursorState();
-//++ bullit@planethalflife.com
+//++ BulliT
     }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 }
 
@@ -1601,9 +1601,9 @@ void TeamFortressViewport::UpdateSpectatorPanel()
 		if ( player && name )
 		{
 			strcpy( bottomText, name );
-//++ bullit@planethalflife.com
+//++ BulliT
 			AgStripColors(bottomText);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		}
 
 		// in first person mode colorize player names
@@ -1665,9 +1665,9 @@ void TeamFortressViewport::UpdateSpectatorPanel()
 		szText[63] = 0;
 				
 		m_pSpectatorPanel->m_CurrentTime->setText( szText ); */
-//++ bullit@planethalflife.com 
+//++ BulliT 
     m_pSpectatorPanel->m_CurrentTime->setText(gHUD.m_Timer.m_szTime);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 		// update spectator panel
 		gViewPort->m_pSpectatorPanel->Update();
@@ -1710,7 +1710,7 @@ void TeamFortressViewport::CreateServerBrowser( void )
 	m_pServerBrowser->setVisible(false);
 }
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #define IRC_INDENT_X			XRES(104)
 #define IRC_INDENT_Y			YRES(40)
 
@@ -1758,7 +1758,7 @@ void TeamFortressViewport::CreateMapBrowser( void )
 	m_pMapBrowser->setVisible(false);
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 //======================================================================
 // Set the VGUI Menu
@@ -1893,7 +1893,7 @@ CMenuPanel* TeamFortressViewport::CreateTextWindow( int iTextToShow )
 			cText = pfile;
 		}
 	}
-//++ bullit@planethalflife.com
+//++ BulliT
 	else if ( iTextToShow == SHOW_README )
 	{
 		pfile = (char*)gEngfuncs.COM_LoadFile( "readme.txt", 5, NULL );
@@ -1904,7 +1904,7 @@ CMenuPanel* TeamFortressViewport::CreateTextWindow( int iTextToShow )
 		cText = pfile;
     strcpy( cTitle, "Readme.txt" );
 	}
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// if we're in the game (ie. have selected a class), flag the menu to be only grayed in the dialog box, instead of full screen
 	CMenuPanel *pMOTDPanel = CMessageWindowPanel_Create( cText, cTitle, g_iPlayerClass == PC_UNDEFINED, false, 0, 0, ScreenWidth, ScreenHeight );
 	pMOTDPanel->setParent( this );
@@ -1969,11 +1969,11 @@ void TeamFortressViewport::ShowVGUIMenu( int iMenu )
 		pNewMenu = ShowClassMenu();
 		break;
 
-//++ bullit@planethalflife.com
+//++ BulliT
   case MENU_README:
 		pNewMenu = CreateTextWindow( SHOW_README );
 		break;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	default:
 		break;
 	}
@@ -2128,12 +2128,12 @@ void TeamFortressViewport::UpdateCursorState()
 {
 	// Need cursor if any VGUI window is up
 	if ( m_pSpectatorPanel->m_menuVisible || m_pCurrentMenu || m_pTeamMenu->isVisible() || m_pServerBrowser->isVisible() || GetClientVoiceMgr()->IsInSquelchMode()
-//++ bullit@planethalflife.com
+//++ BulliT
 	    || m_pIRC->isVisible()
       || m_pWinamp->isVisible()
       || m_pPassword->isVisible()
       || m_pMapBrowser->isVisible()
-//-- bullit@planethalflife.com
+//-- Martin Webrant
     )
 	{
 		g_iVisibleMouse = true;
@@ -2276,7 +2276,7 @@ bool TeamFortressViewport::SlotInput( int iSlot )
 // Direct Key Input
 int	TeamFortressViewport::KeyInput( int down, int keynum, const char *pszCurrentBinding )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   if (m_pIRC)
     if (0 == m_pIRC->KeyInput(down,keynum,pszCurrentBinding))
       return 0;
@@ -2297,19 +2297,19 @@ int	TeamFortressViewport::KeyInput( int down, int keynum, const char *pszCurrent
     if (0 == m_pWinamp->KeyInput(down,keynum,pszCurrentBinding))
       return 0;
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// Enter gets out of Spectator Mode by bringing up the Team Menu
 	if (m_iUser1 && gEngfuncs.Con_IsVisible() == false )
 	{
 		if ( down && (keynum == K_ENTER || keynum == K_KP_ENTER) )
-//++ bullit@planethalflife.com
+//++ BulliT
     {
       if (gHUD.m_Teamplay)
 			  ShowVGUIMenu( MENU_TEAM );
       else
   		  ServerCmd( "spectate\n" );
     }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 
 	// Open Text Window?
@@ -2416,13 +2416,13 @@ int TeamFortressViewport::MsgFunc_TeamNames(const char *pszName, int iSize, void
 		gHUD.m_TextMessage.LocaliseTextString( READ_STRING(), m_sTeamNames[teamNum], MAX_TEAMNAME_SIZE );
 
 		// Set the team name buttons
-//++ bullit@planethalflife.com
+//++ BulliT
 		//if (m_pTeamButtons[i])
     if (i < 4 && m_pTeamButtons[i])
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 			m_pTeamButtons[i]->setText( m_sTeamNames[teamNum] );
 
-//++ bullit@planethalflife.com
+//++ BulliT
     /*
 		// range check this value...m_pDisguiseButtons[5];
 		if ( teamNum < 5 )
@@ -2432,7 +2432,7 @@ int TeamFortressViewport::MsgFunc_TeamNames(const char *pszName, int iSize, void
 				m_pDisguiseButtons[teamNum]->setText( m_sTeamNames[teamNum] );
 		}
     */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 
 	// Update the Team Menu
@@ -2546,19 +2546,19 @@ int TeamFortressViewport::MsgFunc_ScoreInfo( const char *pszName, int iSize, voi
 	short deaths = READ_SHORT();
 	short playerclass = READ_SHORT();
 	short teamnumber = READ_SHORT();
-//++ bullit@planethalflife.com
+//++ BulliT
   short flag = READ_BYTE();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if ( cl > 0 && cl <= MAX_PLAYERS )
 	{
 		g_PlayerExtraInfo[cl].frags = frags;
 		g_PlayerExtraInfo[cl].deaths = deaths;
-//++ bullit@planethalflife.com
+//++ BulliT
 		//g_PlayerExtraInfo[cl].playerclass = playerclass;
     gHUD.m_Teamplay = playerclass; //hack hack... heh.
     g_PlayerExtraInfo[cl].flag = flag;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		g_PlayerExtraInfo[cl].teamnumber = teamnumber;
 
 		//Dont go bellow 0!
@@ -2596,9 +2596,9 @@ int TeamFortressViewport::MsgFunc_TeamScore( const char *pszName, int iSize, voi
 	g_TeamInfo[i].scores_overriden = TRUE;
 	g_TeamInfo[i].frags = READ_SHORT();
 	g_TeamInfo[i].deaths = READ_SHORT();
-//++ bullit@planethalflife.com
+//++ BulliT
   gHUD.m_Teamplay = 1; //hack hack... heh.
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	return 1;
 }

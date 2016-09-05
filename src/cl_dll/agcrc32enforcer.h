@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #ifndef __AG_CRC32ENFORCER_H__
 #define __AG_CRC32ENFORCER_H__
@@ -11,4 +11,4 @@ bool AgCRC32EnforceFiles();
 
 #endif //__AG_CRC32ENFORCER_H__
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

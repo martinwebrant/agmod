@@ -59,10 +59,10 @@ char *g_szDeathType;
 
 CHalfLifeMultiplay :: CHalfLifeMultiplay()
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   m_iGameMode = CVAR_GET_FLOAT("mp_teamplay");
   m_fGameStart = gpGlobals->time;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	m_VoiceGameMgr.Init(&g_GameMgrHelper, gpGlobals->maxClients);
 	int length;
@@ -219,12 +219,12 @@ void CHalfLifeMultiplay :: Think ( void )
 		return;
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   if (g_pGameRules->m_iGameMode == LMS)
     m_LMS.Think();
   else if (g_pGameRules->m_iGameMode == ARENA)
     m_Arena.Think();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if ( m_flGameEndTime != 0.0 && m_flGameEndTime <= gpGlobals->time )
 	{
@@ -233,22 +233,22 @@ void CHalfLifeMultiplay :: Think ( void )
 		return;
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   if (m_iGameMode != CVAR_GET_FLOAT("mp_teamplay"))
   {
     GoToIntermission();
     return;
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 	float flTimeLimit = timelimit.value * 60;
 	float flFragLimit = fraglimit.value;
 	
-//++ bullit@planethalflife.com
+//++ BulliT
 	//time_remaining = (int)(flTimeLimit ? ( flTimeLimit - gpGlobals->time ) : 0);
   time_remaining = (int)(flTimeLimit ? ( flTimeLimit - gpGlobals->time + m_fGameStart) : 0);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if ( flTimeLimit != 0 && gpGlobals->time >= flTimeLimit && m_flGameEndTime == 0.0 )
 	{
@@ -498,12 +498,12 @@ void CHalfLifeMultiplay :: ClientDisconnected( edict_t *pClient )
 
 		if ( pPlayer )
 		{
-//++ bullit@planethalflife.com
+//++ BulliT
       if (g_pGameRules->m_iGameMode >= LMS)
         m_LMS.ClientDisconnected(pPlayer);
       else if (g_pGameRules->m_iGameMode == ARENA)
         m_Arena.ClientDisconnected(pPlayer);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 			FireTargets( "game_playerleave", pPlayer, pPlayer, USE_TOGGLE, 0 );
 
@@ -586,7 +586,7 @@ void CHalfLifeMultiplay :: PlayerSpawn( CBasePlayer *pPlayer )
 		// Start with shotgun and axe
 		pPlayer->GiveNamedItem( "weapon_quakegun" );
 
-//++ bullit@planethalflife.com
+//++ BulliT
     if (g_pGameRules->m_iGameMode >= ARENA)
     {
       pPlayer->m_iQuakeItems |= (IT_AXE | IT_SHOTGUN | IT_SUPER_SHOTGUN | IT_NAILGUN | IT_SUPER_NAILGUN | IT_GRENADE_LAUNCHER  | IT_ROCKET_LAUNCHER | IT_LIGHTNING);      
@@ -601,7 +601,7 @@ void CHalfLifeMultiplay :: PlayerSpawn( CBasePlayer *pPlayer )
 	    pPlayer->m_iQuakeItems |= IT_ARMOR3;
     }
     else
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		pPlayer->m_iQuakeItems |= (IT_SHOTGUN | IT_AXE);
 		pPlayer->m_iQuakeWeapon = pPlayer->W_BestWeapon();
 		pPlayer->W_SetCurrentAmmo();
@@ -612,10 +612,10 @@ void CHalfLifeMultiplay :: PlayerSpawn( CBasePlayer *pPlayer )
 //=========================================================
 BOOL CHalfLifeMultiplay :: FPlayerCanRespawn( CBasePlayer *pPlayer )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   return pPlayer->IsIngame();
 //	return TRUE;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 //=========================================================

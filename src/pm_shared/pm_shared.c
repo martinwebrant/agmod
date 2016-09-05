@@ -2438,14 +2438,14 @@ PM_Jump
 void PM_Jump (void)
 {
 	int i;
-//++ bullit@planethalflife.com
+//++ BulliT
 	//qboolean tfc = false;
-//-- bullit@planethalflife.com
+//-- BulliT
 
 	qboolean cansuperjump = false;
-//++ bullit@planethalflife.com
+//++ BulliT
   qboolean bBunnyJump = false;
-//-- bullit@planethalflife.com
+//-- BulliT
 
 	if (pmove->dead)
 	{
@@ -2453,12 +2453,12 @@ void PM_Jump (void)
 		return;
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
 //	tfc = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "tfc" ) ) == 1 ? true : false;
-//-- bullit@planethalflife.com
+//-- BulliT
 
 	// Spy that's feigning death cannot jump
-//++ bullit@planethalflife.com
+//++ BulliT
 /*
 	if ( tfc && 
 		( pmove->deadflag == ( DEAD_DISCARDBODY + 1 ) ) )
@@ -2466,7 +2466,7 @@ void PM_Jump (void)
 		return;
 	}
 */
-//-- bullit@planethalflife.com
+//-- BulliT
 
 	// See if we are waterjumping.  If so, decrement count and return.
 	if ( pmove->waterjumptime )
@@ -2532,13 +2532,13 @@ void PM_Jump (void)
 	// In the air now.
     pmove->onground = -1;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 	bBunnyJump = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "bj" ) ) == 1 ? true : false;
   if (!bBunnyJump)
 	  PM_PreventMegaBunnyJumping();
-//-- bullit@planethalflife.com
+//-- BulliT
 
-//++ bullit@planethalflife.com
+//++ BulliT
   /*
 	if ( tfc )
 	{
@@ -2546,7 +2546,7 @@ void PM_Jump (void)
 	}
 	else
   */
-//-- bullit@planethalflife.com
+//-- BulliT
 	{
 		PM_PlayStepSound( PM_MapTextureTypeStepType( pmove->chtexturetype ), 1.0 );
 	}
@@ -2689,7 +2689,7 @@ void PM_CheckFalling( void )
 		}
 		else if ( pmove->flFallVelocity > PLAYER_MAX_SAFE_FALL_SPEED / 2 )
 		{
-//++ bullit@planethalflife.com
+//++ BulliT
       /*
 			qboolean tfc = false;
 			tfc = atoi( pmove->PM_Info_ValueForKey( pmove->physinfo, "tfc" ) ) == 1 ? true : false;
@@ -2699,7 +2699,7 @@ void PM_CheckFalling( void )
 				pmove->PM_PlaySound( CHAN_VOICE, "player/pl_fallpain3.wav", 1, ATTN_NORM, 0, PITCH_NORM );
 			}
       */
-//-- bullit@planethalflife.com
+//-- BulliT
 
 			fvol = 0.85;
 		}

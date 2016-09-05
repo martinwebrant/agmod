@@ -26,14 +26,14 @@
 #include	"game.h"
 #include	"items.h"
 #include	"voice_gamemgr.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "aggamerules.h"
 #include "multi_gamerules.h"
 
 //extern DLL_GLOBAL CGameRules	*g_pGameRules;
 extern DLL_GLOBAL AgGameRules	*g_pGameRules;
 extern int gmsgAuthID;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 extern DLL_GLOBAL BOOL	g_fGameOver;
 extern int gmsgDeathMsg;	// client dll messages
 extern int gmsgScoreInfo;
@@ -57,13 +57,13 @@ public:
 	{
 		if ( g_teamplay )
 		{
-//++ bullit@planethalflife.com
+//++ BulliT
 			if (pListener->IsSpectator() && pTalker->IsSpectator())
 				return true;
 
 			if (pListener->IsSpectator() || pTalker->IsSpectator())
 				return false;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 			if ( g_pGameRules->PlayerRelationship( pListener, pTalker ) != GR_TEAMMATE )
 			{
 				return false;
@@ -86,9 +86,9 @@ CHalfLifeMultiplay :: CHalfLifeMultiplay()
 	RefreshSkillData();
 	m_flIntermissionEndTime = 0;
 	g_flIntermissionStartTime = 0;
-//++ bullit@planethalflife.com
+//++ BulliT
   m_iEndIntermissionButtonHit = 0;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	
 	// 11/8/98
 	// Modified by YWB:  Server .cfg file is now a cvar, so that 
@@ -99,7 +99,7 @@ CHalfLifeMultiplay :: CHalfLifeMultiplay()
 	// 3/31/99
 	// Added lservercfg file cvar, since listen and dedicated servers should not
 	// share a single config file. (sjb)
-//++ bullit@planethalflife.com
+//++ BulliT
 /*
 	if ( IS_DEDICATED_SERVER() )
 	{
@@ -130,7 +130,7 @@ CHalfLifeMultiplay :: CHalfLifeMultiplay()
 		}
 	}
   */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 BOOL CHalfLifeMultiplay::ClientCommand( CBasePlayer *pPlayer, const char *pcmd )
@@ -138,20 +138,20 @@ BOOL CHalfLifeMultiplay::ClientCommand( CBasePlayer *pPlayer, const char *pcmd )
 	if(g_VoiceGameMgr.ClientCommand(pPlayer, pcmd))
 		return TRUE;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 //	return CGameRules::ClientCommand(pPlayer, pcmd);
   return AgGameRules::ClientCommand(pPlayer, pcmd);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 //=========================================================
 //=========================================================
 void CHalfLifeMultiplay::RefreshSkillData( void )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   AgGameRules::RefreshSkillData();
   return;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 // load all default values
 	CGameRules::RefreshSkillData();
 
@@ -213,10 +213,10 @@ extern cvar_t mp_chattime;
 void CHalfLifeMultiplay :: Think ( void )
 {
 	g_VoiceGameMgr.Update(gpGlobals->frametime);
-//++ bullit@planethalflife.com
+//++ BulliT
   if (!AgGameRules::AgThink())
     return;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	///// Check game rules /////
 	static int last_frags;
@@ -242,17 +242,17 @@ void CHalfLifeMultiplay :: Think ( void )
 			if ( m_iEndIntermissionButtonHit  // check that someone has pressed a key, or the max intermission time is over
 				|| ( ( g_flIntermissionStartTime + MAX_INTERMISSION_TIME ) < gpGlobals->time) ) 
 //				ChangeLevel(); // intermission is over
-//++ bullit@planethalflife.com
+//++ BulliT
       {
         ChangeNextLevel();
       }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		}
 
 		return;
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   /*
 	float flTimeLimit = timelimit.value * 60;
 	float flFragLimit = fraglimit.value;
@@ -281,7 +281,7 @@ void CHalfLifeMultiplay :: Think ( void )
     }
 	}
 	float flFragLimit = fraglimit.value;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if ( flFragLimit )
 	{
@@ -355,9 +355,9 @@ BOOL CHalfLifeMultiplay::IsCoOp( void )
 //=========================================================
 BOOL CHalfLifeMultiplay::FShouldSwitchWeapon( CBasePlayer *pPlayer, CBasePlayerItem *pWeapon )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   return AgGameRules::FShouldSwitchWeapon( pPlayer, pWeapon );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	if ( !pWeapon->CanDeploy() )
 	{
 		// that weapon can't deploy anyway.
@@ -386,9 +386,9 @@ BOOL CHalfLifeMultiplay::FShouldSwitchWeapon( CBasePlayer *pPlayer, CBasePlayerI
 
 BOOL CHalfLifeMultiplay :: GetNextBestWeapon( CBasePlayer *pPlayer, CBasePlayerItem *pCurrentWeapon )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   return AgGameRules::GetNextBestWeapon( pPlayer, pCurrentWeapon );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	CBasePlayerItem *pCheck;
 	CBasePlayerItem *pBest;// this will be used in the event that we don't find a weapon in the same category.
@@ -474,9 +474,9 @@ void CHalfLifeMultiplay :: UpdateGameMode( CBasePlayer *pPlayer )
 
 void CHalfLifeMultiplay :: InitHUD( CBasePlayer *pl )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   AgGameRules::InitHUD(pl);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// notify other clients of player joining the game
 	UTIL_ClientPrintAll( HUD_PRINTNOTIFY, UTIL_VarArgs( "%s has joined the game\n", 
 		( pl->pev->netname && STRING(pl->pev->netname)[0] != 0 ) ? STRING(pl->pev->netname) : "unconnected" ) );
@@ -528,7 +528,7 @@ void CHalfLifeMultiplay :: InitHUD( CBasePlayer *pl )
 				WRITE_SHORT( g_teamplay );
 				WRITE_SHORT( GetTeamIndex( plr->m_szTeamName ) + 1 );
 			MESSAGE_END();
-//++ bullit@planethalflife.com
+//++ BulliT
       MESSAGE_BEGIN( MSG_ONE, gmsgSpectator, NULL, pl->edict());
         WRITE_BYTE(ENTINDEX(plr->edict()));
         WRITE_BYTE(plr->IsSpectator() ? 1 : 0);
@@ -540,7 +540,7 @@ void CHalfLifeMultiplay :: InitHUD( CBasePlayer *pl )
 		    WRITE_STRING(plr->GetAuthID());  
 	    MESSAGE_END();
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		}
 	}
 
@@ -555,9 +555,9 @@ void CHalfLifeMultiplay :: InitHUD( CBasePlayer *pl )
 //=========================================================
 void CHalfLifeMultiplay :: ClientDisconnected( edict_t *pClient )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   AgGameRules::ClientDisconnected(pClient);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	if ( pClient )
 	{
 		CBasePlayer *pPlayer = (CBasePlayer *)CBaseEntity::Instance( pClient );
@@ -612,10 +612,10 @@ float CHalfLifeMultiplay :: FlPlayerFallDamage( CBasePlayer *pPlayer )
 //=========================================================
 BOOL CHalfLifeMultiplay::FPlayerCanTakeDamage( CBasePlayer *pPlayer, CBaseEntity *pAttacker )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 	return AgGameRules::FPlayerCanTakeDamage( pPlayer, pAttacker );
 	//return TRUE;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 //=========================================================
@@ -639,10 +639,10 @@ void CHalfLifeMultiplay :: PlayerThink( CBasePlayer *pPlayer )
 //=========================================================
 void CHalfLifeMultiplay :: PlayerSpawn( CBasePlayer *pPlayer )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   AgGameRules::PlayerSpawn(pPlayer);
   return;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	BOOL		addDefault;
 	CBaseEntity	*pWeaponEntity = NULL;
 
@@ -668,10 +668,10 @@ void CHalfLifeMultiplay :: PlayerSpawn( CBasePlayer *pPlayer )
 //=========================================================
 BOOL CHalfLifeMultiplay :: FPlayerCanRespawn( CBasePlayer *pPlayer )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   return AgGameRules::FPlayerCanRespawn(pPlayer);
 //	return TRUE;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 //=========================================================
@@ -692,9 +692,9 @@ BOOL CHalfLifeMultiplay :: AllowAutoTargetCrosshair( void )
 //=========================================================
 int CHalfLifeMultiplay :: IPointsForKill( CBasePlayer *pAttacker, CBasePlayer *pKilled )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   AgGameRules::IPointsForKill(pAttacker, pKilled);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	return 1;
 }
 
@@ -728,11 +728,11 @@ void CHalfLifeMultiplay :: PlayerKilled( CBasePlayer *pVictim, entvars_t *pKille
 	}
 	else
 	{  // killed by the world
-//++ bullit@planethalflife.com
+//++ BulliT
 		//pKiller->frags -= 1;
     if (pVictim->pev)
       pVictim->pev->frags -= 1;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 
 	// update the scores
@@ -741,10 +741,10 @@ void CHalfLifeMultiplay :: PlayerKilled( CBasePlayer *pVictim, entvars_t *pKille
 		WRITE_BYTE( ENTINDEX(pVictim->edict()) );
 		WRITE_SHORT( pVictim->pev->frags );
 		WRITE_SHORT( pVictim->m_iDeaths );
-//++ bullit@planethalflife.com
+//++ BulliT
 		WRITE_SHORT( g_teamplay );
 		WRITE_SHORT( GetTeamIndex( pVictim->m_szTeamName ) + 1 );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	MESSAGE_END();
 
 	// killers score, if it's a player
@@ -757,10 +757,10 @@ void CHalfLifeMultiplay :: PlayerKilled( CBasePlayer *pVictim, entvars_t *pKille
 			WRITE_BYTE( ENTINDEX(PK->edict()) );
 			WRITE_SHORT( PK->pev->frags );
 			WRITE_SHORT( PK->m_iDeaths );
-//++ bullit@planethalflife.com
+//++ BulliT
 			WRITE_SHORT( g_teamplay );
 			WRITE_SHORT( GetTeamIndex( PK->m_szTeamName) + 1 );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		MESSAGE_END();
 
 		// let the killer paint another decal as soon as he'd like.
@@ -772,9 +772,9 @@ void CHalfLifeMultiplay :: PlayerKilled( CBasePlayer *pVictim, entvars_t *pKille
 		DeactivateSatchels( pVictim );
 	}
 #endif
-//++ bullit@planethalflife.com
+//++ BulliT
   AgGameRules::PlayerKilled(pVictim, pKiller, pInflictor);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 //=========================================================
@@ -782,9 +782,9 @@ void CHalfLifeMultiplay :: PlayerKilled( CBasePlayer *pVictim, entvars_t *pKille
 //=========================================================
 void CHalfLifeMultiplay::DeathNotice( CBasePlayer *pVictim, entvars_t *pKiller, entvars_t *pevInflictor )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   AgGameRules::DeathNotice(pVictim, pKiller, pevInflictor);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// Work out what killed the player, and send a message to all clients about it
 	CBaseEntity *Killer = CBaseEntity::Instance( pKiller );
 
@@ -921,7 +921,7 @@ void CHalfLifeMultiplay::DeathNotice( CBasePlayer *pVictim, entvars_t *pKiller, 
 		}
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   UTIL_SendDirectorMessage( pVictim->edict(), pevInflictor ? ENT(pevInflictor) : ENT(pKiller), 7 | DRC_FLAG_DRAMATIC);
   /*
 	MESSAGE_BEGIN( MSG_SPEC, SVC_HLTV );
@@ -934,7 +934,7 @@ void CHalfLifeMultiplay::DeathNotice( CBasePlayer *pVictim, entvars_t *pKiller, 
 		WRITE_LONG( 7 | DRC_FLAG_DRAMATIC);   // eventflags (priority and flags)
 	MESSAGE_END();
   */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 //  Print a standard message
 	// TODO: make this go direct to console
@@ -1067,9 +1067,9 @@ BOOL CHalfLifeMultiplay::CanHavePlayerItem( CBasePlayer *pPlayer, CBasePlayerIte
 	if ( weaponstay.value > 0 )
 	{
 		if ( pItem->iFlags() & ITEM_FLAG_LIMITINWORLD )
-//++ bullit@planethalflife.com
+//++ BulliT
 			return AgGameRules::CanHavePlayerItem( pPlayer, pItem );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 		// check if the player already has this weapon
 		for ( int i = 0 ; i < MAX_ITEM_TYPES ; i++ )
@@ -1088,18 +1088,18 @@ BOOL CHalfLifeMultiplay::CanHavePlayerItem( CBasePlayer *pPlayer, CBasePlayerIte
 		}
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
 	return AgGameRules::CanHavePlayerItem( pPlayer, pItem );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 //=========================================================
 //=========================================================
 BOOL CHalfLifeMultiplay::CanHaveItem( CBasePlayer *pPlayer, CItem *pItem )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 	return AgGameRules::CanHaveItem( pPlayer, pItem );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 //=========================================================
@@ -1148,9 +1148,9 @@ void CHalfLifeMultiplay::PlayerGotAmmo( CBasePlayer *pPlayer, char *szName, int 
 //=========================================================
 BOOL CHalfLifeMultiplay::IsAllowedToSpawn( CBaseEntity *pEntity )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   return AgGameRules::IsAllowedToSpawn(pEntity);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 //	if ( pEntity->pev->flags & FL_MONSTER )
 //		return FALSE;
 
@@ -1200,9 +1200,9 @@ float CHalfLifeMultiplay::FlHEVChargerRechargeTime( void )
 //=========================================================
 int CHalfLifeMultiplay::DeadPlayerWeapons( CBasePlayer *pPlayer )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   return AgGameRules::DeadPlayerWeapons( pPlayer );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	return GR_PLR_DROP_GUN_ACTIVE;
 }
 
@@ -1210,9 +1210,9 @@ int CHalfLifeMultiplay::DeadPlayerWeapons( CBasePlayer *pPlayer )
 //=========================================================
 int CHalfLifeMultiplay::DeadPlayerAmmo( CBasePlayer *pPlayer )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   return AgGameRules::DeadPlayerAmmo( pPlayer );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	return GR_PLR_DROP_AMMO_ACTIVE;
 }
 
@@ -1267,9 +1267,9 @@ void CHalfLifeMultiplay :: GoToIntermission( void )
 {
 	if ( g_fGameOver )
 		return;  // intermission has already been triggered, so ignore.
-//++ bullit@planethalflife.com
+//++ BulliT
   AgGameRules::GoToIntermission();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	MESSAGE_BEGIN(MSG_ALL, SVC_INTERMISSION);
 	MESSAGE_END();

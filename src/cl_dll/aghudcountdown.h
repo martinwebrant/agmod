@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_COUNTDOWN_HUD_)
 #define _AG_COUNTDOWN_HUD_
@@ -20,4 +20,4 @@ private:
 
 #endif //_AG_COUNTDOWN_HUD_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

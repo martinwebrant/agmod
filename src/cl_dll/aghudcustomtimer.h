@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_CUSTOMTIMER_HUD_)
 #define _AG_CUSTOMTIMER_HUD_
@@ -20,4 +20,4 @@ public:
 
 #endif //_AG_CUSTOMTIMER_HUD_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -147,10 +147,10 @@ CTeamMenuPanel::CTeamMenuPanel(int iTrans, int iRemoveMe, int x,int y,int wide,i
 	// Create the Spectate button
 	m_pSpectateButton = new SpectateButton( CHudTextMessage::BufferedLocaliseTextString( "#Menu_Spectate" ), TEAMMENU_TOPLEFT_BUTTON_X, 0, TEAMMENU_BUTTON_SIZE_X, TEAMMENU_BUTTON_SIZE_Y, true);
 	m_pSpectateButton->setParent( this );
-//++ bullit@planethalflife.com
+//++ BulliT
 	//m_pSpectateButton->addActionSignal( new CMenuHandler_StringCommand( "spectate", true ) );
   m_pSpectateButton->addActionSignal( new CMenuHandler_StringCommand( "spectate 1", true ) );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	m_pSpectateButton->setBoundKey( '6' );
 	m_pSpectateButton->addInputSignal( new CHandler_MenuButtonOver(this, 6) );
 
@@ -216,9 +216,9 @@ void CTeamMenuPanel::Update( void )
 					strncat( szPlayerList, g_PlayerInfoList[j].name, sizeof(szPlayerList) - strlen(szPlayerList) );
 					szPlayerList[ sizeof(szPlayerList) - 1 ] = '\0';
 				}
-//++ bullit@planethalflife.com
+//++ BulliT
 				AgStripColors(szPlayerList);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 				if (iTotal > 0)
 				{

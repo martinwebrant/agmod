@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(__AG_STATS__)
 #define __AG_STATS__
@@ -79,4 +79,4 @@ extern DLL_GLOBAL AgStats Stats;
 
 #endif // !defined(__AG_STATS__)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include <time.h>
 #include "hud.h"
@@ -151,4 +151,4 @@ void AgHudTimer::LiveUpdate()
 
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

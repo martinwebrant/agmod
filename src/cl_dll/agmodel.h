@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGMODEL_H__EC242BA8_B4C4_45B1_A6E7_1BF186C6B9CF__INCLUDED_)
 #define AFX_AGMODEL_H__EC242BA8_B4C4_45B1_A6E7_1BF186C6B9CF__INCLUDED_
@@ -43,4 +43,4 @@ public:
 
 #endif // !defined(AFX_AGMODEL_H__EC242BA8_B4C4_45B1_A6E7_1BF186C6B9CF__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

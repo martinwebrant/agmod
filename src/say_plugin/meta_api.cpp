@@ -62,7 +62,7 @@ plugin_info_t Plugin_info = {
 	"Say plugin",	// name
 	"1.12.4",	// version
 	"2002/08/10",	// date
-	"bullit@planethalflife.com>",	// author
+	"Martin Webrant>",	// author
 	"http://www.pmers.net/clan/",	// url
 	"SAY",	// logtag
 	PT_ANYTIME,	// (when) loadable

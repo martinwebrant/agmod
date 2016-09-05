@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_VOTE_HUD_)
 #define _AG_VOTE_HUD_
@@ -29,4 +29,4 @@ private:
 
 #endif //_AG_VOTE_HUD_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

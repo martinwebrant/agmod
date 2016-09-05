@@ -107,7 +107,7 @@ void CHalfLifeTeamplay :: Think ( void )
 		return;
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   if (g_pGameRules->m_iGameMode == LTS)
     m_LMS.Think();
 
@@ -116,14 +116,14 @@ void CHalfLifeTeamplay :: Think ( void )
     GoToIntermission();
     return;
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	float flTimeLimit = CVAR_GET_FLOAT("mp_timelimit") * 60;
 	
-//++ bullit@planethalflife.com
+//++ BulliT
 	//time_remaining = (int)(flTimeLimit ? ( flTimeLimit - gpGlobals->time ) : 0);
   time_remaining = (int)(flTimeLimit ? ( flTimeLimit - gpGlobals->time + m_fGameStart) : 0);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if ( flTimeLimit != 0 && gpGlobals->time >= flTimeLimit )
 	{
@@ -325,9 +325,9 @@ void CHalfLifeTeamplay::ChangePlayerTeam( CBasePlayer *pPlayer, const char *pTea
 //=========================================================
 void CHalfLifeTeamplay::ClientUserInfoChanged( CBasePlayer *pPlayer, char *infobuffer )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   CHalfLifeMultiplay::ClientUserInfoChanged(pPlayer, infobuffer);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	char text[1024];
 
 	// prevent skin/color/model changes

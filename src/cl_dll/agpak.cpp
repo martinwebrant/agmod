@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "agglobal.h"
 #include "agpak.h"
@@ -132,4 +132,4 @@ Limits - Unknown file limit. Don't create too many though :) I would think aroun
 prehaps 2000 (in which case, 2048 would be reasonible) 
 */
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

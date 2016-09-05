@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGTIMEOUT_H__699E98F5_E1CB_4F41_8492_F741C0450C4D__INCLUDED_)
 #define AFX_AGTIMEOUT_H__699E98F5_E1CB_4F41_8492_F741C0450C4D__INCLUDED_
@@ -32,5 +32,5 @@ public:
 
 #endif // !defined(AFX_AGTIMEOUT_H__699E98F5_E1CB_4F41_8492_F741C0450C4D__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 

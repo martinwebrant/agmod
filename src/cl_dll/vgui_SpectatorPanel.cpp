@@ -19,9 +19,9 @@
 #include "vgui_SpectatorPanel.h"
 #include "vgui_scorepanel.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 extern cvar_t* g_pcl_show_banner;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 #define PANEL_HEIGHT 32
@@ -211,9 +211,9 @@ void SpectatorPanel::Initialize()
 	m_Separator->setVisible( false );
 	m_TimerImage->setVisible( false );
 
-//++ bullit@planethalflife.com 
+//++ BulliT 
   m_TopBorder->setVisible(false);
-//-- bullit@planethalflife.com 
+//-- Martin Webrant 
 }
 
 void SpectatorPanel::ShowMenu(bool isVisible)
@@ -247,14 +247,14 @@ void SpectatorPanel::ShowMenu(bool isVisible)
 
 			gHUD.m_TextMessage.MsgFunc_TextMsg( NULL, strlen( string ) + 1, string );
 		}
-//++ bullit@planethalflife.com 
+//++ BulliT 
     m_BottomBorder->m_iTransparency = 255;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
-//++ bullit@planethalflife.com 
+//++ BulliT 
   else
     m_BottomBorder->m_iTransparency = 64;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	m_menuVisible = isVisible;
 
@@ -305,10 +305,10 @@ void SpectatorPanel::EnableInsetView(bool isEnabled)
 		// short black bar to see full inset
 		m_TopBorder->setBounds(	XRES(offset), 0, XRES(640 - offset ), YRES(PANEL_HEIGHT) );
 
-//++ bullit@planethalflife.com
+//++ BulliT
 //		if ( gEngfuncs.IsSpectateOnly()  )
     if ( gEngfuncs.IsSpectateOnly() && g_pcl_show_banner->value > 0 )
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		{
 			m_TopBanner->setVisible( true );
 			m_TopBanner->setPos( XRES(offset), 0 );
@@ -324,10 +324,10 @@ void SpectatorPanel::EnableInsetView(bool isEnabled)
 	{	
 		// full black bar, no inset border
 		// show banner only in real HLTV mode
-//++ bullit@planethalflife.com
+//++ BulliT
 //		if ( gEngfuncs.IsSpectateOnly()  )
     if ( gEngfuncs.IsSpectateOnly() && g_pcl_show_banner->value > 0 )
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		{
 			m_TopBanner->setVisible( true );
 			m_TopBanner->setPos( 0,0 );

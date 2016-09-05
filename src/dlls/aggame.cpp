@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include	"extdll.h"
 #include	"util.h"
@@ -31,4 +31,4 @@ bool AgGame::IsValid()
           0 != m_sDescription.size());
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

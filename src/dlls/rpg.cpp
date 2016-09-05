@@ -22,11 +22,11 @@
 #include "nodes.h"
 #include "player.h"
 #include "gamerules.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
 #include "agstats.h"
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 
@@ -276,14 +276,14 @@ void CRpgRocket :: FollowThink( void  )
 		if (pev->waterlevel == 0 && pev->velocity.Length() < 1500)
 		{
 			Detonate( );
-//++ bullit@planethalflife.com
+//++ BulliT
       //Fixes the bug where it won't auto reload when it explodes coming out of the water
 			if ( m_pLauncher )
 			{
 				// my launcher is still around, tell it I'm dead.
 				m_pLauncher->m_cActiveRockets--;
 			}
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		}
 	}
 	// ALERT( at_console, "%.0f\n", flSpeed );
@@ -344,7 +344,7 @@ void CRpg::Reload( void )
 
 void CRpg::Spawn( )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifndef CLIENT_DLL
   if (SGBOW == AgGametype())
   {
@@ -353,7 +353,7 @@ void CRpg::Spawn( )
     return;
   }
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	Precache( );
 	m_iId = WEAPON_RPG;
 
@@ -488,7 +488,7 @@ void CRpg::PrimaryAttack()
 		CRpgRocket *pRocket = CRpgRocket::CreateRpgRocket( vecSrc, m_pPlayer->pev->v_angle, m_pPlayer, this );
 
 		UTIL_MakeVectors( m_pPlayer->pev->v_angle );// RpgRocket::Create stomps on globals, so remake.
-//++ bullit@planethalflife.com
+//++ BulliT
     if (ag_rpg_fix.value > 0)
     {
       //Fixes the RPG wall bugg just a little bit - I dont want to remove it all. (You jump back and get the RPG in back of your head)
@@ -498,7 +498,7 @@ void CRpg::PrimaryAttack()
         pRocket->pev->velocity = pRocket->pev->velocity + gpGlobals->v_forward * DotProduct( m_pPlayer->pev->velocity, gpGlobals->v_forward );
     }
     else
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		pRocket->pev->velocity = pRocket->pev->velocity + gpGlobals->v_forward * DotProduct( m_pPlayer->pev->velocity, gpGlobals->v_forward );
 #endif
 
@@ -521,11 +521,11 @@ void CRpg::PrimaryAttack()
 #endif
 
 		m_iClip--; 
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
   Stats.FireShot(m_pPlayer,STRING(pev->classname));
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 				
 		m_flNextPrimaryAttack = UTIL_WeaponTimeBase() + 1.5;
 		m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 1.5;
@@ -533,10 +533,10 @@ void CRpg::PrimaryAttack()
 	else
 	{
 		PlayEmptySound( );
-//++ bullit@planethalflife.com
+//++ BulliT
     //fixes the fast-clicking bug
 		m_flNextPrimaryAttack = UTIL_WeaponTimeBase() + 1.5;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 	UpdateSpot( );
 }

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -64,4 +64,4 @@ void AgHudCustomTimer::UserCmd_CustomTimer()
 
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

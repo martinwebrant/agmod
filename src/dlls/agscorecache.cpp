@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -132,4 +132,4 @@ void AgScoreCache::Reset()
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

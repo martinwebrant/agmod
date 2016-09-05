@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -406,4 +406,4 @@ int AgHudLocation::MsgFunc_InitLoc(const char *pszName,  int iSize, void *pbuf)
 	return 1;
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

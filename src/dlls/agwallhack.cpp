@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -44,4 +44,4 @@ void AgWallhack::SendToPlayer(CBasePlayer* pPlayer)
 #endif //AG_USE_CHEATPROTECTION
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "agcrc32.h"
 
@@ -81,4 +81,4 @@ WORD32 AgCRC32(const void* pData, WORD32 lNumOfBytes)
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

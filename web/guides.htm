@@ -1,0 +1,533 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Adrenaline Gamer</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<meta name="MSSmartTagsPreventParsing" content="TRUE">
+		<meta name="Keywords" content="Adrenaline Gamer, AG, Half-Life, BulliT, pmers, Mod">
+		<style type="text/css" media="all">@import "style-all.css";</style>
+		<link rel="stylesheet" type="text/css" media="print" href="style-print.css">
+			<link rel="shortcut icon" href="favicon.ico">
+	</head>
+	<body>
+		<div id='page'>
+			<div id='pagetitle'>
+				<center>
+                    <img src="images/aglogo.jpg">
+				</center>
+			</div>
+			<div id='mainbody'>
+				<b>&#8220;More control... More action... More adrenaline&#8221;</b>
+				<h2>Saturday April 28, 2003</h2>
+				<a name="Skinning Guide"></a>
+				<h3>Guide for skinning a HL Model</h3>
+				<div class="bodyitem">
+					<p>
+						<strong>Introduction:</strong><br>
+						The difference between modeling and skinning is very big. Modeling is making 
+						your own model with his own morphs and bones etc. The skin is just the outside 
+						that you're seeing.<br>
+						It's very easy to change only a skin. I'll try to explain how to do it in 6 
+						steps.<br>
+						<br>
+						<strong>Step1: Download HL MV</strong><br>
+						<br>
+						Download the Half-Life Model Viewer from this page:<br>
+						<a href="http://www.swissquake.ch/chumbalum-soft/hlmv/index.html">http://www.swissquake.ch/chumbalum-soft/hlmv/index.html</a>
+						and install the program.
+						<br>
+						<br>
+						<strong>Step2: Open Model</strong><br>
+						<br>
+						Open the program and load the model, which needs a new skin (File -> Load 
+						Model)
+						<br>
+						<br>
+						<strong>Step3: Get DM_Base.bmp</strong>
+						<br>
+						<br>
+						Go to the tab Texture in the bottom of your screen. Then you see the flat skin 
+						of the model you just chose. Press Export and save the flat bmp-file (most of 
+						the time it's called DM_base) to a directory you wish.
+						<br>
+						<br>
+						<strong>Step4: Edit model + teamcolors</strong>
+						<br>
+						<br>
+						Edit the DM_base.bmp in a paint or photo edit program. I always use Jasc Paint 
+						Shop Pro for it, cause it also allows you add team colors (Top and bottom 
+						color). In JPSP you got a pallet where all the colors got a number; a pallet 
+						index. The colors with index 160 - 191 are the top colors and the color with 
+						index 192 - 223 are the bottomcolors. The pixels you draw with the colors in 
+						that range will be teamcolors.<br>
+						(note: The teamcolors only work if the model you used, also got teamcolors. It 
+						is possible to make a model without teamcolors to a model with teamcolors, but 
+						that's a more difficult job and not easy to explain.)<br>
+						To change the colors in the pallet go to: Colors -> Edit Pallet (or use Shift + 
+						P)<br>
+						For the teamcolors Half-Life uses the HSB-colormodel (Hue, Saturation and 
+						Brightness). With the command topcolor or bottomcolor you will only change the 
+						Hue and not the Saturation or brightness! It doesn't matter if you use Blue 
+						(RGB: 0 0 255) or Red (RGB: 255 0 0), cause when you convert these colors to 
+						the HSB-model you got for Blue H:170, S:255, B:128 and for Red H:0, S:255, 
+						B:128. The only difference between these colors is the Hue, but that will be 
+						changed with the top- and bottomcolor command.
+						<br>
+						<br>
+						<strong>Step5: Preview new skin on model</strong><br>
+						<br>
+						When you changed the skin and maybe added some nice teamcolors then you can 
+						save the DM_base.bmp and go back to the Half-Life Model Viewer.<br>
+						Go to the tab Textures again and choose import. Select the DM_base.bmp that you 
+						just edited. (note: some models contain more than one skin and if you wanna 
+						import an edited skin, be sure that you got the right skin selected or else 
+						you'll get an error that the size isn't the same).<br>
+						To view the new skin select another tab then Texture.<br>
+						If you're not happy with it, you can edit the DM_base again and repeat this 
+						step.<br>
+						<br>
+						<strong>Step6: Save new Model</strong><br>
+						<br>
+						If you're satisfied with the result you can go back to the texture tab and 
+						press the "Save Model" button. Chose the right directory to save it and you can 
+						enjoy the game with your new skinned model.<br>
+						<br>
+						<strong>You are done!</strong><br>
+						<br>
+						<img src="guides/images/ctfmodels.jpg" /> Download my CTF models: <a href="guides/ctfmodels.zip">
+							ctfmodels.zip</a><br><br>
+					</p>
+					<h5>
+						&#8212; &nbsp; <a href="mailto:nvdberge@yahoo.com">.[TT].Voodoo</a> &nbsp; 
+						&#8212;
+					</h5>
+				</div>
+				<h2>Sunday September 2, 2001</h2>
+				<a name="EAX Guide"></a>
+				<h3>EAX Guide</h3>
+				<div class="bodyitem">
+					<p>
+						Alot of people claim A3D is much better for HL than EAX (besides the distance 
+						factor), and after asking why, the answer generally was that they tried eax 
+						once, and didnt think much of it. What came as a suprise though, was that did 
+						not even tweak their EAX settings and set it up right. Its not much of a 
+						suprise then that they didnt think it sounded all that great.<BR>
+					<p>
+						To let people give it a decent try though, and to allow current users to get 
+						the most out their card, heres a short guide to setting it up correctly.<BR>
+					<p>
+						First, download the latest Liveware from the <a href="http://www.soundblaster.com/liveware">
+							Soundblaster</a> site (3 is the current version) and install. Once this is 
+						done, fire up Audio HQ and your ready to being tweaking.<BR>
+					<p>
+						<center><IMG src="guides/images/audiohq.gif"></IMG></center>
+						<BR>
+					<p>
+						Next up, click Device Tools and set the max amount of waves playable to 32 as 
+						seen in the pic below.<BR>
+					<p>
+						<center><IMG src="guides/images/wave32.gif"></IMG></center>
+						<BR>
+					<p>
+						Now back in audio hq, open up enviromental audio. Once there, select No Effects 
+						from the drop down menu.<BR>
+					<P><center><IMG src="guides/images/noeffects.gif"></IMG></center>
+						<BR>
+					<p>
+						Still in enviromental audio, click the source tab to bring up the screen below. 
+						Once there, select Wave/Direct sound from the drop down menu and then turn 
+						Reverb and and Chorus all the way down to 0% (leave original sound as it was at 
+						100%).<BR>
+					<p>
+						<center><IMG src="guides/images/wave.gif"></IMG></center>
+						<BR>
+					<p>
+						Next, click the options tab in enviromental audio and click the boxes as shown 
+						below.<BR>
+					<p>
+						<center><IMG src="guides/images/save.gif"></IMG></center>
+						<BR>
+					<p>
+						Once this is done, press close and you will be prompted to save your changes, 
+						do so as shown below.<BR>
+					<p>
+						<center><IMG src="guides/images/save2.gif"></IMG></center>
+						<BR>
+					<p>
+						The last change you need to make in windows, is to setup the mixer. Open it up 
+						from audiohq, and then tweak the settings similar to the picture below.<BR>
+					<p>
+						<center><IMG src="guides/images/mixer.gif"></IMG></center>
+						<BR>
+					<p>
+						Note though, that one or two of these are based on my speaker setup, they may 
+						sound different on your system (Try to set bass and treble the same as in the 
+						picture though, as this will make the sound much clearer and easier to 
+						pinpoint). The main one you should test is the front/rear balance. To do this, 
+						set it in the middle, the go into a server and then test by standing still and 
+						thowing a grenade in front of you and listen to the volume of the explosion. 
+						Now do the same again, except as soon as you have thrown the grenade, do a 
+						quick 180 degree spin so that you back is facing the the coming explosion. Now 
+						if the sound is excatly the same volume as the previous one, then your surround 
+						sound is setup right. If is not, go back and try a different setting.
+						<BR>
+					<p>
+						The last thing you need to do, is to edit the settings in your config. Here are 
+						the ones i have in mine, although you might want to tweak these so it sounds 
+						better for your system (should be fine as they are though):<BR>
+						<BR>
+						<blockquote>// SOUND SETTINGS<BR>
+							s_rolloff "1.0"
+							<BR>
+							s_doppler "0.0"<BR>
+							s_distance "60"<BR>
+							s_automin_distance "2.0"<BR>
+							s_automax_distance "30.0"<BR>
+							s_min_distance "8.0"<BR>
+							s_max_distance "1000.0"<BR>
+							s_leafnum "0"<BR>
+							s_refgain "0.4"<BR>
+							s_refdelay "4"<BR>
+							s_polykeep "1000000000"<BR>
+							s_polysize "10000000"<BR>
+							s_numpolys "200"<BR>
+							s_reverb "0"<BR>
+							s_occlude "0"<BR>
+							s_usepvs "0"<BR>
+							s_bloat "2"<BR>
+							s_eax "1"<BR>
+							room_off 1<BR>
+							hisound "1.000000"<BR>
+							bgmvolume "0.000000"<BR>
+							hisound "1"<BR>
+							ambient_level 0<BR>
+					</p>
+				</div>
+				<h5>
+					&#8212; &nbsp; <a href="mailto:bullit@planethalflife.com">CHiNX</a> &nbsp; 
+					&#8212;
+				</h5>
+				<h2>Friday March 9, 2001</h2>
+				<a name="Bunnyjumping"></a>
+				<h3>Bunnyjumping</h3>
+				<div class="bodyitem">
+					<B>First Things</B><BR>
+					Bunnyhopping in HL is alot harder than in say QW (quakeworld, enhanced netcode 
+					version of quake1) where it has become an artform that most the top players use 
+					that speeds up the game and also adds a bit more skill to the game. Not only 
+					that but its great fun doing it. The reason its harder in HL is because of a 
+					bug in the HL engine which causes the player to stick to the floor sometimes 
+					when jumping (wether its an actual bug is debateable as Saturn pointed out to 
+					me, as its someting todo with the skelatal model system, but either way, it 
+					hinders jumping well unlike other games). You can still bunnyhop ok, but 
+					nowhere near as good as you could in qw.
+					<P>
+					Well, i finally found a fix for that thanks to Capcop. The fix is a small alias 
+					that replaces your normal jump button, and hammers +jump a few times making it 
+					so you no longer stick to the floor.
+					<P>
+						<blockquote>bind "MOUSE3" "+decentjump"<BR>
+							alias +decentjump "+jump; wait; -jump; wait; +jump; wait; -jump; wait; +jump; 
+							wait; -jump; wait; +jump; wait; -jump"<BR>
+							alias -decentjump "-jump" </blockquote>
+					Ive edited a little from his though, as it was causing problems with gauss 
+					jumping, but it still works just as well.
+					<P>
+					Now dont start thinking that just because you have this your automatically 
+					going to be able to bunnyhop perfectly. Like i said, all this does is fix the 
+					bug in the hl engine to stop you sticking, and thats all. You still need to 
+					spend alot of time and practice on mastering the technique, so lets take a look 
+					at that.
+					<P>
+						<b>The Technique</b><BR>
+					One of the hardest parts of bunnyhopping is getting the initial speed up and 
+					getting some momentum going. To do this you need to learn how to accel jump.
+					<P>
+					The first thing you do is to start strafing to the left a little, and at the 
+					same time, turn your mouse left about 30 degrees. Do this for about 2 seconds 
+					(count it while practicing). Next, hit jump, release forward, strafe right and 
+					start to turn right ALL at the same time. To get it working best, move your 
+					mouse up a bit while turning right,a nd then down a bit as you get to end of 
+					your turning, as its better to make a semi circle/arc with your mouse whilst 
+					doing doing this.
+					<P>
+					As you land again, do excatly the same as described above, expect to the left. 
+					If your doing it right, you should be making a figure 8 shape with your mouse.
+					<P>
+					To make learning it a little easier, if have made a small demo which you can 
+					watch so that you can easier understand the technique. In it, you will see that 
+					i press fire a few times, this is to show you when you need to make the switch 
+					(jump, changing strafes, turning etc)
+					<P>
+						<a href="guides/bunnystart.zip">Starting Jump</a>
+					<P>
+						For the best way to study it, watch it in slow motion by using this: <b>playdemo 
+							bunnystart.dem 0.5</b>
+					which wil play it at half speed.
+					<P>
+						<B>Some Pointers</B><BR>
+						Theres a few things you should pay attention to when practicing, such as the 
+						fundamental rule that should always release forward on the first jump and <b>never</b>
+					press it again during the rest of your jumps. This may seem wierd, but it is 
+					the strafes that give you the speed in the air, holding down forward will just 
+					slow you down to the server max speed again.
+					<P>
+					Another mistake a few make, is that you should never move your mouse while you 
+					are touching the ground. This is a sure fire way to lose speed.
+					<P>
+					Once you begin to get it right, you might notice your not picking up as much 
+					speed as you like. Well to this, make big sweeping corners/turns as this is 
+					where your speed is gained. When doing this though, dont switch strafes or turn 
+					the other way, continue turning and strafing the same way as you fly round the 
+					corner, only switching and turning the other way when your back on a straight.
+					<P>
+					Lastly, if your having trouble getting speed up, practice with the gauss and 
+					use that the fling you across the map at a decent speed, and then try to 
+					carrying on the jumping as you land. You may find this alot easier when trying 
+					to find the right technique.
+					<P>
+					In the end though, its all practice. Its quite a hard skil to learn, and if 
+					your serious about wanting todo it, then its going to take you quite a while to 
+					get it right. Just keep at it, practicing in an open server or on lan until you 
+					find the right feel for it (youll know when you do it right) and youll soon get 
+					it.
+					<P>
+						For futher study, check out <a href="http://www.challenge-tv.com/demos/index.php3?demo=11985">
+							this demo</a> i recorded and watch the movement closely.
+						<h5>
+							&#8212; &nbsp; <a href="mailto:bullit@planethalflife.com">CHiNX</a> &nbsp; 
+							&#8212;
+						</h5>
+				</div>
+				<h2>Unknown</h2>
+				<a name="Font Editing"></a>
+				<h3>Font Editing</h3>
+				<div class="bodyitem">
+					<p>After my post on AG forum, lot of guys ask me how i do to change fonts ? Then i 
+						deceide to do a collums about this topic.</p>
+					<p><b>1st Step, changing the color :</b>
+					</p>
+					<p>It s very easy to change console fonts color. Valve provide us since 1100 patch 
+						a cmd for that : con_color "<font color="#FF0000"><b>RRR</b></font> <b><font color="#00FF00">
+								GGG</font> <font color="#0000FF">BBB</font></b>". RGB value ( 0 to 255 
+						) dertermine ur color.<br>
+						<i>Some example :<br>
+						</i><font color="#FF0000"><b>Red console</b></font> : type con_color "255 0 0"<br>
+						<font color="#00FF00"><b>Green console</b></font> : type con_color " 0 255 0"<br>
+						<font color="#0000FF"><b>Blue console</b></font> : type con_color "0 0 255"<br>
+						<font color="#FFFF00"><b>Yellow console</b></font> : type con_color "255 255 0"<br>
+						<font color="#FF00FF"><b>Pink console</b></font> : type con_color "255 0 255"<br>
+						<font color="#00FFFF"><b>Cyan console</b></font> : type con_color "0 255 255"
+						<br>
+						<br>
+						If u wanna black fonts, set all value to 0, if White is needed, fix all value 
+						to 255.</p>
+					<p><b>2nd Step, changing the fonts :</b>
+					</p>
+					<p>In last version of HL, console font were bitmap, now valve changed it to True 
+						type fonts. The console fonts is also located in fonts.wad file in valve 
+						directory. To changing standard Arial fonts in HL u need a little program 
+						provided by Valve in the last SDK, called <a href="guides/makefont.zip">Makefont.exe</a></p>
+					<p>In a DOS console run it, u will have all parameter needed :<br>
+						<br>
+						<i><b>[-font "fontname"]</b></i> : Here u need enter the real true type fonts 
+						name ( Arial, Tahoma, etc...)<br>
+						<b>[<i>-italic] </i></b><i>: </i>Enter this Flag if u wanna Italic font<br>
+						<i><b>[-underline]</b> :</i> Enter this Flag if u wanna underlined font<i><br>
+							<b>[-bold] </b>: </i>Enter this Flag if u wanna bold font<i><br>
+							<b>[-pointsizes sm med lg] </b>: </i>Here u dertermine ur font size<i>. (seem 
+							to be bugged )
+							<br>
+							<b>outfile </b>: </i>output filename ( is needed )</p>
+					<p>example : makefont -font "Times New roman" -underline -bold fonts.wad</p>
+					<p>Result :
+					</p>
+					<p><img src="guides/images/fonts.jpg" width="423" height="98"></p>
+					<p>Remember that is just an example and u can do what u want. Next time i will show 
+						u how edit ur HUD screen.</p>
+					<h5>
+						&#8212; &nbsp; <a href="mailto:bullit@planethalflife.com">Saturn48</a> &nbsp; 
+						&#8212;
+					</h5>
+				</div>
+				<h2>Unknown</h2>
+				<a name="Hud Editing"></a>
+				<h3>Hud Editing</h3>
+				<div class="bodyitem">
+					After changing style and color of fonts, i will explain how to edit HUD sprite 
+					of HL. This tutotial can also work with other mod.<br>
+					</p>
+					<p><b>1nd Step, Extracting, Viewing and building sprites:</b>
+					</p>
+					<p>The easy part of tutorials =). U just need 3 small programs to extract (<b><i>Pak 
+								explorer</i></b>), view (<i><b>Sprview.exe</b></i>) and build sprites (<i><b>Sprwiz.exe</b></i>). 
+						All can be found on <a href="http://www.planethalflife.com/wavelength/">http://www.planethalflife.com/wavelength/</a>.</p>
+					<p>1. Run Pak explorer, then extract a sprite ( 640hud7.spr)<br>
+						2. Run Sprview and save as 256 BMP file.</p>
+					<p><img src="guides/images/sprview.jpg" width="272" height="192"><br>
+						3. Edit ur BMP and save as 256 BMP format.<br>
+						4. Run Sprwiz, keep all default setting and save ur sprite.</p>
+					<p><img src="guides/images/sprwiz.jpg" width="339" height="315"></p>
+					<p>Congratulation, u edit ur first Sprite.</p>
+					<p><b>2. Color Sprites :</b>
+					</p>
+					<p>Unfortunetly, coloring sprites have some constraint. U can notice that standard 
+						sprite are in grey scale and in game are yellow. It s due to the coders that 
+						coded yellow color for sprites in client.dll. So i ve tried to make some HUD 
+						color, But only green and red sprites works because of the yellow coded in the 
+						client.dll. In other word, u can only do red or green HUD. Other color doesn't 
+						work. U can also download my HUD pak at
+					</p>
+					<p><br>
+						<a href="guides/green640HUDpak.zip">green640HUDpak.zip</a><br>
+						</a>
+					</p>
+					<p>Enjoy it.</p>
+					<p><b>3nd Step, the Hud.txt:</b>
+					</p>
+					<p>If u re curios, u have without doubt notice the file <i><b>hud.txt</b></i> in 
+						the Valve/sprites dir. Lemme show u the syntax :<br>
+					</p>
+					<p><b><i>here is an piece of this file :</i></b></p>
+					<blockquote>
+						<p>d_egon 320 320hud1 96 240 32 16<br>
+							d_hornet 320 320hud1 144 208 48 16
+							<br>
+							d_grenade 320 320hud1 144 224 32 16</p>
+						<p><br>
+							number_0 640 640hud7 0 0 20 24
+							<br>
+							number_1 640 640hud7 24 0 20 24
+							<br>
+							number_2 640 640hud7 48 0 20 24
+							<br>
+							number_3 640 640hud7 72 0 20 24
+						</p>
+						<p>item_healthkit 640 640hud2 176 48 44 44<br>
+							item_longjump 640 640hud2 176 96 44 44</p>
+					</blockquote>
+					<p><b><i>Description :</i></b></p>
+					<p>The 1st string is the name of the sprite/entities to display ( numbers, item, 
+						wepaons, ... )<br>
+						The 2nd describe your screen resolution (320, for 320x240 -> 512x384, and 640 
+						from 640x480 to higher ).<br>
+						Next string, is the file name of the sprite located in sprites dir.<br>
+						And the 4 numbers describe a box ( x1,y1,x2,y2) , containing the sprite.</p>
+					<p>In other word, if i get this line "<b><i>number_0 640 640hud7 0 0 20 24</i></b>",<i> </i>
+						the sprite "number_0" for resolution 640x480+ is in the file <b>640hud7.spr </b>
+						contained in the box with this coordinate (0 ,0, 20, 24).</p>
+					<p>This <b>hud.txt </b>provide u the ability to make big and detailled sprite.</p>
+					<p><b>Conclusion :</b>
+					</p>
+					<p>With a bit imagination and patience, now can do hud like this :
+						<br>
+					</p>
+					<p><img src="guides/images/hud.jpg" width="436" height="100"></p>
+					<p>
+					</p>
+					<p>
+					</p>
+					<p>
+					Special thx to T-rex aka Teco from SSD for Digital counter sprite :p
+					<p><br>
+					</p>
+					<h5>
+						&#8212; &nbsp; <a href="mailto:bullit@planethalflife.com">Saturn48</a> &nbsp; 
+						&#8212;
+					</h5>
+				</div>
+				<h2>Unknown</h2>
+				<a name="Demo2Avi"></a>
+				<h3>Demo2Avi</h3>
+				<div class="bodyitem">
+					<p>Half-Life has the capability to record it's video out to a custom file. You can 
+						then process it with a utility from the SDK that saves each frame to a separate 
+						.bmp file, and compile it into an .avi with programs like Adobe Premiere or 
+						Fast Movie Processor. This is a great way to include footage from the game into 
+						a promotional video for your mod. Unfortunately no sound is recorded at all 
+						during this. You could try running an audio-capture program while it records 
+						video, or plug your audio output into another computer's audio input or into a 
+						tape recorder. There really aren't too many options for this. Also, these files 
+						can get really big. It's around 70 meg for just 30 seconds of video, although 
+						you can make your final .avi reasonably small by compressing it.
+					</p>
+					<p><b><i>1. Recording Movie</i></b></p>
+					<p>Run Half-Life in 320 x 240 and bring down the console. Type<i><b> fps_max </b></i>
+						15 or 12. Play your demo with a time scale of 0.1 (<i><b>playdemo demo 0.1</b></i>
+						).Type<i><b> startmovie movie</b></i>. This tells it to start recording. I 
+						called it movie but you can name it whatever you'd like. Type <i><b>endmovie</b></i>
+						to stop recording and quit out of Half-life. Whether you were playing Half-Life 
+						or a mod, the movie will always be saved to the Half-Life folder.</p>
+					<p><b><i>2. Extracting Movie</i></b></p>
+					<p>Drag-n-drop the movie file onto <a href="guides/mkmovie.zip">mkmovie.exe</a>. It 
+						will create .bmp files for each frame. It will give them the same name as the 
+						movie file, so if you'd like to have a different name, run it with the command 
+						line: mkmovie [-basename <.bmp name>]
+					</p>
+					<p><b><i>3. Building Movie</i></b><movie filename>
+					</p>
+					<p>Ok, now you got all bitmap of the movie. Run Premiere or Fast Movie Processor ( 
+						or other editing/compositing stuff ) import bitmap sequence of your demo. Time 
+						strech, add effects, sound, music if needed then make movie ( CTRL + M in Adobe 
+						Premiere ). Choose your Video codec ( Cinepak, RLE, DIvX,.... ) and press OK. 
+						Don't forget to set frame rate to 15.</p>
+					<p>Ok, you can see the result : <a href="http://cccp.altajeux.com/files/ag.avi">ag.avi</a></p>
+					<P>
+						<B>Update -</B>
+					By CHiNX
+					<P>
+						1. Find the sequence you want within a demo and note the time (use hud_timer 2 
+						if its an AG demo)
+						<BR>
+						2. Bind mouse1 to "startmovie moviename" and mouse2 to endmovie (most keys do 
+						not work during demo playback)<BR>
+						3. Change fps_max to 15 and then timedemo the demo.<BR>
+						4. As soon as you come to the action sequence, hit mouse1 and let it record the 
+						movie. Hit mouse2 as soon as its over (dont let it run too long or will take up 
+						loads of space).<BR>
+						5. Locate the movie file in your hl dir and move it an empty dir on your hdd.<BR>
+						6. Put <a href="guides/mkmovie.zip">mkmovie.exe</a> in the same dir as the 
+						movie and then create a shortcut of the exe. In the properties, add the movies 
+						name after the url (e.g. D:/Movie/Moviemkmovie.exe bootjump) and then run the 
+						shortcut.<BR>
+						7. You should now have a load of bmps in your directory that you need to 
+						convert into an avi. Todo this, read Pho's tutorial <a href="http://forums.gamka.co.uk/phoenix/tutorials/q3avi/">
+							here</a> (for q3, so just replace tgas for bmps)<BR>
+						8. Once you have a few avis you can start pasting them togethor in Premier. 
+						Check <a href="http://www.clan-k.co.uk/phoenix/tutorials/q3avi/premiere-q3movie.htm">
+							this page</a> out for more info on this.
+						<br>
+					</P>
+					<h5>
+						&#8212; &nbsp; <a href="mailto:bullit@planethalflife.com">Saturn48</a> &nbsp; 
+						&#8212;
+					</h5>
+				</div>
+			</div>
+			<div id='menu'>
+				<div class="menubox">
+					<div class="title">Navigate</div>
+					<div class="options">
+						<a href="index.htm">Back to main page</a><br>
+						<br>
+						<a href="guides.htm#Skinning Guide">Skinning Guide</a><br>
+						<a href="guides.htm#EAX Guide">EAX Guide</a><br>
+						<a href="guides.htm#Bunnyjumping">Bunnyjumping</a><br>
+						<a href="guides.htm#Font Editing">Font Editing</a><br>
+						<a href="guides.htm#Hud Editing">Hud Editing</a><br>
+						<a href="guides.htm#Demo2Avi">Demo2Avi</a><br>
+					</div>
+				</div>
+			</div>
+			<br clear="all">
+			&nbsp;
+			<div id="copyrightprint">
+				<br>
+				The content contained herein is Copyright &copy; 2001-2003 
+				bullit@planethalflife.com, unless otherwise noted. This printout may be used 
+				for reference purposes only. You may not reprint any of this content without 
+				the express written authorization of bullit@planethalflife.com.
+			</div>
+		</div>
+	</body>
+</html>

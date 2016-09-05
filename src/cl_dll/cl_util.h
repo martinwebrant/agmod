@@ -92,28 +92,28 @@ inline 	int						TextMessageDrawChar( int x, int y, int number, int r, int g, in
 	return gEngfuncs.pfnDrawCharacter( x, y, number, r, g, b ); 
 }
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "agglobal.h"
 inline int DrawConsoleString( int x, int y, const char *string, float r = 0, float g = 0, float b = 0)
 //inline int DrawConsoleString( int x, int y, const char *string, float r = 0)
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   if (!(r == 0 && g == 0 && b == 0))
     gEngfuncs.pfnDrawSetTextColor(r, g, b);
   return AgDrawConsoleString(x, y, string, r ,g, b);
 //	return gEngfuncs.pfnDrawConsoleString( x, y, (char*) string );
 }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 inline void GetConsoleStringSize( const char *string, int *width, int *height )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   char* pszString = strdup(string);
   AgStripColors((char*)pszString);
 	gEngfuncs.pfnDrawConsoleStringLen( pszString, width, height );
   free(pszString);
 //	gEngfuncs.pfnDrawConsoleStringLen( string, width, height );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 inline int ConsoleStringLen( const char *string )
@@ -125,24 +125,24 @@ inline int ConsoleStringLen( const char *string )
 
 inline void ConsolePrint( const char *string )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   char* pszString = strdup(string);
   AgStripColors((char*)pszString);
 	gEngfuncs.pfnConsolePrint(pszString);
   free(pszString);
 //	gEngfuncs.pfnConsolePrint(string);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 inline void CenterPrint( const char *string )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   char* pszString = strdup(string);
   AgStripColors((char*)pszString);
 	gEngfuncs.pfnCenterPrint(pszString);
   free(pszString);
 //  gEngfuncs.pfnCenterPrint( string );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 // returns the players name of entity no.
@@ -178,13 +178,13 @@ extern vec3_t vec3_origin;
 
 inline void UnpackRGB(int &r, int &g, int &b, unsigned long ulRGB)\
 {\
-//++ bullit@planethalflife.com
+//++ BulliT
 	if (ulRGB == RGB_YELLOWISH)
 	{
 		AgGetHudColor(r, g, b);
 		return;
 	}
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	r = (ulRGB & 0xFF0000) >>16;\
 	g = (ulRGB & 0xFF00) >> 8;\
 	b = ulRGB & 0xFF;\

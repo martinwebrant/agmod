@@ -1,6 +1,6 @@
-//++ muphicks@mups.co.uk  
+//++ muphicks  
 // AGDomination mode
-// Based on the AG CTF code by bullit@pmers.net
+// Based on the AG CTF code by BulliT
 
 #include "extdll.h"
 #include "util.h"

@@ -27,9 +27,9 @@
 
 #include "vgui_TeamFortressViewport.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 extern cvar_t* g_pcl_playtalk;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 extern float *GetClientColor( int clientIndex );
 
 #define MAX_LINES	5
@@ -138,11 +138,11 @@ int CHudSayText :: Draw( float flTime )
 				strncpy( buf, g_szLineBuffer[i], min(g_iNameLengths[i], MAX_PLAYER_NAME_LENGTH+32) );
 				buf[ min(g_iNameLengths[i], MAX_PLAYER_NAME_LENGTH+31) ] = 0;
 
-//++ bullit@planethalflife.com
+//++ BulliT
         int x = DrawConsoleString( LINE_START, y, buf, g_pflNameColors[i][0], g_pflNameColors[i][1], g_pflNameColors[i][2] );
 				//gEngfuncs.pfnDrawSetTextColor( g_pflNameColors[i][0], g_pflNameColors[i][1], g_pflNameColors[i][2] );
 				//int x = DrawConsoleString( LINE_START, y, buf );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 				// color is reset after each string draw
 				DrawConsoleString( x, y, g_szLineBuffer[i] + g_iNameLengths[i] );
@@ -180,7 +180,7 @@ void CHudSayText :: SayTextPrint( const char *pszBuf, int iBufSize, int clientIn
 		return;
 	}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   if (CVAR_GET_FLOAT("cl_only_team_talk") == 1)
   {
     if (0 != strncmp(pszBuf+1,"(T)",3) && 0 != strncmp(pszBuf+1,"(C)",3))
@@ -189,7 +189,7 @@ void CHudSayText :: SayTextPrint( const char *pszBuf, int iBufSize, int clientIn
       return;
     }
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// find an empty string slot
 	for ( int i = 0; i < MAX_LINES; i++ )
 	{
@@ -225,9 +225,9 @@ void CHudSayText :: SayTextPrint( const char *pszBuf, int iBufSize, int clientIn
 	}
 
 	strncpy( g_szLineBuffer[i], pszBuf, max(iBufSize -1, MAX_CHARS_PER_LINE-1) );
-//++ bullit@planethalflife.com
+//++ BulliT
   gHUD.m_Location.ParseAndEditSayString(g_szLineBuffer[i],clientIndex);
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	// make sure the text fits in one line
 	EnsureTextFitsInOneLineAndWrapIfHaveTo( i );
@@ -239,10 +239,10 @@ void CHudSayText :: SayTextPrint( const char *pszBuf, int iBufSize, int clientIn
 	}
 
 	m_iFlags |= HUD_ACTIVE;
-//++ bullit@planethalflife.com
+//++ BulliT
   if (0 < g_pcl_playtalk->value)
     PlaySound( "misc/talk.wav", 1 );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	if ( ScreenHeight >= 480 )
 		Y_START = ScreenHeight - 60;

@@ -414,7 +414,7 @@ LINK_ENTITY_TO_CLASS( weapon_snark, CSqueak );
 
 void CSqueak::Spawn( )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifndef CLIENT_DLL
   if (SGBOW == AgGametype())
   {
@@ -423,7 +423,7 @@ void CSqueak::Spawn( )
     return;
   }
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	Precache( );
 	m_iId = WEAPON_SNARK;
 	SET_MODEL(ENT(pev), "models/w_sqknest.mdl");

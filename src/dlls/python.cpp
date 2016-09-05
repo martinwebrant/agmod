@@ -21,11 +21,11 @@
 #include "monsters.h"
 #include "player.h"
 #include "gamerules.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
 #include "agstats.h"
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 enum python_e {

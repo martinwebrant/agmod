@@ -17,14 +17,14 @@
 
 
 #include "pm_materials.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "items.h"
 #include "gamerules.h"
 #include "agglobal.h"
 #include "agclient.h"
 #include "pm_shared.h"
 extern int gmsgSpectator;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 #define PLAYER_FATAL_FALL_SPEED		1024// approx 60 feet
@@ -211,9 +211,9 @@ public:
 	virtual BOOL IsSneaking( void ) { return m_tSneaking <= gpGlobals->time; }
 	virtual BOOL IsAlive( void ) { return (pev->deadflag == DEAD_NO) && pev->health > 0; }
 	virtual BOOL ShouldFadeOnDeath( void ) { return FALSE; }
-//++ bullit@planethalflife.com
+//++ BulliT
 	virtual	BOOL IsPlayer( void ) { return !IsSpectator(); }			// Spectators should return FALSE for this, they aren't "players" as far as game logic is concerned
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	virtual BOOL IsNetClient( void ) { return TRUE; }		// Bots should return FALSE for this, they can't receive NET messages
 															// Spectators should return TRUE for this
@@ -317,7 +317,7 @@ public:
 	char m_SbarString0[ SBAR_STRING_SIZE ];
 	char m_SbarString1[ SBAR_STRING_SIZE ];
 
-//++ bullit@planethalflife.com
+//++ BulliT
 protected:
   bool m_bAdmin;            //Player gained admin status.
   bool m_bIngame;           //Player was in the game when match started.
@@ -448,9 +448,9 @@ public:
   void SetWeaponWeight(const char* pszWeaponWeights);
   void InitWeaponWeight();
   */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 };
-//++ bullit@planethalflife.com
+//++ BulliT
 inline void CBasePlayer::Init()
 {
   m_bSentWallhackInfo = false;
@@ -638,7 +638,7 @@ inline bool CBasePlayer::DisableSpecs()
 #define OBS_MAP_FREE			5
 #define OBS_MAP_CHASE			6
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 #define AUTOAIM_2DEGREES  0.0348994967025
 #define AUTOAIM_5DEGREES  0.08715574274766

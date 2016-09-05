@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -156,4 +156,4 @@ int AgHudCTF::MsgFunc_CTFFlag(const char *pszName,  int iSize, void *pbuf)
 
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

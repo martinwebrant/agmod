@@ -157,7 +157,7 @@ CGameRules *InstallGameRules( void )
 	}
 	else
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 		if ( CVAR_GET_FLOAT( "mp_teamplay" ) >= LTS )
 		{
 			// lts
@@ -174,7 +174,7 @@ CGameRules *InstallGameRules( void )
 			return new CHalfLifeMultiplay;
 		}
 		else 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
     if ( CVAR_GET_FLOAT( "mp_teamplay" ) > 0 )
 		{
 			// teamplay

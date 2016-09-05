@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -1093,4 +1093,4 @@ const char* AgGetDirectoryValve()
 	return szDirectory;
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGCOMMANDS_H__B6D8EF5B_9423_4422_B935_1D71B6146DCA__INCLUDED_)
 #define AFX_AGCOMMANDS_H__B6D8EF5B_9423_4422_B935_1D71B6146DCA__INCLUDED_
@@ -47,4 +47,4 @@ public:
 extern DLL_GLOBAL AgCommand Command;
 
 #endif // !defined(AFX_AGCOMMANDS_H__B6D8EF5B_9423_4422_B935_1D71B6146DCA__INCLUDED_)
-//-- bullit@planethalflife.com
+//-- Martin Webrant

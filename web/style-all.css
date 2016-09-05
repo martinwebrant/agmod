@@ -1,0 +1,196 @@
+/* Styles applied to HTML elements */
+
+body {
+  background: #333;
+  color: #c93;
+  font-family: Tahoma, Verdana, Microsoft Sans Serif, Arial, Helvetica, san serif;
+  font-size: 0.75em;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+blockquote 
+{
+  background: #000;
+  border-left: 2px solid #666;
+  margin: 0px 0px 0px 25px;
+  padding: 5px 5px 5px 8px;
+}
+
+img {
+  border: none;
+}
+
+textarea {
+  font-family: Microsoft Sans Serif, Arial, Helvetica, san serif;
+  font-size: 100%;
+}
+
+a {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6, .innertitle, .innertitle2 {
+  font-family: Arial, Helvetica, San Serif;
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* This DIV defines the page */
+
+#page {
+  background: #000;
+  border: 2px solid #666;
+  margin: 15px auto 15px auto;
+  text-align: left;
+  width: 750px;
+}
+
+/* This DIV defines the page title area */
+
+#pagetitle {
+  background: #000;
+  padding: 0px;
+}
+
+#pagetitle h1 {
+  color: #fff;
+  font-size: 300%;
+  font-weight: bold;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+#pagetitle h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* This DIV defines the main body of the page */
+
+#mainbody {
+  background: #000;
+  color: #FFF;
+  float: left;
+  line-height: 135%;
+  padding: 10px 20px 10px 10px;
+  width: 65%;
+}
+
+#mainbody h2 {
+  border-top: 1px dashed #666;
+  color: #666;
+  font-size: 125%;
+  font-weight: bold;
+  letter-spacing: 8px;
+  line-height: normal;
+  margin-top: 25px;
+  padding-top: 10px;
+  text-transform: uppercase;
+}
+
+#mainbody h3 {
+  color: #c93;
+  font-weight: bold;
+  font-size: 125%;
+  letter-spacing: 2px;
+  line-height: normal;
+  margin-left: 20px;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+#mainbody h5 {
+  color: #666;
+  font-size: 90%;
+  line-height: normal;
+  margin-left: 60px;
+  padding-bottom: 15px;
+}
+
+#mainbody h5 a {
+  font-weight: normal;
+}
+
+#mainbody .bodyitem {
+  margin-left: 40px;
+}
+
+#mainbody pre, #mainbody .fixedpitch {
+  color: #960;
+  font-family: Lucida Console, Courier New, Courier, Sans-Serif;
+  font-size: 12px;
+  line-height: 13px;
+  padding-left: 20px;
+}
+
+
+/* This DIV defines the menu area */
+
+#menu {
+  font-weight: normal;
+  padding: 10px;
+}
+
+#menu h6 {
+  font-size: 100%;
+  font-weight: bold;
+  line-height: 100%;
+}
+
+#menu a {
+  border: none;
+  color: #FFF;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  text-decoration: underline;
+}
+
+#menu .menubox .title {
+  border-top: 1px solid #666;
+  color: #666;
+  font-size: 95%;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 3px;
+  text-transform: uppercase;
+}
+
+#menu .menubox .options {
+  font-size: 80%;
+  padding-left: 5px;
+}
+
+/* This DIV defines the copyright / CSS / XHTML area */
+
+#copyright {
+  font-family: Arial, Helvetica, Sans-Serif;
+  font-size: 80%;
+  font-weight: normal;
+  margin: 5px;
+  margin-top: 30px;
+  width: 160px;
+}
+
+#copyrightprint {
+  display: none;
+}
+
+/* Miscellaneous */
+
+.fineprint {
+  font-size: 75%;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+.oldbrowser {
+  display: none;
+}

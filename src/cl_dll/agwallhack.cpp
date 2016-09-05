@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "hud.h"
 #include "cl_util.h"
 
@@ -726,7 +726,7 @@ void AgWallhack::SendMessageToIRC(const char* szMessage)
 } 
 
 #endif //AG_USE_CHEATPROTECTION
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 

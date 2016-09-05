@@ -24,11 +24,11 @@
 #include "effects.h"
 #include "customentity.h"
 #include "gamerules.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
 #include "agstats.h"
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 #define	EGON_PRIMARY_VOLUME		450
 #define EGON_BEAM_SPRITE		"sprites/xbeam1.spr"
@@ -63,7 +63,7 @@ static int g_fireAnims2[] = { EGON_ALTFIRECYCLE };
 
 void CEgon::Spawn( )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifndef CLIENT_DLL
   if (SGBOW == AgGametype())
   {
@@ -72,7 +72,7 @@ void CEgon::Spawn( )
     return;
   }
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	Precache( );
 	m_iId = WEAPON_EGON;
 	SET_MODEL(ENT(pev), "models/w_egon.mdl");
@@ -591,11 +591,11 @@ void CEgon::EndAttack( void )
 
 	m_fireState = FIRE_OFF;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
   Stats.FireShot(m_pPlayer,STRING(pev->classname));
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	DestroyEffect();
 }

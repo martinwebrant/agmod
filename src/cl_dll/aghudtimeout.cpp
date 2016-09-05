@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -72,4 +72,4 @@ int AgHudTimeout::MsgFunc_Timeout(const char *pszName,  int iSize, void *pbuf)
 
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

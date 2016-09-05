@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -21,4 +21,4 @@ AgScore::~AgScore()
 
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

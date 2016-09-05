@@ -302,9 +302,9 @@ struct extra_player_info_t
 	short playerclass;
 	short teamnumber;
 	char teamname[MAX_TEAM_NAME];
-//++ bullit@planethalflife.com
+//++ BulliT
   short flag;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 };
 
 struct team_info_t 
@@ -543,7 +543,7 @@ private:
 
 };
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include "AgGlobal.h"
 #include "AgHudSplash.h"
 #include "AgHudCountdown.h"
@@ -561,7 +561,7 @@ private:
 #include "AgHudIRC.h"
 #include "AgHudCTF.h"
 #include "AgHudScoreboard.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 //
 //-----------------------------------------------------
 //
@@ -640,7 +640,7 @@ public:
 	CHudAmmoSecondary	m_AmmoSecondary;
 	CHudTextMessage m_TextMessage;
 	CHudStatusIcons m_StatusIcons;
-//++ bullit@planethalflife.com
+//++ BulliT
   AgHudSplash       m_Splash;
   AgHudCountdown    m_Countdown;
   AgHudTimer        m_Timer;
@@ -657,7 +657,7 @@ public:
   AgHudIRC          m_IRC;
   AgHudCTF          m_CTF;
   AgHudScoreboard   m_Scoreboard;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	void Init( void );
 	void VidInit( void );

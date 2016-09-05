@@ -24,9 +24,9 @@
 #include	"skill.h"
 #include	"items.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 extern DLL_GLOBAL AgGameRules	*g_pGameRules;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 extern DLL_GLOBAL BOOL	g_fGameOver;
 extern int gmsgDeathMsg;	// client dll messages
 extern int gmsgScoreInfo;

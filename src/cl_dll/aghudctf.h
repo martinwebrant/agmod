@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_CTF_HUD_)
 #define _AG_CTF_HUD_
@@ -32,4 +32,4 @@ extern int g_iPlayerFlag1;
 extern int g_iPlayerFlag2;
 #endif //_AG_CTF_HUD_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

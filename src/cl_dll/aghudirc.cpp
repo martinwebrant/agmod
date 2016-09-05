@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -191,4 +191,4 @@ void AgHudIRC::UserCmd_IRCToggle()
 
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -24,11 +24,11 @@
 #include "soundent.h"
 #include "shake.h"
 #include "gamerules.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
 #include "agstats.h"
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 #define	GAUSS_PRIMARY_CHARGE_VOLUME	256// how loud gauss is while charging
@@ -152,7 +152,7 @@ void CGauss::Holster( int skiplocal /* = 0 */ )
 
 void CGauss::PrimaryAttack()
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   if (SGBOW == AgGametype())
   {
     PlayEmptySound( );
@@ -180,7 +180,7 @@ void CGauss::PrimaryAttack()
     m_pPlayer->m_flNextAttack = UTIL_WeaponTimeBase() + 1;
     return;
   }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	// don't fire underwater
 	if ( m_pPlayer->pev->waterlevel == 3 )
 	{
@@ -451,7 +451,7 @@ void CGauss::Fire( Vector vecOrigSrc, Vector vecDir, float flDamage )
 //	ALERT( at_console, "%f %f\n", tr.flFraction, flMaxFrac );
 
 #ifndef CLIENT_DLL
-//++ bullit@planethalflife.com
+//++ BulliT
   if (INSTAGIB == AgGametype())
     nMaxHits = 1;
   if (SGBOW == AgGametype())
@@ -460,7 +460,7 @@ void CGauss::Fire( Vector vecOrigSrc, Vector vecDir, float flDamage )
 #ifdef AGSTATS
   Stats.FireShot(m_pPlayer,STRING(pev->classname));
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	while (flDamage > 10 && nMaxHits > 0)
 	{
 		nMaxHits--;
@@ -487,7 +487,7 @@ void CGauss::Fire( Vector vecOrigSrc, Vector vecDir, float flDamage )
 		if (pEntity->pev->takedamage)
 		{
 			ClearMultiDamage();
-//++ bullit@planethalflife.com
+//++ BulliT
 //    pEntity->TraceAttack( m_pPlayer->pev, flDamage, vecDir, &tr, DMG_ENERGYBEAM );
       if (pEntity == m_pPlayer && 0 < ag_gauss_fix.value)
       {
@@ -498,16 +498,16 @@ void CGauss::Fire( Vector vecOrigSrc, Vector vecDir, float flDamage )
         pEntity->TraceAttack( m_pPlayer->pev, flDamage, vecDir, &tr, DMG_ENERGYBEAM );
         //pEntity->TraceAttack( m_pPlayer->pev, flDamage, vecDir, &tr, DMG_BULLET );
       }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 			ApplyMultiDamage(m_pPlayer->pev, m_pPlayer->pev);
 		}
 
-//++ bullit@planethalflife.com
+//++ BulliT
 		if ( pEntity->ReflectGauss() 
       && INSTAGIB != AgGametype()
       )
 //		if ( pEntity->ReflectGauss() )
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		{
 			float n;
 
@@ -546,10 +546,10 @@ void CGauss::Fire( Vector vecOrigSrc, Vector vecDir, float flDamage )
 				fHasPunched = 1;
 
 				// try punching through wall if secondary attack (primary is incapable of breaking through)
-//++ bullit@planethalflife.com
+//++ BulliT
         if (!m_fPrimaryFire && 0 < ag_wallgauss.value)
         //if ( !m_fPrimaryFire )
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 				{
 					UTIL_TraceLine( tr.vecEndPos + vecDir * 8, vecDest, dont_ignore_monsters, pentIgnore, &beam_tr);
 					if (!beam_tr.fAllSolid)
@@ -574,10 +574,10 @@ void CGauss::Fire( Vector vecOrigSrc, Vector vecDir, float flDamage )
 
 							if ( g_pGameRules->IsMultiplayer() )
 							{
-//++ bullit@planethalflife.com
+//++ BulliT
 								//damage_radius = flDamage * 1.75;  // Old code == 2.5
                 damage_radius = flDamage * 1.75 * ag_wallgauss.value; // Old code == 2.5
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 							}
 							else
 							{
@@ -667,9 +667,9 @@ void CGauss::WeaponIdle( void )
 			m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + 3;
 		}
 		return;
-//++ bullit@planethalflife.com
+//++ BulliT
 		//SendWeaponAnim( iAnim );
-//-- bullit@planethalflife.com		
+//-- Martin Webrant		
 	}
 }
 

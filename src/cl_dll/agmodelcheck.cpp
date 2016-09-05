@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -125,4 +125,4 @@ bool AgModelCheck::CheckOne(const char* pszModel)
 #endif //AG_USE_CHEATPROTECTION
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include<VGUI_HeaderPanel.h>
 #include<VGUI_TablePanel.h>
@@ -267,4 +267,4 @@ int	AGVGuiWinamp::KeyInput(int down, int keynum, const char *pszCurrentBinding)
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -28,9 +28,9 @@
 
 extern edict_t *EntSelectSpawnPoint( CBaseEntity *pPlayer );
 
-//++ bullit@planethalflife.com
+//++ BulliT
 DLL_GLOBAL AgGameRules*	g_pGameRules = NULL;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 extern DLL_GLOBAL BOOL	g_fGameOver;
 extern int gmsgDeathMsg;	// client dll messages
 extern int gmsgMOTD;
@@ -310,14 +310,14 @@ void CGameRules::RefreshSkillData ( void )
 // instantiate the proper game rules object
 //=========================================================
 
-//++ bullit@planethalflife.com
+//++ BulliT
 AgGameRules *InstallGameRules( void )
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 {
 	SERVER_COMMAND( "exec game.cfg\n" );
 	SERVER_EXECUTE( );
 
-//++ bullit@planethalflife.com
+//++ BulliT
 	char *servercfgfile = (char *)CVAR_GET_STRING( "servercfgfile" );
 	if ( servercfgfile && servercfgfile[0] )
 	{
@@ -363,7 +363,7 @@ AgGameRules *InstallGameRules( void )
 	}
 	else
 	*/
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	{
 		if ( teamplay.value > 0 )
 		{

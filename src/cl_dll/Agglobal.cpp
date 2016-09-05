@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "hud.h"
 #include "cl_util.h"
@@ -69,7 +69,7 @@ int arrHudColor[3] =
 
 extern int iTeamColors[5][3];
 extern float g_ColorConsole[3];
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 #ifdef _DEBUG
 void AgTest();
 #endif
@@ -521,4 +521,4 @@ const char* AgGetDirectoryValve()
 	return szDirectory;
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

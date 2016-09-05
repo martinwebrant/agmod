@@ -230,13 +230,13 @@ public:
 	};
 #endif
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef CLIENT_DLL
 	void UpdateOnRemove( void );
 #else
   virtual void UpdateOnRemove( void );
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	// common member functions
 	void EXPORT SUB_Remove( void );
@@ -288,9 +288,9 @@ public:
 #ifdef _DEBUG
 	void FunctionCheck( void *pFunction, char *name ) 
 	{ 
-    //++ bullit@planethalflife.com
+    //++ BulliT
     return;
-    //-- bullit@planethalflife.com
+    //-- Martin Webrant
 		if (pFunction && !NAME_FOR_FUNCTION((unsigned long)(pFunction)) )
 			ALERT( at_error, "No EXPORT: %s:%s (%08lx)\n", STRING(pev->classname), name, (unsigned long)pFunction );
 	}
@@ -559,9 +559,9 @@ public:
 							// of the switches in the multisource have been triggered, then
 							// the button will be allowed to operate. Otherwise, it will be
 							// deactivated.
-//++ bullit@planethalflife.com
+//++ BulliT
   virtual void Reset() {};
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 };
 #define SetMoveDone( a ) m_pfnCallWhenMoveDone = static_cast <void (CBaseToggle::*)(void)> (a)
 

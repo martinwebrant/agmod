@@ -22,11 +22,11 @@
 #include "nodes.h"
 #include "player.h"
 #include "gamerules.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
 #include "agstats.h"
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 #ifndef CLIENT_DLL
 #define BOLT_AIR_VELOCITY	2000
@@ -353,11 +353,11 @@ void CCrossbow::FireSniperBolt()
 	m_pPlayer->m_iWeaponVolume = QUIET_GUN_VOLUME;
 	m_iClip--;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
   Stats.FireShot(m_pPlayer,STRING(pev->classname));
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	int flags;
 #if defined( CLIENT_WEAPONS )
@@ -454,11 +454,11 @@ void CCrossbow::FireBolt()
 	m_pPlayer->m_iWeaponVolume = QUIET_GUN_VOLUME;
 
 	m_iClip--;
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
   Stats.FireShot(m_pPlayer,STRING(pev->classname));
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	int flags;
 #if defined( CLIENT_WEAPONS )

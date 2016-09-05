@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(_AG_LOCATION_)
 #define _AG_LOCATION_
@@ -21,4 +21,4 @@ public:
 
 #endif //_AG_LOCATION_
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -321,5 +321,5 @@ void AgArena::ClientDisconnected(CBasePlayer* pPlayer)
 }
 
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 

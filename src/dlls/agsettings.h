@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #if !defined(AFX_AGSETTINGS_H__84946760_20B0_4629_84A4_115B6422C74D__INCLUDED_)
 #define AFX_AGSETTINGS_H__84946760_20B0_4629_84A4_115B6422C74D__INCLUDED_
@@ -33,4 +33,4 @@ public:
 
 #endif // !defined(AFX_AGSETTINGS_H__84946760_20B0_4629_84A4_115B6422C74D__INCLUDED_)
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

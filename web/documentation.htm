@@ -1,0 +1,630 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Adrenaline Gamer</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<meta name="MSSmartTagsPreventParsing" content="TRUE">
+		<meta name="Keywords" content="Adrenaline Gamer, AG, Half-Life, BulliT, pmers, Mod">
+		<style type="text/css" media="all">@import "style-all.css";</style>
+		<link rel="stylesheet" type="text/css" media="print" href="style-print.css">
+			<link rel="shortcut icon" href="favicon.ico">
+	</head>
+	<body>
+		<div id='page'>
+			<div id='pagetitle'>
+				<center>
+					<img src="images/aglogo.jpg">
+				</center>
+			</div>
+			<div id='mainbody'>
+				<b>"More control... More action... More adrenaline"</b>
+				<h2>Info</h2>
+				<h3>Why I made this mod</h3>
+				<div class="bodyitem">
+					<p>
+						<b></b>
+						<br>
+						The Adrenaline Gamer MOD was first targeted as an easy server side replacement 
+						for the Half-Life Deathmatch clans.<br>
+						But now it's targeted for all players that want a better Half-Life Deathmatch 
+						experience.<br>
+						It got cheat protection, spectator mode, new game modes and match features.<br>
+						<br>
+						I'll try to explain all the features of the Adrenaline Gamer MOD.<br>
+						I'll start off with the most used ones and I'll end with tellin you how the 
+						advanced commands work.<br>
+						<br>
+					</p>
+				</div>
+				<h5>
+					&#8212; &nbsp; <a href="mailto:bullit@planethalflife.com">BulliT</a> &nbsp; 
+					&#8212;
+				</h5>
+				<h2>Documentation</h2>
+				<a name="After install"></a>
+				<h3>After install</h3>
+				<div class="bodyitem">
+					<p>
+						The installer automaticly copies your config.cfg and autoexec.cfg from previous 
+						version of AG/HLDM. I recommend that you bind the commandmenu when you first 
+						run the mod. You can do this with the Half-Life menus or by adding this line: <BLOCKQUOTE>bind 
+							"M" "+commandmenu"</BLOCKQUOTE>
+					to your config.cfg in the C:/Half-Life/AG directory. With the commandmenu you 
+					can enter spectator mode, call votes to change map or gamemodes. You got 
+					everything you need in there.
+					<P></P>
+				</div>
+				<a name="Match functions"></a>
+				<h3>Match functions</h3>
+				<div class="bodyitem">
+					<p>
+						If you play clanmatches you can add the teamplay binds aswell.<br>
+						I'll start of with the simple say bind that say:
+						<br>
+						"It's me" and adds your health(%H) and armour(%A) status to text.<br>
+						<BLOCKQUOTE> bind "I" "say_team It's me! %H/%A"</BLOCKQUOTE>
+						<br>
+						You can enhance it abit more and add the location(%L) where you are
+						<br>
+						(works only on standard and the AG map packs).<br>
+						<BLOCKQUOTE> bind "I" "say_team It's me! %H/%A - I'm at %L"</BLOCKQUOTE>
+						<br>
+						And for fun you can add a sound to it that gets played on team mates that
+						<br>
+						are close to you.<br>
+						<BLOCKQUOTE> bind "N" "say_team It's me! %H/%A - I'm at %L;play_team 
+							barney/hellonicesuit.wav" </BLOCKQUOTE>
+						<br>
+						You can find more sounds to use by downloading a pakviewer and open
+						<br>
+						up the C:/Half-Life/valve/pak0.pak file.<br>
+						<br>
+						A good bind that is needed in matches is the drop bind. It drops your current
+						<br>
+						weapon to your team m8 and say's what weapon you dropped.<br>
+						<BLOCKQUOTE> bind "G" "say_team Dropped weapon %W;drop"</BLOCKQUOTE>
+						<br>
+						Thats it for the binds. Wasn't so hard was it? ;)<br>
+						<br>
+						I'll go on to explain the match features.
+						<br>
+						A match is started with the agstart command. You can find this by using the 
+						command menu.<br>
+						The agstart command will start a countdown (if the vote is accepted).
+						<br>
+						The timelimit and frags will be reset after the countdown and the players are 
+						respawned.<br>
+						<br>
+						If you are the admin of the game you should be in spectator mode when the match 
+						starts. After the match begins the players are fixed.
+						<br>
+						If a new player enters the server he will put into spectator mode for the 
+						remaining time of the match. If a player drops from the server during the match 
+						he will be let back into the game when he joins again.<br>
+						A timeout (60 second pause) can be called at any time during the match and a 
+						drop is good sitution to call that. A team only got one timeout per match so 
+						use it carefully.<br>
+						<br>
+						If a team needs to replace a player during the match they can use the agallow 
+						command to let a spectator in. This console command works like this:<br>
+						agallow "player name" (example: agallow [pmers]BulliT)<br>
+						It can also be used with the player id from the status command like this:<br>
+						agallow "player id" (example: agallow #43)<br>
+						<br>
+					<P></P>
+				</div>
+				<a name="Changing gamemode"></a>
+				<h3>Changing gamemode</h3>
+				<div class="bodyitem">
+					<p>
+						You can change gamemode with the commandmenu<br>
+						Here is an explaination of the current AG gamemodes:<br>
+						<br>
+						<u>Free For All</u>: This is the standard Deathmatch server.<br>
+						<br>
+						<u>Team Deathmatch</u>: This gamemode could vary from server to server.
+						<br>
+						A fresh install set this to be the www.clanbase.com CUP settings.
+						<br>
+						The CUP settings are accepted as the European standard.<br>
+						<br>
+						<u>CTF</u>: Capture The Flag mode, a fun teamplay mode where you try to capture 
+						the opponents flag.<br>
+						Score system:<br>
+						4 points for each capture.<br>
+						1 point for returning your teams flag.<br>
+						1 point for killing the opponent that carries your flag.<br>
+						1 point for stealing the other teams flag.<br>
+						1 point if you kill your opponent while defending your flag.<br>
+						<br>
+						<u>LMS</u>: Last Man Standing wins!
+						<br>
+						You start with a subset of the standard weapons and battle it out until one man 
+						remains!
+						<br>
+						<br>
+						<u>LTS</u>: Last Team Standing wins!
+						<br>
+						You start with a subset of the standard weapons and battle it out until one 
+						team remains!
+						<br>
+						<br>
+						<u>Arena</u>: The one on one mode. When a player dies he goes to spectator mode
+						<br>
+						and the next in line is spawned after a countdown. If you just want to
+						<br>
+						watch you can change your ready status in the commandmenu
+						<br>
+						(ready/notready). Settings may vary from server to server.
+						<br>
+						<br>
+						<u>Arcade</u>: Warmup mode to get the feel for the weapons before a match. You
+						<br>
+						allways spawn with all weapons and ammo. If you kill someone you get a refill
+						<br>
+						as a reward. It got reduced headshot and less damage radius just like the
+						<br>
+						match mode.<br>
+						<br>
+						<u>Sgbow</u>: Shotgun and bow mode, this mode features a subset of the regular 
+						weapons and is alot of fun, it got reduced headshots and a gauss to jump with 
+						(gauss wont do any damage).
+						<br>
+						<br>
+						<u>Instagib</u>: One shot one kill!
+					</p>
+				</div>
+				<a name="Client commands"></a>
+				<h3>Client commands</h3>
+				<div class="bodyitem">
+					<p>
+						help - Lists and explains all commands in your console.<br>
+						spectate - Toggles spectator mode.<br>
+						timeout - Call 1 minute timeout in matches.<br>
+						ready/notready - Set ready mode in arena.<br>
+						play_team file.wav - Play wav files to your team m8's<br>
+						play_close file.wav - Play wav files to your team m8's close to you.<br>
+						settings - Shows server settings.<br>
+						auth name pass - Authenticate you as an admin.<br>
+						newpass oldpass newpass - Change password.<br>
+						stopsound - Engine command to stop all sounds currently playing.<br>
+						+commandmenu - Shows commandmenu.<br>
+						togglebrowser - Toggles Server Browser. Passwords are saved in passwords.txt<br>
+						customtimer (seconds) - Shows countdown for the amount of seconds.<br>
+						dropitems or drop flag - Drop flag in CTF mode.<br>
+						togglewinamp - Toggles <a href="http://classic.winamp.com/download/">Winamp 2.X</a>
+						menu. Install <a href="http://www.winamp.com/components3/detail.jhtml?componentId=118230">
+							Winamp 2.X Plugin Manager</a> to be able to use <a href="http://www.winamp.com/download/">
+							Winamp 3.0</a><br>
+						winamp play, pause, stop, next, prev, increase, decrease, repeat, shuffle, 
+						forward, rewind - Controls Winamp from console or alias.<br>
+						agrecord (name) - Record to an unique filename.<br>
+						loadauthid (url) - Load tab seperated list of authids and names.<br>
+						<br>
+						say, say_team command enhancements<br>
+						%H - Health.<br>
+						%A - Armour.<br>
+						%L - Location.<br>
+						%W - Weapon.<br>
+						%Q - Ammo.<br>
+						%P - Long jump status.<br>
+						%F - Flag status.<br>
+						<br>
+						say_close - Only team m8's close to you receive your message.
+					</p>
+				</div>
+				<a name="Client variables"></a>
+				<h3>Client variables</h3>
+				<div class="bodyitem">
+					<p>
+						Recommended settings (1 is on, 0 is off if not stated otherwise)
+						<br>
+						hud_color "255 160 0" - Changes color on the Head Up Display.
+						<br>
+						con_color "255 160 0" - Changes color on the Console text.
+						<br>
+						hud_centerid 1 - Centers player id below crosshair. 0 moves it to the left.
+						<br>
+						hud_playerid 1 - Displays the player identification.
+						<br>
+						hud_spectatebar 1 - Shows the current player and information how to
+						<br>
+						change spectator modes when spectating.
+						<br>
+						hud_timer 1 - Displays the timer. 1 is time remaining, 2 is time elapsed,
+						<br>
+						3 is system time and 0 turns it off.
+						<br>
+						hud_settings 1 - Display the server settings.
+						<br>
+						hud_weapon 1 - Display the current weapon as a sprite (good for viewmodel off).
+						<br>
+						hud_takesshots 1 - Takes screenshot after every map change.
+						<br>
+						cl_matchreport 1 - Writes a match report after every map change into 
+						/aghl/matchreport directory.
+						<br>
+						cl_autowepswitch 2 - Autoswitch to better weapon when you pick up.
+						<br>
+						cl_disablespecs 0 - Disable players from spectating you.
+						<br>
+						cl_scores 2 - for a mini scoreboard direct on your hud. Set it to the amount of 
+						teams/players you want to see.
+						<br>
+						cl_scores_pos "30 30" - Controls where the mini scoreboard is draw on the 
+						screen. Default is top left.
+						<br>
+						cl_old_scoreboard 1 - Set to 1 to get the oldschool feeling back ;)
+						<br>
+						cl_only_team_talk 0 - You can turn off all public talk with this variable.
+						<br>
+						cl_show_colors 1 - Set to 0 to turn off the colors.
+						<br>
+						cl_ctf_volume 1 - Controls the volume on the CTF sounds.
+						<br>
+						cl_lc 1 - Lagg compensation.
+						<br>
+						cl_lw 1 - Client side controlled effects.
+					</p>
+				</div>
+				<a name="Votes, admin commands"></a>
+				<h3>Votes, admin commands</h3>
+				<div class="bodyitem">
+					<p>
+						agstart - Start a match.<br>
+						agallow name - Allow a player into the match.<br>
+						agpause - Pause server.<br>
+						agnextmap (map) - Set next map.<br>
+						agnextmode (mode) - Set next mode.<br>
+						ffa - Change to Free For All mode.<br>
+						tdm - Change to Team Death Match mode (FF1, WS0).<br>
+						tdm2 - Change to Team Death Match mode II (FF0,WS0).<br>
+						tdm3 - Change to Team Death Match mode III (FF0,WS1).<br>
+						tdmx - Change to Team Death Match the AG way.<br>
+						arena - Change to Arena mode.<br>
+						arcade - Change to Arcade mode.<br>
+						sgbow - Change to Shotgun and bow mode.<br>
+						instagib - Change to Instagib mode.<br>
+						lts - Change to Last Team Standing mode.<br>
+						lms - Change to Last Man Standing mode.<br>
+						ctf - Change to Capture The Flag mode.<br>
+						ag_spectalk 1 - Allow spectators to talk to all.<br>
+						ag_spec_team_only 0 - Limit spectators to their team only.
+					</p>
+				</div>
+				<a name="Server installation"></a>
+				<h3>Server installation</h3>
+				<div class="bodyitem">
+					<p>
+						Download the latest dedicated server for Windows <a href="http://www.daddeln.de/index.php?s=&section=filedb&action=details&file_id=19426">
+							hlserver4110.exe</a>
+						<br>
+						or the latest for Linux <a href="http://www.daddeln.de/index.php?s=&section=filedb&action=details&file_id=23658">
+							hlds_l_3110_full.bin</a>
+						<br>
+						If my links don't work go to <a href="http://www.fileplanet.com">Fileplanet</a> 
+						and download the file there.
+						<br>
+						<br>
+						<b>Special Linux instructions in italic:</b>
+						<br>
+						<I>Download the file to your home directory, then type:
+							<br>
+							tar xfzv hlds_l3110.tar.gz
+							<br>
+							cd hlds_l
+							<br>
+							<br>
+							Then download AG to the hlds_l directory you currently
+							<br>
+							are standing in, then type:
+							<br>
+							tar xfzv ag_63.tar.gz
+							<br>
+							cd aghl
+							<br>
+							<br>
+							Then edit "ag_run" and change port if you have more servers
+							<br>
+							running on the machine. You start the linux server with ag_run command
+							<br>
+							when you are done with the settings below.
+							<br>
+							<br>
+						</I>After you installed it you need to edit the /aghl/server.cfg and change:
+						<br>
+						rcon_password - Remote control password.
+						<br>
+						hostname - The name to show in a gamebrowser.
+						<br>
+						sv_password - The password to enter the server.
+						<br>
+						sv_contact - Your email address.
+						<br>
+						<br>
+						You can also go into startup_server.cfg and change to what
+						<br>
+						gamemode the server will start in.
+						<br>
+						sv_ag_gamemode ffa - Free For All
+						<br>
+						sv_ag_gamemode tdm - Team Deathmatch
+						<br>
+						sv_ag_gamemode arena - Arena
+						<br>
+						sv_ag_gamemode arcade - Arcade
+						<br>
+						sv_ag_gamemode sgbow - Sgbow
+						<br>
+						sv_ag_gamemode instagib - Instagib
+						<br>
+						sv_ag_gamemode ctf - Capture The Flag
+						<br>
+						sv_ag_gamemode lts - Last Team Standing
+						<br>
+						sv_ag_gamemode lms - Last Man Standing
+						<br>
+						<br>
+						You can also change the allowed gamemodes. For all gamemodes use blank string.
+						<br>
+						You can also use this string here with all gamemodes allowed. Remove those you 
+						dont like.
+						<br>
+						I recommend that you leave it to what the installer set for you.
+						<br>
+						sv_ag_allowed_gamemodes 
+						"ffa;ffax;tdm;tdm2;tdm3;tdmx;arena;arcade;sgbow;instagib;ctf;lts;lms"
+						<br>
+						<br>
+						Do not change mp_xxx server settings in server.cfg. Add/Change them in
+						<br>
+						the gamemodes configuration files in /aghl/gamemodes. I repeat - do not change 
+						mp_xxx server settings in server.cfg!
+						<br>
+						<br>
+						You can easily start a Windows server by using the shortcuts in startmeny. I 
+						predefined a standard internet and a standard LAN server.
+						<br>
+						Please dont use server password if you dont need to, we need to help new 
+						players into the game!
+						<br>
+						If your server admin demands a password then please use hlclan and remember to 
+						set sv_contact so I can contact you!
+					</p>
+				</div>
+				<a name="RCON Server commands"></a>
+				<h3>RCON Server commands</h3>
+				<div class="bodyitem">
+					<p>
+						agaddadmin name password - Add new admin.<br>
+						aglistadmins - List all admins.<br>
+						agdeladmin name - Delete existing admin.<br>
+						agnextmap mapname - Set next level.<br>
+						agnextmode mode - Set next mode.<br>
+						agexec config - Executes a server configuration.<br>
+						agstart full - Start a match. Add "full" if you want to do an American start.<br>
+						agallow name or #id - Allow a player into the match. If blank - allow yourself<br>
+						agpause - Pause server.<br>
+						agforcespectator name or #id - Force a player into spectator mode.<br>
+						agforceteamup name or #id team - Force a player into a team.<br>
+						ffa - Change to Free For All mode.<br>
+						tdm - Change to Team Death Match mode (FF1, WS0).<br>
+						tdm2 - Change to Team Death Match mode II (FF0,WS0).<br>
+						tdm3 - Change to Team Death Match mode III (FF0,WS1).<br>
+						tdmx - Change to Team Death Match the AG way.<br>
+						arena - Change to Arena mode.<br>
+						arcade - Change to Arcade mode.<br>
+						sgbow - Change to Shotgun and bow mode.<br>
+						instagib - Change to Instagib mode.<br>
+						lts - Change to Last Team Standing mode.<br>
+						lms - Change to Last Man Standing mode.<br>
+						ctf - Change to Capture The Flag mode.<br>
+						help - List commands.<br>
+						variables - List variables.<br>
+					</p>
+				</div>
+				<a name="Server side variables"></a>
+				<h3>Server side variables</h3>
+				<div class="bodyitem">
+					<p>
+						Recommended settings (1 is on, 0 is off if not stated otherwise)
+						<br>
+						sv_ag_pure 1 - 0 is regular spike and wallhack check. 1 adds checks so that 
+						standard models are the same as the servers (aimbot protection), it also adds 
+						the variable checker.
+						<br>
+						sv_ag_max_spectators 5 - Max spectators allowed.
+						<br>
+						sv_ag_allowed_gamemodes "ffa;tdm;arena;arcade;sgbow;instagib" - The allowed 
+						gamemodes. Set this in startup_server.cfg.
+						<br>
+						sv_ag_allow_vote 1 - Allow voting.
+						<br>
+						sv_ag_vote_setting 1 - Vote ag_xxx ettings.
+						<br>
+						sv_ag_vote_gamemode 1 - Allow gamemode switching. This is limited with the 
+						sv_ag_allowed_gamemodes variable
+						<br>
+						sv_ag_vote_kick 0 - Allow voting a kick.
+						<br>
+						sv_ag_vote_admin 0 - Allow voting an admin.
+						<br>
+						sv_ag_vote_map 1 - Allow map voting.
+						<br>
+						sv_ag_vote_start 1 - Allow agstart/agkick.
+						<br>
+						sv_ag_vote_allow 1 - Allow agallow..
+						<br>
+						ag_start_minplayers 2 - Minumum amount of player to allow match with agstart 
+						command.
+						<br>
+						ag_vote_failed_time 180 - Seconds until next vote can begin if last failed.
+						<br>
+						sv_ag_vote_mp_timelimit_low 10 - Lowest timelimit to vote on.
+						<br>
+						sv_ag_vote_mp_timelimit_high 40 - Highest timelimit to vote on.
+						<br>
+						sv_ag_vote_mp_fraglimit_low 0 - Lowest fraglimit to vote on.
+						<br>
+						sv_ag_vote_mp_fraglimit_high 10 - Highest fraglimit to vote on.
+						<br>
+						sv_ag_show_gibs 1 - Show dead bodies.
+						<br>
+						sv_ag_spawn_volume 0.5 - respawn sound volume. The default value is half the 
+						regular value.
+						<br>
+						sv_ag_floodmsgs 4 - Flood messages to tolerate. 0 will deactive it.
+						<br>
+						sv_ag_floodpersecond 4 - Flood messages per second.
+						<br>
+						sv_ag_floodwaitdelay 10 - Flood penelty timer.
+						<br>
+						sv_ag_auto_admin 1 - Give auto admin to admins in admin list.
+						<br>
+						sv_ag_allow_timeout 1 - Allow players calling timeout when playing a match.
+					</p>
+				</div>
+				<a name="Special map developer commands"></a>
+				<h3>Special map developer commands</h3>
+				<div class="bodyitem">
+					<p>
+						Available when you start a listen server (local server).<br>
+						agaddloc name - Add a location.<br>
+						agdelloc name - Delete a location.<br>
+						aglistloc - List locations.<br>
+						<br>
+					</p>
+				</div>
+				<a name="IRC Commands"></a>
+				<h3>IRC Commands</h3>
+				<div class="bodyitem">
+					<p>
+						ircconnect - Connect to IRC server.<BR>
+						ircdisconnect - Disconnect from IRC server.<BR>
+						irc - Execute IRC commands.<BR>
+						toggleirc - Brings up a VGUI dialog that can be used to chat. BR&gt;
+						<BR>
+						To overide the default parameters I added a few variables.<BR>
+						irc_server - The server you want to connect to. Defaults to 
+						irc.quakenet.eu.org.<BR>
+						irc_port - The port on the server. Defaults to 6667.<BR>
+						irc_nick - The nick on IRC. If this is empty it uses your Half-Life name.<BR>
+						<BR>
+						For other networks than quakenet:<BR>
+						irc_userid - Userid on server. If this is empty it uses your computername.<BR>
+						irc_password - Password on server. No defaults on this one.<BR>
+						irc_fullname - Fullname on server. If empty it uses the username you logged on 
+						in windows.<BR>
+						irc_autojoin - Channel you want to join upon connect. Standard is #pmers<BR>
+						<BR>
+						Use / before the IRC commands.
+						<BR>
+						Leave the / out if you want to send messages.<BR>
+						To send private messages write /privmsg nick message
+						<BR>
+						That will send the text "message" to the nick "nick".<BR>
+						<BR>
+						Example:<BR>
+						ircconnect<BR>
+						irc /join #pmers<BR>
+						irc hey boys!<BR>
+						irc /privmsg Bullster man this r0x!<BR>
+						ircdisconnect<BR>
+						<BR>
+						Known problems:<BR>
+						Key input is messed up in VGUI dialog until Valve bugfix the VGUI code.<BR>
+						Nick changes aren't saved on your client so you might see the old nick you had 
+						before you changed it - but others see the new one.<BR>
+						Zonealarm brings up a dialog during connect causing Half-Life to hang.<BR>
+						<BR>
+					</p>
+				</div>
+				<h3>HLTV</h3>
+				<div class="bodyitem">
+					<p>
+						<a name="HLTV"></a>HLTV is a seperate application runned by server admins or by 
+						helpful players.<BR>
+						It works like a server for players so they connect to HLTV instead of the real 
+						server.<BR>
+						Example:<BR>
+						Galzac (a cool dude with fat pipe :P) starts a HLTV server in Sweden and 
+						connects to GIB #1 server in Italy.<BR>
+						The server in Italy will then get a player named HLTV_Proxy. The proxy is 
+						flagged as a spectator and wont join the game.<BR>
+						If you for example are using the excellent <A href="http://www.udpsoft.com/eye/">All 
+							Seeing Eye</A> you will notice that there are two servers now.<BR>
+						GIB #1 HLICUP<BR>
+						GIB #1 HLICUP:0<BR>
+						The one with the number is the HLTV proxy that Galzac put up and the one 
+						without is the real server in Italy.<BR>
+						Players that wanna watch the game connect to Galzac instead of the real server.<BR>
+						That way they 20+ players can spectate the game instead of just the few that 
+						can join the real server.<BR>
+						The best thing is that there dont have to be anyone but the players and the 
+						HLTV proxy on the real server. So they get a lagg free game.<BR>
+						For big games it could be good to make a chain of HLTV servers.<BR>
+						The ones that got a good enough connection to run HLTV decide that one connect 
+						to the server. He then puts password on his server so that no one can get in 
+						except the others that want to run HLTV.<BR>
+						That is done so that he first server dont get borked down by alot of players 
+						that want to spectate the game. They will instead connect to the other HLTV's. 
+						That ensures that the main connect to the real server is good and lagg free.<BR>
+						I made a little picture <a href="images/hltv.gif">here</a> to explain it.<BR>
+					<p>
+						For the primary HLTV server I recommend that you use a shortcut like this:<BR>
+						c:\sierra\half-life\hltv.exe -maxclients 8 +password "primarypass"<BR>
+						When started just type "connect yyy:27015" where the ip is the HL server.<BR>
+						For the secondary line of HLTV servers I recommend that you use this shortcut:<BR>
+						c:\sierra\half-life\hltv.exe -maxclients 32
+						<BR>
+						When started just type "connect xxx:27020" where the ip is the primary HLTV 
+						server.<BR>
+						<BR>
+					</p>
+				</div>
+				<h3>Metamod</h3>
+				<div class="bodyitem">
+					<p>
+						<a name="Metamod"></a>If you are using <a href="http://www.metamod.org">Metamod</a>
+						you need to update it to v1.13.1 be able to host AG CTF games.
+						<br>
+						You also have to rename AG.DLL(ag_i386.so) to HL.DLL(hl_i386.so) to get metamod 
+						to work, Will (metamod dude) forgot to change it.
+					</p>
+				</div>
+			</div>
+			<div id='menu'>
+				<div class="menubox">
+					<div class="title">Navigate</div>
+					<div class="options">
+						<a href="index.htm">Back to main page</a><br>
+						<br>
+						<a href="documentation.htm#After install">After install</a><br>
+						<a href="documentation.htm#Match functions">Match functions</a><br>
+						<a href="documentation.htm#Changing gamemode">Changing gamemode</a><br>
+						<a href="documentation.htm#Client commands">Client commands</a><br>
+						<a href="documentation.htm#Client variables">Client variables</a><br>
+						<a href="documentation.htm#Votes, admin commands">Votes, admin commands</a><br>
+						<a href="documentation.htm#Server installation">Server installation</a><br>
+						<a href="documentation.htm#RCON Server commands">RCON Server commands</a><br>
+						<a href="documentation.htm#Server side variable">Server side variable</a><br>
+						<a href="documentation.htm#Special map developer commands">Special map developer 
+							commands</a><br>
+						<a href="documentation.htm#IRC Commands">IRC commands</a><br>
+						<a href="documentation.htm#HLTV">HLTV</a><br>
+						<a href="documentation.htm#Metamod">Metamod</a><br>
+					</div>
+				</div>
+			</div>
+			<br clear="all">
+			&nbsp;
+			<div id="copyrightprint">
+				<br>
+				The content contained herein is Copyright � 2001-2003 
+				bullit@planethalflife.com, unless otherwise noted. This printout may be used 
+				for reference purposes only. You may not reprint any of this content without 
+				the express written authorization of bullit@planethalflife.com.
+			</div>
+		</div>
+	</body>
+</html>

@@ -16,7 +16,7 @@
 // GameRules
 //=========================================================
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #if !defined(_GAMERULES_H_)
 #define _GAMERULES_H_
 
@@ -24,7 +24,7 @@
 #define ARENA 4
 #define LMS   5
 #define LTS   6
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 //#include "weapons.h"
 //#include "items.h"
@@ -172,13 +172,13 @@ public:
 	// Immediately end a multiplayer game
 	virtual void EndMultiplayerGame( void ) {}
 
-//++ bullit@planethalflife.com
+//++ BulliT
   public:
   AgArena             m_Arena;
   AgLMS               m_LMS;
   int                 m_iGameMode;
   float               m_fGameStart;
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 };
 
 extern CGameRules *InstallGameRules( void );
@@ -391,6 +391,6 @@ protected:
 
 extern DLL_GLOBAL CGameRules*	g_pGameRules;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #endif //_GAMERULES_H_
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -817,13 +817,13 @@ void HUD_WeaponsPostThink( local_state_s *from, local_state_s *to, usercmd_t *cm
 		player.m_rgAmmo[ pCurrent->m_iPrimaryAmmoType ]	= (int)from->client.vuser4[ 1 ];
 		player.m_rgAmmo[ pCurrent->m_iSecondaryAmmoType ]	= (int)from->client.vuser4[ 2 ];
 
-		//++ bullit@planethalflife.com
+		//++ BulliT
 		/*
 		HUD_SetAmmo(pCurrent->m_iPrimaryAmmoType, player.m_rgAmmo[pCurrent->m_iPrimaryAmmoType]);
 		HUD_SetAmmo(pCurrent->m_iSecondaryAmmoType, player.m_rgAmmo[pCurrent->m_iSecondaryAmmoType]);
 		HUD_SetWeaponClip(i , pCurrent->m_iClip);
 		*/
-		//-- bullit@planethalflife.com
+		//-- Martin Webrant
 	}
 
 	// For random weapon events, use this seed to seed random # generator

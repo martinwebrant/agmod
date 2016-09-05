@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 
 #include "extdll.h"
@@ -149,5 +149,5 @@ void AgScoreLog::EndScore()
   mapScores.clear();
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 

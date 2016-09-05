@@ -16,9 +16,9 @@
 // Misc utility code
 //
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include <string.h> //For memset on linux.
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 #ifndef ACTIVITY_H
 #include "activity.h"
@@ -139,15 +139,15 @@ inline entvars_t *VARS(edict_t *pent)
 inline entvars_t* VARS(EOFFSET eoffset)				{ return VARS(ENT(eoffset)); }
 inline int	  ENTINDEX(edict_t *pEdict)			{ return (*g_engfuncs.pfnIndexOfEdict)(pEdict); }
 inline edict_t* INDEXENT( int iEdictNum )		{ return (*g_engfuncs.pfnPEntityOfEntIndex)(iEdictNum); }
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifndef AGMSGSTAT
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 inline void MESSAGE_BEGIN( int msg_dest, int msg_type, const float *pOrigin, entvars_t *ent ) {
 	(*g_engfuncs.pfnMessageBegin)(msg_dest, msg_type, pOrigin, ENT(ent));
 }
-//++ bullit@planethalflife.com
+//++ BulliT
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 // Testing the three types of "entity" for nullity
 #define eoNullEntity 0
@@ -434,9 +434,9 @@ extern DLL_GLOBAL int			g_Language;
 #define SVC_WEAPONANIM		35
 #define SVC_ROOMTYPE		37
 #define	SVC_DIRECTOR		51
-//++ bullit@planethalflife.com
+//++ BulliT
 void UTIL_SendDirectorMessage( edict_t *ent1, edict_t *ent2, int priority_and_flags );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 // triggers
 #define	SF_TRIGGER_ALLOWMONSTERS	1// monsters allowed to fire this trigger
@@ -551,6 +551,6 @@ float UTIL_SharedRandomFloat( unsigned int seed, float low, float high );
 
 float UTIL_WeaponTimeBase( void );
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include <agmsgstat.h>
-//-- bullit@planethalflife.com
+//-- Martin Webrant

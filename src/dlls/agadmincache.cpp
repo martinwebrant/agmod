@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #include "extdll.h"
 #include "util.h"
@@ -258,4 +258,4 @@ void AgAdminCache::Newpass(const AgString& sOldpass, const AgString& sPassword, 
   }
 }
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

@@ -77,9 +77,9 @@ typedef union DLONG {
 
 extern DLONG	dlong;
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifndef __MINGW32__
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 #ifdef _WIN32
 void __inline set_fpu_cw(void)
 {
@@ -113,14 +113,14 @@ void __inline restore_fpu_cw(void)
 #define quick_ftol(f) ftol(f)
 #define restore_fpu_cw() /* */
 #endif
-//++ bullit@planethalflife.com
+//++ BulliT
 #define set_fpu_cw() /* */
 #define quick_ftol(f) ftol(f)
 #define restore_fpu_cw() /* */
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 void FloorDivMod (double numer, double denom, int *quotient,
 		int *rem);

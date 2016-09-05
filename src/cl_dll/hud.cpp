@@ -285,17 +285,17 @@ void CHud :: Init( void )
 
 	HOOK_MESSAGE( ValClass );
 	HOOK_MESSAGE( TeamNames );
-//++ bullit@planethalflife.com
+//++ BulliT
 	//TFC JUNK 	
   //HOOK_MESSAGE( Feign );
 	//HOOK_MESSAGE( Detpack );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	HOOK_MESSAGE( MOTD );
-//++ bullit@planethalflife.com
+//++ BulliT
 	//TFC JUNK 	
 	//HOOK_MESSAGE( BuildSt );
 	//HOOK_MESSAGE( RandomPC );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	HOOK_MESSAGE( ServerName );
 	HOOK_MESSAGE( ScoreInfo );
 	HOOK_MESSAGE( TeamScore );
@@ -303,9 +303,9 @@ void CHud :: Init( void )
 
 	HOOK_MESSAGE( Spectator );
 	HOOK_MESSAGE( AllowSpec );
-//++ bullit@planethalflife.com
+//++ BulliT
 	//TFC JUNK 	
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	// VGUI Menus
 	HOOK_MESSAGE( VGUIMenu );
@@ -358,7 +358,7 @@ void CHud :: Init( void )
 	GetClientVoiceMgr()->Init(&g_VoiceStatusHelper, (vgui::Panel**)&gViewPort);
 
 	m_Menu.Init();
-//++ bullit@planethalflife.com
+//++ BulliT
   m_Splash.Init();
   m_Countdown.Init();
   m_Timer.Init();
@@ -375,7 +375,7 @@ void CHud :: Init( void )
   m_IRC.Init();
   m_CTF.Init();
   m_Scoreboard.Init();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	
 	ServersInit();
 
@@ -401,9 +401,9 @@ CHud :: ~CHud()
 		}
 		m_pHudList = NULL;
 	}
-//++ bullit@planethalflife.com
+//++ BulliT
   m_IRC.UserCmd_IRCDisconnect();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	ServersShutdown();
 }
@@ -525,7 +525,7 @@ void CHud :: VidInit( void )
 	m_TextMessage.VidInit();
 	m_StatusIcons.VidInit();
 	GetClientVoiceMgr()->VidInit();
-//++ bullit@planethalflife.com
+//++ BulliT
   m_Splash.VidInit();
   m_Countdown.VidInit();
   m_Timer.VidInit();
@@ -542,7 +542,7 @@ void CHud :: VidInit( void )
   m_IRC.VidInit();
   m_CTF.VidInit();
   m_Scoreboard.VidInit();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 int CHud::MsgFunc_Logo(const char *pszName,  int iSize, void *pbuf)

@@ -214,10 +214,10 @@ void CEnvExplosion::Use( CBaseEntity *pActivator, CBaseEntity *pCaller, USE_TYPE
 	// do damage
 	if ( !( pev->spawnflags & SF_ENVEXPLOSION_NODAMAGE ) )
 	{
-//++ bullit@planethalflife.com
+//++ BulliT
 		//RadiusDamage ( pev, pev, m_iMagnitude, CLASS_NONE, DMG_BLAST );
 		RadiusDamage ( pActivator ?  pActivator->pev : pev, pCaller ? pCaller->pev : pev, m_iMagnitude, CLASS_NONE, DMG_BLAST );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 	}
 
 	SetThink( &CEnvExplosion::Smoke );
@@ -258,10 +258,10 @@ void CEnvExplosion::Smoke( void )
 
 
 // HACKHACK -- create one of these and fake a keyvalue to get the right explosion setup
-//++ bullit@planethalflife.com
+//++ BulliT
 //void ExplosionCreate( const Vector &center, const Vector &angles, edict_t *pOwner, int magnitude, BOOL doDamage )
 void ExplosionCreate( const Vector &center, const Vector &angles, edict_t *pOwner, int magnitude, BOOL doDamage, CBaseEntity* pEnt )
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 {
 	KeyValueData	kvd;
 	char			buf[128];
@@ -275,8 +275,8 @@ void ExplosionCreate( const Vector &center, const Vector &angles, edict_t *pOwne
 		pExplosion->pev->spawnflags |= SF_ENVEXPLOSION_NODAMAGE;
 
 	pExplosion->Spawn();
-//++ bullit@planethalflife.com
+//++ BulliT
 //	pExplosion->Use( NULL, NULL, USE_TOGGLE, 0 );
 	pExplosion->Use( pEnt, pEnt, USE_TOGGLE, 0 );
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }

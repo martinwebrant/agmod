@@ -19,10 +19,10 @@
 #include "hud.h"
 #include "cl_util.h"
 
-//++ bullit@planethalflife.com
+//++ BulliT
 #include <demo_api.h>
 #include "AgMatchReport.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 #include "vgui_TeamFortressViewport.h"
 
 #define MAX_LOGO_FRAMES 56
@@ -109,11 +109,11 @@ int CHud :: Redraw( float flTime, int intermission )
 			gViewPort->HideCommandMenu();
 			gViewPort->HideScoreBoard();
 			gViewPort->UpdateSpectatorPanel();
-//++ bullit@planethalflife.com
+//++ BulliT
       //Stop recording the demo.
       if ( gEngfuncs.pDemoAPI->IsRecording() )
         gEngfuncs.pfnClientCmd("stop\n");
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		}
 		else if ( !m_iIntermission && intermission )
 		{
@@ -126,10 +126,10 @@ int CHud :: Redraw( float flTime, int intermission )
 			// Take a screenshot if the client's got the cvar set
 			if ( CVAR_GET_FLOAT( "hud_takesshots" ) != 0 )
 				m_flShotTime = flTime + 1.0;	// Take a screenshot in a second
-//++ bullit@planethalflife.com
+//++ BulliT
       AgMatchReport Report;
       Report.Save();
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 		}
 	}
 
@@ -221,7 +221,7 @@ void ScaleColors( int &r, int &g, int &b, int a )
 
 int CHud :: DrawHudString(int xpos, int ypos, int iMaxX, char *szIt, int r, int g, int b )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
   return AgDrawHudString(xpos,ypos,iMaxX,szIt,r,g,b);
   /*
 	// draw the string until we hit the null character or a newline character
@@ -236,7 +236,7 @@ int CHud :: DrawHudString(int xpos, int ypos, int iMaxX, char *szIt, int r, int 
 	}
 	return xpos;
   */
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 }
 
 int CHud :: DrawHudNumberString( int xpos, int ypos, int iMinX, int iNumber, int r, int g, int b )

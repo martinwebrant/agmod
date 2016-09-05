@@ -21,11 +21,11 @@
 #include "nodes.h"
 #include "player.h"
 #include "gamerules.h"
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
 #include "agstats.h"
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 #define	CROWBAR_BODYHIT_VOLUME 128
@@ -172,11 +172,11 @@ void CCrowbar::SwingAgain( void )
 
 int CCrowbar::Swing( int fFirst )
 {
-//++ bullit@planethalflife.com
+//++ BulliT
 #ifdef AGSTATS
   Stats.FireShot(m_pPlayer,STRING(pev->classname));
 #endif
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 	int fDidHit = FALSE;
 
@@ -293,13 +293,13 @@ int CCrowbar::Swing( int fFirst )
 				}
 				m_pPlayer->m_iWeaponVolume = CROWBAR_BODYHIT_VOLUME;
 				if ( !pEntity->IsAlive() )
-//++ bullit@planethalflife.com
+//++ BulliT
         //return TRUE;
         {
             m_flNextPrimaryAttack = UTIL_WeaponTimeBase() + 0.25;
 					  return TRUE;
         }
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 				else
 					  flVol = 0.1;
 

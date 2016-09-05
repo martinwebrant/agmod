@@ -1,4 +1,4 @@
-//++ bullit@planethalflife.com
+//++ BulliT
 
 #ifndef __AG_BASE64_H__
 #define __AG_BASE64_H__
@@ -8,4 +8,4 @@ void AgBase64Encode(const unsigned char* pszString, unsigned long ulInLen, char*
 
 #endif //__AG_BASE64_H__
 
-//-- bullit@planethalflife.com
+//-- Martin Webrant

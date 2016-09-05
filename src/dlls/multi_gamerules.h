@@ -20,21 +20,21 @@
 // CHalfLifeMultiplay - rules for the basic half life multiplayer
 // competition
 //=========================================================
-//++ bullit@planethalflife.com
+//++ BulliT
 #if !defined(_MULTIPLAY_H_)
 #define _MULTIPLAY_H_
 #include "aggamerules.h"
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 
 
 //=========================================================
 // CHalfLifeMultiplay - rules for the basic half life multiplayer
 // competition
 //=========================================================
-//++ bullit@planethalflife.com
+//++ BulliT
 class CHalfLifeMultiplay : public AgGameRules
 //class CHalfLifeMultiplay : public CGameRules
-//-- bullit@planethalflife.com
+//-- Martin Webrant
 {
 public:
 	CHalfLifeMultiplay();
