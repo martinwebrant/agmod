@@ -1,0 +1,51 @@
+================================================================
+Title                    : SemonZ
+Version                  : 1.1
+Release Date             : January 25th 2001
+Filename                 : semonz.bsp
+
+Authors                  : Rik Schennink 'Mr. T-rex' r.schennink@chello.nl
+                     
+Description              : Half-Life Deathmatch Map
+
+Other DM-levels by author: None
+
+================================================================
+--- Play Information ---
+Game                    : Half Life
+Level Name              : Semonz
+Single Player           : No
+Cooperative             : No
+Deathmatch              : Yes
+Difficulty Settings     : No
+New Sounds              : No
+New Graphics            : Yes (Acctually only Planet Halflife Logo)
+Known bugs              : Version 1.0 contained a longjump that was not shown in map this
+			  version fixes that.
+
+--- Construction ---
+Editor used             : WorldCraft 3.3
+Construction Time       : 1 week full time everyday.
+
+
+
+Installation
+------------
+
+Unzip the file semonz.bsp into your ...\sierra\halflife\valve\maps directory
+
+
+Special Thanx
+----------------
+
+Renkie for compiling the map on his l33t pc. (512RAM)
+
+Renkie, CHiNX, Vectrex, Pain, Punisher, DoMiNioN, and Cerox for constructive comments on the map.
+
+Copyright / Permissions
+-----------------------
+This map is copyrighted by Rik Schennink, 2001.
+
+You MAY distribute this level through any electronic network (internet,
+FIDO, local BBS etc.), provided you include this file and leave the archive
+intact.

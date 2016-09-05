@@ -1,0 +1,16 @@
+// Overview: Zoom 2.77, Map Origin (-624.00, 150.00, 360.00), Z Min 26.00, Z Max -433.00, Rotated 0
+
+// overview description file for agony.bsp
+
+global 
+{
+	ZOOM	2.77
+	ORIGIN	-624	150	-430
+	ROTATED	0
+}
+
+layer 
+{
+	IMAGE	"overviews/agony.bmp"
+	HEIGHT	-430
+}

@@ -1,0 +1,5 @@
+#/bin/sh
+PATH=$PATH:~/hlds_l
+cd ~/hlds_l
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/hlds_l
+./hlds_run -port 27017 -game aghl +map boot_camp +maxplayers 6 +servercfgfile server_lms.cfg 

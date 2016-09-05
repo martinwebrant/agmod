@@ -1,0 +1,5 @@
+#/bin/sh
+PATH=$PATH:~/hlds_l
+cd ~/hlds_l
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/hlds_l
+./hlds_run -port 27016 -game aghl +map agctf_infinity +maxplayers 20 +servercfgfile server_ctf.cfg +mapcyclefile mapcycle_ctf.txt

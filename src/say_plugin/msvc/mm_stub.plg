@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: mm_stub - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\mawb\LOCALS~1\Temp\RSP19A.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "..\metamod" /I "..\..\sourcecode\engine" /I "..\..\sourcecode\dlls" /I "..\..\sourcecode\pm_shared" /I "..\..\metamod" /I "..\..\common" /I "..\..\engine" /I "..\..\dlls" /I "..\..\pm_shared" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "MM_STUB_EXPORTS" /FR"release/" /Fp"release/mm_stub.pch" /YX /Fo"release/" /Fd"release/" /FD /c 
+"E:\Dev\AG\SourceCode\say_plugin\dllapi.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\mawb\LOCALS~1\Temp\RSP19A.tmp" 
+Creating temporary file "C:\DOCUME~1\mawb\LOCALS~1\Temp\RSP19B.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /dll /incremental:no /pdb:"release/mm_say.pdb" /machine:I386 /def:".\mm_stub.def" /out:"release/mm_say.dll" /implib:"release/mm_say.lib" 
+.\release\dllapi.obj
+.\release\h_export.obj
+.\release\meta_api.obj
+.\release\sdk_util.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\mawb\LOCALS~1\Temp\RSP19B.tmp"
+<h3>Output Window</h3>
+Compiling...
+dllapi.cpp
+Linking...
+   Creating library release/mm_say.lib and object release/mm_say.exp
+mm_say.exp : warning LNK4070: /OUT:mm_stub.dll directive in .EXP differs from output filename "release/mm_say.dll"; ignoring directive
+Creating command line "bscmake.exe /nologo /o"release/mm_stub.bsc"  .\release\dllapi.sbr .\release\h_export.sbr .\release\meta_api.sbr .\release\sdk_util.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+mm_say.dll - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

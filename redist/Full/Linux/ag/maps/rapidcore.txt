@@ -1,0 +1,81 @@
+* Play Information *
+
+Title 			: Rapidcore
+Filename		: rapidcore.bsp
+Date                    : 04th January 2001
+Author			: [SO]Wolf
+Other levls by author	: Combat Camp, Lost Village, Castle Rush,
+			  Steelwork, Lost Village 2, cctf3, cctf6
+			  Pain 1on1, Vacant Town, Heavy Pole, Finaltube
+
+Email address 		: wolf@so-clan.de
+
+Home page		: http://www.so-clan.de
+
+Description		: The map is overall a structure like datacore and
+				takes palce in the row of teamplay, 1on1 or
+				deathmatchmaps. I am allways on the run to
+				make the best possible map with the idea i have
+				and this time i think, the concept and the
+				gameplay of the whole map is really good and the 
+				map has the stuff to make it to the top of
+				Multiplayer Maps and can match the standard maps
+				in some criterias now. 
+				This Map is my attempt to show, how good standard
+				should be and how the gameplay rules and itemplacement
+				has to manage like as it is necsessary nowadays to
+				satisfy the most players needs.
+				This map is a product of me, with great help and
+				feedback from chinx from www.adrenalinegamer.com
+			  
+Additional Credits to   : spacial thanks to CHiNX for improvment tips and much
+				feedback on the map-betas! Thank you CHiNX 
+				(chinx@clara.co.uk). [SO]Fritzman (fritzman@so-clan.de),
+				who spent much hours with me in the map to test gameplay.
+				And espacially simulated teamplay and 1on1 abilities.
+
+Single Player           : no
+Cooperative Player      : no
+Deathmatch Player       : Deathmatch, 1on1 and Teamplay (2 players up to 12)
+Difficulty Settings     : no
+New Textures            : no
+CD Track                : no
+
+* Construction *
+Base			: new Level from scratch
+Editor(s) used          : Worldcraft 3.3
+Construction Time	: around 70 hours constructing and testing...
+Compile Machine		: Duron @ 722MHz 192MB
+Compile time		: qsg:	   56 sec.
+			  qbsp2:   29 sec.
+			  qrad:   652 sec.
+			  vis:    141 sec.
+			  =========================
+		
+
+================================================================
+		::: ADDITIONAL INFO :::
+================================================================
+
+Bottomline:
+		Try to find some "secrets" and have fun...
+		Mails with comments about this map are welcome. Feel free
+		to send me anything you want to say about this work or 
+		visit my clansite with mapping section (www.so-clan.de). 
+		I need your feedback, because i build this and all of my maps 
+		for YOU and all players around the net. 
+
+
+* Copyright / Permissions *
+
+Authors MAY NOT use this level as a base to build additional levels. 
+You MUST NOT distribute this level UNLESS you INCLUDE THIS FILE WITH
+NO MODIFICATIONS!!!. If you don't co-operate, then DON'T DISTRIBUTE
+IT IN ANY FORM!!.
+This BSP may be distributed ONLY over the Internet and/or BBS systems.
+You are NOT authorized to put this BSP on any CD or distribute it in
+any way without my permission.
+
+
+cy@ Wolf
+

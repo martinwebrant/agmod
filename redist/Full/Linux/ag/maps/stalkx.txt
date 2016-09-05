@@ -1,0 +1,50 @@
+------General Info--------------------------------------------
+
+Date		:  Nov 16, 2000
+Title           :  StalkX
+Filename        :  stalkX.bsp
+Filesize	:  2.42 megs
+Author          :  tommyd
+Author Email    :  tjd159@psu.edu	
+Author ICQ      :  86347298
+Previous Maps	:  Lantastic2, boot_campX
+
+------Map Desciption-------------------------------------------------
+Stalk**** how it should really look.  The layout is somewhat similar
+but nowhere close to stalk****.   Build for gauss jumping room and 
+good looks.
+------Play Information-----------------------------------------------
+
+Deathmatch      :  yes
+Single Player   :  info_player_start exists
+How Many Players:  2-10
+
+------Construction---------------------------------------------------
+
+Base            :  from scratch
+Editor(s) used  :  WorldCraft 3 / Zoner's HL tools 2.4.2
+Time to Complete:  1 week total
+Compile Machine :  p3 800, 128MB RAM
+Compile time    :  15 min (-extra for hlrad) 
+Playtest time   :  1 week
+Custom Lighting :  Yes
+Custom Tex's	:  Yes (new valve tex's are -wadincluded)
+
+------Map Instructions-----------------------------------------------
+
+Unzip the files in this archive.  Place the file "stalkX.bsp" in
+your half-life/valve/maps directory.  
+
+------Thanks/Credits-------------------------------------------------
+
+D$ for pointing out some things.  some other people too i guess.
+------Feedback-------------------------------------------------------
+
+icq or email me
+
+------Copyright-Permissions------------------------------------------
+
+Copyright 2000.  You may not use this map as a base to build other levels.
+You decompile it, i'll cut your balls off. =P
+
+=====================================================================

@@ -1,0 +1,74 @@
+Rebellion
+====================================================================================================
+
+Date                    : 4th April 2002
+Title                   : Rebellion
+Filename                : rebellion.bsp
+Author                  : ReNo [Duncan Blair]
+Email Address           : reno@valvepit.com
+ICQ#			: 28651662
+Home Page               : http://evolution.valvepit.com
+
+Map Description         : I just knocked this little arena together in an evening for no apparent
+			  reason. I didn't have any idea of what I was building or how it would 
+			  turn out, but I'm quite happy with the result. Its best suited to arena
+			  mode of the Adrenaline Gamer mod, but it also works fine in deathmatch.
+
+Other Works by Author   : [1] Obsolete
+			  [2] Elixir
+
+			  Check them and more out at the maps page of my site:
+			  http://evolution.valvepit.com/maps.html
+
+Misc Author Info        : This is my third map release. I am currently 17 [at 06/03/02] and live 
+			  in Scotland in a little town called North Berwick where i skateboard,
+			  map and piss about on computers. Sometime i hope to gain a career in a
+			  level design...nothing wrong with optimism :)
+
+
+===================================================================================================
+
+== Play Information ==
+Single Player           : No [1 start]
+Cooperative             : No
+Deathmatch              : Yes [only 4 starts though!]
+
+== Construction ==
+Base                    : Scratch
+Editor(s) used          : Valve Hammer 3.4
+
+== Build Machine ==
+AMD Duron 800
+256mb Crucial RAM
+Elsa Gladiac MX 32mb
+
+
+================================= Thanks... =======================================================
+In no particular order...
+
+	Friends
+	Family
+	All the great HL mapping sites that i learnt from
+	Howling for hosting me and running the excellent ValvePit (http://www.valvepit.com)
+	Leperous for running (and upgrading!) the amazing Snarkpit (http://www.snarkpit.co.uk)	
+	Snarkpit forum crew for random banter and endless help (although not on this map).
+	Gametribe forum crew for making my moderator job easy :) (http://www.gametribe.net)
+	Bullit for the excellent AG modification (http://www.planethalflife.com/agmod)
+	Orpheus for thinking i coulda made this map quicker than I did (15 minutes?! PFFF!)
+	Kage of "The Rig" mod for not minding me making this ;) (http://www.clan-bdw.co.uk/therig)
+
+
+== Installation Info ==
+Unzip both files to your half-life/valve/maps directory.
+
+
+==Copyright / Permissions==
+Authors MAY NOT use this level as a base to build additional levels.
+
+This map may be distributed ONLY on a "not for profit" basis using any medium,
+provided this file is included with no changes.
+
+Magazines and other published media may use my level provided they ask for my permission and send me
+a copy of their product ;)
+
+This template is available from www.globalassault.com.

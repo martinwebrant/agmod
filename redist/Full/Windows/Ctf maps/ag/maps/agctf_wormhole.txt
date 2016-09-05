@@ -1,0 +1,29 @@
+.::  Map Information  ::.
+
+Wormhole
+Adrenaline Gamer CTF
+agctf_wormhole.bsp
+Recommended Players: 6-12
+
+.::  Author Information  ::.
+
+Author: Andrew C. Weldon
+E-Mail: aweldon@planethalflife.com
+URL:    http://planethalflife.com/awmaps/
+
+.::  Map Description  ::.
+
+Originally created for Op4CTF, this map has received a colored facelift for use in AGCTF. Op4ctf_wormhole was my first Op4CTF creation, a space platform based map inspired by q3ctf4 and mpteam6 from Quake III and Q3: Team Arena, respectively. I've never really been happy with the appearance of this one, and I'd like to someday revisit the concept and improve upon the visuals (or lack thereof) here.
+
+.::  Thanks to:  ::.
+
+	Valve Software
+	Gearbox Software
+	BulliT and AGCTF
+
+.::  Other Stuff ::.
+
+agctf_wormhole (c) 2002 Andrew Weldon
+Also see agctf_gauntlet and agctf_omen.
+
+		 

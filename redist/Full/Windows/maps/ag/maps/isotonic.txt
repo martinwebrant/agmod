@@ -1,0 +1,83 @@
+* Play Information *
+
+Title 			: Isotonic
+Filename		: isotonic.bsp
+Date                    : 02nd February 2002
+Author			: Michael 'Wolf'
+Other levls by author	: HLDM: Combat Camp, Lost Village, Castle Rush,
+			  Steelwork, Lost Village 2, Pain 1on1,
+			  Vacant Town, Heavy Pole, Finaltube, Rapidcore
+			  CCTF Mod: cctf3, cctf6
+
+Email address 		: wolf-so@gmx.de
+
+Home page		: -
+
+Description		: -
+			  
+Additional Credits to   : CHiNX (betatester and jointly responsible
+				 for gameplay and design tweaks)
+			  57th|Fritzman and his clan www.57th.de
+
+Single Player           : no
+Cooperative Player      : no
+Deathmatch Player       : Deathmatch, 1on1 and Teamplay (2 players up to 10)
+Difficulty Settings     : no
+New Textures            : no
+CD Track                : no
+
+* Construction *
+Base			: new Level from scratch
+Editor(s) used          : Worldcraft 3.3, Photoshop 6.0, 
+Construction Time	: -
+Compile Machine		: Athlon 1000 @ 1301MHz 512MB DDRRAM
+Compile time		: csg:	    44.71 sec.
+			  bsp:      11.65 sec.
+			  vis:     117.49 sec.
+			  rad:    1939.03 sec.
+			  =========================
+		
+
+================================================================
+		::: ADDITIONAL INFO :::
+================================================================
+
+Bottomline: The design should not be that different from regular
+	    HL-maps and also add some fresh wind into the details.
+	    Some texture works and design tweaks, also using the
+	    latest known technics and necsessary functionality, 
+	    the map should "feel" like a old scool Half-Life map. 
+	    So it began... 
+
+
+	    The map was planned, as one more quality deathmatch map
+	    for the Half-Life community. Fun for ffa-games and also
+            a good map for leaques and cups. But i decided to 
+	    turn around the basic idea of the map, because the map
+	    had the chance to be a great leaque map wit hsome changes.
+	    After weeks of redesigns and betatests, it came to an
+	    end.
+	    Isotonic is now somewhat "none-ffa-styled".
+	    The maps gameplay and layout, should satisfy any 
+	    hardcore gamer nowadays and espacially modern HL-Clans.
+	    Isotonic is designed, to work in a lineup for cups leaques
+	    with or without the AGMOD.
+
+		
+	    Visit Adrenalinegamer Modification site at: 
+		http://www.planethalflife.com/agmod
+
+
+* Copyright / Permissions *
+
+Authors MAY NOT use this level as a base to build additional levels. 
+You MUST NOT distribute this level UNLESS you INCLUDE THIS FILE WITH
+NO MODIFICATIONS!!!. If you don't co-operate, then DON'T DISTRIBUTE
+IT IN ANY FORM!!.
+This BSP may be distributed ONLY over the Internet and/or BBS systems.
+You are NOT authorized to put this BSP on any CD or distribute it in
+any way without my permission.
+
+
+cy@ Wolf
+

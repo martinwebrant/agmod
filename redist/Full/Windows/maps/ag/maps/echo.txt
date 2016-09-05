@@ -1,0 +1,96 @@
+Echo - Made for the Gametribe HLDM mapping competition
+====================================================================================================
+
+Date                    : 30th April 2002
+Title                   : Echo
+Filename                : echo.bsp
+Author                  : ReNo [Duncan Blair]
+Email Address           : reno@valvepit.com
+ICQ#			: 28651662
+Home Page               : http://evolution.valvepit.com
+
+Map Description         : This is a small, indoors industrial/urban level that i knocked together in a
+			  few days just so that I would have something to enter into the Gametribe DM
+			  mapping competition. I originally planned to use my project Forsaken, but it
+			  was too mammoth an undertaking to get done in time for the deadline, so I
+			  started this new level instead. I drew a lot of inspiration from some UT maps
+			  which will be quite obvious to people who know that game, and also from other
+			  HL maps such as "Lambda Bunker", and Andrew Weldon's "Repair Bay 4".
+
+			  Strangely, this is a map by me with....acceptable r_speeds! What ever is the
+			  world coming to :) Well truth be told, this is my only indoors level, and so
+			  the lack of rocks has meant I have been able to keep them low! They peak at
+			  850, which is higher than I had aimed for, but its only in a small area and
+			  there is little I could do with the current layout to reduce them.
+
+			  The underground section of the map holds some powerful weapons and ammo, but
+			  the ammo and items are housed in the upper regions. I intended for this to
+			  add a tactical element to small team games and *fingers crossed* [i had no			  	  time to test it out] I've pulled it off.
+
+Other Works by Author   : [1] Obsolete
+			  [2] Elixir
+			  [3] Rebellion
+			  [4] CM Arena
+
+			  Check them and more out at the maps page of my site:
+			  http://evolution.valvepit.com/maps.html
+
+Misc Author Info        : This is my fifth map release. I am currently 17 [at 30/04/02] and live 
+			  in Scotland in a little town called North Berwick where i skateboard,
+			  map and piss about on computers. Sometime i hope to gain a career in a
+			  level design...nothing wrong with optimism :)
+
+
+===================================================================================================
+
+== Play Information ==
+Single Player           : No [1 start]
+Cooperative             : No
+Deathmatch              : Yes
+
+== Construction ==
+Base                    : Scratch
+Editor(s) used          : Valve Hammer 3.4, Wally
+
+== Build Machine ==
+AMD Duron 800
+256mb Crucial RAM
+Elsa Gladiac MX 32mb
+
+
+========================== Playtesting & Suggestions =============================================
+	
+Real Life mates :	Frank		Trunter
+
+Others :		Scary_jeff	Gollum
+			ACE|FRAG	Kagemusha
+			Yak_Fighter	Cash Car Star
+
+
+================================= Thanks... =======================================================
+In no particular order...
+
+	Friends
+	Family
+	All the great HL mapping sites that i learnt from
+	All the great HL level review sites that im sending this too!
+	Rince, Inx and everyone else running the show at Gametribe (http://www.gametribe.net)
+	Kage of "The Rig" mod for letting me finish this ;) (http://therig.valvepit.com)
+	Howling for hosting me and running the excellent ValvePit (http://www.valvepit.com)
+	Leperous for running (and upgrading!) the amazing Snarkpit (http://www.snarkpit.co.uk)	
+	Snarkpit forum crew for comments and banter.
+
+
+== Installation Info ==
+Unzip echo.bsp and this text file to your half-life\valve\maps directory.
+Unzip echo.jrf (optional file) to your half-life\jumbot\wpfiles directory.
+
+==Copyright / Permissions==
+Authors MAY NOT use this level as a base to build additional levels.
+
+This map may be distributed ONLY on a "not for profit" basis using any medium,
+provided this file is included with no changes.
+
+Magazines and other published media may use my level provided they ask for my permission.
+
+This template is available from www.globalassault.com.

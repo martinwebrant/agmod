@@ -1,0 +1,38 @@
+// Command Menu definition
+// 
+// Basic Format:
+//		"<Bound Key>" "<Button Text>" "<Command sent to server>"
+//
+// 
+//
+//
+// Buttons can also open up submenus, as follows:
+// {
+// 	"Some More Options",
+//	{
+//		...
+//	}
+// }
+//
+//
+// Buttons preceded with "CUSTOM" are handled in special ways. They can only be moved
+// around or deleted.
+//
+//
+// Limitations:
+//		Maximum of 50 menus.
+//		Maximum of 100 buttons per menu.
+
+//--------------------------------------------------------
+// Everything below here is editable
+
+"6" "Chase Overview"	"spec_mode 6"
+"5" "Free Overview"	"spec_mode 5"
+"4" "First Person"	"spec_mode 4"
+"3" "Free Look"		"spec_mode 3"
+"2" "Free Chase Cam"	"spec_mode 2"
+"1" "Locked Chase Cam"	"spec_mode 1"
+
+
+
+

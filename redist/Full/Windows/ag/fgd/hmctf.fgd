@@ -1,0 +1,42 @@
+//
+// Half-Life game definition file (.fgd) 
+// version 1.00
+// for Worldcraft 2.0 and above, and Half-Life 1.0.0.9 and above
+// This file is for Home Made CTF
+// last update: 30th of June 1999
+//
+// made by Arnout 'RR2DO2' van Meer - rr2do2@planethalflife.com -
+// http://www.planethalflife.com/whenitsdone
+//
+// special thanks to: everyone at Valve Software!
+//
+
+//
+// -30-06-99: Initial release
+//
+
+
+//
+// PointClasses
+//
+
+@PointClass size(-8 -16 -36, 8 16 36) color(255 0 0) = item_flag_team1 : "Blue flag" []
+@PointClass size(-8 -16 -36, 8 16 36) color(0 0 255) = item_flag_team2 : "Red flag" []
+
+@PointClass  size(-16 -16 -36, 16 16 36) color(255 0 0)= info_player_team1 : "Blue team start"
+[
+	spawnflags(Flags) =
+	[
+		2048 : "Not in Deathmatch" : 0
+	]
+]
+
+@PointClass size(-16 -16 -36, 16 16 36) color(0 0 255) = info_player_team2 : "Red team start"
+[
+	spawnflags(Flags) =
+	[
+		2048 : "Not in Deathmatch" : 0
+	]
+]
+
+@PointClass = info_hmctfdetect : "Map Detection" []

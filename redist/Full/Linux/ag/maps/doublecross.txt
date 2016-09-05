@@ -1,0 +1,14 @@
+Title:  DoubleCross
+Author: Dario Casali
+Size:	2229
+
+The first map is Dario Casali's follow-up to Crossfire, called
+DoubleCross.Here are his comments and the BSP.
+
+The principal is the same as in Crossfire. There is a bunker which can
+be used to call a nuclear strike against anyone outside of it every four
+minutes. Once the strike has been called, a one minute warning siren
+activates, giving everyone the chance to get to the bunker. There are
+far more tactical points in this map than in Crossfire and it also
+addresses the bug in the Crossfire where people wouldn't get killed by
+the strike sometimes. 

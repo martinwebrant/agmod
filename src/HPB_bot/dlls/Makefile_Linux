@@ -1,0 +1,20 @@
+CPP = gcc
+BASEFLAGS = -Dstricmp=strcasecmp -Dstrcmpi=strcasecmp
+CPPFLAGS = ${BASEFLAGS} -m486 -O2 -w -I../engine -I../common -I../pm_shared
+
+OBJ = bot.o bot_chat.o bot_client.o bot_combat.o bot_models.o bot_navigate.o \
+	bot_start.o dll.o engine.o h_export.o linkfunc.o util.o waypoint.o
+
+HPB_bot_i486.so: ${OBJ}
+	${CPP} -fPIC -shared -o $@ ${OBJ} -Xlinker -Map -Xlinker HPB_bot.map -ldl
+
+clean:
+	-rm -f *.o
+	-rm -f *.so	
+
+%.o:	%.cpp
+	${CPP} ${CPPFLAGS} -c $< -o $@
+
+%.o:	%.c
+	${CPP} ${CPPFLAGS} -c $< -o $@
+

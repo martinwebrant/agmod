@@ -1,0 +1,15 @@
+/* Styles applied to HTML elements */
+
+body {
+  font-family: Tahoma, Verdana, Microsoft Sans Serif, Arial, Helvetica, san serif;
+  font-size: 0.75em;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+#menu {
+  display: none;
+}

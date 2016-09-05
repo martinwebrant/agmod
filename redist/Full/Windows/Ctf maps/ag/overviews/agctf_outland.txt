@@ -1,0 +1,14 @@
+// overview description file for agctf_outland.bsp
+
+global 
+{
+	ZOOM	1.01
+	ORIGIN	16 	1320	264
+	ROTATED	1
+}
+
+layer 
+{
+	IMAGE	"overviews/agctf_outland.tga"
+	HEIGHT	264
+}

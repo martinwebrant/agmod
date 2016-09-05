@@ -1,0 +1,103 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HPB_bot - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\mawb\LOCALS~1\Temp\RSP9.tmp" with contents
+[
+/nologo /G5 /MT /W3 /GX /Zi /O2 /I "..\dlls" /I "..\engine" /I "..\common" /I "..\pm_shared" /I "..\\" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "VALVE_DLL" /Fp".\Release/HPB_bot.pch" /YX /Fo".\Release/" /Fd".\Release/" /FD /c 
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\bot.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\bot_chat.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\bot_client.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\bot_combat.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\bot_models.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\bot_navigate.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\bot_start.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\dll.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\engine.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\h_export.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\linkfunc.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\namefunc.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\util.cpp"
+"E:\Dev\Projects\agmod\6.0\src\HPB_bot\dlls\waypoint.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\mawb\LOCALS~1\Temp\RSP9.tmp" 
+Creating temporary file "C:\DOCUME~1\mawb\LOCALS~1\Temp\RSPA.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib /nologo /subsystem:windows /dll /incremental:no /pdb:".\Release/HPB_bot.pdb" /map:".\Release/HPB_bot.map" /debug /machine:I386 /def:".\HPB_bot.def" /out:".\Release/HPB_bot.dll" /implib:".\Release/HPB_bot.lib" 
+.\Release\bot.obj
+.\Release\bot_chat.obj
+.\Release\bot_client.obj
+.\Release\bot_combat.obj
+.\Release\bot_models.obj
+.\Release\bot_navigate.obj
+.\Release\bot_start.obj
+.\Release\dll.obj
+.\Release\engine.obj
+.\Release\h_export.obj
+.\Release\linkfunc.obj
+.\Release\namefunc.obj
+.\Release\util.obj
+.\Release\waypoint.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\mawb\LOCALS~1\Temp\RSPA.tmp"
+Creating temporary file "C:\DOCUME~1\mawb\LOCALS~1\Temp\RSPB.bat" with contents
+[
+@echo off
+copy .\Release\HPB_bot.dll D:\Half-Life\valve\dlls
+copy .\Release\HPB_bot.dll D:\Half-Life\tfc\dlls
+copy .\Release\HPB_bot.dll D:\Half-Life\cstrike\dlls
+copy .\Release\HPB_bot.dll D:\Half-Life\gearbox\dlls
+copy .\Release\HPB_bot.dll D:\Half-Life\frontline\dlls
+copy .\Release\HPB_bot.dll D:\Half-Life\holywars\dlls
+copy .\Release\HPB_bot.dll D:\Half-Life\dmc\dlls
+copy .\Release\HPB_bot.dll D:\Half-Life\HPB_bot
+]
+Creating command line "C:\DOCUME~1\mawb\LOCALS~1\Temp\RSPB.bat"
+Compiling...
+bot.cpp
+bot_chat.cpp
+bot_client.cpp
+bot_combat.cpp
+bot_models.cpp
+bot_navigate.cpp
+bot_start.cpp
+dll.cpp
+engine.cpp
+h_export.cpp
+linkfunc.cpp
+namefunc.cpp
+util.cpp
+waypoint.cpp
+Linking...
+   Creating library .\Release/HPB_bot.lib and object .\Release/HPB_bot.exp
+<h3>Output Window</h3>
+Copying to DLL folder(s)
+The system cannot find the path specified.
+        0 file(s) copied.
+The system cannot find the path specified.
+        0 file(s) copied.
+The system cannot find the path specified.
+        0 file(s) copied.
+The system cannot find the path specified.
+        0 file(s) copied.
+The system cannot find the path specified.
+        0 file(s) copied.
+The system cannot find the path specified.
+        0 file(s) copied.
+The system cannot find the path specified.
+        0 file(s) copied.
+The system cannot find the path specified.
+        0 file(s) copied.
+Error executing c:\windows\system32\cmd.exe.
+
+
+
+<h3>Results</h3>
+HPB_bot.dll - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

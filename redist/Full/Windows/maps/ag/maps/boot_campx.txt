@@ -1,0 +1,83 @@
+------General Info--------------------------------------------
+
+Date		:  May 8, 2000
+Title           :  >> boot_camp eXtreme <<
+Filename        :  boot_campX.bsp
+Filesize	:  3.5 megs - additional 1 meg for custom skybox
+Author          :  [LMS]tommyd
+Author Email    :  tjd159@psu.edu	
+Author ICQ      :  49471756
+Previous Maps	:  Lantastic2
+
+------Map Desciption-------------------------------------------------
+A refreshing view of the greatest map in existance, namely boot_camp.
+This has been designed with elite-style gameplay - tau jumping, etc.
+I kept the same layout, but injected my own style into the map.  I have
+added a new building near the bridge that houses another long jump.  
+
+------Play Information-----------------------------------------------
+
+Deathmatch      :  yes
+Single Player   :  info_player_start exists
+How Many Players:  2-16
+
+Spawn Points	:  23
+
+LongJumpMods	:  3
+health kits	:  12
+HEV packs	:  12
+
+9mmARs		:  21
+AR grens	:  17	
+Shotguns	:  7
+Xbows		:  3	
+RPG's		:  3
+Taus		:  2
+Egons		:  1
+Satchels	:  5
+Tripmines	:  3
+Hand Grens	:  2
+Snarks		:  1
+Hornetguns	:  ????  =P
+Mags		:  1
+
+------Construction---------------------------------------------------
+
+Base            :  from scratch, inspired by original boot_camp
+Editor(s) used  :  WorldCraft 2.1 / Zoner's HL tools 1.6.2
+Time to Complete:  3 months on and off (including 3 weeks playtesting)
+Compile Machine :  Athlon800, 256MB RAM - Great Thanks CRuCiFeR!
+Compile time    :  About 50 minutes (-extra -chop 96 for hlrad) 
+Playtest time   :  hours and hours
+Custom Lighting :  Yes
+Custom Tex's	:  No
+
+------Map Instructions-----------------------------------------------
+
+Unzip the files in this archive.  Place the file "boot_campX.bsp" in
+your half-life/valve/maps directory.  Place all skybox files into your
+half-life/valve/gfx/env directory.
+
+------Thanks/Credits-------------------------------------------------
+
+Valve and Dario Casali for HL and boot_camp
+CRuCiFeR for the compile machine
+DarcJedi for the custom skybox
+|XPK|Voltron and [LMS]007 for the inspiration and mapping help
+[TDK]*SCORPION, [TDK]kray, uBL.NeO, |THB|sstinger for their advice.
+Beta Servers: LoSeR, pimpstyle, MADHOUSE, and others
+All elites (too many to list) who played BCX and gave me advice/help.
+... anyone else i forgot
+
+Now go play it and have fun !
+
+------Feedback-------------------------------------------------------
+
+icq or email me
+
+------Copyright-Permissions------------------------------------------
+
+Copyright 2000.  You may not use this map as a base to build other levels
+without permission.
+
+=====================================================================

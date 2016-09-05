@@ -1,0 +1,14 @@
+// overview description file for agctf_daydream.bsp
+
+global 
+{
+	ZOOM	.81
+	ORIGIN	-1.56 	3.13	-160
+	ROTATED	1
+}
+
+layer 
+{
+	IMAGE	"overviews/agctf_daydream.tga"
+	HEIGHT	-160
+}

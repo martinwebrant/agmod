@@ -1,0 +1,93 @@
+================================================================
+Title                   : Havoc
+Date                    : 22nd April 2000 
+Filename                : havoc.bsp
+Author                  : Steve Lyne aka "Scary-one" 
+Email Address           : steve.lyne@telia.com
+Home Page               : http://scary1.remotepoint.com
+
+Description             : This map has been in the making, in theory at least, for about half a year -  in fact ever since I agreed to 
+			  make a map for the clan [H.o.H] back in the early Autumn of 1999. For many reasons the original Havoc never
+			  became more than than a couple of corridors, and the .rmf file of that map just ended up gathering dust on 
+			  my hard drive.I started work on this Havoc about a month ago. I have worked fairly hard on it the past couple
+			  of weeks, and I can safely say that the map would never have been in shape it is now if it wasn't for the assistance
+			  and ideas of the [H.o.H] boys themselves. They have flooded me with criticism (constructive) - guiding me forwards
+			  so that the map would be the very best it could be.
+
+			  Havoc can be described as a multi-level Outcry follow-up. It has many of Outcry's traits, whilst being different
+			  enough to stand on its own 2 feet. It borrows some of the architectural feel from its predecessor, but this was
+			  completely intentional, considering that Outcry is considered by many to be my finest map to date.
+
+			  I figure that the map is good for 4-12 players. Of course I may be wrong. It seems large at first, but connections
+			  are abundant, and this allows fewer players to enjoy the map too. 
+
+			  Main Features would be:
+
+			  A laser platform which gives access to the Long Jump module.
+			  A double action fan which bars access to the RPG and the Hornetgun .. nice :)
+			  A watery trap awaiting any Egon loving sucker.
+
+			  Extra special thanks to these [H.o.H] guys for major help and guidance, I hope you actually like the map after all this :)
+			  
+			  Draft4u
+			  DirtySAnchez
+			  The_Necromancer
+			  cyrus258
+			  Methodi
+			  Vorg
+			  
+Other Levels by myself  : Manhunt (manhunt.bsp)
+			  Enraged (enraged.bsp) revised - (enraged2.bsp)
+			  Outcry  (outcry.bsp)  revised - (outcry!.bsp) 
+			  Scary_1 (scary_1.bsp)
+			  Scary_2 (scary_2.bsp) the original :)
+			  RemoteChance (r_chance.bsp)
+			  PCG_Infested 
+			  OP4_Infested (slightly altered from the original)
+
+Additional Credits to   : i)   My family - Hannele, Nathalie & Emily.
+  			  ii)  Valve/Sierra 
+                          iii) ID Software
+			  iv)  The guy(s) who made Worldcraft (I always forget to thank him/them)
+			  v)   Sean Cavanaugh for his adapted compile tools. Reach this guy at seancavanaugh@hotmail.com 
+			  vi)  Vector and the dudes on the RemoteChance server for hosting me and always being so willing
+			       to help me beta test. Special thanks to Vector, Raider, Elkdog and Thump. 
+			  vii) Thanks to Jake, Gladdis and Fisich for their words of wisdom too :) 
+
+================================================================
+
+* Play Information *
+
+Single Player           : No (one start)
+Deathmatch              : 4-12+ 
+Difficulty Settings     : No
+
+* Construction *
+
+Base                    : from scratch
+Editor(s) used          : Worldcraft 2.0 
+Known Bugs              : none I'm aware of, but I wouldn't be surprised if the fan stops rotating at some point.
+
+Build Time              : Roughly 1 month, of which the past 2 weeks were basically a beta testing tweak-fest fortnight. 
+
+Compile machine         : PII 333 with 96 megs of SDRAM 
+HLCSG Time		: 
+HLBSP Time              : forgot to check
+HLVIS Time              : but altogether about 25 minutes -extra
+HLRAD Time (extra)      :  
+
+* Permissions *
+
+You MAY NOT sell this sucker for money!
+
+If a magazine wants it on its CD - that's fine - *BUT* you *MUST*
+send me a copy. OK!! Then we are quits :) Email me ... I'm not impossible.
+
+General BBS use - sure, I don't have a problem with that.
+
+You MAY NOT alter or add to this level without my permission.
+
+* Last but not least *
+
+Please, please, please email me if you like this level, or if you would like to employ me. 
+

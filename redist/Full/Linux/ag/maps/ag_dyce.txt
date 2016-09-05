@@ -1,0 +1,55 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Title:			DyCe
+File name:		dyce.bsp
+Author:			Martin Buff a.k.a. "Violation"
+E-mail:			v.c.assasin@btinternet.com
+Background:		The year is 2000+ something, this bright chap called Derik finds that he
+			has no room to keep his pet snails anymore, so he builds this arena (yes on his own)
+			but before he can place his snails in the arena some big 'ard men come in and 
+			beat him till he dies. They cant decide who 0wnz the snail arena so they 
+			fight for it. So if you want the arena for your own you have to fight for it.
+			eehh i named it Dyce cos the old man that made hit for his snails was called
+			Derik Dyce... no i didnt just make all this up!
+			
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Singleplayer:		Just to look around
+Deathmatch:		Yes
+Teamplay:		NEIN
+Players:		As many as you want, but its a 1v1 map
+
+Information:		This is my first 1v1 map, and it shows i think, r_speeds are pretty pants in
+			places cos i got carried away with the looks but if u got a fairly good pc it
+			should play fine. There are a few rebounds, but nearly all maps have a few...
+			i got rid of alot of them however.
+
+Special Thanks:		-Valve for making the best fps of all-time.		
+			-Bullit for making AG
+
+
+*Construction*
+
+Base:			From Scratch
+Editor Used:		WorldCraft
+Compile Machine:	Athlon800, 128MB RAM
+Construction time:	bout 3 days for a few hours, then 3 months were i left it at about 80% done...
+			then i added the dodgy lift and compiled it and made the roof blue
+New textures:		No
+CD track:		No
+Known Errors:		Jump on the lift to get on, else it will go without you ;)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Copyright 1999 Collin Holmes
+
+Authors MAY NOT use this level as a base to build additional levels. 
+
+Feel free to distribute this level, but ONLY if you INCLUDE THIS FILE WITH
+NO MODIFICATIONS!! If you don't co-operate, then DON'T DISTRIBUTE
+IT IN ANY FORM!! Just keep the two files together, okay?
+
+This map may be distributed ONLY over the Internet and/or BBS systems.
+DO NOT put this map on any CD or sell it in any form without my consent!
+Thanks for playing.

@@ -1,0 +1,74 @@
+================================================================
+Title                   : Scary_1 - for Half-Life
+Date                    : 23rd May 1999 
+Filename                : scary_1.bsp
+Author                  : Steve Lyne aka "Scary-one" 
+Email Address           : steve.lyne@telia.com
+Home Page               : home9.swipnet.se/~w-91844
+Description             : This smaller map has been designed to please the people out there looking for a smaller map to fight on. Its should house
+			  2-4 players comfortably. It may feel too large for 2, especially 2 who don't know the layout intimately, but I've planned
+			  the layout carefully so that it should be easy to find and stalk down prey with ease. 
+
+			  The map signifies a turning point for me. I'm going to concentrate on this kind of level from now on. There are an
+			  adequate amount of larger maps out there which are of a decent standard. The smaller maps available are sadly of a much
+			  lower standard. I see a vacuum and I'll do my best to fill it. The name "Scary_1" is obviously a pun but it also denotes the
+			  first map in a series of this kind of level.
+
+			  As for appearances ... well its been made to look ugly on purpose. I've been criticised in the past for only making
+			  nice looking maps so I thought I'd do one like this. The overall feel is ruddier, which isn't a bad thing. It also feels a little 
+			  more realistic than my other maps to date, although I'm not sure which planet the action takes place on :)
+
+			  Its a no gimmick map, with a minimal use of entities. It runs pretty well, and connects nicely. The rocket launcher is placed deliberately 
+			  to deter players from camping by it. The gauss isn't hard to get, but it doesn't get used THAT much because it requires a long jump to get.
+			  From the playtesting I've done I've noticed that it doesn't seem to be needed that much either as there is normally another equally powered
+			  weapon ready to take its place in a fight. To add, from what I've managed to gather, there is no one weapon that dominates the map. The RL is
+			  as powerful as ever, but the crossbow is often more effective. The MP5 is deadly too etc etc. In other words I'm hoping its balanced.  
+
+Other Levels by me ....  : Manhunt (manhunt.bsp)
+			   Enraged (enraged.bsp) revised - (enraged2.bsp)
+			   Outcry  (outcry.bsp)  revised - (outcry!.bsp) 
+			   All are available from Radium or my own homepage at http://home9.swipnet.se/~w-91844
+
+Additional Credits to   : i)   My family - Kirsi, Nathalie & Emily for being there and supporting me.
+  			  ii)  Valve/Sierra 
+                          iii) ID Software
+			  iv)  Radium ... an extremely good level review site found at www.planethalflife.com/radium
+			  v)   To the guys who helped with feedback:- Rafter, Legion, Palehorse to name a few. Thanks guys!
+			  vi)  a small mention to the guys on the #hlediting channel who helped me enormously by giving me a quick tutorial on how to the texture the side of a brush :) (not!!!)
+
+================================================================
+
+* Play Information *
+
+Single Player           : No (one start)
+Deathmatch              : 2+ (not sure of the limit but I'd assume that more than 4 would be pretty messy)
+Difficulty Settings     : No
+
+* Construction *
+
+Base                    : From scratch
+Editor(s) used          : Worldcraft 2.0
+Known Bugs              : I don't think so
+
+Build Time              : on and off about 5 evenings. 
+
+Compile machine         : PII 333 with 96 megs of SDRAM 
+QBSP Time               : 1 minute
+QVIS Time               : 10 minutes
+QRAD Time (extra)       : 4 minutes (roughly)
+
+* Permissions *
+
+You MAY NOT sell this sucker for money!
+
+If a magazine wants it on its CD - that's fine - *BUT* you *MUST*
+send me a copy. OK!! Then we are quits :) My address is at the top!
+
+General BBS use - sure, I don't have a problem with that.
+
+You MAY NOT alter or add to this level without my permission.
+
+* Last but not least *
+
+Please, please, please email me if you like this level. I need to know that you like what you see.
+It boosts my confidence and gives me a big kick up the ass to get the next one done.

@@ -1,0 +1,14 @@
+// overview description file outcry.bsp
+
+global 
+{
+	ZOOM	1.84
+	ORIGIN	347.13	-575.19	-737
+	ROTATED	0
+}
+
+layer 
+{
+	IMAGE	"overviews/outcry.bmp"
+	HEIGHT	-737
+}

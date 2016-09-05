@@ -1,0 +1,16 @@
+// Overview: Zoom 1.18, Map Origin (40.00, -148.00, 212.00), Z Min 232.00, Z Max -361.00, Rotated 0
+
+// overview description file for boot_campx.bsp
+
+global 
+{
+	ZOOM	1.18
+	ORIGIN	40	-148	-355
+	ROTATED	0
+}
+
+layer 
+{
+	IMAGE	"overviews/boot_campx.bmp"
+	HEIGHT	-355
+}

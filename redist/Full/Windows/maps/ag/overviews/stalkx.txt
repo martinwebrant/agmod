@@ -1,0 +1,14 @@
+// overview description file for stalkx.bsp
+
+global 
+{
+	ZOOM	1.91
+	ORIGIN	420.31 	901.94	-469.00
+	ROTATED	1
+}
+
+layer 
+{
+	IMAGE	"overviews/stalkx.bmp"
+	HEIGHT	-469.00
+}

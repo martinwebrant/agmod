@@ -1,0 +1,16 @@
+// Overview: Zoom 1.62, Map Origin (-1248.00, 548.00, -126.00), Z Min -38.00, Z Max -669.00, Rotated 1
+
+// overview description file for rustmill.bsp
+
+global 
+{
+	ZOOM	1.62
+	ORIGIN	-1248	548	-669
+	ROTATED	1
+}
+
+layer 
+{
+	IMAGE	"overviews/rustmill.bmp"
+	HEIGHT	-669
+}

@@ -1,0 +1,33 @@
+------General Info--------------------------------------------
+
+Date		:  Summer, 2000
+Title           :  thunderstruck
+Filename        :  thunderstruck.bsp
+Filesize	:  431kb
+Author          :  chinx
+Author Email    :  chinx@clara.co.uk
+
+------Map Desciption-------------------------------------------------
+Arena map for Adrenaline gamer mod.
+
+------Play Information-----------------------------------------------
+
+Deathmatch      :  yes
+Single Player   :  info_player_start exists
+How Many Players:  2-10
+
+
+------Map Instructions-----------------------------------------------
+
+Unzip the files in this archive.  Place the file "thunderstruck.bsp" in
+your half-life/valve/maps directory.  
+
+------Feedback-------------------------------------------------------
+
+icq or email me
+
+------Copyright-Permissions------------------------------------------
+
+Copyright 2000.  You may not use this map as a base to build other levels.
+
+=====================================================================

@@ -1,0 +1,20 @@
+AG DMC Version 0.1
+
+Install:
+Copy ag_dmc.dll to Half-Life\dmc\ and change from dmc.dll to ag_dmc.dll in Half-Life\dmc\liblist.gam.
+
+Fixes:
+cl_fov in teamplay.
+
+New features:
+spectate - toggles spectatormode on/off
+rcon agstart - respawns all players in server (except those in specmode) + reset score + reset items on the map + reset timelimit.
+timeleft - display timeleft
+mp_teamplay 4 - 1vs1 Arena mode
+mp_teamplay 5 - Last Man Standing mode
+mp_teamplay 6 - Last Team Standing mode
+
+Thats it for now, I'm nog going to do a full blown Adrenaline Gamer mod of it cause of lack of time.
+Have fun!
+BulliT@planethalflife.com
+www.planethalflife.com/agmod

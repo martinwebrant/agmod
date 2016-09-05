@@ -1,0 +1,57 @@
+AG IRC Bot
+--------------
+What's that ? 
+--------------
+
+The AG IRC Live-Bot is a perl script, capable to broadcast on an IRC channel what's 
+happening in real time on an AG server.
+It's useful to follow a match.
+
+-------------------
+Pre - Installation
+-------------------
+
+If you are running a Win32 server, you need to have a perl interpreter.
+On a linux server it should be installed yet.
+
+-------------
+Installation 
+-------------
+
+You need to edit the ircbot.pl file to customize the bot. Set the following variables:
+
+$local_address  = "127.0.0.1"		    <---- enter your bothost-ip here (mostly localhost(127.0.0.1))
+$irc_address 	= "irc.quakenet.eu.org";    <---- IRC server to connect 
+$irc_port	= 6667;			    <---- IRC port  ( 6667 is the standard port ) 
+$irc_nickname	= "AGHL";                   <---- Bot name 
+$irc_channel 	= "#AGHL";                  <---- IRC channel where bot broadcast 
+$hostname       = "AG Server";              <---- The hostname of your server (this one will be displayed in the IRC channel)
+$advertisement  = "name/channel/whatever";  <---- Advertisement (Displayed when BOT joins IRC channel)
+
+Additionally you can edit the Q-Auth settings.
+
+Do NOT edit ANY other line!!!
+
+On the GameServer set the following parameters (via rcon or write them into the server.cfg):
+logaddress 127.0.0.1 28889
+log on  
+
+If you are using logmod, type this instead:
+logmod add 127.0.0.1 28889 OrgSource
+
+Note:
+Use 127.0.0.1 if you are running the bot on your local host.
+Otherwise, use the IP of the bothost + port: 28889.
+
+------------
+Running the bot 
+------------
+
+Windows: Run a dos/console windows. Go to the bot directory and type "perl ircbot.pl" 
+Linux  : In a bash shell, go to the bot directory and type "perl ircbot.pl &"
+
+-------------
+For any information, help or questions feel free to contact Vi700 or t0x- 
+(info@agzone.org | #aghl & #AGzone @ quakenet, IRC)
+
+Enjoy!

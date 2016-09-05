@@ -1,0 +1,86 @@
+ELiXiR
+====================================================================================================
+Date                    : 29th August 2001
+Title                   : Elixir
+Filename                : elixir.bsp
+Author                  : ReNo [Duncan Blair]
+Email Address           : reno84@eidosnet.co.uk
+ICQ#			: 28651662
+Home Page               : http://www.evolution.gametribe.net
+
+Map Description         : HLDM map set in an abandoned factory style setting (i'm highly original!).
+			  Best suited for a player load of 2-8, it could handle more if you 
+			  like a hectic game. All the weapons except the hornetgun are in since the 
+			  hornetgun sucks! Incase you don't guess, you can climb the pipes and grass
+			  in some areas, just like normal ladders. If for some reason you instantly
+			  fall in love with the map and need more to do with it, then get my graphic
+			  for your desktop wallpaper [it is on the files page below...].
+
+			  http://pages.eidosnet.co.uk/~reno84/files.html
+
+			PS. I'd like apologise to people on low spec machines about the r_speeds, but
+			    I guess i decided to put detail ahead of speed this time around :( All i 
+			    can suggest is to stay on the ground floor or play another map :/
+
+Other Works by Author   : Obsolete - http://pages.eidosnet.co.uk/~reno84/files/obsolete.zip
+
+Misc Author Info        : This is my second map release. I am currently 17 [at 29/8/01] and live 
+			  in Scotland in a little town called North Berwick where i skateboard,
+			  map and piss about on computers. Sometime i hope to gain a career in a
+			  level design...nothing wrong with optimism :)
+
+===================================================================================================
+
+== Play Information ==
+Single Player           : No [1 start]
+Cooperative             : No
+Deathmatch              : Yes
+
+== Construction ==
+Base                    : Scratch
+Editor(s) used          : Worldcraft 3.3
+
+== Build Machine ==
+AMD Duron 800 @ 950MHz
+256mb Crucial RAM
+Elsa Gladiac MX 32mb
+
+================================ Playtesters ======================================================
+	
+I know I was originally going to put everyones' name down, but there was just too many of you, and I
+didnt want to forget anybody! Thanks to everyone who played the map online and off, you know who you
+are and it helped me more than you think :)
+
+
+================================= Thanks... =======================================================
+In no particular order...
+	
+	Friends
+	Family
+	All the great HL mapping sites that i learnt from
+	All the great HL level review sites that im sending this too!
+	Broon for staying up till abt 7am while i was trying to get this map done for the GA contest!
+	Jay-Dee for staying up hours to try and host an unsuccessful playtest [cheers anyway m8]
+	Cleg for putting my map up on his server to playtest on multiple occasions!
+	KIA for putting the map on their server
+	Tolon for abt 8 million suggestions on how to improve the map
+	Bullit/Chinx for mentioning the map on challenge-hl.com and putting it in the next AG map pack!
+	#wphl peeps on IRC for keeping me company while mapping and stuff :)
+	Scary_Jeff for making the great Jumbot waypoint file!
+	My HL clan Colonial Marines
+
+
+== Installation Info ==
+Unzip elixir.bsp and this text file to your half-life\valve\maps directory.
+
+
+==Copyright / Permissions==
+Authors MAY NOT use this level as a base to build additional levels.
+
+This map may be distributed ONLY on a "not for profit" basis using any medium,
+provided this file is included with no changes.
+
+Magazines and other published media may use my level provided they ask for my permission and send me a copy
+of their product ;)
+
+This template is available from www.globalassault.com.

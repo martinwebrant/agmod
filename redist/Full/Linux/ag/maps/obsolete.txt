@@ -1,0 +1,73 @@
+==========================================================
+
+---General Information---
+Title			: Obsolete
+Version			: 1.0
+Release Date :		: 19 / 01 / 01
+Filename			: obsolete.bsp
+Filesize(zipped)		: 255kb
+Author			: ReNo [Duncan Blair]
+Email Address		: reno@eidosnet.co.uk
+Homepage		: www.adrenalinegamer.com/evolution
+Other Work		: wl_residence, crushdown [none released but someday ill get round to it!]
+               	    
+==========================================================
+
+---Play Information---
+Game			: Half-Life
+Game Mode		: Arena mode [AG mod]
+Players			: 2 [u could play with more but it IS made for arena mode in the AG mod, which is a 1v1 battle]
+Known Bugs		: In some places in the sky some areas of the map disappear.  r_speeds creep up a little high in places [not a bug but a noteworthy problem]. There aint any weapons! This is coz its for the AG mod though, maybe someday ill tweak it for DM.
+
+---Construction---
+Editor Used		: Worldcraft 3.3
+Compile Machine		: P2 300, 64mb RAM
+HLCSG			: 32 secs [-skyclip -chart -estimate]
+HLBSP			: 21 secs [-maxnodesize 4096 -chart -estimate]
+HLVIS			: 310 secs [-chart -estimate]
+HLRAD			: 1052 secs [-extra -bounce 4 -smooth 80 -chart -estimate]
+Base			: From scratch
+Construction Time		: Well i must admit that i didnt count :(
+Prefabs used		: Hanging Light - QuakeGuru [God this prefab is way overused by me :)]
+
+---Notes---
+This map was made to be included in the AG Mod Arena map pack.
+
+E-mail me with any comments on the level, praise or criticism. This is easily my best map to date, and is the first that i have released. All my other maps have been experimental to test out ideas and to learn worldcraft's tools etc... Any feedback is much appreciated, as maybe my next work will be better for it :)
+
+---Special thanks---
+Play Testers - Groo, Johnny L, Violation, AG mod peeps [CHiNX, Bullit, maybe more?!], Alborac, my offline m8ies
+All of my HL clan, Colonial Marines, for spreading the power of WHOOPAH far and wide; and covering my hide in those firefights :)
+Everyone in the wireplay HL community [especially to all those in #wphl] for their heartwarming banter :)
+All the peeps running the show that we like to call HLCCL
+All the wireplay HL admins for changing maps and gravity settings :E
+As usual, Valve...
+Most of the sites over at Planet Half-Life, especially wavelength, for being so damned good.
+
+================================================================
+
+Copyright and Permissions
+
+This level may be distributed via any medium (ie: Internet,
+BBS, CD-ROM, compilation disk) as long as it maintains the
+name obsolete.bsp and is supplied in a zip file called 
+obsolete.zip that also contains this text document and 
+no other files.
+
+If the level is to be included on a CD-ROM or other profit-
+making medium, including but not limited to "Public Domain"
+collections or archives, the publisher / manufacturer must
+send me a copy of the product.
+
+I reserve the right to refuse permission for this level to
+be distributed via any CD-ROM or other profit-making medium.
+
+(c) Copyright 2000 ReNo
+
+===============================================================
+
+This readme is a changed version of the template created by Hornetking UK Half-Life, which is available at  his great map review site;
+http://www.planethalflife.com/hornetking/
+hornetking@planethalflife.com
+
+===============================================================

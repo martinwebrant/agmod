@@ -1,0 +1,126 @@
+AGCTF_FORSAKEN_BETA
+====================================================================================================
+
+Date                    : 31st October 2002
+Title                   : AGCTF Forsaken beta
+Filename                : agctf_outland_beta.bsp
+Author                  : ReNo [Duncan Blair]
+Email Address           : reno84@eidosnet.co.uk
+ICQ#			: 28651662
+MSN			: renobutsomebassnickedmynick@hotmail.com
+Home Page               : http://evolution.hlgaming.com
+
+Installation Info	: Unzip the contents of this zip to your half-life folder and all the files
+			  will go to their correct location.
+
+Map Description         : This is a modified version of my HLDM map "Forsaken". It has been converted
+			  to work with the Adrenaline Gamer mod's CTF game mode.
+
+			  The original map was quite small, so to make it suitable for 7v7 clan games
+			  I mirrored it and built a new neutral area between the two large bases. I
+			  am very happy with how the layout turned out, and to me it seems like the
+			  map makes a better CTF level than it did deathmatch!
+
+			  This is a beta version of the map so feel free to give me comments on how I
+			  can improve it for the final version.
+
+Other Works by Author   : [1]  Obsolete - HLDM
+			  [2]  Elixir - HLDM
+			  [3]  Rebellion - HLDM / AG arena
+			  [4]  CM Arena - HLDM
+			  [5]  Echo - HLDM
+			  [6]  Forsaken - HLDM
+			  [7]  AGCTF_Outland - AGCTF
+			  [8]  Torrent - HLDM
+
+			  Check them and more out at the maps page of my site:
+			  http://evolution.hlgaming.com/
+
+Misc Author Info        : This is my ninth map release. I am an 18 year old currently studying
+			  BSc Computer Games Technology at the University of Abertay in Dundee,
+			  Scotland. Fingers crossed after getting this degree I will become a
+			  fully fledged Level Designer working in the industry :) Outside of level
+			  design I am a skateboarder, rollerblader, ice skater and snowboarder.
+			  I listen to ska/punk music and play a helluva lot of computer games :)
+
+===================================================================================================
+
+== Play Information ==
+Single Player           : No [1 start]
+Cooperative             : No
+Deathmatch              : No, but there is a deathmatch version of the map available.
+AGCTF			: Yes
+
+== Construction ==
+Base                    : Scratch
+Editor(s) used          : Valve Hammer 3.4, Wally
+
+== Build Machine ==
+AMD Athlon XP 1800+
+256mb RAM
+GeForce4 Ti-4200 128mb
+
+
+========================== Playtesting & Suggestions & Feedback ===================================
+	
+In no particular order...
+
+Real Life mates :	Frank		Trunter
+			Alborac		Moose
+			Eudo		Scotty
+
+Others :		Cassius		Gwil
+			Azelito		Orpheus
+			T-Bone		Dietz
+			Scary_jeff	Rugal
+			Spudboy32	Gollum
+			KornFlakes	Alien_Sniper
+			Edge Damodred	Flewda
+			Prankster	Violation
+			Lemmy		Sliver
+			Boris		Skie
+			Jimmy_P		Flex
+			Hench		Hacktic
+			Psy		Stig
+			Whip		Karate-Nig
+			ZeroCool	Cleg
+			Zaxxon		Alba
+			Moonymaster	Inspector-71
+			RingSting	Taz
+			Symbiote	Mak
+	
+	I *THINK* thats the lot, if you commented on the map and your names not
+	above then I apologize, but there was quite a few people who commented :)
+
+	These are the testers of the HLDM version, but thanks also to anyone who
+	commented on this CTF conversion.	
+
+
+================================= Thanks... =======================================================
+In no particular order...
+
+	Friends
+	Family
+	All the great HL mapping sites that i learnt from
+	All the great HL level review sites
+	Rince, Inx and everyone else running the show at Gametribe (http://www.gametribe.net)
+	Howling for hosting me and running the excellent Shiftify (http://www.shiftify.com)
+	Leperous for running the amazing Snarkpit (http://www.snarkpit.co.uk)	
+	Snarkpit forum crew for comments and banter
+	BulliT for asking me to build this for him :)
+	Everyone involved in the AG mod for improving HLDM (http://www.planethalflife.com/agmod)
+	Challenge-HL folks for being continually interested in HLDM (http://www.challenge-hl.com)
+	Mighty Pete for making this and hundreds of other custom skies
+	Eddz and the others at HLCCL for starting a CTF league with my maps in (http://www.hlccl.com)
+	Anybody who looked at this map and told me their thoughts!
+
+
+==Copyright / Permissions==
+Authors MAY NOT use this level as a base to build additional levels.
+
+This map may be distributed ONLY on a "not for profit" basis using any medium,
+provided this file is included with no changes.
+
+Magazines and other published media may use my level provided they ask for my permission.
+
+This template is available from www.globalassault.com.

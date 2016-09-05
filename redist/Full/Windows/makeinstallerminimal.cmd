@@ -1,0 +1,1 @@
+makensis-bz2.exe aghlminimal.nsi

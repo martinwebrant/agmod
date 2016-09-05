@@ -1,0 +1,9 @@
+agctf_daydream
+agctf_duff
+agctf_echo
+agctf_forsaken
+agctf_gauntlet
+agctf_infinity
+agctf_omen
+agctf_outland
+agctf_wormhole

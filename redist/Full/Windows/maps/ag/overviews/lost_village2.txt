@@ -1,0 +1,14 @@
+// overview description file for lost_village2.bsp
+
+global 
+{
+	ZOOM	2.21
+	ORIGIN	2500.00 	524.14	-305.00
+	ROTATED	0
+}
+
+layer 
+{
+	IMAGE	"overviews/lost_village2.bmp"
+	HEIGHT	-305.00
+}

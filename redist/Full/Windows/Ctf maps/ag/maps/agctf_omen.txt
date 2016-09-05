@@ -1,0 +1,28 @@
+.::  Map Information  ::.
+Omen
+Adrenaline Gamer CTF
+agctf_omen.bsp
+Recommended Players: 6-12
+
+.::  Author Information  ::.
+
+Author: Andrew C. Weldon
+E-Mail: aweldon@planethalflife.com
+URL:    http://planethalflife.com/awmaps/
+
+.::  Map Description  ::.
+
+Originally created for Op4CTF, this map has received a colored facelift for use in AGCTF. Op4ctf_omen was created as a 4-day distractionary map during a streak of 'mappers block' while working on ns_eclipse. I decided to release it upon completion, and when BulliT approached me about converting op4ctf_wormhole and op4ctf_gauntlet to AGCTF, I offered to convert this one as well.
+
+.::  Thanks to:  ::.
+
+	Valve Software
+	Gearbox Software
+	BulliT and AGCTF
+
+.::  Other Stuff ::.
+
+agctf_omen (c) 2002 Andrew Weldon
+Also see agctf_womrhole and agctf_gauntlet.
+
+		 

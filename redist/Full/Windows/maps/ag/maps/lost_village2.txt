@@ -1,0 +1,71 @@
+* Play Information *
+Title 			: Lost Village 2 V1.0
+Filename		: lost_village.bsp
+Author			: [RI] Wolf
+Other lvls by author	: Combat Camp V2.0
+			  Lost Village V1.0
+			  Castle Rush V1.0
+			  Steelwork V1.0
+
+Email address 		: ri-wolf@gmx.de
+Home page		: http://ri.gametown.de
+
+Description		: The map is the second village-map from me
+			  I designed this map for arms-priority-DM/TP.
+			  The ambience is a little asia-like i think
+			  and the gameplay is like in lost village 1:
+			  fast! get your eyes open and watch out!
+			  Two buildings are placed in the map. Both
+			  have a second floor where you can hideout 
+			  and find weapons. stay not to long there and
+			  beware yourself of campers hehe :-)
+			  also some big crates are standing around in
+			  the map. watch on the top of them for
+			  goodies!
+
+Additional Credits to   : The Clanmembers of Half-Life for testing
+                          the map and give me comments about it
+                          special thanks also to [FA]Vader for 
+			  help on texturerrors and [MoV]Hemd for
+			  testing the gameplay at LAN-games ;)
+Single Player           : no
+Cooperative Player      : no
+Deathmatch Player       : yes DM/TP
+Difficulty Settings     : no
+New Textures            : yes (own textures and from texturepaks of:
+				[ Christopher "shaithis" Buecheler ]========='
+CD Track                : no
+
+* Construction *
+Base			: new Level from scratch
+Build Time		: around 3 weeks (60 hours i think ;-)
+Editor(s) used          : Worldcraft 2.0
+Compile Machine		: Pentium II 350MHz
+Compile time		: around 1200 secs.
+
+================================================================
+		::: ADDITIONAL INFO :::
+================================================================
+
+Clanfriends from me and some other people said: please make no
+secret areas in this map. Others have said: make secrets....
+so what?! i have made NO secret areas in lost_village 2 and believe
+it okay? :)) Don´t aks me for secrets in this map...
+All the fragstuff you need and love is around in the map and "easy" 
+to reach to make the gameplay fast. The explosive ammo as: ARgranades and the RPG and so on, 
+are placed also, but you must search for them :))
+Klimb up ladders and you will see "the powers"  hehehe....
+
+* Copyright / Permissions *
+
+Authors MAY NOT use this level as a base to build additional levels. 
+
+You MUST NOT distribute this level UNLESS you INCLUDE THIS FILE WITH
+NO MODIFICATIONS!!!. If you don't co-operate, then DON'T DISTRIBUTE
+IT IN ANY FORM!!.
+
+This BSP may be distributed ONLY over the Internet and/or BBS systems.
+You are NOT authorized to put this BSP on any CD or distribute it in
+any way without my permission.
+
+	[RI]Wolf 1999      -< Raising Inferno >-

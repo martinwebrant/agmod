@@ -1,0 +1,32 @@
+.::  Map Information  ::.
+
+Gauntlet
+Adrenaline Gamer CTF
+agctf_gauntlet.bsp
+Recommended Players: 4-6
+
+.::  Author Information  ::.
+
+Author: Andrew C. Weldon
+E-Mail: aweldon@planethalflife.com
+URL:    http://planethalflife.com/awmaps/
+
+.::  Map Description  ::.
+
+Originally created for Op4CTF, this map has received a colored facelift for use in AGCTF. The original map was based upon op4ctf_hairball, a small but surprisingly popular map featured in the Op4CTF SDK released by Gearbox.
+
+.::  Thanks to:  ::.
+
+	Valve Software
+	Gearbox Software
+	BulliT and AGCTF
+	Shader Lab (texture source, http://www.shaderlab.com/)
+	Relic25 (textures from r25.wad, http://www.deltatraining.com/relic25/)
+	SuperCrazy (Morning Mountains sky, http://crazymaps.caseynet.com/)
+
+.::  Other Stuff ::.
+
+agctf_gauntlet (c) 2002 Andrew Weldon
+Also see agctf_wormhole and agctf_omen.
+
+		 

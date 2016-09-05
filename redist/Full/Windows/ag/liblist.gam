@@ -1,0 +1,16 @@
+// Valve Game Info file
+//  These are key/value pairs.  Certain mods will use different settings.
+//
+game "Adrenaline Gamer Steam"
+url_info "www.planethalflife.com/agmod"
+url_dl ""
+version "6.6"
+size "93961341"
+svonly "0"
+type "multiplayer_only"
+cldll "0"
+mpentity "info_player_deathmatch"
+gamedll "dlls\ag.dll"
+gamedll_linux "dlls/ag_i386.so"
+secure "1"
+

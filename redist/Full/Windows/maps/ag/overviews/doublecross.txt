@@ -1,0 +1,16 @@
+// Zoom 1.70, Map Origin (48.00, 850.56, 16.00), Z Min -1474.00, Z Max -2049.00, Rotated 0
+
+// overview description file for doublecross.bsp
+
+global 
+{
+	ZOOM	1.70
+	ORIGIN	48	851	-2049
+	ROTATED	0
+}
+
+layer 
+{
+	IMAGE	"overviews/doublecross.bmp"
+	HEIGHT	-2049
+}

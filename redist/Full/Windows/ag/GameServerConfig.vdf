@@ -1,0 +1,188 @@
+"GameServerConfig"
+{
+	"sv_ag_gamemode"
+	{
+		"name" "Gamemode"
+		//"type" "enumeration"
+		"type" "string"
+		"list"
+		{
+			"ffa" "Free For All"
+			"sgbow" "Shotgun & Bow"
+			"hlccl" "HLCCL"
+			"cbcup" "Clanbase CUP"
+			"arena" "Arena"
+			"arcade" "Arcade"
+			"ctf" "Capture The Flag"
+			"ctf2"	"Capture The Flag II"
+			"lts" "Last Team Standing"
+			"lms"	"Last Man Standing"
+			"tdm" "Team DeathMatch I"
+			"tdm2" "Team DeathMatch II"
+			"tdm3" "Team DeathMatch III"
+			"tdm4" "Team DeathMatch IV"
+			"tdmx" "Team DeathMatch X"
+		}
+	}
+	"sv_allowdownload"
+	{
+		"name" "Allow download"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}
+	"sv_allowupload"
+	{
+		"name" "Allow upload"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}
+	"sv_voiceenable"
+	{
+		"name" "Voice communication"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}
+	"ag_rpg_fix"
+	{
+		"name" "RPG Fix"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}
+	"ag_gauss_fix"
+	{
+		"name" "Gauss Fix"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}
+	"sv_ag_allow_vote"
+	{
+		"name" "Voting"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}	
+	"sv_ag_vote_start"
+	{
+		"name" "Vote START"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}		
+	"sv_ag_vote_setting"
+	{
+		"name" "Allow vote settings"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}		
+	"sv_ag_vote_gamemode"
+	{
+		"name" "Allow vote gamemode"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}		
+	"sv_ag_vote_kick"
+	{
+		"name" "Allow vote kick"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}		
+	"sv_ag_vote_allow"
+	{
+		"name" "Allow vote allow"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}		
+	"sv_ag_vote_admin"
+	{
+		"name" "Allow vote admin"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}		
+	"sv_ag_vote_map"
+	{
+		"name" "Allow vote map"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}			
+	"sv_ag_vote_failed_time"
+	{
+		"name" "Vote failed wait time"
+		"type" "string"
+	}	
+		
+	"sv_ag_max_spectators"
+	{
+		"name" "Max Spectators"
+		"type" "string"
+	}	
+	"ag_spectalk"
+	{
+		"name" "Allow spectators to talk"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}	
+	"sv_ag_oldphysics"
+	{
+		"name" "Bunnyjumping"
+		"type" "enumeration"
+		"list"
+		{
+			"0" "Disabled"
+			"1"	"Enabled"
+		}
+	}		
+}

@@ -1,0 +1,1459 @@
+<html>
+<head>
+<title>NSIS</title>
+</head>
+<body text="#000000" bgcolor="#ffffff" link="#800080" vlink="#800080" alink="#808080">
+<h2>NSIS</h2>
+<h3>Table of Contents</h3>
+<ul>
+<li><a href="#features">Features</a>
+<li><a href="#usage">MakeNSIS usage</a>
+<li><a href="#script_format">.NSI script format</a><ul>
+    <li><a href="#headconfig">Installer attributes</a>
+    <li><a href="#compiler_flags">Compiler flags</a>
+    <li><a href="#sections">Sections</a>
+    <li><a href="#functions">Functions</a>
+    <li><a href="#Labels">Labels</a>
+    <li><a href="#instructions">Instructions</a><ul>
+         <li>Basic: <a href="#SetOutPath">SetOutPath</a>, <a href="#File">File</a>, <a href="#Exec">Exec</a>, <a href="#ExecWait">ExecWait</a>, <a href="#ExecShell">ExecShell</a>, <a href="#Rename">Rename</a>, <a href="#Delete">Delete</a>, <a href="#RMDir">RMDir</a>.
+         <li>Registry/INI: <a href="#WriteRegStr">WriteRegStr</a>, <a href="#WriteRegStr">WriteRegExpandStr</a>, <a href="#WriteRegDWORD">WriteRegDWORD</a>, <a href="#WriteRegBin">WriteRegBin</a>, <A href="#WriteINIStr">WriteINIStr</a>, <a href="#ReadRegStr">ReadRegStr</a>, <a href="#ReadRegDWORD">ReadRegDWORD</a>, <a href="#ReadINIStr">ReadINIStr</a>, <a href="#ReadEnvStr">ReadEnvStr</a>, <a href="#ExpandEnvStrings">ExpandEnvStrings</a>, <a href="#DeleteRegValue">DeleteRegValue</a>, <A href="#DeleteRegKey">DeleteRegKey</a>, <a href="#EnumRegKey">EnumRegKey</a>, <a href="#EnumRegValue">EnumRegValue</a>, <a href="#DeleteINISec">DeleteINISec</a>, <a href="#DeleteINIStr">DeleteINIStr</a>.
+         <li>Advanced: <a href="#CreateDirectory">CreateDirectory</a>, <a href="#CopyFiles">CopyFiles</a>, <a href="#SetFileAttributes">SetFileAttributes</a>, <a href="#CreateShortCut">CreateShortCut</a>, <a href="#GetFullPathName">GetFullPathName</a>, <a href="#SearchPath">SearchPath</a>, <a href="#GetTempFileName">GetTempFileName</a>, <a href="#CallInstDLL">CallInstDLL</a>, <a href="#RegDLL">RegDLL</a>, <a href="#UnRegDLL">UnRegDLL</a>, <a href="#GetDLLVersion">GetDllVersion</a>, <a href="#GetDLLVERSIONLocal">GetDLLVersionLocal</a>, <a href="#GetFileTime">GetFileTime</a>, <a href="#GetFileTimeLocal">GetFileTimeLocal</a>.
+         <li>Branching/etc: <a href="#Goto">Goto</a>, <a href="#Call">Call</a>, <a href="#Return">Return</a>, <a href="#IfErrors">IfErrors</a>, <A href="#ClearErrors">ClearErrors</a>, <A href="#SetErrors">SetErrors</a>, <A href="#FindWindow">FindWindow</a>, <A href="#SendMessage">SendMessage</a>, <a href="#IsWindow">IsWindow</a>, <a href="#IfFileExists">IfFileExists</a>, <a href="#MessageBox">MessageBox</a>, <a href="#StrCmp">StrCmp</a>, <a href="#IntCmp">IntCmp</a>, <a href="#IntCmpU">IntCmpU</a>, <a href="#Abort">Abort</a>, <a href="#Quit">Quit</a>, <a href="#GetFunctionAddress">GetFunctionAddress</a>, <a href="#GetLabelAddress">GetLabelAddress</a>, <a href="#GetCurrentAddress">GetCurrentAddress</a>.
+         <li>File/directory i/o: <a href="#FindFirst">FindFirst</a>, <a href="#FindNext">FindNext</a>, <a href="#FindClose">FindClose</a>, <a href="#FileOpen">FileOpen</a>, <a href="#FileClose">FileClose</a>, <A href="#FileRead">FileRead</a>, <a href="#FileWrite">FileWrite</a>, <a href="#FileReadByte">FileReadByte</a>, <a href="#FileWriteByte">FileWriteByte</a>, <a href="#FileSeek">FileSeek</a>.
+          <li>Misc: <a href="#SetDetailsView">SetDetailsView</a>, <a href="#SetDetailsPrint">SetDetailsPrint</a>, <a href="#SetAutoClose">SetAutoClose</a>, <a href="#DetailPrint">DetailPrint</a>, <a href="#Sleep">Sleep</a>, <a href="#BringToFront">BringToFront</a>, <a href="#HideWindow">HideWindow</a>, <a href="#SetShellVarContext">SetShellVarContext</a>.
+          <li>Strings: <a href="#StrCpy">StrCpy</a>, <a href="#StrLen">StrLen</a>.
+          <li>Stack: <a href="#Push">Push</a>, <a href="#Pop">Pop</a>, <a href="#Exch">Exch</a>.
+          <li>Integers: <a href="#IntOp">IntOp</a>, <a href="#IntFmt">IntFmt</a>.
+          <li>Reboot: <a href="#Reboot">Reboot</a>, <a href="#IfRebootFlag">IfRebootFlag</a>, <A href="#SetRebootFlag">SetRebootFlag</a>.
+          <li>Uninstall: <a href="#WriteUninstaller">WriteUninstaller</a>.
+          <li>Install logging: <a href="#LogSet">LogSet</a>, <a href="#LogText">LogText</a>.
+          <li>Section management instructions: <a href="#SectionSetFlags">SectionSetFlags</a>, <a href="#SectionGetFlags">SectionGetFlags</a>, <a href="#SectionSetText">SectionSetText</a> and <a href="#SectionGetText">SectionGetText</a>.
+       </ul>
+    <li><a href="#V">Variables</a>
+    <li><a href="#Uninstall_Section">Uninstall section</a>
+    <li><a href="#CBFuncs">Callback functions</a>
+    <li><a href="#compilerutil">Compiler utility commands</a>
+    <li><a href="#defines">Compiler defines/conditional compilation</a>
+  </ul>
+<li><a href="#version">Version history</a>
+<li><a href="#license">License</a>
+</ul>
+
+<a name="features"><h3>Features</h3>
+<ul>
+<li>SuperPiMP&trade; technology (so advanced, so amazing, we won't even tell you what it is).
+<li>Generates self contained, win32 executable installer.
+<li>Uninstall support (installer can automagically generate an uninstaller)
+<li>Optional installer self-verification using a CRC32.
+<li>Compression choices of <a href="http://www.gzip.org/zlib/">zlib</a> or <a href="http://sourceware.cygnus.com/bzip2/">bzip2</a> based compression. The installer can compress everything together, or individually.
+<li>Approximately 20-40k overhead over compressed data size (depending on features enabled, compression algorithm, and so on - the default options are ~35k).
+<li>Ability to display a license agreement.
+<li>Ability to detect destination directory from the registry, and let the user override (or not let them)
+<li>Customizable appearance (background, icons, text, checkmarks)
+<li>Multiple install configurations (usually Minimal, Typical, Full), and custom configuration
+<li>Installers can be as large as 2GB (theoretically -- when building on Win9x the limit seems to be around 500MB, however building on NT then installing on Win9x works with larger sizes)
+<li>Optional Silent mode for automated installations
+<li>Installers have their own VMs that let you write code that can support:<ul>
+     <li>File extraction (with configurable overwrite parameters)
+     <li>File/directory copying, renaming, deletion
+     <li>DLL loading (ActiveX control registration/deregistration, extension DLL calling, etc)
+     <li>Executable execution (shell execute and wait options)
+     <li>Shortcut creation
+     <li>Registry key reading/setting/enumerating/deleting
+     <li>INI file reading/writing
+     <li>Generic text file reading/writing
+     <li>Directory scanning
+     <li>Powerful string and integer manipulation
+     <li>Window finding based on class name or title (for is-application-running detection)
+     <li>Window message sending.
+     <li>User interaction with MessageBox.
+     <li>Branching, comparisons, etc.
+     <li>Error checking.
+     <li>Installer behaviour commands (such as show/hide/wait/etc)
+     <li>User functions in script
+     <li>Callback functions that let you customize the way the installer behaves from script.
+     <li>A lovely coding experience with elements of PHP and assembly.
+     <li>More
+   </ul>
+<li>Completely free for any use. <A href="#build">Source</a> included. See <a href="#license">license</a>.
+</ul>
+
+
+<a name="usage"><h3>MakeNSIS usage</h3>
+NSIS installers are generated by using the 'MakeNSIS' program to compile a <a href="#script_format">NSIS script (.NSI)</a> into an installer executable.
+The syntax of the makensis command is:<UL>
+<a name="slashdefine">
+<pre>
+Makensis [/Vx] [/Olog] [/LICENSE] [/PAUSE] [/NOCONFIG] [/CMDHELP [command]] [/HDRINFO] [/CD]
+         [/Ddefine[=value] ...] ["/XCommand parameter" ...] [Script.nsi | - [...]]
+</pre>
+<ul>
+<li>/LICENSE displays a keen license page.
+<li>The /V switch followed by a number between 0 and 4 will set the verbosity of output accordingly. 0=no output, 1=errors only, 2=warnings and errors, 3=info, warnings, and errors, 4=all output.
+<li>The /O switch followed by a filename tells the compiler to print its log to that file (instead of the screen)
+<li>/PAUSE makes Makensis pause before quitting, which is useful when executing  directly from Windows (the auto-installed shell extensions use it).
+<li>/NOCONFIG disables inclusion of [path to makensis.exe]\nsisconf.nsi . Without this parameter, installer defaults are set from nsisconf.nsi. See <a href="#nsisconf">NSIS Configuration File</a>.
+<li>/CMDHELP prints basic usage information for command (if specified), or all commands (if command is not specified).
+<li>/HDRINFO prints out information on what options Makensis was compiled with.
+<li>/CD tells the compiler to switch to the directory of the script it is currently compiling.
+<li>Using the /D switch one or more times will add to symbols to the globally defined list (See <a href="#bangdefine">!define</a>). 
+<li>Using the /X switch one or more times will execute the code you specify following it. Example: "/XAutoCloseWindow false"
+<li>Specifying a dash (-) for the script name will tell Makensis to use the standard input as a source.
+<li>If multiple scripts are specified, they are treated as one concatenated script.
+</UL>
+</ul>
+Note that the NSIS development kit installer may have set up your computer so that you can compile a .nsi file by simply right-clicking on it in explorer, and selecting 'compile'.
+
+
+<a name="script_format"><h3>.NSI script format</h3>
+A NSIS Script File (.nsi) is just a text file with a series of commands.
+<ul>
+<li>Lines beginning with ; or # are comments.
+<li>Non-comment lines are in the form of 'command [parameters]'
+<li>Anything after a ; or # that is not in a parameter (i.e. in quotes or part of another string) is treated as a comment. (i.e. "File myfile ; this is the file" would work)
+<li>For parameters that are treated as numbers, use decimal (the number) or hexadecimal (with 0x prepended to it, i.e. 0x12345AB), or octal (numbers beginning with a 0 and no x).
+<li>To represent strings that have spaces, use quotes.<ul>
+  <li>quotes only have the property of containing a parameter if they begin the parameter.
+  <li>quotes can be either single quotes, double quotes, or the backward single quote.
+  </ul>
+  Examples:<PRE>
+    MessageBox MB_OK "I'll be happy" ; this one puts a ' inside a string
+    MessageBox MB_OK 'And he said to me "Hi there!"' ; this one puts a " inside a string
+    MessageBox MB_OK `And he said to me "I'll be fucked!"` ; this one puts both ' and "s inside a string:
+  </PRE>
+It's a little weird, I know, but oh well.
+  <li>To extend a command over multiple lines, use a backslash (\) at the end of the line, and the next line will effectively be concatenated the end of it. For example:<PRE>
+    CreateShortCut "$SMPROGRAMS\NSIS\ZIP2EXE project workspace.lnk" \
+                   "$INSTDIR\source\zip2exe\zip2exe.dsw"
+    MessageBox MB_YESNO|MB_ICONQUESTION \
+               "Remove all files in your NSIS directory? (If you have anything \
+you created that you want to keep, click No)" \
+                IDNO NoRemoveLabel
+</PRE>
+<li><A name="nsisconf">If a file named "nsisconf.nsi" in the same directory as makensis.exe exists, it will be included by default before any scripts (unless the <a href="#usage">/NOCONFIG</a> command line parameter is used.
+<li>To have a template .nsi generated to your needs, go <a href="http://www.nullsoft.com/free/nsis/makensitemplate.phtml">here</a>.
+</ul>
+
+<a name="headconfig"><h4>Installer attributes:</h4>
+The commands below all adjust attributes of the installer. These attributes control how the installer looks and functions, including which pages are present in the installer, as what text is displayed in each part of each page, how the installer is named, what icon the installer uses, the default installation directory, what file it writes out, and more. Note that these attributes can be set anywhere in the file except in a <a href="#Section">Section</a> or <a href="#Function">Function</a>.
+<BR>
+With the exception of <a href="#InstallDir">InstallDir</a>, none of these attributes allow use of <a href="#V">Variables</a> other than <a href="#V_RETURN">$\r</a> and <a href="#V_NEWLINE">$\n</a> in their strings.
+
+<ul>
+
+<TABLE BORDER="0">
+<TR><TD COLSPAN=3 BGCOLOR="#606060">General installer configuration</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>OutFile</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>install.exe</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies the output file that the MakeNSIS should write the installer to. This is just the file that MakeNSIS writes, it doesn't effect the contents of the installer.
+</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><A name="Name"><b>Name</b></TD> 
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the name of the installer. The name is usually simply the product name such as 'MyApp' or 'CrapSoft MyApp'. 
+</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Caption"><b>Caption</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>caption</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets what the titlebars of the installer will display. By default, it is '<i>Name</i> Setup', where Name is specified with the <a href="#Name">Name</a> command. You can, however, override it with 'MyApp Installer' or whatever. If you specify an empty string (""), the default will be used (you can however specify " " to achieve a blank string)
+</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SubCaption"><b>SubCaption</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>page_number<br>subcaption</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Overrides the subcaptions for each of the installer pages (0=": License Agreement",1=": Installation Options",2=": Installation Directory", 3=": Installing Files", 4=": Completed"). If you specify an empty string (""), the default will be used (you can however specify " " to achieve a blank string)
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>BrandingText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>text</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the text that is shown (by default it is 'Nullsoft Install System vX.XX') in the bottom of the install window. Setting this to an empty string ("") uses the default; to set the string to blank, use " " (a space). If it doesn't matter to you, leave it the default so that everybody can know why the installer didn't suck. heh.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>Icon</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>path_to_icon.ico</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the icon of the installer. The icon MUST contain a 32x32x16 color icon resource (it can also contain other icons, but they will be discarded).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>WindowIcon</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>on|off</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets whether or not the installer's icon is in the upper left corner of the installer.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>BGGradient</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[off]|<br>[topc botc<br>&nbsp;[textcolor|notext]<br>]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies whether or not to use a gradient background window. If 'off', the installer will not show a background window, if no parameters are specified, the default black to blue gradient is used, and otherwise the top_color or bottom_color are used to make a gradient. Top_color and bottom_color are specified using the form RRGGBB (in hexadecimal, as in HTML, only minus the leading '#', since # can be used for comments). 'textcolor' can be specified as well, or 'notext' can be specified to turn the big background text off.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>SilentInstall</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>normal|<br>silent|<br>silentlog</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies whether or not the installer should be silent. If it is 'silent' or 'silentlog', all sections are installed quietly, with no screen output from the installer itself (MessageBoxes are still displayed on error, and the script can still display whatever it wants). Note that if this is set to 'normal' and the user runs the installer with /S on the command line, it will behave as if SilentInstall 'silent' was used. Note: see also <a href="#LogSet">LogSet</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>SilentUnInstall</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>normal|<br>silent</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies whether or not the uninstaller should be silent.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>CRCCheck</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>on|off</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies whether or not the installer will perform a CRC on itself before allowing an install. Valid options are 'on'  and 'off'. Note that if the user uses /NCRC on the command line when executing the installer, the CRC will not occur, and the user will be allowed to install a (potentially) corrupted installer.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="MiscButtonText"><b>MiscButtonText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[back button text]<br>[next button text]<br>[cancel button text]<br>[close button text]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Replaces the default text strings for the four buttons (&lt; Back, Next &gt;, Cancel and Close). If parameters are omitted, the defaults are used.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="InstallButtonText"><b>InstallButtonText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[install button text]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+If parameter is specified, overrides the default install button text (of "Install") with the specified text.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FileErrorText"><b>FileErrorText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[file error text]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Replaces the default text that comes up when a file cannot be written to. This string can contain a reference to $0, which is the filename ($0 is temporarily changed to this value). Example: "Can not write to file $\r$\n$0$\r$\ngood luck, bitch.".
+</TD></TR>
+<TR><TD COLSPAN=3 BGCOLOR="#606060">Install directory configuration</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="InstallDir"><b>InstallDir</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>definstdir</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">Sets the default installation directory is. See the <a href="#V">variables section</a> for variables that can be used to make this string (especially <a href="#V_PROGRAMFILES">$PROGRAMFILES</a>). Note that the part of this string following the last \ will be used if the user selects 'browse', and may be appended back on to the string at install time (to disable this, end the directory with a \ (which will require the entire parameter to be enclosed with quotes)). If this doesn't make any sense, play around with the browse button a bit.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>InstallDirRegKey</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>root_key<br>subkey<br>key_name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">This attribute tells the installer to check a string in the registry, and use it for the install dir if that string is valid. If this attribute is present, it will override the <a href="#InstallDir">InstallDir</a> attribute if the registry key is valid, otherwise it will fall back to the InstallDir default. When querying the registry, this command will automatically remove any quotes. If the string ends in ".exe", it will automatically remove the filename component of the string (i.e. if the string is "C:\program files\poop\poop.exe", it will know to use "C:\program files\poop"). For more advanced install directory configuration, set <a href="#V_INSTDIR">$INSTDIR</a> in <a href="#onInit">.onInit</a>.
+</TD></TR>
+<TR><TD COLSPAN=3 BGCOLOR="#606060">License page configuration</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>LicenseText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>text<br>[button_text]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies a string that is above the license text. Omit this to not have a license displayed. If button_text is specified, it will override the default button text of "I Agree".
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>LicenseData</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>licdata.txt</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies a text file to use for the license that the user can read. Omit this to not have a license displayed. Note that the file must be in the evil DOS text format (\r\n, yeah!)
+</TD></TR>
+<TR><TD BGCOLOR="#606060" COLSPAN=3>Component page configuration</TD></TR>
+
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ComponentText"><b>ComponentText</b>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[text]<br>[subtext]<br>[subtext2]</i>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies a string that is above the component list. This can be something that notifies the user what it is they are actually installing. Note that if no parameter is specified, or if the ComponentText command is omitted, then the component page will not be visible, and all of the sections will be installed. Note: if text is specified and non-empty and you leave subtext or subtext2 empty, the defaults will be used (to set one to blank, use a string like " "). empty strings mean default on subtext and subtext2. Likewise, if you wish to enable the component page, but don't want any text on the top line, set text to " ".
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="InstType"><b>InstType</b>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>install_type_name |<br>/NOCUSTOM |<br>/CUSTOMSTRING=str|<br>/COMPONENTS..<br>..ONLYONCUSTOM</i>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+
+Adds an install type to the install type list, or disables the custom install type. There can be as many as 8 types, each one specifying the name of the install. The first type is the default (generally 'Typical'). Each type is numbered, starting at 1. See <a href="#SectionIn">SectionIn</a> for information on how those numbers are used. If the /NOCUSTOM switch is specified, then the "custom" install type is disabled, and the user has to choose one of the pre-defined install types. Alternatively, if the /CUSTOMSTRING switch is specified, the parameter will override the "Custom" install type text. Alternatively, if the /COMPONENTSONLYONCUSTOM flag is specified, the component list will only be shown if the "Custom" install type is selected.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>EnabledBitmap</b>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>bitmap.bmp</i>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the enabled state of the listbox for the component page. It MUST be a 16 color bitmap (it can be any size, but 20x20 is preferred -- all others will be resized down... poorly).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>DisabledBitmap</b>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>bitmap.bmp</i>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the disabled state of the listbox for the component page. It MUST be a 16 color bitmap (it can be any size, but 20x20 is preferred -- all others will be resized down... poorly).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><B>SpaceTexts</B>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[req text]<br>[avail text]</i>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+If parameters are specified, overrides the space required and space available text ("Space required: " and "Space available: " by default).
+</TD></TR>
+
+<TR><TD BGCOLOR="#606060" COLSPAN=3>Directory page configuration</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="DirShow"><b>DirShow</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>show|hide</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies whether or not the user will see the directory selection page. Note that if 'hide' is specified, the installer will still check the validity of the installation path (using internal logic and <a href="#onVerifyInstDir">.onVerifyInstDir</a> if it is declared). If the path is deemed invalid, the directory page will be shown. To completely disable the Directory page (and install without prompting, even if a valid installation path is not available), specify <a href="#DirText">DirText</a> with no parameter (this might be useful if the installer installs everything into <a href="#V_SYSDIR">$SYSDIR</a> or something like that).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="DirText"><b>DirText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[text]<br>[subtext]<br>[browse text]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies a string that is above the directory selection area. If this command is not specified, or no parameter is specified, then the directory page is never visible to the user (even if <a href="#DirShow">DirShow</a> show is specified).
+If subtext is specified and not empty, it overrides the default text above the path entry box ("Select the directory to install MyApp in:"). If browse button text is specified but not empty, it overrides the default browse button text ("Browse...").
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="AllowRootDirInstall"><b>AllowRootDirInstall</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>true|false</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Controls whether or not installs are enabled to the root directory of a drive, or directly into a network share. Set to 'true' to change the default (safe) behavior, which prevents users from selecting C:\ or \\server\share as an install (and lataer on, uninstall) directory.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+For additional directory selection page customizability, see <a href="#onVerifyInstDir">.onVerifyInstDir</a>
+</TD></TR>
+
+<TR><TD BGCOLOR="#606060" COLSPAN=3>Install page configuration</TD></TR>
+
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="InstallColors"><b>InstallColors</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>/windows |<br>foreground background</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the colors to use for the install info screen (the default is 00FF00 000000. Use the form RRGGBB (in hexadecimal, as in HTML, only minus the leading '#', since # can be used for comments). Note that if "/windows" is specified as the only parameter, the default windows colors will be used.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="InstProgressFlags"><b>InstProgressFlags</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[flag [...]]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Valid values for flag are "smooth" (smooth the progress bar) or "colored" (color the progress bar with the colors set by <a href="#InstallColors">InstallColors</a>. Examples: "InstProgressFlags" (default old-school windows look), "InstProgressFlags smooth" (new smooth look), "InstProgressFlags smooth colored" (colored smooth look whee).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="AutoCloseWindow"><b>AutoCloseWindow</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>true|false</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets whether or not the install window automatically closes when completed. Can be 'false' or 'true'. This is overrideable from a <a href="#Sections">section</a> using <a href="#SetAutoClose">SetAutoClose</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ShowInstDetails"><b>ShowInstDetails</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>hide|show|nevershow</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets whether or not the details of the install are shown. Can be 'hide' (the default) to hide the details by default, allowing the user to view them, or 'show' to show them by default, or 'nevershow', to prevent the user from ever seeing them. Note that <a href="#Sections">sections</a> can override this using <a href="#SetDetailsView">SetDetailsView</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="DetailsButtonText"><b>DetailsButtonText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[show details text]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Replaces the default details button text of "Show details", if parameter is specified (otherwise the default is used).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="CompletedText"><b>CompletedText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[Completed text]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Replaces the default text ("Completed") that is printed at the end of the install if parameter is specified. Otherwise, the default is used.
+</TD></TR>
+<TR><TD BGCOLOR="#606060" COLSPAN=3><a name="UninstallConfig">Uninstall configuration</TD></TR>
+
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>UninstallText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>text<br>[subtext]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Specifies the text on the first page of the uninstaller. If subtext is specified and not empty, it will replace the default secondary text on that page, "Uninstall from:".
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>UninstallIcon</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>path_to_icon.ico</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the icon of the uninstaller. Again, the icon MUST contain a 32x32x16 color icon resource (it can also contain other icons, but they will be discarded).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="UninstallCaption"><b>UninstallCaption</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>caption</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets what the titlebars of the uninstaller will display. By default, it is 'Name Uninstall', where Name is specified with the <a href="#Name">Name</a> command. You can, however, override it with 'MyApp uninstaller' or whatever. If you specify an empty string (""), the default will be used (you can however specify " " to achieve a blank string)
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="UninstallSubCaption"><b>UninstallSubCaption</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>page_number<br>subcaption</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Overrides the subcaptions for each of the uninstaller pages (0=": Confirmation",1=": Uninstalling Files",2=": Completed"). If you specify an empty string (""), the default will be used (you can however specify " " to achieve a blank string)
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ShowUninstDetails"><b>ShowUninstDetails</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>hide |<br>show |<br>nevershow</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets whether or not the details of the uninstall are shown. Can be 'hide' (the default) to hide the details by default, allowing the user to view them, or 'show' to show them by default, or 'nevershow', to prevent the user from ever seeing them. Note that <a href="#Sections">sections</a> can override this using <a href="#SetDetailsView">SetDetailsView</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="UninstallButtonText"><b>UninstallButtonText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[button text]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Changes the text of the button that by default says "Uninstall" in the uninstaller. If no parameter is specified, the default text is used.
+</TD></TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+See also <A href="#WriteUninstaller">WriteUninstaller</a> (replaces UninstallEXEName).
+</TD></TR><TR>
+</TABLE>
+</ul>
+<a name="compiler_flags"><h4>Compiler flags:</h4>
+The following commands change how the compiler generates code and compresses data.<BR>
+These commands are valid anywhere in the script, and effect every line below where each one is placed (until overriden by another command).<BR>
+<ul>
+<TABLE BORDER=0>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetOverwrite"><b>SetOverwrite</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>on|off|try|ifnewer</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command sets the overwrite flag which is used by the File command to determine whether or not the file should overwrite any existing files that are present. If overwriteflag is 'on', files are overwritten (this is the default). If overwriteflag is 'off', files that are already present are not overwritten. If overwriteflag is 'try', files are overwritten if possible (meaning that if the file is not able to be written to, it is skipped without any user interaction). If overwriteflag is 'ifnewer', then files are only overwritten if the existing file is older than the new file (note that when in 'ifnewer' mode, the destination file's date is set, regardless of what <A href="#SetDateSave">SetDateSave</a> is set to). 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetCompress"><b>SetCompress</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>auto|force|off</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command sets the compress flag which is used by the installer to determine whether or not data should be compressed. Typically the SetCompress flag will effect the commands after it, and the last SetCompress command in the file also determines whether or not the install info section and uninstall data of the installer is compressed. If compressflag is 'auto', then files are compressed if the compressed size is smaller than the uncompressed size. If compressflag is set to 'force', then the compressed version is always used. If compressflag is 'off' then compression is not used (which can be faster). 
+</TR></TD><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetDatablockOptimize"><b>SetDatablockOptimize</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>on|off</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command tells the compiler whether or not to do datablock optimizations. Datablock optimizations have the compiler check to see if any data being added to the data block is already in the data block, and if so, it is simply referenced as opposed to added (can save a little bit of size). 
+</TR></TD><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetDateSave"><b>SetDateSave</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>on|off</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command sets the file date/time saving flag which is used by the File command to determine whether or not to save the last write date and time of the file, so that it can be restored on installation.  Valid flags are 'on' and 'off'. 'on' is the default. 
+</TR></TD>
+</TABLE>
+</ul>
+<a name="sections"><h4>Sections:</h4>
+Each NSIS installer contains one or more Sections. Each  These sections are created, modified, and ended with the following commands. <ul>
+<ul>
+<li>Each section contains zero or more <a href="#Instructions">instructions</a>.
+<li>Sections are executed in order by the resulting installer, and if <a href="#ComponentText">ComponentText</a> is set, the user will have the option of disabling/enabling each section.
+<li>If a section's name is 'Uninstall', then it is a special <a href="#uninstall_section">Uninstall Section</a>.
+</ul><BR><BR>
+<TABLE BORDER=0>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Section"><b>Section</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[section_name]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Begins annd opens a new section. If section_name is empty, omitted, or begins with a -, then it is a required section and the user will not see it, nor have the option of disabling it.
+If the section name is 'Uninstall', then it is a special <a href="#uninstall_section">Uninstall Section</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>SectionIn</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>section_index<br>[section_index]<br>[RO]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command specifies which Install Types (see <a href="#InstType">InstType</a>) the current section defaults to the enabled state in. Multiple SectionIn commands can be specified (they are combined). If you specify <i>RO</i> as a parameter, then the section will be Read-Only, meaning it will always be set to install.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SectionEnd"><b>SectionEnd</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i></i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command closes the current open section. 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><b>SectionDivider</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[divider caption]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command inserts a divider into the section list that the user sees. If a divider caption is specified, it will be shown on the divider.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="AddSize"><b>AddSize</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>size_kb</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Tells the installer that the current section needs an additional "size_kb" kilobytes of disk space. Only valid within a section (will have no effect outside of a section or in a function).
+</TD></TR>
+</TABLE>
+See also: <a href="#SectionSetFlags">SectionSetFlags</a>, 
+          <a href="#SectionGetFlags">SectionGetFlags</a>,
+          <a href="#SectionSetText">SectionSetText</a>,
+          and <a href="#SectionGetText">SectionGetText</a>.
+</ul>
+<a name="functions"><h4>Functions:</h4>
+Functions are like similar to <a href="#Sections">Sections</a> in that they contain zero or more <a href="#Instructions">instructions</a>. Functions are not called by the installer directly, instead they are called from <a href="#Sections">Sections</a> using the <a href="#Call">Call</a> instruction (Note: there are some special <a href="#CBFuncs">Callback Functions</a> that can be called by the installer directly).<BR>
+<ul>
+<ul>
+<li>Functions must be declared outside of <a href="#Sections">Sections</a> or other Functions.<BR>
+<li>Function names beginning with "." (e.g. ".Whatever") are generally reserved for <a href="#CBFuncs">callback functions</a>. <BR>
+<li>Function names beginning with "un." are functions that will be generated in the Uninstaller. Hence, normal install <A href="#Sections">Sections</a> and functions cannot call uninstall functions, and the <a href="#uninstall_section">Uninstall Section</a> and uninstall functions cannot call normal functions.
+</ul><BR><BR>
+
+<TABLE BORDER=0>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Function"><b>Function</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>function_name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Creates and opens a function named function_name. 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FunctionEnd"><b>FunctionEnd</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Ends the current open function.
+</TD></TR>
+</TABLE>
+</ul>
+See also: <a href="functions.htm">Utility Functions (functions.htm)</a>.
+<a name="Labels"><h4>Labels:</h4>
+Labels are the targets of <a href="#Goto">Goto</A> instructions, or of the various branching instructions (such as <a href="#IfErrors">IfErrors</a>, <a href="#MessageBox">MessageBox</a>, <a href="#IfFileExists">IfFileExists</a>, and <a href="#StrCmp">StrCmp</a>). Labels must be within a <a href="#Sections">Section</a> or a <a href="#Functions">Function</a>. Labels are local in scope, meaning they are only accessable from within the Section or Function that they reside in.<BR>
+To declare a label, simply do:<PRE>
+MyLabel:
+</PRE>
+Labels cannot begin with a -, +, !, $, or 0-9. When specifying labels for the various <a href="#Instructions">instructions</a> that require them, remember that both an empty string ("") and 0 both represent the next instruction (meaning no <a href="#Goto">Goto</a> will occur).
+Labels beginning with a period (.) are global, meaning you can jump to them from any function or section (though you cannot jump to an uninstall global label from the installer, and vice versa).
+<a name="Instructions"><h4>Instructions:</h4>
+The instructions that NSIS uses for scripting are sort of a cross between <a href="http://www.php.net">PHP</a> and assembly. There are no real high level language constructs, but the instructions themselves are (for the most part) high level, and you have handy string capability (i.e. you don't have to worry about concatenating strings, etc). You essentially have <a href="#V_USER">22 registers (20 general purpose, 2 special purpose)</a>, and a <a href="#Push">stack</a>. 
+<ul>
+<TABLE BORDER=0>
+<TR><TD COLSPAN=3 BGCOLOR="#606060">General purpose, basic instructions</TD></TR>
+
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetOutPath"><b>SetOutPath</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>outpath</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the output path (<a href="#V_OUTDIR">$OUTDIR</A>) and creates it (recursively if necessary), if it does not exist. Must be a full pathname, usually is just <a href="#V_INSTDIR">$INSTDIR</a> (you can specify $INSTDIR if you are lazy with a single "-").
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="File"><b>File</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>([/r] file|wildcard [...]) |<br>(/oname=file.dat infile.dat)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Adds file(s) to be extracted to the current output path (<a href="#V_OUTDIR">$OUTDIR</A>). <ul>
+<li>Note that the output file name is <a href="#V_OUTDIR">$OUTDIR</a>\filename_portion_of_file. 
+<li>If the /oname=X switch is used, the output name becomes <a href="#V_OUTDIR">$OUTDIR</a>\X. When using the /oname= switch, only one file can be specified, and the file name can contain variables (or a fully qualified path, i.e. $SYSDIR\whatever.dll).
+<li>Wildcards are supported. 
+<li>If the /r switch is used, files and directories are added recursively. If is no trailing wildcard (i.e. File /r C:\whatever\mydir), then the whole tree of mydir will go in <a href="#V_OUTDIR">$OUTDIR</a>\mydir. To put it in $OUTDIR, use File /r C:\whatever\mydir\*.*
+</ul>
+The File command sets the error flag if overwrite mode is set to 'try' and the file could not be overwritten, or if the overwrite mode is set to 'on' and the file could not be overwritten and the user selects ignore.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Exec"><b>Exec</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>command</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Execute the specfied program and continue immediately.  Note that the file specified must exist on the target system, not the compiling system. <a href="#V_OUTDIR">$OUTDIR</a> is used for the working directory. The error flag is set if the process could not be launched. Note, if the command could have spaces, you may with to put it in quotes to delimit it from parameters. i.e.: Exec '"$INSTDIR\command.exe" parameters'.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ExecWait"><b>ExecWait</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>command<br>[<a href="#V_USER">user_var</a>(exit code)]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Execute the specfied program and wait for the executed process to quit. See <a href="#Exec">Exec</a> for more information. If no output variable is specified ExecWait sets the error flag if the program executed returns a nonzero error code, or if there is an error. If an output variable is specified, ExecWait sets the variable with the exit code (and only sets the error flag if an error occurs; if an error occurs the contents of the user variable are undefined). Note, if the command could have spaces, you may with to put it in quotes to delimit it from parameters. i.e.: ExecWait '"$INSTDIR\command.exe" parameters'
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><A name="ExecShell"><b>ExecShell</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>action<br>command<br>[parameters]<br>[SW_SHOWNORMAL |<br>&nbsp;SW_SHOWMAXIMIZED |<br>&nbsp;SW_SHOWMINIMIZED]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Execute the specfied program using ShellExecute. Note that action is usually "open", "print", etc, but can be an empty string to use the default action. Parameters and the show type are optional. <a href="#V_OUTDIR">$OUTDIR</a> is used for the working directory. The error flag is set if the process could not be launched.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><A name="Rename"><b>Rename</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[/REBOOTOK]<br>source_file<br>dest_file</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Rename source_file to dest_file. Functions just like the win32 API MoveFile, which means you can move a file from anywhere on the system to anywhere else, and you can move a directory to somewhere else on the same drive. If /REBOOTOK is specified, and the file cannot be overwritten, then the file is moved when the system reboots -- if the file will be moved on a reboot, the <A href="#Reboot">reboot flag</a> will be set. The error flag is set if the file cannot be renamed (and /REBOOTOK is not used) or if the source file does not exist.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Delete"><b>Delete</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[/REBOOTOK]<br>file</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Delete file (which can be a file or wildcard, but should be specified with a full path) from the target system. If /REBOOTOK is specified and the file cannot be deleted then the file is deleted when the system reboots -- if the file will be deleted on a reboot, the <A href="#Reboot">reboot flag</a> will be set. The error flag is set if files are found and cannot be deleted. The error flag is not set from trying to delete a file that does not exist.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="RMDir"><b>RMDir</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[/r]<br>directory</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Remove the directory (which should be a full path). If /r is specified, it will recursively remove the directory. The error flag is set if the directory exists and cannot be removed.
+</TD></TR>
+<TR><TD COLSPAN=3 BGCOLOR="#606060">Registry, INI file reading/writing/deleting instructions</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="WriteRegStr"><b>WriteRegStr</b><BR>
+<a name="WriteRegExpandStr"><b>WriteRegExpandStr</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>root_key<br>subkey<br>key_name<br>value</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Write a string to the registry. root_key must be one of:<ul>
+<li>HKCR or HKEY_CLASSES_ROOT
+<li>HKLM or HKEY_LOCAL_MACHINE
+<li>HKCU or HKEY_CURRENT_USER
+<li>HKU or HKEY_USERS
+<li>HKCC or HKEY_CURRENT_CONFIG
+<li>HKDD or HKEY_DYN_DATA
+<li>HKPD or HKEY_PERFORMANCE_DATA
+</ul>
+The error flag is set if the string could not be written to the registry.
+The type of the string will be REG_SZ for WriteRegStr, or REG_EXPAND_STR for WriteRegExpandStr.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="WriteRegDWORD"><b>WriteRegDWORD</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>root_key<Br>subkey<br>key_name<br>value</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command writes a dword (32 bit integer) to the registry (a <a href="#V_USER">user variable</a> can be specified). Valid values for root_key are listed under <a href="#WriteRegStr">WriteRegStr</a>. The error flag is set if the dword could not be written to the registry.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="WriteRegBin"><b>WriteRegBin</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>root_key<br>subkey<br>key_name<br>valuedata</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command writes a block of binary data to the registry. Valid values for root_key are listed under <a href="#WriteRegStr">WriteRegStr</a>. Valuedata is in hexadecimal (i.e. DEADBEEF01223211151). The error flag is set if the binary data could not be written to the registry.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="WriteINIStr"><b>WriteINIStr</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>ini_filename<br>section_name<br>entry_name<br>value</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Writes entry_name=value into [section_name] of ini_filename. The error flag is set if the string could not be written to the ini file.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ReadRegStr"><b>ReadRegStr</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<Br>root_key<Br>sub_key<br>name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Reads from the registry into the <a href="#V_USER">user variable $x</a>. Valid values for root_key are listed under <a href="#WriteRegStr">WriteRegStr</a>.  The error flag will be set and $x will be set to an empty string ("") if the string is not present. If the value is present, but is of type REG_DWORD, it will be read and converted to a string and the error flag will be set. 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ReadRegDWORD"><b>ReadRegDWORD</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<Br>root_key<br>sub_key<br>name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Reads a 32 bit DWORD from the registry into the <a href="#V_USER">user variable $x</a>. Valid values for root_key are listed under <a href="#WriteRegStr">WriteRegStr</a>.  The error flag will be set and $x will be set to an empty string ("" which is 0) if the DWORD is not present. If the value is present, but is not a DWORD, it will be read as a string and the error flag will be set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ReadINIStr"><b>ReadINIStr</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<Br>ini_filename<Br>section_name<br>entry_name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Reads from entry_name in [section_name] of ini_filename and stores the value into <a href="#V_USER">user variable $x</a>. The error flag will be set and $x will be assigned to an empty string if the entry is not found. 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ReadEnvStr"><b>ReadEnvStr</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<Br>name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Reads from the environment string "name" and sets the value into the <A href="#V_USER">user variable $x</a>. If there is an error reading the string, the user variable is set to empty, and the error flag is set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ExpandEnvStrings"><b>ExpandEnvStrings</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<Br>string</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Expands environment variables in "string" into the <a href="#V_USER">user variable $x</a>. If error, the variable is set to empty, and the error flag is set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="DeleteRegValue"><b>DeleteRegValue</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>root_key<br>subkey<Br>key_name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Deletes a registry value. Valid values for root_key are listed under <a href="#WriteRegStr">WriteRegStr</a>. The error flag is set if the value could not be removed from the registry (or if it didn't exist to begin with).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="DeleteRegKey"><b>DeleteRegKey</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[/ifempty]<br>root_key<br>subkey</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Deletes a registry key. If /ifempty is specified, the registry key will only be deleted if it has no subkeys (otherwise, the whole registry tree will be removed). Valid values for root_key are listed under <a href="#WriteRegStr">WriteRegStr</a>. The error flag is set if the key could not be removed from the registry (or if it didn't exist to begin with).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="EnumRegKey"><b>EnumRegKey</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<br>root_key<br>subkey<br>index</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Set <a href="#V_USER">user variable $x</a> with the name of the 'index'th registry key in root_key\subkey. Valid values for root_key are listed under <a href="#WriteRegStr">WriteRegStr</a>. Returns an empty string if there are no more keys, and returns an empty string and sets the error flag if there is an error.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="EnumRegValue"><b>EnumRegValue</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<Br>root_key<br>subkey<br>index</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Set <a href="#V_USER">user variable $x</a> with the name of the 'index'th registry value in root_key\subkey. Valid values for root_key are listed under <a href="#WriteRegStr">WriteRegStr</a>. Returns an empty string if there are no more values, and returns an empty string and sets the error flag if there is an error.
+
+
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="DeleteINISec"><b>DeleteINISec</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>ini_filename<br>section_name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Deletes the entire section [section_name] from ini_filename. If the section could not be removed from the ini file, the error flag is set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="DeleteINIStr"><b>DeleteINIStr</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>ini_filename<br>section_name<br>str_name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Deletes the string str_name from section [section_name] from ini_filename. If the string could not be removed from the ini file, the error flag is set.
+</ul>
+</TD></TR>
+<TR><TD COLSPAN=3 BGCOLOR="#606060">General purpose, advanced instructions</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><A name="CreateDirectory"><b>CreateDirectory</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>path_to_create</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Creates (recursively if necessary) the specified directory.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="CopyFiles"><b>CopyFiles</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[/SILENT]<br>[/FILESONLY]<BR>filespec_on_destsys<Br>destination_path<br>[size_of_files_in_kb]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Copies files from the source to the destination on the installing system. Useful with <a href="#V_EXEDIR">$EXEDIR</a> if you want to copy from installation media, or to copy from one place to another on the system. Uses SHFileOperation, so the user might see a status window of the copy operation if it is large (to disable this, use /SILENT). The last parameter specifies how big the copy is (in kilobytes), so that the installer can approximate the disk space requirements. On error, or if the user cancels the copy (only possible when /SILENT was omitted), the error flag is set. If /FILESONLY is specified, only files are copied.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetFileAttributes"><b>SetFileAttributes</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>filename attribute1|attribute2|...</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the file attributes of 'filename' (which can contain wildcards). Valid attributes can be combined with | and are:<ul>
+<li>NORMAL or FILE_ATTRIBUTE_NORMAL (you can use 0 to abbreviate this)
+<li>ARCHIVE or FILE_ATTRIBUTE_ARCHIVE
+<li>HIDDEN or FILE_ATTRIBUTE_HIDDEN
+<li>OFFLINE or FILE_ATTRIBUTE_OFFLINE
+<li>READONLY or FILE_ATTRIBUTE_READONLY
+<li>SYSTEM or FILE_ATTRIBUTE_SYSTEM
+<li>TEMPORARY or FILE_ATTRIBUTE_TEMPORARY
+</ul>
+The error flag will be set if the file's attributes cannot be set (i.e. the file doesn't exist, or you don't have the right permissions) 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="CreateShortCut"><b>CreateShortCut</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>link.lnk<br>target.file<br>[parameters]<br>[icon.file]<br>[icon_index_number]<br>[start_options]<br>[keyboard_shortcut]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Creates a shortcut 'link.lnk' that links to 'target.file', with optional parameters 'parameters'. <ul>
+<li>The icon used for the shortcut is 'icon.file,icon_index_number'; for default icon settings use empty strings for both icon.file and icon_index_number. 
+<li>start_options should be one of: SW_SHOWNORMAL, SW_SHOWMAXIMIZED, SW_SHOWMINIMIZED, or an empty string.
+<li>keyboard_shortcut should be in the form of 'flag|c' where flag can be a combination (using |) of: ALT, CONTROL, EXT, or SHIFT. c is the character to use (a-z, A-Z, 0-9, F1-F24, etc). Note that no spaces are allowed in this string. A good example is "ALT|CONTROL|F8". 
+<a href="#V_OUTDIR">$OUTDIR</a> is used for the working directory. 
+</ul>
+The error flag is set if the shortcut cannot be created (i.e. the path does not exist, or some other error).
+
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="GetFullPathName"><b>GetFullPathName</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[/SHORT]<br><a href="#V_USER">user_var</a>(output)<br>path_or_file</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Assign to the <a href="#V_USER">user variable $x</a>, the full path of the file specified. If the path portion of the parameter is not found, the error flag will be set and $x will be empty. If /SHORT is specified, the path is converted to the short filename form.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SearchPath"><b>SearchPath</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<br>filename</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Assign to the <a href="#V_USER">user variable $x</a>, the full path of the file named by the second parameter. The error flag will be set and $x will be empty if the file cannot be found. Uses SearchPath() to search the system paths for the file.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="GetTempFileName"><b>GetTempFileName</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Assign to the <a href="#V_USER">user variable $x</a>, the name of a temporary file. The file will have been created, so you can then overwrite it with what you please. The name of the temporary file is guaranteed to be unique. Delete the file when done with it.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="CallInstDLL"><b>CallInstDLL</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>dllfile<Br>function</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Calls a NSIS extension DLL. See Contrib\ExDLL for an example of how to make one. Extension DLLs can access the stack and variables.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="RegDll"><b>RegDLL</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>dllfile<Br>[entrypoint_name]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Loads the specified DLL and calls DllRegisterServer (or entrypoint_name if specified). The error flag is set if an error occurs (i.e. it can't load the DLL, initialize OLE, or find the entry point).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="UnRegDLL"><b>UnRegDLL</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>dllfile</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Loads the specified DLL and calls DllUnregisterServer. The error flag is set if an error occurs (i.e. it can't load the DLL, initialize OLE, or find the entry point).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="GetDLLVersion"><B>GetDLLVersion</B></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>filename<br><a href="#V_USER">user_var</a>(high dword output)<br><a href="#V_USER">user_var</a>(low dword output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Gets the version information from the DLL in "filename". Sets the user output variables with the high and low dwords of version information on success; on failure the outputs are empty and the error flag is set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="GetDLLVersionLocal"><B>GetDLLVersionLocal</B></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>localfilename<br><a href="#V_USER">user_var</a>(high dword output)<br><a href="#V_USER">user_var</a>(low dword output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This is similar to <a href="#GetDLLVersion">GetDLLVersion</a>, only it acts on the system building the installer (it actually compiles into two StrCpy commands). Sets the two output variables with the DLL version information of the DLL on the build system.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="GetFileTime"><B>GetFileTime</B></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>filename<br><a href="#V_USER">user_var</a>(high dword output)<br><a href="#V_USER">user_var</a>(low dword output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Gets the last write time of "filename". Sets the user output variables with the high and low dwords of the timestamp on success; on failure the outputs are empty and the error flag is set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="GetFileTimeLocal"><B>GetFileTimeLocal</B></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>localfilename<br><a href="#V_USER">user_var</a>(high dword output)<br><a href="#V_USER">user_var</a>(low dword output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This is similar to <a href="#GetFileTime">GetFileTime</a>, only it acts on the system building the installer (it actually compiles into two StrCpy commands). Sets the two output variables with the file timestamp of the file on the build system.
+</TD></TR>
+<TR><TD COLSPAN=3 BGCOLOR="#606060">Branching, flow control, error checking, user interaction, etc instructions</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Goto"><b>Goto</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>label_to_jump_to |<br>+offset|<br>-offset|<br><a href="#V_USER">user_var</a>(target)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+If label is specified, goto the label 'label_to_jump_to:'. <br>
+If +offset or -offset is specified, jump is relative by offset instructions. Goto +1 goes to the next instruction, Goto -1 goes to the previous instruction, etc.<Br>
+If a user variable is specified, jumps to absolute address (generally you will want to get this value from a function like <A href="#GetLabelAddress">GetLabelAddress</a>.
+I
+<a href="#Compiler_flags">Compiler flag commands</a> and <A href="#SectionIn">SectionIn</a> aren't instructions so jumping over them has no effect. 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Call"><b>Call</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>function_name |<br>:label_name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Calls the <a href="#Functions">function</a> named function_name. If in the Uninstall section, Call can only be used with function names beginning with "un.". 
+If the parameter starts with a ':' it will be treated as a label (so you can call to a label in your function - this is probably not going to be used most of the time).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Return"><b>Return</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i></i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Returns from a function or section.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="IfErrors"><b>IfErrors</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>jumpto_iferror<br>[jumpto_ifnoerror]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Checks and clears the error flag, and if it is set, it will <a href="#Goto">goto</a> jumpto_iferror, otherwise it will <a href="#Goto">goto</a> jumpto_ifnoerror. The error flag is set by other instructions when a recoverable error (such as trying to delete a file that is in use) occurs.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="ClearErrors"><b>ClearErrors</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Clears the error flag.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetErrors"><b>SetErrors</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the error flag.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FindWindow"><b>FindWindow</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(hwnd output)<br>windowclass<br>[windowtitle]<br>[windowparent]<br>[childafter]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Searches for a window. Behaves like the win32 FindWindowEx(). Seaches by windowclass (and/or windowtitle if specified). If windowparent or childafter are specified, the search will be restricted as such. If windowclass or windowtitle is specified as "", they will not be used for the search. If the window is not found, the user variable returned is 0. To accomplish old-style FindWindow behavior, use FindWindow with <a href="#SendMessage">SendMessage</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SendMessage"><b>SendMessage</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>HWND<br>msg<br>wparam<br>lparam<br>[<a href="#V_USER">user_var</a>(return value)]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sends a message to HWND. If <a href="#V_USER">a user variable $x</a> is specified as the last parameter, the return value of SendMessage will be stored to it.
+Note that when specifying 'msg' you must just use the integer value of the message. Here are a few example messages and their values:<ul>
+<li>WM_CLOSE 16
+<li>WM_COMMAND 273
+<li>WM_USER 1024
+</ul>
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="IsWindow"><b>IsWindow</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>HWND<Br>jump_if_window<br>[jump_if_not_window]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+If HWND is a window, <a href="#Goto">Goto</a>s jump_if_window, otherwise, <a href="#Goto">Goto</a>s jump_if_not_window (if specified).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="IfFileExists"><b>IfFileExists</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>file_to_check_for<Br>jump_if_present<br>[jump_otherwise]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Checks for existence of file(s) file_to_check_for (which can be a wildcard, or a directory), and <a href="#Goto">Goto</a>s jump_if_present if the file exists, otherwise <a href="#Goto">Goto</a>s jump_otherwise. If you want to check to see if a file is a directory, use IfFileExists DIRECTORY\*.*
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="MessageBox"><b>MessageBox</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>mb_option_list<br>messagebox_text<br>[return_check<br>&nbsp;jumpto]<br>[return_check_2<br>&nbsp; jumpto_2]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Displays a MessageBox containing the text "messagebox_text". mb_option_list must be one or more of the following, delimited by |s (i.e. MB_YESNO|MB_ICONSTOP). <ul>
+  <li>MB_OK - Display with an OK button
+  <li>MB_OKCANCEL - Display with an OK and a cancel button
+  <li>MB_ABORTRETRYIGNORE - Display with abort, retry, ignore buttons
+  <li>MB_RETRYCANCEL - Display with retry and cancel buttons
+  <li>MB_YESNO - Display with yes and no buttons
+  <li>MB_YESNOCANCEL - Display with yes, no, cancel buttons
+  <li>MB_ICONEXCLAMATION - Display with exclamation icon
+  <li>MB_ICONINFORMATION - Display with information icon
+  <li>MB_ICONQUESTION - Display with question mark icon
+  <li>MB_ICONSTOP - Display with stop icon
+  <li>MB_TOPMOST - Make messagebox topmost
+  <li>MB_SETFOREGROUND - Set foreground
+  <li>MB_RIGHT - Right align text
+  <li>MB_DEFBUTTON1 - Button 1 is default
+  <li>MB_DEFBUTTON2 - Button 2 is default
+  <li>MB_DEFBUTTON3 - Button 3 is default
+  <li>MB_DEFBUTTON4 - Button 4 is default
+  </ul>
+  return_check can be 0 (or empty, or left off), or one of the following: <ul>
+  <li>IDABORT - Abort button
+  <li>IDCANCEL - Cancel button
+  <li>IDIGNORE - Ignore button
+  <li>IDNO - No button
+  <li>IDOK - OK button
+  <li>IDRETRY - Retry button
+  <li>IDYES - Yes button
+  </ul>
+  if the return value of the MessageBox is return_check, the installer will <a href="#Goto">Goto</a> jumpto.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="StrCmp"><b>StrCmp</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>str1<br>str2<br>jump_if_equal<br>[jump_if_not_equal]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Compares (case insensitively) str1 to str2. If str1 and str2 are equal, <a href="#Goto">Goto</a>s jump_if_equal, otherwise <a href="#Goto">Goto</a>s jump_if_not_equal.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="IntCmp"><b>IntCmp</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>val1<br>val2<br>jump_if_equal<br>[jump_if_val1_less]<br>[jump_if_val1_more]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Compares two integers val1 and val2. If val1 and val2 are equal, <a href="#Goto">Goto</a>s jump_if_equal, otherwise if val1 &lt; val2, <a href="#Goto">Goto</a>s jump_if_val1_less, otherwise if val1 &gt; val2, <a href="#Goto">Goto</a>s jump_if_val1_more.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="IntCmpU"><b>IntCmpU</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>val1<br>val2<br>jump_if_equal<br>[jump_if_val1_less]<br>[jump_if_val1_more]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Compares two unsigned integers val1 and val2. If val1 and val2 are equal, <a href="#Goto">Goto</a>s jump_if_equal, otherwise if val1 &lt; val2, <a href="#Goto">Goto</a>s jump_if_val1_less, otherwise if val1 &gt; val2, <a href="#Goto">Goto</a>s jump_if_val1_more. Performs the comparison as unsigned integers.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Abort"><b>Abort</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>user_message</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Cancels the install, stops execution of script, and displays user_message in the status display. Note: you can use this from <a href="#CBFuncs">Callback Functions</a> to do special things. Note 2: When using from <a href="#onNextPage">.onNextPage</a> or <a href="#onPrevPage">.onPrevPage</a>, the parameter to Abort can be an integer that specifies how many pages to skip.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Quit"><b>Quit</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i></i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Causes the installer to exit as soon as possible. 
+After Quit is called, the installer will exit (no callback functions will get a chance to run).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="GetFunctionAddress"><b>GetFunctionAddress</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output) function_name</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Gets the address of the function and stores it in the output user variable. This user variable then can be passed to <a href="#Call">Call</a> or <a href="#Goto">Goto</a>. Note that if you Goto an address which is the output of GetFunctionAddress, your function will never be returned to (when the function you Goto'd to returns, you return instantly).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="GetLabelAddress"><b>GetLabelAddress</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output) label</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Gets the address of the label and stores it in the output user variable. This user variable then can be passed to <a href="#Call">Call</a> or <a href="#Goto">Goto</a>.  Note that you may only call this with labels accessible from your function, but you can call it from anywhere (which is potentially dangerous). Note that if you Call the output of GetLabelAddress, code will be executed until it Return's (explicitly or implicitly at the end of a function), and then you will be returned to the statement after the Call. 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="GetCurrentAddress"><b>GetCurrentAddress</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Gets the address of the current instruction (the GetCurrentAddress) and stores it in the output user variable. This user variable then can be passed to <a href="#Call">Call</a> or <a href="#Goto">Goto</a>.
+</TD></TR>
+
+<TR><TD COLSPAN=3 BGCOLOR="#606060">File and directory i/o instructions</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FindFirst"><b>FindFirst</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(handle output)<br><a href="#V_USER">user_var</a>(filename output)<Br>filespec</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Performs a search for 'filespec', placing the first file found in filename_output (a <a href="#V_USER">user variable</a>). It also puts the handle of the search into handle_output (also a user variable). If no files are found, both outputs are set to empty, and the error flag is set. Best used with <a href="#FindNext">FindNext</a> and <a href="#FindClose">FindClose</a>. Note that the filename output is without path.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FindNext"><b>FindNext</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>handle<br><a href="#V_USER">user_var</a>(filename_output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Continues a search began with <a href="#FindFirst">FindFirst</a>. handle should be the handle_output_variable returned by FindFirst. If the search is completed (there are no more files), filename_output is set to empty, and the error flag is set. Note that the filename output is without path.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FindClose"><b>FindClose</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>handle</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Closes a search opened with <a href="#FindFirst">FindFirst</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FileOpen"><b>FileOpen</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(handle output)<br>filename<br>openmode</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Opens a file named "filename", and sets the handle output variable with the handle. The openmode should be one of "r" (read) "w" (write, all contents of file are destroyed) or "a" (append, meaning opened for both read and write, contents preserved). In all open modes, the file pointer is placed at the beginning of the file. If the file cannot be opened, the handle output is set to empty, and the error flag is set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FileClose"><b>FileClose</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>handle</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Closes a file handle opened with <a href="#FileOpen">FileOpen</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FileRead"><b>FileRead</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>handle<br><a href="#V_USER">user_var</a>(output)<br>[maxlen]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Reads a string from a file opened with <a href="#FileOpen">FileOpen</a>. The string is read until either a newline (or carriage return newline pair) occurs, or until a null byte is read, or until maxlen is met (if specified). Strings are limited to 1024 characters. If the end of file is read and no more data is available, the output string will be empty, and the error flag will be set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FileWrite"><b>FileWrite</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>handle<br>string</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Writes a string to a file opened with <a href="#FileOpen">FileOpen</a>. If an error occurs writing, the error flag will be set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FileReadByte"><b>FileReadByte</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>handle<br><a href="#V_USER">user_var</a>(output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Reads a byte from a file opened with <a href="#FileOpen">FileOpen</a>. The byte is stored in the output as an integer (0-255). If the end of file is read and no more data is available, the output will be empty, and the error flag will be set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FileWriteByte"><b>FileWriteByte</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>handle<br>string</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Writes the integer interpretation of 'string' to a file opened with <a href="#FileOpen">FileOpen</a>. If an error occurs writing, the error flag will be set. Note that the low byte of the integer is used, i.e. writing 256 is the same as writing 0, etc.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="FileSeek"><b>FileSeek</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>handle<br>offset<br>[mode]<br>[<a href="#V_USER">user_var</a>(new position)]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Seeks a file opened with <a href="#FileOpen">FileOpen</a>. If mode is omitted or specified as SET, the file is positioned to "offset". If mode is specified as CUR, then the file pointer is moved by offset. If mode is specified as END, the file pointer is set to a position relative to EOF. If the final parameter "new position" is specified, the new file position will be stored to that variable.
+</TD></TR>
+<TR><TD COLSPAN=3 BGCOLOR="#606060">Misc instructions</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetDetailsView"><b>SetDetailsView</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>show|hide</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Shows or hides the details, depending on which parameter you pass. Overrides the default details view, which is set via <a href="#ShowInstDetails">ShowInstDetails</a>
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetDetailsPrint"><b>SetDetailsPrint</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>none |<br>listonly |<br>textonly |<br>both</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets mode at which commands print their status. None has commands be quiet, listonly has status text only added to the listbox, textonly has status text only printed to the status bar, and both enables both (the default). For extracting many small files, textonly is recommended (especially on win9x with smooth scrolling enabled).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetAutoClose"><b>SetAutoClose</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>true|false</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Overrides the default auto window-closing flag (specified for the installer using <A href="#AutoCloseWindow">AutoCloseWindow</a>, and false for the uninstaller). Specify 'true' to have the install window immediately disappear after the install has completed, or 'false' to make it require a manual close.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="DetailPrint"><b>DetailPrint</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>user_message</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Adds the string "user_message" to the details view of the installer.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><A name="Sleep"><b>Sleep</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>sleeptime_in_ms</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Pauses execution in the installer for sleeptime_in_ms milliseconds. sleeptime_in_ms can be a <a href="#V_USER">variable</a>, i.e. "$0" or a number, i.e. "666".
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="BringToFront"><b>BringToFront</b></TD>
+
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Makes the installer window visible and brings it to the top of the window list (i.e. if a command was executed that shows itself in front of the installer, a BringToFront would bring the installer back in focus). 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="HideWindow"><b>HideWindow</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Hides the installer.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetShellVarContext"><b>SetShellVarContext</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>current|all</TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the context of <a href="#V_SMPROGRAMS">$SMPROGRAMS</A> and other shell folders. If set to 'current' (the default), the current user's shell folders are used. If set to 'all', the 'all users' shell folder is used. The all users folder may not be supported on all OSes. If the all users folder is not found, the current user folder will be used.
+</TD></TR>
+<TR><TD BGCOLOR="#606060" COLSPAN=3>String manipulation support</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="StrCpy"><b>StrCpy</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(destination)<br>str<br>[maxlen]<br>[start_offset]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the <A href="#V_USER">user variable $x</a> with str. Note that str can contain other variables, or the user variable being set (concatenating strings this way is possible, etc). If maxlen is specified, the string will be a maximum of maxlen characters (if maxlen is negative, the string will be truncated abs(maxlen) characters from the end). If start_offset is specified, the source is offset by it (if start_offset is negative, it will start abs(start_offset) from the end of the string).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="StrLen"><b>StrLen</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(length output)<br>str</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets <a href="#V_USER">user variable $x</a> with the length of str.
+</TD></TR>
+<TR><TD BGCOLOR="#606060" COLSPAN=3>Stack support</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Push"><b>Push</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>string</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Pushes a string onto the stack. The string can then be <a href="#Pop">Popped</a> off of the stack.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Pop"><b>Pop</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(out)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Pops a string off of the stack into <a href="#V_USER">user variable $x</a>. If the stack is empty, the error flag will be set.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Exch"><b>Exch</b></TD>
+<TD BGCOLOR="#C0C0C0" NOWRAP VALIGN="TOP"><i>[<a href="#V_USER">user_var</a>] |<BR>stack_index</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+When no parmater is specified, exchanges the top two elements of the stack. When a parameter is specified and is a <a href="#V_USER">user variable</a>, exchanges the top element of the stack with the parameter. When a parameter is specified and is a positive integer, the parameter specifies which item on the stack that the top of the stack is swapped with. If there are not enough items on the stack to accomplish the exchange, a fatal error will occur (to help you debug your code :).
+</TD></TR>
+<TR><TD BGCOLOR="#606060" COLSPAN=3>Integer manipulation support</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="IntOp"><b>IntOp</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<Br>value1<br>OP<br>[value2]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Combines value1 and (depending on OP) value2 into the <a href="#V_USER">user variable $x</a>. OP is defined as one of the following:<ul>
+<li>+  ADDs value1 and value2
+<li>-  SUBTRACTs value2 from value1
+<li>*  MULTIPLIES value1 and value2
+<li>/  DIVIDEs value1 by value2
+<li>%  MODULUSs value1 by value2
+<li>|  BINARY ORs value1 and value2
+<li>&amp;  BINARY ANDs value1 and value2
+<li>^  BINARY XORs value1 and value2
+<li>~  BITWISE NEGATEs value1 (i.e. 7 becomes 4294917288)
+<li>!  LOGICALLY NEGATEs value1 (i.e. 7 becomes 0)
+<li>|| LOGICALLY ORs value1 and value2
+<li>&amp;&amp; LOGICALLY ANDs value1 and value2
+</ul>
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="IntFmt"><b>IntFmt</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i><a href="#V_USER">user_var</a>(output)<Br>format<br>numberstring</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Formats the number in "numberstring" using the format "format", and sets the output to <a href="#V_USER">user variable $x</a>. Example format strings include "%08X" "%u" etc.
+</TD></TR>
+<TR><TD BGCOLOR="#606060" COLSPAN=3>Rebooting support</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="Reboot"><b>Reboot</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i></i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Reboots the computer. Be careful with this one. If there is an error rebooting, this function sets the error flag and continues. If the reboot is sucessful, this instruction does not return.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="IfRebootFlag"><b>IfRebootFlag</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[jump_if_set]<br>[jump_if_not_set]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Checks the reboot flag, and jumps to jump_if_set if the reboot flag is set, otherwise jumps to jump_if_not_set. The reboot flag can be set by <a href="#Delete">Delete</a> and <a href="#Rename">Rename</a>, or manually with <a href="#SetRebootFlag">SetRebootFlag</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SetRebootFlag"><b>SetRebootFlag</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>true|false</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the reboot flag to either true or false.
+</TD></TR>
+<TR><TD BGCOLOR="#606060" COLSPAN=3>Uninstaller instructions</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="WriteUninstaller"><b>WriteUninstaller</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>[Path\]exename.exe</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Writes the uninstaller to the filename (and optionally path) specified. Only valid from within an install section or function, and requires that you have an uninstall section in your script. See also <A href="#UninstallConfig">Uninstall configuration</a>. You can call this one or more times to write out one or more copies of the uninstaller.
+</TD></TR>
+<TR><TD BGCOLOR="#606060" COLSPAN=3>Install logging instructions</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="LogSet"><b>LogSet</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>on|off</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets whether install logging to $INSTDIR\install.log will happen. Note that NSIS_CONFIG_LOG must be set in the installer configuration (it is not by default) to support this. 
+</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="LogText"><b>LogText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>text</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+If installer logging is enabled, inserts text "text" into the log file.
+</TD></TR>
+<TR><TD BGCOLOR="#606060" COLSPAN=3>Section management instructions</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SectionSetFlags"><b>SectionSetFlags</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>section_index<br>section_flags</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the section's flags. The flag is a 32 bit integer. The low 30 bits represent whether the section is in the (as many as) 30 file types. The top bit (0x80000000) represents whether the section is currently enabled, and the second to top bit (0x40000000) represents whether or not the section is read-only. The error flag will be set if an out of range section is specified.
+</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SectionGetFlags"><b>SectionGetFlags</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>section_index<br><a href="#V_USER">user_var</a>(output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Retrieves the section's flags. See above for a description of the flag. The error flag will be set if an out of range section is specified.
+</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SectionSetText"><b>SectionSetText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>section_index<br>section_text</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Sets the description for the section section_index. If section_text is set to an empty string (""), the section will no longer be visible. If the section is not visible, you can make it visible by setting it to a valid string. You can even make a section into a divider by beginning the string with a "-" (which isn't really recommended)!. Note that hidden sections may still be executed if the sectin's flag is still set. Section text strings may contain variables, but the variable will not determine whether or not the section is visible or a divider. The error flag will be set if an out of range section is specified.
+</TD></TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="SectionGetText"><b>SectionGetText</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>section_index<br><a href="#V_USER">user_var</a>(output)</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Stores the text description of the section section_index into the output. If the section is hidden, stores an empty string. If the section is a divider, the string will begin with a "-". The error flag will be set if an out of range section is specified.
+</TD></TR>
+</TABLE>
+</ul>
+<h4><a name="V">Variables:</h4>
+<ul>
+<table border=0>
+<TR><TD COLSPAN=2 BGCOLOR="#606060">The following are modifiable variables that are usable in <a href="#Instructions">Instructions</a>:</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_INSTDIR">$INSTDIR</TD><TD BGCOLOR="#E0E0E0">
+The installation directory ($INSTDIR is modifiable using <a href="#StrCpy">StrCpy</a>, <a href="#ReadRegStr">ReadRegStr</a>, <a href="#ReadINIStr">ReadINIStr</a>, etc. - This could be used, for example, in the <a href="#CBFuncs">.onInit function</a> to do a more advanced detection of install location).
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_OUTDIR">$OUTDIR</TD><TD BGCOLOR="#E0E0E0">
+The current output directory (set implicitly via <a href="#SetOutPath">SetOutPath</a> or explicitly via <a href="#StrCpy">StrCpy</a>, <a href="#ReadRegStr">ReadRegStr</a>, <a href="#ReadINIStr">ReadINIStr</a>, etc)
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP">
+<a name="V_USER">$0, $1, $2, $3, $4, $5, $6, $7, $8, $9, $R0, $R1, $R2, $R3, $R4, $R5, $R6, $R7, $R8, $R9
+</TD>
+<TD BGCOLOR="#E0E0E0">
+User variables (set via <a href="#StrCpy">StrCpy</a>, <a href="#ReadRegStr">ReadRegStr</a>, <a href="#ReadINIStr">ReadINIStr</a>, etc, and use like any other variable). It is recommended (but not required) that you use $R1-$R9 as local registers, and $0-$9 as global values. Note that any function that lets you specify one of these variables as an output, can use $INSTDIR or $OUTDIR as well (but has different implications).
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_CMDLINE">$CMDLINE</TD><TD BGCOLOR="#E0E0E0">
+The command line of the installer. The format of the command line can be one of the following:<ul>
+<li>"full\path to\installer.exe" PARAMETER PARAMETER PARAMETER
+<li>installer.exe  PARAMETER PARAMETER PARAMETER
+</ul>
+For parsing out the PARAMETER portion, see <a href="functions.htm#GetParameters">GetParameters</a> on the utility functions page. It's worth noting that if /D= is specified on the command line (to override the install directory), it won't be in $CMDLINE.
+</TD></TR>
+<TR><TD COLSPAN=2 BGCOLOR="#606060">The following are constant variables that are usable in <a href="#Instructions">Instructions</a> and <a href="#InstallDir">InstallDir</a>:</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_PROGRAMFILES">$PROGRAMFILES</TD><TD BGCOLOR="#E0E0E0">
+The program files directory (usually C:\Program Files but detected at runtime).
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_DESKTOP">$DESKTOP</TD><TD BGCOLOR="#E0E0E0">
+The windows desktop directory (usually C:\windows\desktop but detected at runtime). The context of this variable (All Users or Current user) depends on the <a href="#SetShellVarContext">SetShellVarContext</a> setting. The default is the current user.
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_EXEDIR">$EXEDIR</TD><TD BGCOLOR="#E0E0E0">
+The location of the installer executable. (technically you can modify this variable, but it is probably not a good idea)
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_WINDIR">$WINDIR</TD><TD BGCOLOR="#E0E0E0">
+The windows directory (usually C:\windows or C:\winnt but detected at runtime)
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_SYSDIR">$SYSDIR</TD><TD BGCOLOR="#E0E0E0">
+The windows system directory (usually C:\windows\system or C:\winnt\system32 but detected at runtime)
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_TEMP">$TEMP</TD><TD BGCOLOR="#E0E0E0">
+The system temporary directory (usually C:\windows\temp but detected at runtime)
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_STARTMENU">$STARTMENU</TD><TD BGCOLOR="#E0E0E0">
+The start menu folder (useful in adding start menu items using CreateShortCut)
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_SMPROGRAMS">$SMPROGRAMS</TD><TD BGCOLOR="#E0E0E0">
+The start menu programs folder (use this whenever you want $STARTMENU\Programs). The context of this variable (All Users or Current user) depends on the <a href="#SetShellVarContext">SetShellVarContext</a> setting. The default is the current user.
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_SMSTARTUP">$SMSTARTUP</TD><TD BGCOLOR="#E0E0E0">
+The start menu programs / startup folder. The context of this variable (All Users or Current user) depends on the <a href="#SetShellVarContext">SetShellVarContext</a> setting. The default is the current user.
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_QUICKLAUNCH">$QUICKLAUNCH</TD><TD BGCOLOR="#E0E0E0">
+The quick launch folder for IE4 active desktop and above. If quick launch is not available, simply returns the same as $TEMP. The context of this variable (All Users or Current user) depends on the <a href="#SetShellVarContext">SetShellVarContext</a> setting. The default is the current user.
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_HWNDPARENT">$HWNDPARENT</TD><TD BGCOLOR="#E0E0E0">
+The decimal HWND of the parent window.
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_STRING">$$</TD><TD BGCOLOR="#E0E0E0">
+Use to represent $. 
+</TD></TR>
+<TR><TD COLSPAN=2 BGCOLOR="#606060">The following "variables" are usable anywhere in a string:</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_RETURN">$\r</TD><TD BGCOLOR="#E0E0E0">
+Use to represent a carriage return (\r). 
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_NEWLINE">$\n</TD><TD BGCOLOR="#E0E0E0">
+Use to represent a newline (\n). 
+</TD></TR>
+<tr><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="V_DEFINED">${SYMBOL}</TD><TD BGCOLOR="#E0E0E0">
+Where SYMBOL is the name of something <a href="#defines">globally defined</a>, this will be replaced with the value of that symbol. If the symbol is not defined, no replace occurs (i.e. if ${POOP} is encountered, and POOP is not defined, ${POOP} is output).
+</TD></TR>
+</TABLE>
+</ul>
+<h4><a name="Uninstall_Section">Uninstall section:</h4>
+A special <a href="#Sections">Section</a> named 'Uninstall' must be created in order to generate an uninstaller. This section should remove all files, registry keys, etc that were installed by the installer, from the system. Here is an example of a simple uninstall section:<PRE>
+        Section "Uninstall"
+          Delete $INSTDIR\Uninst.exe ; delete self (see explanation below why this works)
+          Delete $INSTDIR\myApp.exe
+          RMDir $INSTDIR
+          DeleteRegKey HKLM SOFTWARE\myApp
+        SectionEnd
+</PRE>
+The first Delete instruction works (deleting the uninstaller), because the uninstaller is transparently copied to the system temporary directory for the uninstall.
+<h4><a name="CBFuncs">Callback functions:</h4>
+You can create callback functions which have special names, that will be called by the installer at certain points in the install. Below is a list of currently available callbacks:
+<ul>
+<TABLE BORDER=0>
+<TR><TD COLSPAN=2 BGCOLOR="#606060">Install callbacks</TD></TR>
+  <TR>
+  <TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="onInit">.onInit</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+  This callback will be called when the installer is nearly finished initializing. If the '.onInit' function calls <a href="#Abort">Abort</A>, the installer will quit instantly. <BR><BR>Here are two examples of how this might be used:<PRE>
+  Function .onInit
+    MessageBox MB_YESNO "This will install. Continue?" IDYES NoAbort
+      Abort ; causes installer to quit.
+    NoAbort:
+  FunctionEnd
+</PRE>or:<PRE>
+  Function .onInit
+    ReadINIStr $INSTDIR $WINDIR\wincmd.ini Configuration InstallDir
+    StrCmp $INSTDIR "" 0 NoAbort
+      MessageBox MB_OK "Windows Commander not found. Unable to get install path."
+      Abort ; causes installer to quit.
+    NoAbort:
+  FunctionEnd
+</PRE>
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP">.onUserAbort</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+      This callback is called when the user hits the 'cancel' button, and the install hasn't already failed. If this function calls <a href="#Abort">Abort</a>, the install will not be aborted. <BR><BR>Example:<PRE>
+  Function .onUserAbort
+    MessageBox MB_YESNO "Abort install?" IDYES NoCancelAbort
+      Abort ; causes installer to not quit.
+    NoCancelAbort:
+  FunctionEnd
+</PRE>
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="onInstSuccess">.onInstSuccess</TD>
+
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+      This callback is called when the install was successful, right before the install window closes (which may be after the user clicks 'Close' if <a href="#AutoCloseWindow">AutoCloseWindow</a> is set to false). <BR><BR>Example:<PRE>
+  Function .onInstSuccess
+    MessageBox MB_YESNO "Congrats, it worked. View readme?" IDNO NoReadme
+      Exec notepad.exe ; view readme or whatever, if you want.
+    NoReadme:
+  FunctionEnd
+</PRE>
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP">.onInstFailed</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+  
+      This callback is called when the user hits the 'cancel' button after the install has failed (if it could not extract a file, or the install script used the <a href="#Abort">Abort</a> command). <BR><BR>Example:<PRE>
+  Function .onInstFailed
+    MessageBox MB_OK "Better luck next time."  
+  FunctionEnd
+</PRE>
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="onVerifyInstDir">.onVerifyInstDir</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+  
+      This callback enables control over whether or not an installation path is valid for your installer. This code will be called every time the user changes the install directory, so it shouldn't do anything crazy with MessageBox or the likes. If this function calls <a href="#Abort">Abort</a>, the installation path in $INSTDIR is deemed invalid. <BR><BR>Example:<PRE>
+  Function .onVerifyInstDir
+    IfFileExists $INSTDIR\Winamp.exe PathGood
+      Abort ; if $INSTDIR is not a winamp directory, don't let us install there
+    PathGood
+  FunctionEnd
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="onNextPage">.onNextPage</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+    Called when the user selects to go from one page to the next. Also called when the first page is shown (after <a href="#onInit">.onInit</a>). Call <a href="#Abort">Abort</a> from this callback in order to make the installer stay on the current page (or to make it move relative to the current page - Abort 0 means to stay put, Abort 1 means to go to the next page, Abort 2 means to go to the following page, Abort -1 means to go back a page, and so on). To figure out which page you are on, you can just keep a counter and increment it on .onNextPage, and decrement it on .onPrevPage. Note that if the directory selection page is disabled, .onNextPage and .onPrevPage are still called for it.<BR>
+    Example use of .onNextPage/.onPrevPage/.onInit:<PRE>
+Function .onInit
+  StrCpy $9 0 ; we start on page 0
+FunctionEnd
+
+Function .onNextPage
+  StrCmp $9 1 "" noabort
+    MessageBox MB_YESNO "advance to the second page?" IDYES noabort
+      Abort
+  noabort:
+    IntOp $9 $9 + 1
+FunctionEnd
+
+Function .onPrevPage
+  StrCmp $9 2 "" noabort
+    MessageBox MB_YESNO "go back to the first page?" IDYES noabort
+      Abort
+  noabort:
+    IntOp $9 $9 - 1
+FunctionEnd
+ </PRE>
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="onPrevPage">.onPrevPage</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+    Called when the user selects to go from one page to the previous. Call <a href="#Abort">Abort</a> from this callback in order to make the installer stay on the current page (or pass an integer parameter to Abort to specify how many pages to move: Abort 1 means to go back one page, Abort 2 means to go back two pages, Abort -1 means to go forward a page, and so on). See <a href="#onNextPage">.onNextPage</a> for more information.
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="onSelChange">.onSelChange</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Called when the selection changes on the component page. Useful for using with <a href="#SectionSetFlags">SectionSetFlags</a> and <a href="#SectionGetFlags">SectionGetFlags</a>.
+</TD></TR>
+<TR><TD COLSPAN=2 BGCOLOR="#606060">Uninstall callbacks</TD></TR>
+  <TR>
+  <TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="unonInit">un.onInit</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+  This callback will be called when the uninstaller is nearly finished initializing. If the 'un.onInit' function calls <a href="#Abort">Abort</A>, the uninstaller will quit instantly. Note that this function can verify and/or modify $INSTDIR if necessary.<BR><BR>Here are two examples of how this might be used:<PRE>
+  Function un.onInit
+    MessageBox MB_YESNO "This will uninstall. Continue?" IDYES NoAbort
+      Abort ; causes uninstaller to quit.
+    NoAbort:
+  FunctionEnd
+</PRE>or:<PRE>
+  Function un.onInit
+    IfFileExists $INSTDIR\myfile.exe found
+      Messagebox MB_OK "Uninstall path incorrect"
+      Abort
+    found:
+  FunctionEnd
+</PRE>
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP">un.onUserAbort</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+      This callback is called when the user hits the 'cancel' button and the uninstall hasn't already failed. If this function calls <a href="#Abort">Abort</a>, the install will not be aborted. <BR><BR>Example:<PRE>
+  Function un.onUserAbort
+    MessageBox MB_YESNO "Abort uninstall?" IDYES NoCancelAbort
+      Abort ; causes uninstaller to not quit.
+    NoCancelAbort:
+  FunctionEnd
+</PRE>
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="unonUninstSuccess">un.onUninstSuccess</TD>
+
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+      This callback is called when the uninstall was successful, right before the install window closes (which may be after the user clicks 'Close' if <a href="#AutoCloseWindow">AutoCloseWindow</a> is set to false). <BR><BR>Example:<PRE>
+  Function un.onUninstSuccess
+    MessageBox MB_OK "Congrats, it's gone."
+  FunctionEnd
+</PRE>
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP">un.onUninstFailed</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+  
+      This callback is called when the user hits the 'cancel' button after the uninstall has failed (if it used the <a href="#Abort">Abort</a> command or otherwise failed). <BR><BR>Example:<PRE>
+  Function un.onUninstFailed
+    MessageBox MB_OK "Better luck next time."  
+  FunctionEnd
+</PRE>
+</TD></TR>
+  <TR><TD BGCOLOR="#C0C0C0" VALIGN="TOP"><a name="un.onNextPage">un.onNextPage</TD>
+  <TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+    Called when the user selects 'Uninstall' or 'Close' from the uninstaller. Call Abort from this callback in order to make the uninstaller stay on the current page.
+</TD></TR>
+
+</TABLE>
+</ul>
+<h4><a name="compilerutil">Compiler utility commands</h4>
+These commands are similar to the C preprocessor in terms of purpose and functionality. They allow file inclusion, conditional compilation, executable header packing, and processes execution during the build process.
+ Note: none of these commands allow use of <a href="#V">variables</a>. 
+<ul>
+<TABLE BORDER="0">
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><b>!system</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>command [compare comparevalue]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command will execute 'command' using a call to system(), and if the return value compared (using 'compare') to 'comparevalue' is false, execution will halt. 'compare' can be '<' or '>' or '<>' or '=' or 'ignore'.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><b>!include</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>file</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command will include 'file' as if it was part of the original script. Note that if a file is included in another directory, the current directory is still where the script was compiled from (not where the included file resides).
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><b>!cd</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>new_path</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command will change the compiler to the new directory, new_path. new_path can be relative or absolute.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><a name="PackEXEHeader"><b>!packhdr</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP"><i>tempfile command</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This option makes the compiler an external EXE packer (such as <a href="http://www.un4seen.com/petite/">Petite</a> or <a href="http://wildsau.idv.uni-linz.ac.at/mfx/upx.html">UPX</a>) to compress the executable header. Specify a temporary file name (such as "temp.dat") and a command line (such as "C:\program files\upx\upx -9 temp.dat") to compress the header. 
+</TD></TR><TR>
+</TABLE>
+</ul>
+<a name="defines"><h3>Compiler defines/conditional compilation:</h3>
+The compiler maintains a list of defined symbols, which can be defined using <a href="#bangdefine">!define</a> or the /D command line switch. These defined symbols can be used for conditional compilation (using <a href="#bangifdef">!ifdef</a>) or for symbol replacement (a simple form of macros). To replace a symbol with its value, use <a href="#V_DEFINED">${SYMBOL}</a> (if SYMBOL is not defined, no translation will occur). The translation is first-come-first-served, meaning if you do:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; !define symbol1 ${symbol2}<Br>
+if symbol2 is defined when that line occurs, it will be replaced. Otherwise, any replacing will occur when ${symbol1} is referenced.
+<br><br>
+Define/conditional compilation related commands:<ul>
+<TABLE BORDER="0">
+<TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><a name="bangdefine"><b>!define</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><i>gflag [value]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command will add 'gflag' to the global define list. This will have a similar effect as using the <a href="#slashdefine">/D</a> switch on the command line (only the define only becomes effective after the !define command). 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><a name="bangundef"><b>!undef</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><i>gflag</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Removes an item from the global define list. Note that ${SYMBOL} where SYMBOL is undefined will be translated to "${SYMBOL}".
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><a name="bangifdef"><b>!ifdef</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><i>gflag [bcheck [gflag [...]]]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command, when paired with an <a href="#bangendif">!endif</a> command, will tell the compiler whether or not to compile the lines in between the two lines. If gflag is globally defined (using <a href="#bangdefine">!define</a> or the <a href="#slashdefine">/D</a> switch), then the contained lines will be compiled. Otherwise, they will be skipped. 'bcheck' can be specified as &amp; (boolean and) or | (boolean or) along with more gflags -- precedence is simple, left to right.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><a name="bangifndef"><b>!ifndef</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><i>gflag [bcheck [gflag [...]]]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command is the opposite of <A href="#bangifdef">!ifdef</a> (If 'gflag' is not globally defined, the lines contained will be compiled). Note that when using boolean operators (&amp; or |), 'gflag' is treated as true if it is undefined. I.e. '!ifndef X | Y' means "if either X or Y is undefined" and '!ifndef X & Y' means "if X and Y are both undefined".
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><a name="bangendif"><b>!endif</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command closes a block started with <a href="#bangifdef">!ifdef</a> or <a href="#bangifndef">!ifndef</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><b>!else</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><i>[ifdef|ifndef [...]]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+This command is the logical lovemonkey to !ifdef and !endif. !ifdef/!else/!endif, !ifdef/!else ifdef/!endif, !ifdef/!else ifdef/!else ifndef/!endif, etc. If ifdef or ifndef is specified as the first parameter, it behaves as expected. 
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><a name="bangmacro"><b>!macro</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><i>macro_name<br>[parameter]<br>[...]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Creates a macro named 'macro_name'. All lines between the !macro and the <a href="#bangmacroend">!macroend</a> will be saved. To insert the macro later on, use <a href="#banginsertmacro">!insertmacro</a>. Note that macros cannot contain other macro definitions (though they can insert other macros), or !ifdef/!else/!endif. !macro definitions can have one or more parameters defined. The parameters may be accessed the same way a !define would (i.e. ${PARMNAME}) from inside the macro.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><a name="bangmacroend"><b>!macroend</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><i></i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Ends a macro that was started with <a href="#Bangmacro">!macro</a>.
+</TD></TR><TR>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><a name="banginsertmacro"><b>!insertmacro</b></TD>
+<TD BGCOLOR="#C0C0C0" VALIGN="TOP" NOWRAP><i>macro_name<br>[parameter]<BR>[...]</i></TD>
+<TD BGCOLOR="#E0E0E0" VALIGN="TOP">
+Inserts the contents of a macro that was created with <a href="#bangmacro">!macro</a>. If the macro was created with parameters, then you must pass as many parameters to the macro as it requires.
+</TD></TR>
+</TABLE>
+</ul>
+<a name="version"><h3>Version history:</h3><ul>
+<li>v1.98 (1.97 was a development version or something)<ul>
+<li>Made SectionIn support more section indices. May break old scripts though (since 12 is interpreted as 12 not 1 and 2 now), but the compiler should at least
+give error rather than fail silently.
+<li>Added config.h option: NSIS_CONFIG_CRC_ANAL
+<li>Made Sleep instruction not print "Wait..." to output.
+<li>Updated to MakensisW 1.4
+<li>Updated exdll.dpr (Delphi port)
+<li>Added LogText and LogSet commands
+<li>Reworked heavily the section system.
+<li>- Added SectionSetText, SectionSetFlags, SectionGetFlags, and SectionGetText.
+<li>- Added .onSelChange callback.
+<li>- Added RO parameter for SectionIn
+<li>Made size estimation display nicer and reorganized a little bit.
+<li>Added SetShellVarContext instruction.
+<li>Added parameter support for !macro and !insertmacro.
+</ul>
+<li>v1.96<ul>
+<li>Removed a few documentation errors (happy now, Alex??)
+<li>Updated to the latest makensisw.exe (sexy!)
+<li>Fixed a resource.h issue (thanks Robert Rainwater)
+<li>Fixed compilation bug when logging enabled (thanks Fritz Elfert)
+<li>Fixed bug in Call when calling a variable location from uninstall (thanks to Fritz Elfert again)
+</ul>
+<li>v1.95<ul>
+<li>Fixed section divider bug (thanks to Robert Rainwater)
+<li>Included a modified version of MakeNSISW (thanks to Robert Rainwater)
+<li>Made compiler's output line display full path (for the wrapper)
+</ul>
+<li>v1.94<ul>
+<li>Fixed whole compression + small uninstaller bug.
+</ul>
+<li>v1.93<ul>
+<li>Made !insertmacro work within macros and in command mode.
+<li>Removed stupid CRC padding on tiny installers (also fixes whole+CRC+tinyinstaller bug).
+<li>Other cleanups to both build output and exehead.
+<li>Zip2exe v0.16 (yay)
+</ul>
+<li>v1.92<ul>
+<li>Fixed bug in InstallOptions (State= empty on checkboxes causing problems)
+<li>Included WinMessages.NSH from KiCHiK
+<li>Added NSIS_COMPRESS_BZIP2_LEVEL option to config.h
+<li>Made compiler fflush() more often.
+<li>Made zip2exe use Miguel Garrido's code to embed the console instance of makensis (well, modified it a bit too).
+<li>Made zip2exe allow selection of makensis.exe (so you can do makensis-bz2.exe if you want), and have lots of other improvements.
+</ul>
+<li>v1.91<ul>
+<li>Made GetFileTime handle locked files better (thanks Dave Bau).
+<li>Cleaned up exec.c some by making file_exists() return metadata about the file.
+<li>Removed any versioning issues with the multiple 1.90s (since I'm stupid and make multiple versions with the same number).
+</ul>
+<li>v1.90<ul>
+<li>Included Install Options DLL instead of the classic install options.
+<li>Added GetTempFileName instruction.
+<li>Dave Laundon's new onNextPage/onPrevPage style.
+</ul>
+<li>v1.9b2<ul>
+<li>Included Peter Windridge's Delphi ExDLL port (contrib\exdll\exdll.dpr)
+<li>Added Quit instruction (almost instantly quits installer).
+<li>Added .onNextPage, .onPrevPage, and un.onNextPage callbacks.
+</ul>
+<li>v1.9b<ul>
+<li>Support for bzip2 as well as zlib for compression (see config.h - the default distribution includes makensis.exe (classic support) and makensis-bz2.exe (new style, can make smaller installers))
+<li>Support for compression that spans the entire installer (see config.h - the makensis-bz2.exe uses this by default) -- expense of temporary file required.
+<li>Included contrib\nsisdl (thanks, Yaroslav - updated again)
+<li>Began making more install strings changeable (see lang.h). Soon (for 2.0 hopefully) we will have full multilanguage (multiple languages per installer) support.
+<li>Fun command line updates.
+</ul>
+<li>for complete version history, see <a href="http://www.nullsoft.com/free/nsis/version-history.html">http://www.nullsoft.com/free/nsis/version-history.html</a>.
+</ul>
+<a name="license"><h3>License:</h3><pre>
+ Copyright (C) 1999-2002 Nullsoft, Inc.
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+</pre>
+
+eof (that's end of file for all you people who don't get it).
+</body>
+</html>

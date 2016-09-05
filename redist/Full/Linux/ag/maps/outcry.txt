@@ -1,0 +1,66 @@
+================================================================
+Title                   : Outcry - for Half-Life
+Date                    : 9th March 1999 
+Filename                : outcry.bsp
+Author                  : Steve Lyne aka "Scary-one" 
+Email Address           : steve.lyne@telia.com (not working yet) .... scooby.doo@swipnet.se (will die shortly)
+Home Page               : home9.swipnet.se/~w-91844
+Description             : This map should hopefully prove to be a popular Internet server map as well as an ideal LAN sized map.
+			  It should also help promote team-play strategies, whilst not looking like the typical team-play level.
+			  The weapons are placed in such places that they can guarded - making them quite hard to get.
+			  
+			  People often moan about my levels lacking a coherent theme. Well this level has a theme .. mine :) Its a
+			  Scary-one map - can't you tell? That basically means that it should look and play well. Learning the level
+			  shouldn't be too tough either ... logical connections and vertical situations should also be abundant. 
+			  
+			  I've worked hard with detail ... as well as with the r_speeds. Enraged was looked good .. but the balance tipped
+			  in favour of the beauty .. allowing r_speeds to slip in places (although it still works well). Outcry peaks at
+			  just about 600 - whilst barely comprimising with the beauty. I'm satisfied with the result. 
+			  My belief is that people will happily play a bare looking level if it is great .. but they will definately prefer 
+			  to play a great looking level that runs equally well. Somehow its more pleasant to be there (just my opinion of course). 
+
+Other Levels by me ....  : Manhunt (manhunt.bsp) and Enraged (enraged2.bsp) available from Radium or my homepage.
+
+Additional Credits to   : i)   My family - Kirsi, Nathalie & Emily for being there and supporting me.
+  			  iii) Valve/Sierra for a great title
+                          iii) ID Software
+			  iv)  Jeff Meyer .. the "Jammer" for helping me out with a server, allowing me to beta test the effect
+			       of the air jumps in combination with Internet lag. Thanks Nathan .. for killing us a few times too :)
+			  v)   Radium ... an extremely good level review site found at www.planethalflife.com/radium
+
+================================================================
+
+* Play Information *
+
+Single Player           : No (one start)
+Deathmatch              : Yes, 4 or more players would be ideal, up to about 12 or so. (10 starts)
+Difficulty Settings     : No
+
+* Construction *
+
+Base                    : From scratch
+Editor(s) used          : Worldcraft 2.0
+Known Bugs              : I don't think so
+
+Build Time              : on and off about 3 weeks. 
+
+Compile machine         : PII 333 with 96 megs of SDRAM 
+QBSP Time               : 1 minute
+QVIS Time               : 20 minutes
+QRAD Time (extra)       : 20 minutes (roughly)
+
+* Permissions *
+
+You MAY NOT sell this sucker for money!
+
+If a magazine wants it on its CD - that's fine - *BUT* you *MUST*
+send me a copy. OK!! Then we are quits :) My address is at the top!
+
+General BBS use - sure, I don't have a problem with that.
+
+You MAY NOT alter or add to this level without my permission.
+
+* Last but not least *
+
+Please, please, please email me if you like this level. I need to know that you like what you see.
+It boosts my confidence and gives me a big kick up the ass to get the next one done.

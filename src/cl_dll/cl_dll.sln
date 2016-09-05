@@ -1,0 +1,49 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cl_dll", "cl_dll.vcproj", "{64342A76-E8E2-476F-B254-F81F2C8060F7}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hl", "..\dlls\hl.vcproj", "{B10E9263-5895-4690-8A1A-14C21ED55D64}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Profile = Profile
+		Release = Release
+		Release_SW = Release_SW
+		Valve Debug = Valve Debug
+		Valve Release = Valve Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Debug.ActiveCfg = Debug|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Debug.Build.0 = Debug|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Profile.ActiveCfg = Release|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Profile.Build.0 = Release|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Release.ActiveCfg = Release|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Release.Build.0 = Release|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Release_SW.ActiveCfg = Release_SW|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Release_SW.Build.0 = Release_SW|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Valve Debug.ActiveCfg = Debug|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Valve Debug.Build.0 = Debug|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Valve Release.ActiveCfg = Release|Win32
+		{64342A76-E8E2-476F-B254-F81F2C8060F7}.Valve Release.Build.0 = Release|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Debug.ActiveCfg = Debug|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Debug.Build.0 = Debug|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Profile.ActiveCfg = Profile|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Profile.Build.0 = Profile|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Release.ActiveCfg = Release|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Release.Build.0 = Release|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Release_SW.ActiveCfg = Release_SW|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Release_SW.Build.0 = Release_SW|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Valve Debug.ActiveCfg = Valve Debug|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Valve Debug.Build.0 = Valve Debug|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Valve Release.ActiveCfg = Valve Release|Win32
+		{B10E9263-5895-4690-8A1A-14C21ED55D64}.Valve Release.Build.0 = Valve Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

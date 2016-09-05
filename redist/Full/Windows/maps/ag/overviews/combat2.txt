@@ -1,0 +1,16 @@
+// Overview: Zoom 2.48, Map Origin (-160.00, -1239.00, -232.00), Z Min -246.00, Z Max -529.00, Rotated 1 
+
+// overview description file for combat2.bsp
+
+global 
+{
+	ZOOM	2.48
+	ORIGIN	-160	-1239	-520
+	ROTATED	1
+}
+
+layer 
+{
+	IMAGE	"overviews/combat2.bmp"
+	HEIGHT	-520
+}

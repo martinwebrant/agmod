@@ -1,0 +1,135 @@
+..:: No Remorse, By Ken Banks ::..
+==================================
+Please read this entire document
+before playing the level.
+
+..::File Information
+
+Primary (Zip) File: no_remorse.zip - 419 KB
+Bsp File: no_remorse.bsp - 1.08 MB
+Readme File: no_remorse.txt - 9.66 KB
+
+..::Level Information
+
+Title: No Remorse
+Game: Half-Life
+Type: Deathmatch
+Players: 2-4
+Release Date: April 12, 2000
+
+..::Author Information
+
+Name: Ken Banks
+Email Address: ahawk@wastelandhalflife.com
+Homepage: http://members.xoom.com/kenblevels/index.html
+Mapfinger: http://www.mapfinger.com/members/Ken%20Banks/
+Age: 15
+Nationality: United States
+Previous Maps: Nope
+
+..::Level Description
+
+This is my first level (Oh, no!). After a year or so of practice, I finally made something I really feel proud of. Well anyways, here it is. It certainly isn't the best level out there, but I think it's pretty cool. :-) Anyone who's played one of Scary-One's 1v1 levels (scary_1, scary_2) will recognize the style... Very "arenaish" with lots of twisting ledges, etc. Now don't get me wrong, I'm not claiming my level is as good as one of Scary-One's creations! Oh, no. I truly believe any one little area of scary_1 puts No Remorse to shame. That's not to say that my level is bad either... Nor is it a rip-off of scary_1: It is completely unique, and in fact, not really anything like scary_1 at all (LOL, then what am I going on about it for?!). I just have a lot of respect for Steve and I owe him a great amount of credit for inspiring me in the creation of this map. I'd also like to thank "SpaceMan" and "Twizted" up here, as well as below, for their great imput on the map. Thanks!
+
+Now on to the level! Well... It's actually kinda hard to explain... :-) So I'll just run through some of the major design areas for you: I tried to make good use of several ambient sounds, and I strongly recommend playing with the sound enabled. Along with the more obvious ones, I put quite a few nice little quiet sounds in the map like the computalk2 on the Health Recharger, the faint wind by the "window", etc. There are some nice random background sounds in there too. I feel the lighting is just what I was looking for, and am quite pleased about that. The architecture is very... curvy. And nice, in my opinion. R_speeds don't get too high (650ish max, averaging around 200), and it should run fine on most systems. Connectivity is nice, though the layout isn't everything I wish it could be. Weapon placement: I've really put a lot of thought into this area, as you can see in the next section, "Additional Notes". The items/weapons are placed in a way that you need to keep moving if you want to succed. Srategy: Actually, there's quite a bit in this little level. Like... Deciding what level you should be on, and which way you should take to get there; Whether or not you should sit and wait for someone to walk into your satchel trap, therefor making yourself very vulnerable to enemy rockets (you would be backed up against a wall); Whether you should head left to charge up on health, or through the doorway to get the RPG... you get the point. These tactics aren't anything special... I mean, they are found in every good map out there... But they're there, nonetheless.
+
+Anyways, all of these elements are joined together into what is a pretty enjoyable little level. If you have any comments/complaints/or questions, please email me at ahawk@wastelandhalflife.com . I'd really appreciate any feedback!
+
+..::Additional Notes
+
+-In the large horseshoe shaped arena, the two things running up the sides of the walls are ladders. Anything else that looks like this is a ladder also.
+
+-All weapons except the EGON and Hornet Gun are present. The map is just too small to house the EGON, and the Hornet Gun, well... sucks. ;-)
+
+-The spot where the light on the beams above you is burnt out was intentionally left darker. This is so you can chuck a few satchel charges down the "hole" in the floor and wait for someone to come by. ;-) This area is fairly open though, so campers beware.
+
+-The crossbow is down in the shallow pit in the area with the red lights on the walls, and you have to jump up onto a couple crates to get it. This makes anyone down there an easy target for someone who has just picked up the MP5 with contact grenades nearby. You probably won't find very many good sniping places in this map, but the explosive bolt has proven to come in handy at times. ;-)
+
+-The RPG isn't exactly very hard to get to, but it is in a spot where there are several different directions people can ambush you from. This is to eliminate camping and map domination. Any hey, it's in the sunlight, so you can be caught off guard as you warm up or work on your tan... maybe? Anyways, you'll certainly die if you stand there too long.
+
+-There are snarks in the level, but they are placed under one of the acloves in the center arena. They are placed here so that you can't grab them and unleash havoc onto your victims right away - they would turn right back around and kill you. I hate it when people can just sit up in a little hidden away spot and throw snarks down to do all the work for them. That isn't deathmatch, it's camping. (In case you hadn't already noticed, I tried to make this level as "camper resistant" as possible...)
+
+-To reach the Gauss gun you first need to pick up the LJM. The LJM isn't very hard to get or anything, but you need to watch your back because there are some hand grenades (and snarks) placed nearby, and someone can simply toss a couple down at you for an easy frag. The LJM was intentionally placed fairly close to where you need to actually use it. This is because it's not very fun to have to travel all the way across a map, and get shot in the head right as you're about to jump. That's just frustrating. (The LJM is also pretty useful for getting around the larger areas of the map.)
+
+-The wall that protects the Health Charger is pretty thin, so make sure that guy with the gauss isn't sneeking up on you while you're charging up. ;-) Though it seems that when fully charged, the gauss beam will bounce back and kill the person who shot it if they are too close to the wall... hmmm...
+
+-This map is designed for small FFA matches (4 players seems to be just right), or 1v1 matches. Don't try fitting 10 people in here, ok?
+
+-Oh, and the sky is clipped. ;-)
+
+..::Level Construction
+
+Base: I built this level from scratch.
+Editor: Worldcraft 2.1
+Compile Tools: HLCC and Zoner's HL Tools
+Compile Options:
+CSG - skyclip
+BSP - Normal Compile
+VIS - Full Compile
+RAD - extra; notexscale; bounce 8; smooth 80
+Build Time: About 3-4 months, on and off.
+
+..::Special Thanks
+
+Spaceman - Your feedback and ideas are most appreciated. Thanks! (Thank God the pop machines didn't get back from the repair shop in time for the final release, eh? ;-) )
+
+Twizted - Thanks man! I really appreciate your support/feedback and for putting up with me when the map got near completion. ;-) (Twizted has a really cool map in progress right now that I suggest you go check out: http://www.mapfinger.com/maps/Spherical_Noise )
+
+Anyone who downloads this map! - You rock!
+
+Department of Engineering - You guys are great! What an awesome resource!
+
+Cricket in the left aclove - Hehe, good thing your legs aren't stuck together anymore.
+
+Half-Life Editing Resource Center - Wonderful!
+
+Half-Life Compilation Controller - For making compiling sooo much easier.
+
+Mapfinger - Yet another truly awesome resource! Great work, Deraj!
+
+PlanetHalfLife - For holding my interest in HL, and for just being the coolest site around.
+
+radium - radium is the one responsible for getting me into HL mapping in the first place. After seeing all those maps being reviewed, I just HAD to make one. Heh, it was the wavelength grey box. (Note the lowercase "r"... ;-)  )
+
+Scary_One - You're my hero. ;-0
+
+Valve - Erm... I forget.
+
+Wavelength - For teaching me the basics of mapping, and for being the coolest editing site out there!
+
+Zoner - Your compiling tools are great! Thanks!
+
+I'd like to thank these people for their input as well:
+Amorphia
+BazzA
+Bluu
+Colby ?
+Hornetking
+Kman
+LtChambers
+Pysa
+Spaztek
+ZogMeister
+
+:-)
+
+..::Installation
+Unzip no_remorse.zip into your Half-Life\valve\maps folder.
+If you don't have a maps folder, create one.
+Run Half-Life and either start a LAN game or Internet game or whatever, and you should now see no_remorse.bsp listed in you map list. (That's for people who just purchased the game.)
+
+..::Legal Information
+
+Authors may NOT use this level as a base for the creation of additional levels, period.
+If you wish to include this level on a cover disk or any other means of distribution other than general Internet/BBS use, please contact me via email (ahawk@wastelandhalflife.com) first.
+If this level is to be included in a map pack, I would appreciate it if you would tell me about it before the thing gets released. :-)
+When distributing this level, under all circumstances, please include this readme file (no_remorse.txt) in its unmodified form, with the bsp file (no_remorse.bsp), and no other files, in a zip file named "no_remorse.zip".
+
+..::Misc
+I hope I didn't leave out anything important in here... And don't mind any spelling errors. :-)
+Thanks for taking the time to read this, and for downloading my map! I would really appreciate any feedback! Seriously: I've found that mapping is a very frustrating and time consuming hobby, and this map has completely worn me out. Now the only thing I'm gonna get for it is compliments (hopefully), so if you like it PLEASE take a minute to email me about it. That would be really cool. It might also get me back in the mood to actually make another one... :-)
+
+Thanks,
+
+..::Ken Banks
+ahawk@wastelandhalflife.com

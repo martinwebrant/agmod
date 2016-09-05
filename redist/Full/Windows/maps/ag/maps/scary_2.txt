@@ -1,0 +1,91 @@
+================================================================
+Title                   : Scary_2 * "Junior" * - for Half-Life
+Date                    : 31st May 1999 
+Filename                : scary_2.bsp
+Author                  : Steve Lyne aka "Scary-one" 
+Email Address           : steve.lyne@telia.com
+Home Page               : home9.swipnet.se/~w-91844
+Description             : I knocked this map up in the hours following the release of Scary_1. Normally after I release
+			  a level I spend a while readjusting myself .. trying hard to think along different lines. This
+			  time I didn't take the time to think .. I just built. I had no plans or ideas, and no hopes for 
+			  this level. I was just "getting stuff out of my system". Anyway the end result is quite pleasant,
+			  and I'm as surprised as the next guy :) It took the best part of three days to stick together, and it
+			  demonstrates what I'm capable of getting out of the motor. It has been a struggle to hold on the reins of the
+			  r_speeds though, and I settled on ~600. They go over in a couple of places, but very rarely and 
+			  probably never higher than ~650. I've also had to be very careful with the epolys count too. Seeing
+			  as the map is basically an arena - most of the action will take place there, which will result in a lot of
+			  corpses in view. I've tucked a lot of ammo out of sight in order to keep things moving well, even after a few frags.
+			
+			  I've not looked in this, but I wouldn't be surprised if there was a tweakable variable
+			  somewhere which limits the number of corpses visable on the client machine. If it exists ... I advise
+			  lowering this value, as well as lowering the number of drawn decals at any one time.
+
+			  I consider this kind of map a risk, but one worth taking. It is harder to make highly acclaimed small maps than larger
+			  successful ones. Larger maps can be filled with all manner of detail, where as smaller maps need the speed and look a lot barer.
+			  I hope that the map get appreciated for what it is trying to achieve .. and that is to create a decent arena for the
+			  small lan duel tourneys. 1 on 1 home or office matches jump to mind ... 
+
+			  The map rotates around a central area .. and doesn't really lead anwhere else :) There is one rocket launcher 
+			  placed out in the watery "cul de sac" cellar area, which is fairly risky to get. Alert opponents will always
+			  know your location because of the tell-tale splashing sounds. There is also a restocking area with a few
+			  goodies placed out. Once again its a risk to hang around in this place because listening to the sounds reveals a lot. 
+
+			  I'll repeat .. it is aimed at 1 on 1. It really is 1 on 1 stuff. It is a very small level. Got it! If you choose to play
+			  it with an 8 player limit, I'm not going to be held responsible for the epoly count after 30 seconds :) 
+
+			* I am contemplating expanding this level slightly to suit 4 or 5 players, by adding a water section uder the map. I have a vision of
+			* how the level would play with this extra section, and I'm quite keen to implement it. The main reason the water section is
+			* absent from Scary_2 "Junior" is because I wanted to keep the level suitable for 1 on 1 play. If I do edit the map and make the planned
+			* changes I'll be retexturing the level throughout and calling it Scary_2 "Senior" :) It depends a lot opon the response I get as to "junior"
+			* as to whether or not I go through with it. I advise small lan players, fond of Scary_1, to mail me a word or two ... 
+			  
+Other Levels by moi ... : Manhunt (manhunt.bsp)
+			  Enraged (enraged.bsp) revised - (enraged2.bsp)
+			  Outcry  (outcry.bsp)  revised - (outcry!.bsp) 
+			  Scary_1 (scary_1.bsp)
+			  
+			  All are available from Radium or my own homepage at http://home9.swipnet.se/~w-91844
+
+Additional Credits to   : i)   My family - Kirsi, Nathalie & Emily for being there and supporting me. I'm a lucky guy.
+  			  ii)  Valve/Sierra 
+                          iii) ID Software
+			  iv)  Radium ... an extremely good level review site found at www.planethalflife.com/radium
+			  v)   Not so much a thankyou as a big HELLO to gerb ... take it easy old buddy!
+			  vi)  To all the guys who have helped me test the map, especially EASE who gave some damned fine feedback! Thanks man!
+ 
+================================================================
+
+* Play Information *
+
+Single Player           : No (one start)
+Deathmatch              : 2+ (not sure of the limit but I'd assume that more than 4 would be pretty messy)
+Difficulty Settings     : No
+
+* Construction *
+
+Base                    : From scratch
+Editor(s) used          : Worldcraft 2.0
+Known Bugs              : I don't think so
+
+Build Time              : 3 days to make plus a day or so of waiting for beta testing response. 
+
+Compile machine         : PII 333 with 96 megs of SDRAM 
+QBSP Time               : 30  seconds
+QVIS Time               : 23  seconds
+QRAD Time (extra)       : 305 seconds 
+
+* Permissions *
+
+You MAY NOT sell this sucker for money!
+
+If a magazine wants it on its CD - that's fine - *BUT* you *MUST*
+send me a copy. OK!! Then we are quits :) Email me ... I'm not impossible.
+
+General BBS use - sure, I don't have a problem with that.
+
+You MAY NOT alter or add to this level without my permission.
+
+* Last but not least *
+
+Please, please, please email me if you like this level. I need to know that you like what you see.
+It boosts my confidence and gives me a big kick up the ass to get the next one done.
