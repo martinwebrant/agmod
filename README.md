@@ -1,7 +1,17 @@
+# Adrenaline Gamer 6.6
 This is the source code and distribution files for Adrenaline Gamer Mod 6.6 as it was released in November 2003.
 It's based upon the Half Life 1 SDK Copyright(C) Valve Corp.
 
-Team
+Hope the code is of some use to somebody!
+
+Martin Webrant aka BulliT
+Malmö 2016-09-05
+
+*Note: my old email bullit@planethalflife.com is not active anymore.*
+
+
+## Team
+
     Members
         Team leader, Programmer and Website: Martin "BulliT" Webrant
         IRC bot and in game logo: Harry "Saturn48" Bardak
@@ -31,10 +41,3 @@ Team
         Andrew "KungFuSquirrel" Weldon
         "Cash Car Star"
         tommyd
-
-
-Hope the code is of some use to somebody!
-Martin Webrant aka BulliT
-Malmö 2016-09-05
-
-Note: my old email bullit@planethalflife.com is not active anymore.
