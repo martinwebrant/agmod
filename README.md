@@ -4,8 +4,7 @@ It's based upon the Half Life 1 SDK Copyright(C) Valve Corp.
 
 Hope the code is of some use to somebody!
 
-Martin Webrant aka BulliT
-Malmö 2016-09-05
+Martin Webrant aka BulliT /Malmö 2016-09-05
 
 *Note: my old email bullit@planethalflife.com is not active anymore.*
 
